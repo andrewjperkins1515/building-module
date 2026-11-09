@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Owner Docket — prototype design tokens
+ * Neutral, institutional palette: graphite/navy ink on white & cool grays,
+ * one restrained accent (deep blue), and muted semantic tones.
+ */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  --color-background: #ffffff;
+  --color-canvas: #f7f8fa;
+  --color-subtle: #f1f3f6;
+  --color-muted: #eceff3;
+  --color-border: #e3e7ed;
+  --color-border-strong: #cfd5de;
+  --color-input: #dde2e9;
+  --color-ring: #3b5bab;
+
+  --color-ink: #0f1b2d;
+  --color-ink-2: #2b3a4f;
+  --color-ink-3: #5a6779;
+  --color-ink-4: #8a95a5;
+
+  --color-accent: #2c4c9c;
+  --color-accent-hover: #233e82;
+  --color-accent-soft: #eef2fb;
+  --color-accent-line: #d4ddf3;
+
+  --color-navy: #14213d;
+  --color-navy-2: #1c2b4b;
+
+  --color-success: #2f7a55;
+  --color-success-soft: #ecf6f0;
+  --color-success-line: #cbe6d6;
+  --color-warning: #a3621a;
+  --color-warning-soft: #fdf5e9;
+  --color-warning-line: #f2dcb9;
+  --color-danger: #b03a3a;
+  --color-danger-soft: #fcefef;
+  --color-danger-line: #f1cfcf;
+  --color-info: #2e6a9e;
+  --color-info-soft: #edf4fa;
+  --color-info-line: #cfe0ee;
+  --color-violet: #5b4a9e;
+  --color-violet-soft: #f2f0fa;
+  --color-violet-line: #dcd6f0;
+
+  --color-star: #c4952b;
+
+  --shadow-xs: 0 1px 2px 0 rgb(15 27 45 / 0.04);
+  --shadow-card: 0 1px 2px 0 rgb(15 27 45 / 0.04), 0 1px 3px 0 rgb(15 27 45 / 0.03);
+  --shadow-pop: 0 8px 24px -6px rgb(15 27 45 / 0.14), 0 2px 6px -2px rgb(15 27 45 / 0.08);
+  --shadow-drawer: -12px 0 40px -12px rgb(15 27 45 / 0.18);
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.45rem;
+  --radius-lg: 0.6rem;
+  --radius-xl: 0.8rem;
+
+  --animate-fade-in: fade-in 160ms ease-out;
+  --animate-pop-in: pop-in 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-in-right: slide-in-right 240ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pop-in {
+    from { opacity: 0; transform: translateY(4px) scale(0.985); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes slide-in-right {
+    from { transform: translateX(24px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+    font-size: 14px;
+  }
+  ::selection {
+    background: var(--color-accent-line);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}

@@ -1,0 +1,70 @@
+# Owner Docket — Building Module (Interactive Prototype)
+
+A functional, interactive prototype of the **Building Module** for Owner Docket, a skilled nursing facility (SNF) M&A platform by Prometheus Rising Studios.
+
+> **All data is fictional.** CMS ratings, surveys and financials are mock/illustrative data generated for demonstration. There are no live CMS, SharePoint, Outlook or mapping integrations.
+
+## Run locally
+
+Requires Node.js 20+.
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:5173. Other scripts:
+
+```bash
+npm run build      # type-check + production build to dist/
+npm run preview    # serve the production build
+npm run typecheck  # TypeScript only
+```
+
+Changes persist in the browser's `localStorage`. To restore the original dataset, use **avatar menu → Reset demo data** or **Settings → Reset demo data**.
+
+## Suggested demo walkthrough
+
+1. **Buildings** — search "Maple", try filters (State, CMS rating, Deals, Verification), toggle Table/Cards.
+2. Open **Maple Grove Health & Rehabilitation Center**.
+3. Review header metrics, Facility information (hover the colored dots for source & verification), and the **CMS & Regulatory** tab.
+4. **Ownership & operations** and **Related deals** — click *Great Lakes Portfolio* to open the deal preview.
+5. **Building condition** / **Site Visits** — resolve an observation, check off a follow-up, add a site visit.
+6. **Attention required** → click "Missing: Floor plan" to jump to Documents.
+7. **Documents** — use the *Missing* and *Pending review* views; click **Review** on *Property condition assessment* and **Approve**.
+8. Return to **Overview** — the documents progress and attention list reflect the approval.
+
+Also try: **Add Building** (CMS search, provider number e.g. `155921`, or manual), **Edit Building** (changing a CCN retires the old one into history), **Add to Deal**, **Sync now** in the Connected Data Room, and **⌘K** global search (works with provider numbers).
+
+## Architecture
+
+```
+src/
+  types/            Domain model (Building, BuildingIdentifier, Deal, DealBuildingRelationship, CMSData, DocumentRequest, …)
+  data/             Fictional seed data + deterministic generators, mock CMS registry, checklist templates
+  store/            DataProvider (React context + localStorage), selectors (derived stats, attention items)
+  components/
+    ui/             shadcn-style primitives on Radix (button, dialog, sheet, select, tabs, dropdown, tooltip, toast…)
+    shared/         Domain components (badges, star ratings, facility illustration, schematic map, layout pieces)
+    layout/         App shell, sidebar, header (breadcrumbs, global search, notifications)
+  features/buildings/
+    directory/      Buildings Directory (table/cards, filters, sort, metrics)
+    add/            Add Building workflow
+    detail/         Building detail page, header, tabs, dialogs (edit, add-to-deal, deal preview, site visit)
+    documents/      Documents & Due Diligence (checklist, review sheet, templates, simulated data room)
+  pages/            Placeholder modules, Settings, Not found
+```
+
+### Data model notes
+
+- **Stable internal IDs** for every entity. CMS provider numbers (CCNs), state licenses and NPIs are time-bounded `BuildingIdentifier` records — a building can carry several historical CCNs (see Brookhaven and Chestnut Hill).
+- **Deal-specific values** (role in deal, price allocation) live on `DealBuildingRelationship`, never on the `Building`. A building can belong to many deals (Seaside Pines is in a dead 2024 deal and an active 2026 deal).
+- Key facts (beds, census, year built, square footage) are `Tracked<T>` values with **source metadata and verification status**.
+- Every building gets **baseline document placeholders** (current facility license, floor plan); more can be added from the configurable diligence template.
+
+### Prototype limitations
+
+- File uploads store **metadata only** (name, size, version, review state). File contents are previewable for the current browser session but are not persisted.
+- SharePoint sync, CMS refresh and maps are simulated. Other modules (Deals, Contacts, etc.) are placeholders.
+
+Stack: React 19, TypeScript, Vite, Tailwind CSS v4, shadcn/ui-style components (Radix primitives), Lucide icons, React Router.

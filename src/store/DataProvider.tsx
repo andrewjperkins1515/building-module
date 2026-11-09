@@ -1,0 +1,409 @@
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import type {
+  Activity,
+  AppState,
+  Building,
+  DealBuildingRelationship,
+  DocumentFile,
+  DocumentRequest,
+  DocumentStatus,
+  ReviewComment,
+  SiteVisit,
+} from "@/types";
+import { buildSeedState, STATE_VERSION } from "@/data/seed";
+import { CURRENT_USER, DOC_STATUS_LABEL } from "@/lib/labels";
+import { nowIso, uid } from "@/lib/utils";
+import { templateFor, BASELINE_DOCUMENTS } from "@/data/templates";
+import type { NewBuildingInput } from "./createBuilding";
+import { materializeNewBuilding } from "./createBuilding";
+
+const STORAGE_KEY = "owner-docket:prototype-state";
+
+function loadState(): AppState {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw) as AppState;
+      if (parsed.version === STATE_VERSION) return parsed;
+    }
+  } catch {
+    /* ignore corrupt storage */
+  }
+  return buildSeedState();
+}
+
+type ReviewAction = "approved" | "rejected" | "needs_revision";
+
+interface DataContextValue {
+  state: AppState;
+  updateBuilding: (id: string, patch: Partial<Building>, change?: { title: string; description?: string; type?: Activity["type"] }) => void;
+  addBuilding: (input: NewBuildingInput) => string;
+  addDealAssociation: (rel: Omit<DealBuildingRelationship, "id" | "addedAt">) => void;
+  addSiteVisit: (visit: Omit<SiteVisit, "id" | "createdAt" | "createdBy">) => void;
+  toggleFollowUp: (visitId: string, taskId: string) => void;
+  toggleObservation: (visitId: string, obsId: string) => void;
+  addDocumentRequest: (req: Omit<DocumentRequest, "id" | "createdAt" | "updatedAt" | "files" | "comments">) => void;
+  updateDocumentRequest: (id: string, patch: Partial<DocumentRequest>, note?: string) => void;
+  setDocumentStatus: (id: string, status: DocumentStatus) => void;
+  uploadDocumentFile: (id: string, file: { name: string; size: number; type: string }) => void;
+  reviewDocument: (id: string, action: ReviewAction, comment: string) => void;
+  addDocumentComment: (id: string, text: string) => void;
+  deleteDocumentRequest: (id: string) => void;
+  applyChecklistTemplate: (buildingId: string, keys: string[], dealId?: string) => number;
+  syncDataRoom: (buildingId: string) => { imported: number };
+  connectDataRoom: (buildingId: string, folderPath: string) => void;
+  addNote: (buildingId: string, text: string) => void;
+  refreshCms: (buildingId: string) => void;
+  resetDemo: () => void;
+}
+
+const DataContext = createContext<DataContextValue | null>(null);
+
+export function DataProvider({ children }: { children: ReactNode }) {
+  const [state, setState] = useState<AppState>(loadState);
+  const stateRef = useRef(state);
+  stateRef.current = state;
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch {
+      /* storage full or unavailable — prototype continues in memory */
+    }
+  }, [state]);
+
+  const activity = (a: Omit<Activity, "id" | "timestamp" | "actor"> & { actor?: string }): Activity => ({
+    id: uid("act"),
+    timestamp: nowIso(),
+    actor: a.actor ?? CURRENT_USER.name,
+    ...a,
+  });
+
+  const touchBuilding = (s: AppState, buildingId: string): Building[] =>
+    s.buildings.map((b) => (b.id === buildingId ? { ...b, updatedAt: nowIso() } : b));
+
+  const updateBuilding = useCallback<DataContextValue["updateBuilding"]>((id, patch, change) => {
+    setState((s) => {
+      const prev = s.buildings.find((b) => b.id === id);
+      if (!prev) return s;
+      const acts: Activity[] = [];
+      if (patch.verificationStatus && patch.verificationStatus !== prev.verificationStatus) {
+        acts.push(activity({ buildingId: id, type: "verification_changed", title: `Verification changed to ${patch.verificationStatus.replace("_", " ")}`, description: `Previously ${prev.verificationStatus.replace("_", " ")}.` }));
+      }
+      if (change) acts.push(activity({ buildingId: id, type: change.type ?? "building_updated", title: change.title, description: change.description }));
+      return {
+        ...s,
+        buildings: s.buildings.map((b) => (b.id === id ? { ...b, ...patch, updatedAt: nowIso() } : b)),
+        activities: [...acts, ...s.activities],
+      };
+    });
+  }, []);
+
+  const addBuilding = useCallback<DataContextValue["addBuilding"]>((input) => {
+    const bundle = materializeNewBuilding(input);
+    setState((s) => ({
+      ...s,
+      buildings: [bundle.building, ...s.buildings],
+      cms: bundle.cms ? [...s.cms, bundle.cms] : s.cms,
+      conditions: s.conditions,
+      financials: s.financials,
+      ownerships: [...s.ownerships, ...bundle.ownerships],
+      organizations: [...s.organizations, ...bundle.newOrganizations.filter((o) => !s.organizations.some((x) => x.id === o.id))],
+      documentRequests: [...s.documentRequests, ...bundle.documents],
+      activities: [...bundle.activities, ...s.activities],
+      dataRooms: [...s.dataRooms, { buildingId: bundle.building.id, provider: "sharepoint", siteName: "", folderPath: "", status: "not_connected", recentFiles: [] }],
+    }));
+    return bundle.building.id;
+  }, []);
+
+  const addDealAssociation = useCallback<DataContextValue["addDealAssociation"]>((rel) => {
+    setState((s) => {
+      const deal = s.deals.find((d) => d.id === rel.dealId);
+      return {
+        ...s,
+        dealBuildings: [...s.dealBuildings, { ...rel, id: uid("db"), addedAt: nowIso().slice(0, 10) }],
+        buildings: touchBuilding(s, rel.buildingId),
+        activities: [activity({ buildingId: rel.buildingId, dealId: rel.dealId, type: "deal_associated", title: `Added to ${deal?.name ?? "deal"}`, description: rel.notes }), ...s.activities],
+      };
+    });
+  }, []);
+
+  const addSiteVisit = useCallback<DataContextValue["addSiteVisit"]>((visit) => {
+    setState((s) => {
+      const v: SiteVisit = { ...visit, id: uid("sv"), createdAt: nowIso(), createdBy: CURRENT_USER.name };
+      return {
+        ...s,
+        siteVisits: [v, ...s.siteVisits],
+        buildings: touchBuilding(s, visit.buildingId),
+        activities: [
+          activity({
+            buildingId: visit.buildingId,
+            dealId: visit.dealId,
+            type: "site_visit",
+            title: "Site visit recorded",
+            description: `${visit.participants.length} participant${visit.participants.length === 1 ? "" : "s"} · ${visit.observations.length} observation${visit.observations.length === 1 ? "" : "s"} · ${visit.followUps.length} follow-up${visit.followUps.length === 1 ? "" : "s"}`,
+          }),
+          ...s.activities,
+        ],
+      };
+    });
+  }, []);
+
+  const toggleFollowUp = useCallback<DataContextValue["toggleFollowUp"]>((visitId, taskId) => {
+    setState((s) => ({
+      ...s,
+      siteVisits: s.siteVisits.map((v) =>
+        v.id === visitId ? { ...v, followUps: v.followUps.map((t) => (t.id === taskId ? { ...t, done: !t.done } : t)) } : v,
+      ),
+    }));
+  }, []);
+
+  const toggleObservation = useCallback<DataContextValue["toggleObservation"]>((visitId, obsId) => {
+    setState((s) => ({
+      ...s,
+      siteVisits: s.siteVisits.map((v) =>
+        v.id === visitId
+          ? { ...v, observations: v.observations.map((o) => (o.id === obsId ? { ...o, status: o.status === "open" ? "resolved" : "open" } : o)) }
+          : v,
+      ),
+    }));
+  }, []);
+
+  const addDocumentRequest = useCallback<DataContextValue["addDocumentRequest"]>((req) => {
+    setState((s) => {
+      const doc: DocumentRequest = { ...req, id: uid("doc"), files: [], comments: [], createdAt: nowIso(), updatedAt: nowIso() };
+      return {
+        ...s,
+        documentRequests: [...s.documentRequests, doc],
+        activities: [
+          activity({ buildingId: req.buildingId, dealId: req.dealId, type: "document_requested", title: `${req.name} ${req.status === "not_requested" ? "added to checklist" : "requested"}`, description: req.requestedFrom ? `Requested from ${req.requestedFrom}` : undefined }),
+          ...s.activities,
+        ],
+      };
+    });
+  }, []);
+
+  const mapDoc = (s: AppState, id: string, fn: (d: DocumentRequest) => DocumentRequest) =>
+    s.documentRequests.map((d) => (d.id === id ? { ...fn(d), updatedAt: nowIso() } : d));
+
+  const updateDocumentRequest = useCallback<DataContextValue["updateDocumentRequest"]>((id, patch, note) => {
+    setState((s) => ({
+      ...s,
+      documentRequests: mapDoc(s, id, (d) => ({
+        ...d,
+        ...patch,
+        comments: note ? [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text: note, createdAt: nowIso(), action: "status_change" }] : d.comments,
+      })),
+    }));
+  }, []);
+
+  const setDocumentStatus = useCallback<DataContextValue["setDocumentStatus"]>((id, status) => {
+    setState((s) => {
+      const doc = s.documentRequests.find((d) => d.id === id);
+      if (!doc || doc.status === status) return s;
+      const c: ReviewComment = { id: uid("cm"), author: CURRENT_USER.name, text: `Status changed from ${DOC_STATUS_LABEL[doc.status]} to ${DOC_STATUS_LABEL[status]}.`, createdAt: nowIso(), action: "status_change" };
+      return {
+        ...s,
+        documentRequests: mapDoc(s, id, (d) => ({ ...d, status, comments: [...d.comments, c] })),
+        activities:
+          status === "requested"
+            ? [activity({ buildingId: doc.buildingId, dealId: doc.dealId, type: "document_requested", title: `${doc.name} requested`, description: doc.requestedFrom ? `From ${doc.requestedFrom}` : undefined }), ...s.activities]
+            : s.activities,
+      };
+    });
+  }, []);
+
+  const uploadDocumentFile = useCallback<DataContextValue["uploadDocumentFile"]>((id, file) => {
+    setState((s) => {
+      const doc = s.documentRequests.find((d) => d.id === id);
+      if (!doc) return s;
+      const version = doc.files.length + 1;
+      const f: DocumentFile = {
+        id: uid("file"),
+        fileName: file.name,
+        fileSize: file.size,
+        mimeType: file.type || "application/octet-stream",
+        version,
+        uploadedAt: nowIso(),
+        uploadedBy: CURRENT_USER.name,
+        source: "upload",
+      };
+      const nextStatus: DocumentStatus = ["approved"].includes(doc.status) ? "in_review" : "received";
+      return {
+        ...s,
+        documentRequests: mapDoc(s, id, (d) => ({
+          ...d,
+          files: [...d.files, f],
+          status: nextStatus,
+          comments: [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text: `Uploaded ${file.name} (v${version}).`, createdAt: nowIso(), action: "comment" }],
+        })),
+        buildings: touchBuilding(s, doc.buildingId),
+        activities: [activity({ buildingId: doc.buildingId, dealId: doc.dealId, type: "document_uploaded", title: `${doc.name} uploaded`, description: `${file.name} · v${version}` }), ...s.activities],
+      };
+    });
+  }, []);
+
+  const reviewDocument = useCallback<DataContextValue["reviewDocument"]>((id, action, comment) => {
+    setState((s) => {
+      const doc = s.documentRequests.find((d) => d.id === id);
+      if (!doc) return s;
+      const verb = action === "approved" ? "approved" : action === "rejected" ? "rejected" : "returned for revision";
+      return {
+        ...s,
+        documentRequests: mapDoc(s, id, (d) => ({
+          ...d,
+          status: action,
+          reviewer: d.reviewer ?? CURRENT_USER.name,
+          comments: [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text: comment || `Document ${verb}.`, createdAt: nowIso(), action }],
+        })),
+        buildings: touchBuilding(s, doc.buildingId),
+        activities: [activity({ buildingId: doc.buildingId, dealId: doc.dealId, type: "document_reviewed", title: `${doc.name} ${verb}`, description: comment || undefined }), ...s.activities],
+      };
+    });
+  }, []);
+
+  const addDocumentComment = useCallback<DataContextValue["addDocumentComment"]>((id, text) => {
+    setState((s) => ({
+      ...s,
+      documentRequests: mapDoc(s, id, (d) => ({ ...d, comments: [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text, createdAt: nowIso(), action: "comment" }] })),
+    }));
+  }, []);
+
+  const deleteDocumentRequest = useCallback<DataContextValue["deleteDocumentRequest"]>((id) => {
+    setState((s) => ({ ...s, documentRequests: s.documentRequests.filter((d) => d.id !== id) }));
+  }, []);
+
+  const applyChecklistTemplate = useCallback<DataContextValue["applyChecklistTemplate"]>((buildingId, keys, dealId) => {
+    const cur = stateRef.current;
+    const bld = cur.buildings.find((x) => x.id === buildingId);
+    const have = new Set(cur.documentRequests.filter((d) => d.buildingId === buildingId).map((d) => d.name));
+    const added = bld ? [...BASELINE_DOCUMENTS, ...templateFor(bld.facilityType)].filter((t) => keys.includes(t.key) && !have.has(t.name)).length : 0;
+    setState((s) => {
+      const b = s.buildings.find((x) => x.id === buildingId);
+      if (!b) return s;
+      const existing = new Set(s.documentRequests.filter((d) => d.buildingId === buildingId).map((d) => d.name));
+      const items = [...BASELINE_DOCUMENTS, ...templateFor(b.facilityType)].filter((t) => keys.includes(t.key) && !existing.has(t.name));
+      if (!items.length) return s;
+      const docs: DocumentRequest[] = items.map((t) => ({
+        id: uid("doc"),
+        buildingId,
+        dealId,
+        name: t.name,
+        category: t.category,
+        required: t.required,
+        isBaseline: !!t.baseline,
+        status: "not_requested",
+        files: [],
+        notes: t.description,
+        comments: [],
+        createdAt: nowIso(),
+        updatedAt: nowIso(),
+      }));
+      return {
+        ...s,
+        documentRequests: [...s.documentRequests, ...docs],
+        activities: [activity({ buildingId, dealId, type: "document_requested", title: `${docs.length} checklist item${docs.length === 1 ? "" : "s"} added from template`, description: docs.map((d) => d.name).join(", ") }), ...s.activities],
+      };
+    });
+    return added;
+  }, []);
+
+  const syncDataRoom = useCallback<DataContextValue["syncDataRoom"]>((buildingId) => {
+    // Simulated: the next outstanding request (requested / needs revision) "arrives" from SharePoint.
+    const imported = stateRef.current.documentRequests.some(
+      (d) => d.buildingId === buildingId && (d.status === "requested" || d.status === "needs_revision"),
+    )
+      ? 1
+      : 0;
+    setState((s) => {
+      const room = s.dataRooms.find((r) => r.buildingId === buildingId);
+      if (!room || room.status !== "connected") return s;
+      const candidate = s.documentRequests.find((d) => d.buildingId === buildingId && (d.status === "requested" || d.status === "needs_revision"));
+      const now = nowIso();
+      let documentRequests = s.documentRequests;
+      let recentFiles = room.recentFiles;
+      const acts: Activity[] = [];
+      if (candidate) {
+        const b = s.buildings.find((x) => x.id === buildingId)!;
+        const fileName = `${b.name.split(" ").slice(0, 2).join("_")}_${candidate.name.replace(/[^A-Za-z0-9]+/g, "_")}${candidate.files.length ? `_v${candidate.files.length + 1}` : ""}.pdf`;
+        const f: DocumentFile = { id: uid("file"), fileName, fileSize: 412_000 + Math.round(Math.random() * 2_000_000), mimeType: "application/pdf", version: candidate.files.length + 1, uploadedAt: now, uploadedBy: "Data room sync", source: "sharepoint", pageCount: 4 + Math.round(Math.random() * 30) };
+        documentRequests = mapDoc(s, candidate.id, (d) => ({ ...d, files: [...d.files, f], status: "received", comments: [...d.comments, { id: uid("cm"), author: "Data room sync", text: `Imported ${fileName} from SharePoint.`, createdAt: now, action: "comment" }] }));
+        recentFiles = [{ id: uid("drf"), name: fileName, importedAt: now, size: f.fileSize, matchedRequestId: candidate.id }, ...recentFiles].slice(0, 6);
+        acts.push(activity({ buildingId, dealId: candidate.dealId, type: "data_room_sync", actor: "Data room sync", title: `${candidate.name} imported from SharePoint`, description: `${fileName} matched to checklist item` }));
+      } else {
+        acts.push(activity({ buildingId, type: "data_room_sync", actor: "Data room sync", title: "Data room synced", description: "No new files found." }));
+      }
+      return {
+        ...s,
+        documentRequests,
+        dataRooms: s.dataRooms.map((r) => (r.buildingId === buildingId ? { ...r, lastSyncAt: now, status: "connected", recentFiles } : r)),
+        activities: [...acts, ...s.activities],
+      };
+    });
+    return { imported };
+  }, []);
+
+  const connectDataRoom = useCallback<DataContextValue["connectDataRoom"]>((buildingId, folderPath) => {
+    setState((s) => {
+      const exists = s.dataRooms.some((r) => r.buildingId === buildingId);
+      const room = { buildingId, provider: "sharepoint" as const, siteName: "OD Acquisitions", folderPath, status: "connected" as const, lastSyncAt: nowIso(), recentFiles: [] };
+      return {
+        ...s,
+        dataRooms: exists ? s.dataRooms.map((r) => (r.buildingId === buildingId ? room : r)) : [...s.dataRooms, room],
+        activities: [activity({ buildingId, type: "data_room_sync", title: "SharePoint folder connected (simulated)", description: folderPath }), ...s.activities],
+      };
+    });
+  }, []);
+
+  const addNote = useCallback<DataContextValue["addNote"]>((buildingId, text) => {
+    setState((s) => ({ ...s, buildings: touchBuilding(s, buildingId), activities: [activity({ buildingId, type: "note", title: "Note added", description: text }), ...s.activities] }));
+  }, []);
+
+  const refreshCms = useCallback<DataContextValue["refreshCms"]>((buildingId) => {
+    setState((s) => ({
+      ...s,
+      cms: s.cms.map((c) => (c.buildingId === buildingId ? { ...c, lastRefreshedAt: nowIso() } : c)),
+      activities: [activity({ buildingId, type: "cms_refreshed", actor: "System", title: "CMS data refreshed", description: "Simulated refresh — mock dataset unchanged." }), ...s.activities],
+    }));
+  }, []);
+
+  const resetDemo = useCallback(() => {
+    localStorage.removeItem(STORAGE_KEY);
+    setState(buildSeedState());
+  }, []);
+
+  const value = useMemo<DataContextValue>(
+    () => ({
+      state,
+      updateBuilding,
+      addBuilding,
+      addDealAssociation,
+      addSiteVisit,
+      toggleFollowUp,
+      toggleObservation,
+      addDocumentRequest,
+      updateDocumentRequest,
+      setDocumentStatus,
+      uploadDocumentFile,
+      reviewDocument,
+      addDocumentComment,
+      deleteDocumentRequest,
+      applyChecklistTemplate,
+      syncDataRoom,
+      connectDataRoom,
+      addNote,
+      refreshCms,
+      resetDemo,
+    }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [state],
+  );
+
+  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
+}
+
+export function useData() {
+  const ctx = useContext(DataContext);
+  if (!ctx) throw new Error("useData must be used within DataProvider");
+  return ctx;
+}
