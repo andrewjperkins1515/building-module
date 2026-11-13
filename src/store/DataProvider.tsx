@@ -4,6 +4,7 @@ import type {
   AppState,
   Building,
   BuildingPhoto,
+  Communication,
   Contact,
   DealBuildingRelationship,
   Organization,
@@ -15,6 +16,7 @@ import type {
 } from "@/types";
 import { buildSeedState, STATE_VERSION } from "@/data/seed";
 import { defaultContactType, defaultSectors } from "@/data/contactDefaults";
+import { buildCommunications } from "@/data/communications";
 import { CURRENT_USER, DOC_STATUS_LABEL } from "@/lib/labels";
 import { nowIso, uid } from "@/lib/utils";
 import { templateFor, BASELINE_DOCUMENTS } from "@/data/templates";
@@ -39,12 +41,14 @@ function loadState(): AppState {
 }
 
 /** Upgrade saved prototype data in place so demo edits survive new releases. */
-function migrate(s: AppState): AppState | null {
+function migrate(input: AppState): AppState | null {
+  let s = input;
+  if (s.version < 4) return null; // too old — reseed
   if (s.version === 4) {
     const orgs = new Map(s.organizations.map((o) => [o.id, o]));
-    return {
+    s = {
       ...s,
-      version: STATE_VERSION,
+      version: 5,
       contacts: s.contacts.map((c) => ({
         ...c,
         contactType: c.contactType ?? defaultContactType(orgs.get(c.organizationId)),
@@ -52,7 +56,10 @@ function migrate(s: AppState): AppState | null {
       })),
     };
   }
-  return null;
+  if (s.version === 5) {
+    s = { ...s, version: 6, communications: buildCommunications(s) };
+  }
+  return s.version === STATE_VERSION ? s : null;
 }
 
 type ReviewAction = "approved" | "rejected" | "needs_revision";
@@ -88,6 +95,7 @@ interface DataContextValue {
   addBuildingPhotos: (buildingId: string, photos: Omit<BuildingPhoto, "id" | "uploadedAt" | "uploadedBy">[]) => void;
   removeBuildingPhoto: (buildingId: string, photoId: string) => void;
   setCoverPhoto: (buildingId: string, photoId: string) => void;
+  addCommunication: (c: Omit<Communication, "id" | "threadId" | "source" | "loggedBy">) => void;
 }
 
 const DataContext = createContext<DataContextValue | null>(null);
@@ -494,6 +502,11 @@ export function DataProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
+  const addCommunication = useCallback<DataContextValue["addCommunication"]>((c) => {
+    const id = uid("comm");
+    setState((s) => ({ ...s, communications: [{ ...c, id, threadId: id, source: "manual", loggedBy: CURRENT_USER.name }, ...s.communications] }));
+  }, []);
+
   const value = useMemo<DataContextValue>(
     () => ({
       state,
@@ -525,6 +538,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       addBuildingPhotos,
       removeBuildingPhoto,
       setCoverPhoto,
+      addCommunication,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [state],

@@ -37,6 +37,7 @@ export default function App() {
                   <Route path="buildings/:buildingId/:tab" element={<BuildingDetail />} />
                   <Route path="contacts" element={<ContactsDirectory />} />
                   <Route path="contacts/:contactId" element={<ContactDetail />} />
+                  <Route path="contacts/:contactId/:tab" element={<ContactDetail />} />
                   {PLACEHOLDERS.map((p) => (
                     <Route key={p.path} path={p.path} element={<PlaceholderPage title={p.title} icon={p.icon} description={p.description} />} />
                   ))}

@@ -45,6 +45,8 @@ Changes persist in the browser's `localStorage`. To restore the original dataset
 - Each **contact record** has a Contact type (Operator, Vendor (Due Diligence), Vendor (Operating), Investor / Capital Provider, Broker, Lawyer), one or more Sectors (Skilled Nursing Facility, Assisted Living, Independent Living, Memory Care Facility), the full contact card (work and personal details), tags, active and past deals, associated people at the same company, and related buildings.
 - Add a contact (pick a company or create one; type and sectors are pre-filled from the company), edit, tag, make primary, or delete. People's names link to their record from the building Owner tab, Relationships, key contacts and global search.
 
+- **Communications tab** on each contact record: an inbox-style view of email threads, calls and meetings with that person (fictional dummy data standing in for the planned Outlook integration). Search, filter by type or deal, read full threads with attachments, reply via your email client, and log calls, meetings or emails manually.
+
 Also try: **Add Building** (CMS search, provider number e.g. `155921`, or manual), **Edit Building** (changing a CCN retires the old one into history), **Add to Deal**, **Sync now** in the Connected Data Room, and **⌘K** global search (works with provider numbers).
 
 ## Architecture
@@ -78,6 +80,6 @@ src/
 - Personal contact data (date of birth, personal email, mailing address) is visible to everyone; role-based visibility is planned.
 - Uploaded photos, logos and contact photos are downscaled and stored in the browser's localStorage, so storage limits apply.
 - File uploads store **metadata only** (name, size, version, review state). File contents are previewable for the current browser session but are not persisted.
-- SharePoint sync, CMS refresh and maps are simulated. Other modules (Deals, Contacts, etc.) are placeholders.
+- Outlook email sync, SharePoint sync, CMS refresh and maps are simulated. Other modules (Deals, Contacts, etc.) are placeholders.
 
 Stack: React 19, TypeScript, Vite, Tailwind CSS v4, shadcn/ui-style components (Radix primitives), Lucide icons, React Router.

@@ -608,6 +608,40 @@ export interface DataRoomConnection {
 }
 
 // ---------------------------------------------------------------------------
+// Communications (Outlook sync is simulated in the prototype)
+// ---------------------------------------------------------------------------
+
+export interface CommParticipant {
+  name: string;
+  email: string;
+}
+
+export type CommChannel = "email" | "call" | "meeting";
+
+export interface Communication {
+  id: ID;
+  /** Messages sharing a threadId form one conversation. */
+  threadId: ID;
+  channel: CommChannel;
+  direction: "inbound" | "outbound";
+  subject: string;
+  from: CommParticipant;
+  to: CommParticipant[];
+  cc: CommParticipant[];
+  sentAt: ISODate;
+  body: string;
+  attachments: { name: string; size: number }[];
+  /** CRM contacts this message is logged against. */
+  contactIds: ID[];
+  dealId?: ID;
+  buildingId?: ID;
+  /** For calls / meetings. */
+  durationMin?: number;
+  source: "outlook_sync" | "manual";
+  loggedBy?: string;
+}
+
+// ---------------------------------------------------------------------------
 // App state
 // ---------------------------------------------------------------------------
 
@@ -628,4 +662,5 @@ export interface AppState {
   documentRequests: DocumentRequest[];
   activities: Activity[];
   dataRooms: DataRoomConnection[];
+  communications: Communication[];
 }

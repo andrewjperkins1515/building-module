@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { ArrowRight, Briefcase, Building2, Mail, MoreHorizontal, Pencil, Phone, Star, Tag, Trash2, UserPlus, Users } from "lucide-react";
+import { ArrowRight, Briefcase, Building2, Clock, LayoutDashboard, Mail, MessagesSquare, MoreHorizontal, Pencil, Phone, Star, Tag, Trash2, UserPlus, Users } from "lucide-react";
 import { useBreadcrumbs } from "@/components/layout/breadcrumbs";
 import { useData } from "@/store/DataProvider";
 import { companyDeals, contactBuildings } from "@/store/selectors";
@@ -18,9 +18,13 @@ import { ChipList, ContactCard } from "@/features/crm/ContactCard";
 import { EditContactSheet, type ContactSheetTarget } from "@/features/crm/EditContactSheet";
 import { EditCompanySheet } from "@/features/crm/EditCompanySheet";
 import { DealPreviewSheet } from "@/features/buildings/detail/dialogs/DealPreviewSheet";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { fmtRelative } from "@/lib/format";
+import { CommunicationsTab } from "./CommunicationsTab";
 
 export function ContactDetail() {
-  const { contactId } = useParams();
+  const { contactId, tab } = useParams();
+  const activeTab = tab === "communications" ? "communications" : "overview";
   const navigate = useNavigate();
   const toast = useToast();
   const { state, updateContact, updateOrganization, deleteContact } = useData();
@@ -30,7 +34,7 @@ export function ContactDetail() {
   const [confirmDelete, setConfirmDelete] = useState(false);
 
   const c = state.contacts.find((x) => x.id === contactId);
-  useBreadcrumbs(c ? [{ label: "Contacts", to: "/contacts" }, { label: c.name }] : [{ label: "Contacts", to: "/contacts" }, { label: "Not found" }]);
+  useBreadcrumbs(c ? [{ label: "Contacts", to: "/contacts" }, { label: c.name, to: `/contacts/${c.id}` }, ...(activeTab === "communications" ? [{ label: "Communications" }] : [])] : [{ label: "Contacts", to: "/contacts" }, { label: "Not found" }]);
   if (!c) return <NotFound title="Contact not found" description="This contact may have been removed, or the link is incorrect." />;
 
   const org = state.organizations.find((o) => o.id === c.organizationId);
@@ -41,6 +45,9 @@ export function ContactDetail() {
   const past = deals.filter((d) => d.deal.status !== "active");
   const colleagues = state.contacts.filter((x) => x.organizationId === c.organizationId && x.id !== c.id).sort((a, b) => Number(b.id === org?.primaryContactId) - Number(a.id === org?.primaryContactId) || a.name.localeCompare(b.name));
   const buildings = contactBuildings(state, c.id);
+  const myComms = state.communications.filter((m) => m.contactIds.includes(c.id));
+  const threadCount = new Set(myComms.map((m) => m.threadId)).size;
+  const lastTouch = myComms.reduce<string | undefined>((a, m) => (!a || m.sentAt > a ? m.sentAt : a), undefined);
 
   return (
     <div className="mx-auto max-w-[1600px] px-4 pb-16 pt-5 lg:px-8">
@@ -65,6 +72,11 @@ export function ContactDetail() {
                 </>
               )}
             </div>
+            {lastTouch && (
+              <button onClick={() => navigate(`/contacts/${c.id}/communications`)} className="mt-1 inline-flex items-center gap-1 text-[12px] text-ink-3 hover:text-ink">
+                <Clock className="size-3" /> Last contacted {fmtRelative(lastTouch)}
+              </button>
+            )}
             <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
               <ContactTypeBadge type={c.contactType} />
               <SectorBadges sectors={c.sectors} full />
@@ -135,6 +147,23 @@ export function ContactDetail() {
         </div>
       </div>
 
+      <Tabs value={activeTab} onValueChange={(t) => navigate(`/contacts/${c.id}${t === "overview" ? "" : `/${t}`}`)} className="mt-6">
+        <TabsList>
+          <TabsTrigger value="overview">
+            <LayoutDashboard className="size-3.5 opacity-70" /> Overview
+          </TabsTrigger>
+          <TabsTrigger value="communications">
+            <MessagesSquare className="size-3.5 opacity-70" /> Communications
+            {threadCount > 0 && <span className="tabular ml-0.5 rounded-full bg-subtle px-1.5 text-[10.5px] font-medium text-ink-3">{threadCount}</span>}
+          </TabsTrigger>
+        </TabsList>
+      </Tabs>
+
+      {activeTab === "communications" ? (
+        <div className="mt-5">
+          <CommunicationsTab contact={c} />
+        </div>
+      ) : (
       <div className="mt-5 grid gap-5 xl:grid-cols-[minmax(0,1fr)_380px]">
         <div className="min-w-0 space-y-5">
           <Section title="Contact details" icon={Users} actions={<Button variant="ghost" size="sm" onClick={() => setSheet({ mode: "edit", contactId: c.id })}>Edit</Button>}>
@@ -265,6 +294,8 @@ export function ContactDetail() {
           </Section>
         </div>
       </div>
+
+      )}
 
       <EditContactSheet target={sheet} onOpenChange={(o) => !o && setSheet(null)} onSaved={(id, isNew) => isNew && navigate(`/contacts/${id}`)} />
       <EditCompanySheet orgId={companyOpen && org ? org.id : null} onOpenChange={setCompanyOpen} />

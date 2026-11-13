@@ -19,8 +19,9 @@ import { buildDeals, buildDealBuildings } from "./deals";
 import { buildingSpecs, type BuildingSpec } from "./buildingSpecs";
 import { generateCapitalProjects, generateCms, generateCondition, generateFinancials } from "./generators";
 import { BASELINE_DOCUMENTS, templateFor } from "./templates";
+import { buildCommunications } from "./communications";
 
-export const STATE_VERSION = 5;
+export const STATE_VERSION = 6;
 
 const orgName = (id: string) => organizations.find((o) => o.id === id)?.name ?? "";
 const slug = (s: string) => s.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");
@@ -402,6 +403,7 @@ export function buildSeedState(): AppState {
     documentRequests: [],
     activities: [],
     dataRooms: [],
+    communications: [],
   };
 
   for (const s of buildingSpecs) {
@@ -446,5 +448,6 @@ export function buildSeedState(): AppState {
     );
     state.dataRooms.push(buildDataRoom(s, docs, activeDeal?.name));
   }
+  state.communications = buildCommunications(state);
   return state;
 }
