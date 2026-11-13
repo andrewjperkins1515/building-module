@@ -80,6 +80,17 @@ export interface BuildingIdentifier {
   note?: string;
 }
 
+export interface BuildingPhoto {
+  id: ID;
+  caption: string;
+  /** Uploaded image (downscaled data URL). Absent = generated placeholder. */
+  dataUrl?: string;
+  /** Placeholder subject when no image is uploaded. */
+  subject?: "exterior" | "entrance" | "dining" | "therapy" | "resident_room" | "courtyard" | "lobby";
+  uploadedAt: ISODate;
+  uploadedBy: string;
+}
+
 export interface Building {
   id: ID;
   name: string;
@@ -102,6 +113,8 @@ export interface Building {
   lastVerifiedAt: ISODate | null;
   /** Seed for the generated facility illustration. */
   photoSeed: number;
+  /** Property photo gallery. The first photo is the cover image. */
+  photos: BuildingPhoto[];
   tags: string[];
   createdAt: ISODate;
   updatedAt: ISODate;
@@ -123,14 +136,37 @@ export type OrganizationType =
   | "consultant"
   | "investor";
 
+/** Capital / ownership classification of a company (CRM "Company Type"). */
+export type CompanyType = "bank" | "finco" | "mezz_lender" | "reit" | "private" | "ar_lender";
+
+export interface PostalAddress {
+  street: string;
+  street2?: string;
+  city: string;
+  state: string;
+  zip: string;
+}
+
 export interface Organization {
   id: ID;
   name: string;
+  /** Primary role in the ecosystem (owner, operator, broker…). */
   type: OrganizationType;
+  /** Capital classification — e.g. whether a property owner is a Bank, REIT or Private. */
+  companyType?: CompanyType;
+  parentOrgId?: ID;
   hqCity: string;
   hqState: string;
+  officeAddress?: PostalAddress;
   website?: string;
   description?: string;
+  /** Downscaled image data URL (prototype storage). */
+  logoDataUrl?: string;
+  acuityFocus?: string[];
+  regionalFocus?: string[];
+  stateFocus?: string[];
+  primaryContactId?: ID;
+  tags?: string[];
 }
 
 export interface Contact {
@@ -138,8 +174,21 @@ export interface Contact {
   name: string;
   title: string;
   organizationId: ID;
+  /** Work email. */
   email: string;
+  /** Office / work phone. */
   phone: string;
+  mobilePhone?: string;
+  linkedIn?: string;
+  dob?: ISODate;
+  personalEmail?: string;
+  mailingAddress?: PostalAddress;
+  /** Downscaled image data URL (prototype storage). */
+  photoDataUrl?: string;
+  /** Role on the company's corporate roster (e.g. "Decision maker", "Asset management"). */
+  rosterRole?: string;
+  notes?: string;
+  tags?: string[];
 }
 
 export type OwnershipRole = "property_owner" | "operator" | "parent_organization" | "management_company";
@@ -197,6 +246,8 @@ export interface Deal {
   brokerOrgId?: ID;
   lenderOrgId?: ID;
   buyerEntity: string;
+  /** Buyer as a CRM company, when known. */
+  buyerOrgId?: ID;
   askingPrice?: number;
   purchasePrice?: number;
   projectedCloseDate?: ISODate;

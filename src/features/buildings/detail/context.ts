@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import type { BuildingBundle } from "@/store/selectors";
 
-export type DetailTab = "overview" | "cms" | "property" | "financials" | "documents" | "site-visits" | "relationships" | "activity";
+export type DetailTab = "overview" | "owner" | "cms" | "property" | "financials" | "documents" | "site-visits" | "relationships" | "activity";
 
 export interface BuildingPageCtx {
   bundle: BuildingBundle;

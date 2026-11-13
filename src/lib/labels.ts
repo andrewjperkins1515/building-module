@@ -2,6 +2,7 @@ import type {
   ActivityType,
   BuildingRelationshipRole,
   BuildingSystem,
+  CompanyType,
   ConditionRating,
   DataSource,
   DealBuildingRole,
@@ -213,23 +214,30 @@ export const SITE_VISIT_TYPE_LABEL: Record<SiteVisit["type"], string> = {
 };
 
 export const US_STATES: Record<string, string> = {
-  AZ: "Arizona",
-  CO: "Colorado",
-  FL: "Florida",
-  GA: "Georgia",
-  IL: "Illinois",
-  IN: "Indiana",
-  KY: "Kentucky",
-  MI: "Michigan",
-  MO: "Missouri",
-  NC: "North Carolina",
-  OH: "Ohio",
-  PA: "Pennsylvania",
-  TN: "Tennessee",
-  TX: "Texas",
-  VA: "Virginia",
-  WI: "Wisconsin",
+  AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut",
+  DE: "Delaware", DC: "District of Columbia", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois",
+  IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland",
+  MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana",
+  NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York",
+  NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania",
+  RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah",
+  VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming",
 };
+
+export const COMPANY_TYPES: CompanyType[] = ["bank", "finco", "mezz_lender", "reit", "private", "ar_lender"];
+
+export const COMPANY_TYPE_LABEL: Record<CompanyType, string> = {
+  bank: "Bank",
+  finco: "Finco",
+  mezz_lender: "Mezz Lender",
+  reit: "REIT",
+  private: "Private",
+  ar_lender: "AR Lender",
+};
+
+export const ACUITY_OPTIONS = ["Skilled Nursing", "Assisted Living", "Memory Care", "Independent Living", "CCRC", "Behavioral Health", "LTACH"];
+
+export const REGION_OPTIONS = ["Northeast", "Mid-Atlantic", "Southeast", "Midwest", "Southwest", "Mountain West", "West Coast", "National"];
 
 export const CURRENT_USER = { name: "Jordan Ellis", title: "VP, Acquisitions", email: "jordan.ellis@example.com" };
 

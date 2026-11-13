@@ -3,7 +3,10 @@ import type {
   Activity,
   AppState,
   Building,
+  BuildingPhoto,
+  Contact,
   DealBuildingRelationship,
+  Organization,
   DocumentFile,
   DocumentRequest,
   DocumentStatus,
@@ -55,6 +58,16 @@ interface DataContextValue {
   addNote: (buildingId: string, text: string) => void;
   refreshCms: (buildingId: string) => void;
   resetDemo: () => void;
+  // CRM
+  updateOrganization: (id: string, patch: Partial<Organization>, change?: { buildingId?: string; title: string }) => void;
+  addOrganization: (org: Omit<Organization, "id">) => string;
+  updateContact: (id: string, patch: Partial<Contact>) => void;
+  addContact: (contact: Omit<Contact, "id">) => string;
+  deleteContact: (id: string) => void;
+  changeOwner: (buildingId: string, organizationId: string, effectiveDate: string) => void;
+  addBuildingPhotos: (buildingId: string, photos: Omit<BuildingPhoto, "id" | "uploadedAt" | "uploadedBy">[]) => void;
+  removeBuildingPhoto: (buildingId: string, photoId: string) => void;
+  setCoverPhoto: (buildingId: string, photoId: string) => void;
 }
 
 const DataContext = createContext<DataContextValue | null>(null);
@@ -372,6 +385,95 @@ export function DataProvider({ children }: { children: ReactNode }) {
     setState(buildSeedState());
   }, []);
 
+  const updateOrganization = useCallback<DataContextValue["updateOrganization"]>((id, patch, change) => {
+    setState((s) => ({
+      ...s,
+      organizations: s.organizations.map((o) => (o.id === id ? { ...o, ...patch } : o)),
+      activities: change?.buildingId ? [activity({ buildingId: change.buildingId, type: "building_updated", title: change.title }), ...s.activities] : s.activities,
+    }));
+  }, []);
+
+  const addOrganization = useCallback<DataContextValue["addOrganization"]>((org) => {
+    const id = uid("org");
+    setState((s) => ({ ...s, organizations: [...s.organizations, { acuityFocus: [], regionalFocus: [], stateFocus: [], tags: [], ...org, id }] }));
+    return id;
+  }, []);
+
+  const updateContact = useCallback<DataContextValue["updateContact"]>((id, patch) => {
+    setState((s) => ({ ...s, contacts: s.contacts.map((c) => (c.id === id ? { ...c, ...patch } : c)) }));
+  }, []);
+
+  const addContact = useCallback<DataContextValue["addContact"]>((contact) => {
+    const id = uid("ct");
+    setState((s) => {
+      const org = s.organizations.find((o) => o.id === contact.organizationId);
+      return {
+        ...s,
+        contacts: [...s.contacts, { ...contact, id }],
+        // First person on a company's roster becomes its primary contact.
+        organizations: org && !org.primaryContactId ? s.organizations.map((o) => (o.id === org.id ? { ...o, primaryContactId: id } : o)) : s.organizations,
+      };
+    });
+    return id;
+  }, []);
+
+  const deleteContact = useCallback<DataContextValue["deleteContact"]>((id) => {
+    setState((s) => ({
+      ...s,
+      contacts: s.contacts.filter((c) => c.id !== id),
+      organizations: s.organizations.map((o) => (o.primaryContactId === id ? { ...o, primaryContactId: s.contacts.find((c) => c.organizationId === o.id && c.id !== id)?.id } : o)),
+      relationships: s.relationships.filter((r) => r.contactId !== id),
+    }));
+  }, []);
+
+  const changeOwner = useCallback<DataContextValue["changeOwner"]>((buildingId, organizationId, effectiveDate) => {
+    setState((s) => {
+      const current = s.ownerships.find((o) => o.buildingId === buildingId && o.isCurrent && o.role === "property_owner");
+      if (current?.organizationId === organizationId) return s;
+      const prevName = s.organizations.find((o) => o.id === current?.organizationId)?.name;
+      const nextName = s.organizations.find((o) => o.id === organizationId)?.name ?? "new owner";
+      return {
+        ...s,
+        ownerships: [
+          ...s.ownerships.map((o) => (o.id === current?.id ? { ...o, isCurrent: false, endDate: effectiveDate } : o)),
+          { id: uid("own"), buildingId, organizationId, role: "property_owner", startDate: effectiveDate, isCurrent: true, meta: { source: "manual", asOf: effectiveDate, verification: "unverified" } },
+        ],
+        buildings: touchBuilding(s, buildingId),
+        activities: [
+          activity({ buildingId, type: "building_updated", title: `Current owner changed to ${nextName}`, description: prevName ? `Previous owner ${prevName} moved to ownership history (effective ${effectiveDate}).` : `Effective ${effectiveDate}.` }),
+          ...s.activities,
+        ],
+      };
+    });
+  }, []);
+
+  const addBuildingPhotos = useCallback<DataContextValue["addBuildingPhotos"]>((buildingId, photos) => {
+    setState((s) => ({
+      ...s,
+      buildings: s.buildings.map((b) =>
+        b.id === buildingId
+          ? { ...b, updatedAt: nowIso(), photos: [...b.photos, ...photos.map((p) => ({ ...p, id: uid("ph"), uploadedAt: nowIso(), uploadedBy: CURRENT_USER.name }))] }
+          : b,
+      ),
+      activities: [activity({ buildingId, type: "building_updated", title: `${photos.length} photo${photos.length === 1 ? "" : "s"} added` }), ...s.activities],
+    }));
+  }, []);
+
+  const removeBuildingPhoto = useCallback<DataContextValue["removeBuildingPhoto"]>((buildingId, photoId) => {
+    setState((s) => ({ ...s, buildings: s.buildings.map((b) => (b.id === buildingId ? { ...b, photos: b.photos.filter((p) => p.id !== photoId) } : b)) }));
+  }, []);
+
+  const setCoverPhoto = useCallback<DataContextValue["setCoverPhoto"]>((buildingId, photoId) => {
+    setState((s) => ({
+      ...s,
+      buildings: s.buildings.map((b) => {
+        if (b.id !== buildingId) return b;
+        const p = b.photos.find((x) => x.id === photoId);
+        return p ? { ...b, photos: [p, ...b.photos.filter((x) => x.id !== photoId)] } : b;
+      }),
+    }));
+  }, []);
+
   const value = useMemo<DataContextValue>(
     () => ({
       state,
@@ -394,6 +496,15 @@ export function DataProvider({ children }: { children: ReactNode }) {
       addNote,
       refreshCms,
       resetDemo,
+      updateOrganization,
+      addOrganization,
+      updateContact,
+      addContact,
+      deleteContact,
+      changeOwner,
+      addBuildingPhotos,
+      removeBuildingPhoto,
+      setCoverPhoto,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [state],

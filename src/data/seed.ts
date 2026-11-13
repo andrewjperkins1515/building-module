@@ -20,7 +20,7 @@ import { buildingSpecs, type BuildingSpec } from "./buildingSpecs";
 import { generateCapitalProjects, generateCms, generateCondition, generateFinancials } from "./generators";
 import { BASELINE_DOCUMENTS, templateFor } from "./templates";
 
-export const STATE_VERSION = 3;
+export const STATE_VERSION = 4;
 
 const orgName = (id: string) => organizations.find((o) => o.id === id)?.name ?? "";
 const slug = (s: string) => s.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");
@@ -70,11 +70,29 @@ function buildBuilding(s: BuildingSpec): Building {
     verificationStatus: v,
     lastVerifiedAt: v === "unverified" ? null : offsetDate(-Math.min(s.createdDaysAgo - 1, 18)),
     photoSeed: s.photoSeed,
+    photos: seedPhotos(s),
     tags: s.tags,
     createdAt: offsetTimestamp(-s.createdDaysAgo),
     updatedAt: offsetTimestamp(-(1 + (s.photoSeed % 9))),
     createdBy: "Jordan Ellis",
   };
+}
+
+const PHOTO_SET: { subject: NonNullable<Building["photos"][number]["subject"]>; caption: string }[] = [
+  { subject: "exterior", caption: "Front elevation" },
+  { subject: "entrance", caption: "Main entrance" },
+  { subject: "lobby", caption: "Lobby & reception" },
+  { subject: "dining", caption: "Main dining room" },
+  { subject: "therapy", caption: "Therapy gym" },
+  { subject: "resident_room", caption: "Typical resident room" },
+  { subject: "courtyard", caption: "Courtyard" },
+];
+
+function seedPhotos(s: BuildingSpec): Building["photos"] {
+  const n = s.docProgress < 0 ? 3 : s.docProgress < 0.2 ? 5 : 7;
+  return PHOTO_SET.filter((p) => s.type === "skilled_nursing" || p.subject !== "therapy")
+    .slice(0, n)
+    .map((p, i) => ({ id: `${s.id}_photo_${i}`, caption: p.caption, subject: p.subject, uploadedAt: offsetTimestamp(-(s.createdDaysAgo - 2)), uploadedBy: i < 2 ? "Broker OM" : "Jordan Ellis" }));
 }
 
 function offsetDateFrom(d: string, days: number) {

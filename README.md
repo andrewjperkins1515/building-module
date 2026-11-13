@@ -34,6 +34,12 @@ Changes persist in the browser's `localStorage`. To restore the original dataset
 7. **Documents** — use the *Missing* and *Pending review* views; click **Review** on *Property condition assessment* and **Approve**.
 8. Return to **Overview** — the documents progress and attention list reflect the approval.
 
+### CRM: current owner
+- **Owner tab** on any building: who owns the real estate today, with a **Company type** dropdown (Bank, Finco, Mezz Lender, REIT, Private, AR Lender), primary contact (work and personal details, photo, tags), company information (logo, parent company, office address, acuity / regional / state focus), active deals, corporate roster (Role, Name, Email, Phone, Notes) and past deals. Both deal tables show Status, Name, State, Buildings, Beds, $ Amount and $ / Bed, three rows at a time with an expand control.
+- **Change owner** moves the previous owner into ownership history; you can also create a new company on the spot.
+- **Photos** on the Overview: shows 5, expands to all, opens a lightbox, uploads images and sets the cover.
+- Directory **Owner type** filter (try *Bank* → Prairie View, a foreclosed REO property).
+
 Also try: **Add Building** (CMS search, provider number e.g. `155921`, or manual), **Edit Building** (changing a CCN retires the old one into history), **Add to Deal**, **Sync now** in the Connected Data Room, and **⌘K** global search (works with provider numbers).
 
 ## Architecture
@@ -64,6 +70,8 @@ src/
 
 ### Prototype limitations
 
+- Personal contact data (date of birth, personal email, mailing address) is visible to everyone; role-based visibility is planned.
+- Uploaded photos, logos and contact photos are downscaled and stored in the browser's localStorage, so storage limits apply.
 - File uploads store **metadata only** (name, size, version, review state). File contents are previewable for the current browser session but are not persisted.
 - SharePoint sync, CMS refresh and maps are simulated. Other modules (Deals, Contacts, etc.) are placeholders.
 

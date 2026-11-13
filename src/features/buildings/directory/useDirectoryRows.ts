@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { Building, Deal, VerificationStatus } from "@/types";
+import type { Building, CompanyType, Deal, VerificationStatus } from "@/types";
 import { useData } from "@/store/DataProvider";
 import { currentCcn, currentOwnership, dealLinks, docStats, occupancy } from "@/store/selectors";
 
@@ -9,6 +9,7 @@ export interface DirectoryRow {
   rating?: number;
   operator?: string;
   owner?: string;
+  ownerType?: CompanyType;
   occupancy: number | null;
   activeDeals: Deal[];
   allDeals: Deal[];
@@ -43,6 +44,7 @@ export function useDirectoryRows(): DirectoryRow[] {
           rating: state.cms.find((c) => c.buildingId === b.id)?.ratings.overall,
           operator: own.operator?.name,
           owner: own.owner?.name,
+          ownerType: own.owner?.companyType,
           occupancy: occupancy(b),
           activeDeals: active,
           allDeals: links.map((l) => l.deal),
@@ -61,6 +63,7 @@ export interface DirectoryFilters {
   states: string[];
   types: string[];
   operators: string[];
+  ownerTypes: string[]; // CompanyType | "none"
   ratings: string[]; // "1".."5" | "none"
   deal: DealAssociation[];
   verification: VerificationStatus[];
@@ -68,7 +71,7 @@ export interface DirectoryFilters {
   bedsMax?: number;
 }
 
-export const EMPTY_FILTERS: DirectoryFilters = { q: "", states: [], types: [], operators: [], ratings: [], deal: [], verification: [] };
+export const EMPTY_FILTERS: DirectoryFilters = { q: "", states: [], types: [], operators: [], ownerTypes: [], ratings: [], deal: [], verification: [] };
 
 export type SortKey = "name" | "location" | "type" | "beds" | "adc" | "rating" | "operator" | "deals" | "verification" | "updated";
 
@@ -85,6 +88,7 @@ export function applyFilters(rows: DirectoryRow[], f: DirectoryFilters) {
     if (f.states.length && !f.states.includes(b.address.state)) return false;
     if (f.types.length && !f.types.includes(b.facilityType)) return false;
     if (f.operators.length && !f.operators.includes(r.operator ?? "")) return false;
+    if (f.ownerTypes?.length && !f.ownerTypes.includes(r.ownerType ?? "none")) return false;
     if (f.ratings.length && !f.ratings.includes(r.rating ? String(r.rating) : "none")) return false;
     if (f.deal.length && !f.deal.includes(r.dealAssociation)) return false;
     if (f.verification.length && !f.verification.includes(b.verificationStatus)) return false;

@@ -16,7 +16,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/overlays";
-import { FACILITY_TYPE_LABEL, US_STATES, VERIFICATION_LABEL, VERIFICATION_STATUSES } from "@/lib/labels";
+import { COMPANY_TYPES, COMPANY_TYPE_LABEL, FACILITY_TYPE_LABEL, US_STATES, VERIFICATION_LABEL, VERIFICATION_STATUSES } from "@/lib/labels";
 import { fmtNumber, fmtPct } from "@/lib/format";
 import {
   applyFilters,
@@ -37,7 +37,10 @@ const PREFS_KEY = "owner-docket:directory-prefs";
 function loadPrefs(): { view: "table" | "cards"; filters: DirectoryFilters; sort: { key: SortKey; dir: "asc" | "desc" } } {
   try {
     const raw = localStorage.getItem(PREFS_KEY);
-    if (raw) return { view: "table", filters: EMPTY_FILTERS, sort: { key: "name", dir: "asc" }, ...JSON.parse(raw) };
+    if (raw) {
+      const p = JSON.parse(raw);
+      return { view: p.view ?? "table", filters: { ...EMPTY_FILTERS, ...p.filters }, sort: p.sort ?? { key: "name", dir: "asc" } };
+    }
   } catch {
     /* ignore */
   }
@@ -82,6 +85,10 @@ export function BuildingsDirectory() {
   const stateOpts = [...new Set(rows.map((r) => r.building.address.state))].sort().map((s) => ({ value: s, label: `${US_STATES[s] ?? s} (${s})`, count: count((r) => r.building.address.state === s) }));
   const typeOpts = [...new Set(rows.map((r) => r.building.facilityType))].map((t) => ({ value: t, label: FACILITY_TYPE_LABEL[t], count: count((r) => r.building.facilityType === t) }));
   const operatorOpts = [...new Set(rows.map((r) => r.operator).filter(Boolean) as string[])].sort().map((o) => ({ value: o, label: o, count: count((r) => r.operator === o) }));
+  const ownerTypeOpts = [
+    ...COMPANY_TYPES.map((t) => ({ value: t as string, label: COMPANY_TYPE_LABEL[t], count: count((r) => r.ownerType === t) })),
+    { value: "none", label: "Not set / unknown", count: count((r) => !r.ownerType) },
+  ];
   const ratingOpts = [
     ...[5, 4, 3, 2, 1].map((n) => ({ value: String(n), label: `${"★".repeat(n)}${"☆".repeat(5 - n)}  ${n} star${n > 1 ? "s" : ""}`, count: count((r) => r.rating === n) })),
     { value: "none", label: "Not CMS-rated", count: count((r) => !r.rating) },
@@ -93,6 +100,7 @@ export function BuildingsDirectory() {
     ...filters.states.map((s) => ({ label: s, remove: () => set("states", filters.states.filter((x) => x !== s)) })),
     ...filters.types.map((t) => ({ label: FACILITY_TYPE_LABEL[t as keyof typeof FACILITY_TYPE_LABEL], remove: () => set("types", filters.types.filter((x) => x !== t)) })),
     ...filters.operators.map((o) => ({ label: o, remove: () => set("operators", filters.operators.filter((x) => x !== o)) })),
+    ...filters.ownerTypes.map((o) => ({ label: `Owner: ${o === "none" ? "type not set" : COMPANY_TYPE_LABEL[o as keyof typeof COMPANY_TYPE_LABEL]}`, remove: () => set("ownerTypes", filters.ownerTypes.filter((x) => x !== o)) })),
     ...filters.ratings.map((o) => ({ label: o === "none" ? "Not CMS-rated" : `${o}★`, remove: () => set("ratings", filters.ratings.filter((x) => x !== o)) })),
     ...filters.deal.map((o) => ({ label: DEAL_ASSOCIATION_LABEL[o], remove: () => set("deal", filters.deal.filter((x) => x !== o)) })),
     ...filters.verification.map((o) => ({ label: VERIFICATION_LABEL[o], remove: () => set("verification", filters.verification.filter((x) => x !== o)) })),
@@ -155,7 +163,7 @@ export function BuildingsDirectory() {
         <div className="flex flex-col gap-3 border-b border-border p-3 xl:flex-row xl:items-center">
           <div className="relative w-full xl:max-w-xs">
             <Search className="pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-ink-4" />
-            <Input value={filters.q} onChange={(e) => set("q", e.target.value)} placeholder="Search name, city, provider #, operator…" className="pl-8 pr-8" />
+            <Input value={filters.q} onChange={(e) => set("q", e.target.value)} placeholder="Search name, city, provider #, owner…" className="pl-8 pr-8" />
             {filters.q && (
               <button onClick={() => set("q", "")} className="absolute right-2 top-1/2 -translate-y-1/2 text-ink-4 hover:text-ink" aria-label="Clear search">
                 <X className="size-3.5" />
@@ -165,6 +173,7 @@ export function BuildingsDirectory() {
           <div className="flex flex-1 flex-wrap items-center gap-1.5">
             <MultiSelectFilter label="State" options={stateOpts} selected={filters.states} onChange={(v) => set("states", v)} />
             <MultiSelectFilter label="Type" options={typeOpts} selected={filters.types} onChange={(v) => set("types", v)} />
+            <MultiSelectFilter label="Owner type" options={ownerTypeOpts} selected={filters.ownerTypes} onChange={(v) => set("ownerTypes", v)} />
             <MultiSelectFilter label="Operator" options={operatorOpts} selected={filters.operators} onChange={(v) => set("operators", v)} />
             <MultiSelectFilter label="CMS rating" options={ratingOpts} selected={filters.ratings} onChange={(v) => set("ratings", v)} />
             <BedRangeFilter min={filters.bedsMin} max={filters.bedsMax} onChange={(mn, mx) => setFilters((f) => ({ ...f, bedsMin: mn, bedsMax: mx }))} />

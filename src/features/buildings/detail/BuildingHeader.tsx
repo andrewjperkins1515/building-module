@@ -16,6 +16,10 @@ import {
   Tooltip,
 } from "@/components/ui/overlays";
 import { FacilityImage } from "@/components/shared/FacilityImage";
+import { PhotoView } from "@/features/crm/PhotoCarousel";
+import { CompanyTypeBadge, TagEditor } from "@/features/crm/components";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/overlays";
+import { Landmark, Tag } from "lucide-react";
 import { MapPreview } from "@/components/shared/MapPreview";
 import { SourceIndicator, StarRating, VerificationBadge } from "@/components/shared/badges";
 import { useData } from "@/store/DataProvider";
@@ -67,7 +71,14 @@ export function BuildingHeader() {
       <div className="grid gap-5 xl:grid-cols-[1fr_340px]">
         {/* Identity */}
         <div className="flex flex-col gap-4 sm:flex-row">
-          <FacilityImage seed={b.photoSeed} type={b.facilityType} className="h-36 w-full shrink-0 rounded-lg border border-border sm:h-[148px] sm:w-[220px]" />
+          {b.photos[0] ? (
+            <button onClick={() => goTab("overview")} className="relative h-36 w-full shrink-0 overflow-hidden rounded-lg border border-border sm:h-[148px] sm:w-[220px]" aria-label="View photos">
+              <PhotoView photo={b.photos[0]} building={b} large={!b.photos[0].dataUrl && b.photos[0].subject === "exterior"} />
+              {b.photos.length > 1 && <span className="absolute bottom-1.5 right-1.5 rounded bg-black/55 px-1.5 py-px text-[10.5px] font-medium text-white">1 / {b.photos.length}</span>}
+            </button>
+          ) : (
+            <FacilityImage seed={b.photoSeed} type={b.facilityType} className="h-36 w-full shrink-0 rounded-lg border border-border sm:h-[148px] sm:w-[220px]" />
+          )}
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-1.5">
               <Badge tone="outline">{FACILITY_TYPE_LABEL[b.facilityType]}</Badge>
@@ -80,6 +91,21 @@ export function BuildingHeader() {
               {b.tags.map((t) => (
                 <Badge key={t}>{t}</Badge>
               ))}
+              <Popover>
+                <PopoverTrigger asChild>
+                  <button className="inline-flex h-5 items-center gap-1 rounded-[5px] border border-dashed border-border-strong px-1.5 text-[11.5px] text-ink-3 hover:text-ink">
+                    <Tag className="size-3" /> {b.tags.length ? "Edit tags" : "Add tags"}
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent className="w-80">
+                  <div className="mb-2 text-[12px] font-medium text-ink-2">Building tags</div>
+                  <TagEditor
+                    tags={b.tags}
+                    onChange={(tags) => updateBuilding(b.id, { tags })}
+                    suggestions={["Watchlist", "Off-market", "Turnaround", "REO", "Portfolio anchor", "Survey risk"]}
+                  />
+                </PopoverContent>
+              </Popover>
             </div>
             <div className="mt-2 flex items-start justify-between gap-3">
               <h1 className="text-[22px] font-semibold leading-tight tracking-[-0.02em] text-ink">{b.name}</h1>
@@ -133,6 +159,12 @@ export function BuildingHeader() {
                     {IDENTIFIER_LABEL[i.type]} <span className="font-mono text-ink-2">{i.value}</span>
                   </span>
                 ))}
+              {bundle.ownership.owner && (
+                <button onClick={() => goTab("owner")} className="inline-flex items-center gap-1.5 hover:text-ink">
+                  <Landmark className="size-3" /> Owner <span className="font-medium text-ink-2">{bundle.ownership.owner.name}</span>
+                  <CompanyTypeBadge type={bundle.ownership.owner.companyType} />
+                </button>
+              )}
               <span>
                 Updated <span className="text-ink-2">{fmtRelative(b.updatedAt)}</span>
               </span>

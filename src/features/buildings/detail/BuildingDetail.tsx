@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { Activity, BarChart3, Building, ClipboardCheck, FileText, LayoutDashboard, Network, ShieldCheck } from "lucide-react";
+import { Activity, BarChart3, Building, ClipboardCheck, FileText, Landmark, LayoutDashboard, Network, ShieldCheck } from "lucide-react";
 import { useBreadcrumbs } from "@/components/layout/breadcrumbs";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useBuildingBundle } from "@/store/selectors";
@@ -8,6 +8,7 @@ import { NotFound } from "@/pages/NotFound";
 import { BuildingPageContext, type BuildingPageCtx, type DetailTab } from "./context";
 import { BuildingHeader } from "./BuildingHeader";
 import { OverviewTab } from "./tabs/OverviewTab";
+import { OwnerTab } from "./tabs/OwnerTab";
 import { CmsTab } from "./tabs/CmsTab";
 import { PropertyTab } from "./tabs/PropertyTab";
 import { FinancialsTab } from "./tabs/FinancialsTab";
@@ -21,6 +22,7 @@ import { DealPreviewSheet } from "./dialogs/DealPreviewSheet";
 
 const TABS: { id: DetailTab; label: string; icon: typeof Building }[] = [
   { id: "overview", label: "Overview", icon: LayoutDashboard },
+  { id: "owner", label: "Owner", icon: Landmark },
   { id: "cms", label: "CMS & Regulatory", icon: ShieldCheck },
   { id: "property", label: "Property & Condition", icon: Building },
   { id: "financials", label: "Financials", icon: BarChart3 },
@@ -101,6 +103,7 @@ export function BuildingDetail() {
         </Tabs>
         <div className="mt-5">
           {tab === "overview" && <OverviewTab />}
+          {tab === "owner" && <OwnerTab />}
           {tab === "cms" && <CmsTab />}
           {tab === "property" && <PropertyTab />}
           {tab === "financials" && <FinancialsTab />}

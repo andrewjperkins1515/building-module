@@ -178,3 +178,39 @@ export function useBuildingBundle(id: string | undefined) {
 }
 
 export type BuildingBundle = NonNullable<ReturnType<typeof useBuildingBundle>>;
+
+export interface CompanyDealRow {
+  deal: Deal;
+  role: "Seller" | "Buyer" | "Seller & buyer";
+  states: string[];
+  buildings: number;
+  beds: number;
+  amount?: number;
+  amountLabel: "Purchase" | "Ask" | "—";
+  perBed?: number;
+}
+
+/** Deals where the company is the seller or buyer, with portfolio totals. */
+export function companyDeals(state: AppState, orgId: string): CompanyDealRow[] {
+  return state.deals
+    .filter((d) => d.sellerOrgId === orgId || d.buyerOrgId === orgId)
+    .map((deal) => {
+      const blds = state.dealBuildings
+        .filter((r) => r.dealId === deal.id)
+        .map((r) => state.buildings.find((b) => b.id === r.buildingId))
+        .filter((b): b is Building => !!b);
+      const beds = blds.reduce((a, b) => a + b.certifiedBeds.value, 0);
+      const amount = deal.purchasePrice ?? deal.askingPrice;
+      return {
+        deal,
+        role: deal.sellerOrgId === orgId && deal.buyerOrgId === orgId ? "Seller & buyer" : deal.sellerOrgId === orgId ? "Seller" : "Buyer",
+        states: [...new Set(blds.map((b) => b.address.state))].sort(),
+        buildings: blds.length,
+        beds,
+        amount,
+        amountLabel: deal.purchasePrice ? "Purchase" : deal.askingPrice ? "Ask" : "—",
+        perBed: amount && beds ? amount / beds : undefined,
+      } satisfies CompanyDealRow;
+    })
+    .sort((a, b) => (b.deal.actualCloseDate ?? b.deal.createdAt).localeCompare(a.deal.actualCloseDate ?? a.deal.createdAt));
+}

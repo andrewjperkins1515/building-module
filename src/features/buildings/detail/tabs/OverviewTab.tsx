@@ -12,12 +12,15 @@ import { daysUntil, fmtCurrency, fmtDate, fmtNumber } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { useBuildingPage } from "../context";
 import { PhotoTile } from "../components/PhotoTile";
+import { PhotoCarousel } from "@/features/crm/PhotoCarousel";
+import { CompanyTypeBadge } from "@/features/crm/components";
 
 export function OverviewTab() {
   return (
     <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
       <div className="min-w-0 space-y-5">
         <FacilityInformation />
+        <PhotosSection />
         <OwnershipOperations />
         <RelatedDeals />
         <div className="grid gap-5 2xl:grid-cols-2">
@@ -99,6 +102,11 @@ function FacilityInformation() {
   );
 }
 
+function PhotosSection() {
+  const { bundle } = useBuildingPage();
+  return <PhotoCarousel building={bundle.building} />;
+}
+
 // ---------------------------------------------------------------------------
 
 function OwnershipOperations() {
@@ -123,9 +131,14 @@ function OwnershipOperations() {
       title="Ownership & operations"
       icon={Landmark}
       actions={
-        <Button variant="ghost" size="sm" onClick={() => goTab("relationships")}>
-          All relationships <ArrowRight />
-        </Button>
+        <>
+          <Button variant="ghost" size="sm" onClick={() => goTab("owner")}>
+            Owner profile <ArrowRight />
+          </Button>
+          <Button variant="ghost" size="sm" className="hidden sm:inline-flex" onClick={() => goTab("relationships")}>
+            All relationships
+          </Button>
+        </>
       }
     >
       <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -138,6 +151,7 @@ function OwnershipOperations() {
             {r.org ? (
               <>
                 <div className="mt-1 text-[13px] font-medium leading-snug text-ink">{r.org.name}</div>
+                {r.label === "Property owner" && <CompanyTypeBadge type={r.org.companyType} className="mt-1" />}
                 <div className="mt-0.5 text-[11.5px] text-ink-3">
                   {r.org.hqCity}, {r.org.hqState}
                   {r.record && ` · since ${new Date(r.record.startDate).getFullYear()}`}

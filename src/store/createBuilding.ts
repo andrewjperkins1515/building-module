@@ -90,6 +90,7 @@ export function materializeNewBuilding(input: NewBuildingInput): NewBuildingBund
     verificationStatus: fromCms ? "partially_verified" : "unverified",
     lastVerifiedAt: fromCms ? today : null,
     photoSeed: seed,
+    photos: [],
     tags: [],
     createdAt: now,
     updatedAt: now,

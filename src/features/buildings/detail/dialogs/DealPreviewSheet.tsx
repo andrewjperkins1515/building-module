@@ -78,7 +78,7 @@ export function DealPreviewSheet({ dealId, onOpenChange }: { dealId: string | nu
                 <KeyValueRow label="Seller" value={org(deal.sellerOrgId)} />
                 <KeyValueRow label="Broker" value={org(deal.brokerOrgId)} />
                 <KeyValueRow label="Lender" value={org(deal.lenderOrgId)} />
-                <KeyValueRow label="Buyer entity" value={deal.buyerEntity} />
+                <KeyValueRow label="Buyer" value={deal.buyerOrgId ? org(deal.buyerOrgId) : deal.buyerEntity} />
                 <KeyValueRow label="Deal lead" value={deal.leadName} />
               </div>
 

@@ -7,6 +7,7 @@ import { DealStageBadge, DealStatusBadge } from "@/components/shared/badges";
 import { DEAL_ROLE_LABEL, OWNERSHIP_ROLE_LABEL, RELATIONSHIP_ROLE_LABEL } from "@/lib/labels";
 import { fmtCurrency, fmtDate } from "@/lib/format";
 import { useBuildingPage } from "../context";
+import { CompanyTypeBadge } from "@/features/crm/components";
 
 interface OrgEntry {
   org: Organization;
@@ -74,6 +75,7 @@ export function RelationshipsTab() {
                         <div className="flex items-center gap-1.5">
                           <span className="truncate text-[13px] font-medium text-ink">{e.org.name}</span>
                           {!e.current && <Badge className="text-[10px]">Former</Badge>}
+                          {g.key === "owners" && e.org.companyType && <CompanyTypeBadge type={e.org.companyType} className="text-[10px]" />}
                         </div>
                         <div className="truncate text-[11.5px] text-ink-3">
                           {e.roles.join(", ")} · {e.org.hqCity}, {e.org.hqState}
