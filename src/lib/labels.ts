@@ -3,6 +3,8 @@ import type {
   BuildingRelationshipRole,
   BuildingSystem,
   CompanyType,
+  ContactType,
+  Sector,
   ConditionRating,
   DataSource,
   DealBuildingRole,
@@ -234,6 +236,28 @@ export const COMPANY_TYPE_LABEL: Record<CompanyType, string> = {
   private: "Private",
   ar_lender: "AR Lender",
 };
+
+export const CONTACT_TYPES: ContactType[] = ["operator", "vendor_dd", "vendor_operating", "investor", "broker", "lawyer"];
+
+export const CONTACT_TYPE_LABEL: Record<ContactType, string> = {
+  operator: "Operator",
+  vendor_dd: "Vendor (Due Diligence)",
+  vendor_operating: "Vendor (Operating)",
+  investor: "Investor / Capital Provider",
+  broker: "Broker",
+  lawyer: "Lawyer",
+};
+
+export const SECTORS: Sector[] = ["snf", "alf", "ilf", "mc"];
+
+export const SECTOR_LABEL: Record<Sector, string> = {
+  snf: "Skilled Nursing Facility",
+  alf: "Assisted Living",
+  ilf: "Independent Living",
+  mc: "Memory Care Facility",
+};
+
+export const SECTOR_SHORT: Record<Sector, string> = { snf: "SNF", alf: "ALF", ilf: "ILF", mc: "MC" };
 
 export const ACUITY_OPTIONS = ["Skilled Nursing", "Assisted Living", "Memory Care", "Independent Living", "CCRC", "Behavioral Health", "LTACH"];
 

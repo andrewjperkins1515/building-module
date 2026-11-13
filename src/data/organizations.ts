@@ -1,5 +1,6 @@
 import type { Contact, Organization } from "@/types";
 import { seeded } from "@/lib/utils";
+import { defaultContactType, defaultSectors } from "./contactDefaults";
 
 /** All organizations and people below are fictional. */
 const baseOrganizations: Organization[] = [
@@ -49,7 +50,9 @@ const baseOrganizations: Organization[] = [
   { id: "org_veritas", name: "Veritas Healthcare Consulting", type: "consultant", hqCity: "Atlanta", hqState: "GA", description: "Clinical and regulatory diligence." },
 ];
 
-const baseContacts: Contact[] = [
+type SeedContact = Omit<Contact, "contactType" | "sectors"> & Partial<Pick<Contact, "contactType" | "sectors">>;
+
+const baseContacts: SeedContact[] = [
   { id: "ct_hwalsh", name: "Helen Walsh", title: "Managing Director", organizationId: "org_calloway", email: "hwalsh@calloway.example", phone: "(312) 555-0142" },
   { id: "ct_bcarter", name: "Ben Carter", title: "Analyst", organizationId: "org_calloway", email: "bcarter@calloway.example", phone: "(312) 555-0177" },
   { id: "ct_tnguyen", name: "Thomas Nguyen", title: "Senior Vice President", organizationId: "org_stonebridge", email: "tnguyen@stonebridge.example", phone: "(214) 555-0119" },
@@ -104,7 +107,7 @@ const ORG_PROFILES: Record<string, OrgProfile> = {
   org_calloway: { primaryContactId: "ct_hwalsh" },
 };
 
-const extraContacts: Contact[] = [
+const extraContacts: SeedContact[] = [
   { id: "ct_rcole", name: "Robert Cole", title: "Chief Executive Officer", organizationId: "org_meridian", email: "rcole@meridianhcp.example", phone: "(312) 555-0102", rosterRole: "Decision maker", notes: "Final say on dispositions. Prefers calls before 9am CT." },
   { id: "ct_lpark", name: "Linda Park", title: "Chief Financial Officer", organizationId: "org_meridian", email: "lpark@meridianhcp.example", phone: "(312) 555-0118", rosterRole: "Finance", notes: "Owns data room access and financial reporting packages." },
   { id: "ct_jsimmons", name: "Jason Simmons", title: "Director of Acquisitions", organizationId: "org_meridian", email: "jsimmons@meridianhcp.example", phone: "(312) 555-0131", rosterRole: "Transactions", notes: "Day-to-day contact on Great Lakes diligence." },
@@ -132,8 +135,13 @@ const ZIP_PREFIX: Record<string, string> = {
 
 const STREETS = ["Maple Avenue", "Oak Street", "Lakeview Drive", "Ridgeway Lane", "Chestnut Court", "Willow Bend", "Hillcrest Road", "Briar Lane"];
 
+function profiledOrg(id: string): Organization | undefined {
+  const o = [...baseOrganizations, ...extraOrganizations].find((x) => x.id === id);
+  return o ? { ...o, ...ORG_PROFILES[o.id] } : undefined;
+}
+
 /** Deterministic, fictional personal details for every contact. */
-function withPersonalDetails(c: Contact, i: number): Contact {
+function withPersonalDetails(c: SeedContact, i: number): Contact {
   const r = seeded(i * 7717 + 31);
   const org = [...baseOrganizations, ...extraOrganizations].find((o) => o.id === c.organizationId);
   const [first, ...rest] = c.name.toLowerCase().replace(/[^a-z ]/g, "").split(" ");
@@ -155,6 +163,8 @@ function withPersonalDetails(c: Contact, i: number): Contact {
     },
     tags: c.rosterRole === "Decision maker" ? ["Decision maker"] : [],
     ...c,
+    contactType: c.contactType ?? defaultContactType(profiledOrg(c.organizationId)),
+    sectors: c.sectors ?? defaultSectors(profiledOrg(c.organizationId)),
   };
 }
 

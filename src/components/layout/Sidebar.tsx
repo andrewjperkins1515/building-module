@@ -25,7 +25,7 @@ export const NAV_ITEMS: NavItem[] = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/deals", label: "Deals", icon: Briefcase },
   { to: "/buildings", label: "Buildings", icon: Building2, ready: true },
-  { to: "/contacts", label: "Contacts", icon: Users },
+  { to: "/contacts", label: "Contacts", icon: Users, ready: true },
   { to: "/organizations", label: "Organizations", icon: Landmark },
   { to: "/documents", label: "Documents", icon: FileText },
   { to: "/tasks", label: "Tasks & Activity", icon: ListChecks },
@@ -72,7 +72,7 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
                 <item.icon className={cn("size-4", isActive ? "text-white" : "text-white/45 group-hover:text-white/70")} strokeWidth={1.8} />
                 <span className="flex-1 truncate">{item.label}</span>
                 {item.ready ? (
-                  <span className="tabular rounded bg-white/10 px-1.5 text-[10.5px] text-white/70">{state.buildings.length}</span>
+                  <span className="tabular rounded bg-white/10 px-1.5 text-[10.5px] text-white/70">{item.to === "/contacts" ? state.contacts.length : state.buildings.length}</span>
                 ) : (
                   <span className="hidden text-[10px] text-white/30 group-hover:inline">Soon</span>
                 )}

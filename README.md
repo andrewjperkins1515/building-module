@@ -40,6 +40,11 @@ Changes persist in the browser's `localStorage`. To restore the original dataset
 - **Photos** on the Overview: shows 5, expands to all, opens a lightbox, uploads images and sets the cover.
 - Directory **Owner type** filter (try *Bank* → Prairie View, a foreclosed REO property).
 
+### Contacts module
+- **Contacts** in the sidebar: a CRM directory with search and filters for Contact type, Sector, Company and Tags.
+- Each **contact record** has a Contact type (Operator, Vendor (Due Diligence), Vendor (Operating), Investor / Capital Provider, Broker, Lawyer), one or more Sectors (Skilled Nursing Facility, Assisted Living, Independent Living, Memory Care Facility), the full contact card (work and personal details), tags, active and past deals, associated people at the same company, and related buildings.
+- Add a contact (pick a company or create one; type and sectors are pre-filled from the company), edit, tag, make primary, or delete. People's names link to their record from the building Owner tab, Relationships, key contacts and global search.
+
 Also try: **Add Building** (CMS search, provider number e.g. `155921`, or manual), **Edit Building** (changing a CCN retires the old one into history), **Add to Deal**, **Sync now** in the Connected Data Room, and **⌘K** global search (works with provider numbers).
 
 ## Architecture

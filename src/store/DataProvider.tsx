@@ -14,6 +14,7 @@ import type {
   SiteVisit,
 } from "@/types";
 import { buildSeedState, STATE_VERSION } from "@/data/seed";
+import { defaultContactType, defaultSectors } from "@/data/contactDefaults";
 import { CURRENT_USER, DOC_STATUS_LABEL } from "@/lib/labels";
 import { nowIso, uid } from "@/lib/utils";
 import { templateFor, BASELINE_DOCUMENTS } from "@/data/templates";
@@ -28,11 +29,30 @@ function loadState(): AppState {
     if (raw) {
       const parsed = JSON.parse(raw) as AppState;
       if (parsed.version === STATE_VERSION) return parsed;
+      const migrated = migrate(parsed);
+      if (migrated) return migrated;
     }
   } catch {
     /* ignore corrupt storage */
   }
   return buildSeedState();
+}
+
+/** Upgrade saved prototype data in place so demo edits survive new releases. */
+function migrate(s: AppState): AppState | null {
+  if (s.version === 4) {
+    const orgs = new Map(s.organizations.map((o) => [o.id, o]));
+    return {
+      ...s,
+      version: STATE_VERSION,
+      contacts: s.contacts.map((c) => ({
+        ...c,
+        contactType: c.contactType ?? defaultContactType(orgs.get(c.organizationId)),
+        sectors: c.sectors ?? defaultSectors(orgs.get(c.organizationId)),
+      })),
+    };
+  }
+  return null;
 }
 
 type ReviewAction = "approved" | "rejected" | "needs_revision";

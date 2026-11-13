@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Lock } from "lucide-react";
-import type { Contact } from "@/types";
+import type { Contact, ContactType, Sector } from "@/types";
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/overlays";
 import { Button } from "@/components/ui/button";
 import { Input, Label, Separator, Switch, Textarea } from "@/components/ui/primitives";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useData } from "@/store/DataProvider";
-import { US_STATES } from "@/lib/labels";
+import { CONTACT_TYPES, CONTACT_TYPE_LABEL, ORG_TYPE_LABEL, SECTORS, SECTOR_LABEL, US_STATES } from "@/lib/labels";
+import { Checkbox } from "@/components/ui/primitives";
+import { defaultContactType, defaultSectors } from "@/data/contactDefaults";
 import { useToast } from "@/components/ui/toast";
 import { cn } from "@/lib/utils";
 import { ContactPhoto, ImagePicker, TagEditor } from "./components";
@@ -14,21 +16,26 @@ import { ContactPhoto, ImagePicker, TagEditor } from "./components";
 const NONE = "__none";
 export const ROSTER_ROLES = ["Decision maker", "Transactions", "Finance", "Asset management", "Operations", "Real estate", "Legal", "Lending", "Other"];
 
-export type ContactSheetTarget = { mode: "edit"; contactId: string } | { mode: "new"; organizationId: string } | null;
+export type ContactSheetTarget = { mode: "edit"; contactId: string } | { mode: "new"; organizationId?: string } | null;
 
-const EMPTY = (organizationId: string): Contact => ({
+const NEW_COMPANY = "__new";
+
+const EMPTY = (organizationId: string, contactType: ContactType, sectors: Sector[]): Contact => ({
   id: "",
   name: "",
   title: "",
   organizationId,
+  contactType,
+  sectors,
   email: "",
   phone: "",
   mailingAddress: { street: "", city: "", state: "", zip: "" },
   tags: [],
 });
 
-export function EditContactSheet({ target, onOpenChange }: { target: ContactSheetTarget; onOpenChange: (o: boolean) => void }) {
-  const { state, updateContact, addContact, updateOrganization } = useData();
+export function EditContactSheet({ target, onOpenChange, onSaved }: { target: ContactSheetTarget; onOpenChange: (o: boolean) => void; onSaved?: (id: string, isNew: boolean) => void }) {
+  const { state, updateContact, addContact, updateOrganization, addOrganization } = useData();
+  const [newCompany, setNewCompany] = useState("");
   const toast = useToast();
   const [f, setF] = useState<Contact | null>(null);
   const [primary, setPrimary] = useState(false);
@@ -44,8 +51,10 @@ export function EditContactSheet({ target, onOpenChange }: { target: ContactShee
         setPrimary(state.organizations.find((o) => o.id === c.organizationId)?.primaryContactId === c.id);
       }
     } else {
-      setF(EMPTY(target.organizationId));
-      setPrimary(!state.organizations.find((o) => o.id === target.organizationId)?.primaryContactId);
+      const o = state.organizations.find((x) => x.id === target.organizationId);
+      setF(EMPTY(target.organizationId ?? "", defaultContactType(o), defaultSectors(o)));
+      setPrimary(!o?.primaryContactId);
+      setNewCompany("");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target]);
@@ -54,14 +63,32 @@ export function EditContactSheet({ target, onOpenChange }: { target: ContactShee
   const setAddr = (k: "street" | "street2" | "city" | "state" | "zip", v: string) => setF((x) => (x ? { ...x, mailingAddress: { ...x.mailingAddress!, [k]: v } } : x));
   const org = f ? state.organizations.find((o) => o.id === f.organizationId) : undefined;
   const nameError = touched && !f?.name.trim();
+  const companyError = touched && !!f && !f.organizationId;
+  const sortedOrgs = [...state.organizations].sort((a, b) => a.name.localeCompare(b.name));
+  const chooseCompany = (id: string) => {
+    if (!f) return;
+    if (id === NEW_COMPANY) {
+      setF({ ...f, organizationId: NEW_COMPANY });
+      return;
+    }
+    const o = state.organizations.find((x) => x.id === id);
+    // For new contacts, pre-fill type and sectors from the company.
+    setF(target?.mode === "new" ? { ...f, organizationId: id, contactType: defaultContactType(o), sectors: defaultSectors(o) } : { ...f, organizationId: id });
+    if (target?.mode === "new") setPrimary(!o?.primaryContactId);
+  };
+  const toggleSector = (sec: Sector) => f && set("sectors", f.sectors.includes(sec) ? f.sectors.filter((x) => x !== sec) : [...f.sectors, sec]);
 
   const save = () => {
     if (!f) return;
-    if (!f.name.trim()) {
+    if (!f.name.trim() || !f.organizationId || (f.organizationId === NEW_COMPANY && !newCompany.trim())) {
       setTouched(true);
       return;
     }
-    const clean: Contact = { ...f, name: f.name.trim(), mailingAddress: f.mailingAddress?.street || f.mailingAddress?.city ? f.mailingAddress : undefined };
+    let organizationId = f.organizationId;
+    if (organizationId === NEW_COMPANY) {
+      organizationId = addOrganization({ name: newCompany.trim(), type: "investor", hqCity: "", hqState: "" });
+    }
+    const clean: Contact = { ...f, organizationId, name: f.name.trim(), mailingAddress: f.mailingAddress?.street || f.mailingAddress?.city ? f.mailingAddress : undefined };
     let id = f.id;
     if (target?.mode === "new") {
       const { id: _omit, ...rest } = clean;
@@ -69,8 +96,9 @@ export function EditContactSheet({ target, onOpenChange }: { target: ContactShee
       id = addContact(rest);
     } else updateContact(f.id, clean);
     if (org && primary && org.primaryContactId !== id) updateOrganization(org.id, { primaryContactId: id });
-    toast({ title: target?.mode === "new" ? "Contact added" : "Contact saved", description: `${clean.name}${org ? ` · ${org.name}` : ""}` });
+    toast({ title: target?.mode === "new" ? "Contact added" : "Contact saved", description: `${clean.name}${org ? ` · ${org.name}` : newCompany ? ` · ${newCompany}` : ""}` });
     onOpenChange(false);
+    onSaved?.(id, target?.mode === "new");
   };
 
   return (
@@ -80,7 +108,7 @@ export function EditContactSheet({ target, onOpenChange }: { target: ContactShee
           <>
             <div className="border-b border-border px-5 py-4 pr-12">
               <SheetTitle className="text-[15px] font-semibold">{target?.mode === "new" ? "Add contact" : "Edit contact"}</SheetTitle>
-              <SheetDescription className="text-[13px] text-ink-3">{org?.name}</SheetDescription>
+              <SheetDescription className="text-[13px] text-ink-3">{org?.name ?? "CRM contact record"}</SheetDescription>
             </div>
             <div className="scrollbar-thin flex-1 space-y-5 overflow-y-auto px-5 py-4">
               <div className="flex items-center gap-3">
@@ -101,6 +129,57 @@ export function EditContactSheet({ target, onOpenChange }: { target: ContactShee
                 </ImagePicker>
               </div>
 
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="text-[13px] font-semibold sm:col-span-2">Classification</div>
+                <div className="sm:col-span-2">
+                  <Label>Company *</Label>
+                  <Select value={f.organizationId || undefined} onValueChange={chooseCompany}>
+                    <SelectTrigger className={cn("mt-1", companyError && "border-danger/60")}>
+                      <SelectValue placeholder="Select a company" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value={NEW_COMPANY}>+ New company…</SelectItem>
+                      {sortedOrgs.map((o) => (
+                        <SelectItem key={o.id} value={o.id}>
+                          {o.name} · {ORG_TYPE_LABEL[o.type]}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {f.organizationId === NEW_COMPANY && (
+                    <Input autoFocus className="mt-2" value={newCompany} onChange={(e) => setNewCompany(e.target.value)} placeholder="New company name" />
+                  )}
+                  {companyError && <p className="mt-1 text-[11.5px] text-danger">Choose or create a company.</p>}
+                </div>
+                <div>
+                  <Label>Contact type</Label>
+                  <Select value={f.contactType} onValueChange={(v) => set("contactType", v as ContactType)}>
+                    <SelectTrigger className="mt-1">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {CONTACT_TYPES.map((t) => (
+                        <SelectItem key={t} value={t}>
+                          {CONTACT_TYPE_LABEL[t]}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label>Sector</Label>
+                  <div className="mt-1 grid grid-cols-1 gap-1.5 rounded-md border border-input px-2.5 py-2">
+                    {SECTORS.map((sec) => (
+                      <label key={sec} className="flex cursor-pointer items-center gap-2 text-[13px] text-ink-2">
+                        <Checkbox checked={f.sectors.includes(sec)} onCheckedChange={() => toggleSector(sec)} />
+                        {SECTOR_LABEL[sec]}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <Separator />
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div className="text-[13px] font-semibold sm:col-span-2">Contact information</div>
                 <div>

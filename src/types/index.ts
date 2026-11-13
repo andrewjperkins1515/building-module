@@ -169,11 +169,19 @@ export interface Organization {
   tags?: string[];
 }
 
+/** CRM contact classification. */
+export type ContactType = "operator" | "vendor_dd" | "vendor_operating" | "investor" | "broker" | "lawyer";
+
+/** Care sectors a contact works in. */
+export type Sector = "snf" | "alf" | "ilf" | "mc";
+
 export interface Contact {
   id: ID;
   name: string;
   title: string;
   organizationId: ID;
+  contactType: ContactType;
+  sectors: Sector[];
   /** Work email. */
   email: string;
   /** Office / work phone. */

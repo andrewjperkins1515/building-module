@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AlertTriangle, ArrowRight, Briefcase, Camera, CheckCircle2, ClipboardCheck, FileText, Hammer, Info, Landmark, Plus, ShieldAlert, Users } from "lucide-react";
 import type { AttentionItem } from "@/store/selectors";
 import { useData } from "@/store/DataProvider";
@@ -177,7 +178,9 @@ function OwnershipOperations() {
                 <div key={r.id} className="flex items-center gap-2.5">
                   <Avatar name={c.name} size="md" />
                   <div className="min-w-0 flex-1">
-                    <div className="truncate text-[13px] font-medium text-ink">{c.name}</div>
+                    <Link to={`/contacts/${c.id}`} className="block truncate text-[13px] font-medium text-ink hover:text-accent hover:underline">
+                      {c.name}
+                    </Link>
                     <div className="truncate text-[11.5px] text-ink-3">
                       {c.title} · {state.organizations.find((o) => o.id === c.organizationId)?.name}
                     </div>

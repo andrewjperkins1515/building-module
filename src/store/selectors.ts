@@ -181,7 +181,7 @@ export type BuildingBundle = NonNullable<ReturnType<typeof useBuildingBundle>>;
 
 export interface CompanyDealRow {
   deal: Deal;
-  role: "Seller" | "Buyer" | "Seller & buyer";
+  role: string;
   states: string[];
   buildings: number;
   beds: number;
@@ -190,10 +190,10 @@ export interface CompanyDealRow {
   perBed?: number;
 }
 
-/** Deals where the company is the seller or buyer, with portfolio totals. */
+/** Deals where the company is seller, buyer, broker or lender, with portfolio totals. */
 export function companyDeals(state: AppState, orgId: string): CompanyDealRow[] {
   return state.deals
-    .filter((d) => d.sellerOrgId === orgId || d.buyerOrgId === orgId)
+    .filter((d) => d.sellerOrgId === orgId || d.buyerOrgId === orgId || d.brokerOrgId === orgId || d.lenderOrgId === orgId)
     .map((deal) => {
       const blds = state.dealBuildings
         .filter((r) => r.dealId === deal.id)
@@ -203,7 +203,7 @@ export function companyDeals(state: AppState, orgId: string): CompanyDealRow[] {
       const amount = deal.purchasePrice ?? deal.askingPrice;
       return {
         deal,
-        role: deal.sellerOrgId === orgId && deal.buyerOrgId === orgId ? "Seller & buyer" : deal.sellerOrgId === orgId ? "Seller" : "Buyer",
+        role: [deal.sellerOrgId === orgId && "Seller", deal.buyerOrgId === orgId && "Buyer", deal.brokerOrgId === orgId && "Broker", deal.lenderOrgId === orgId && "Lender"].filter(Boolean).join(" & "),
         states: [...new Set(blds.map((b) => b.address.state))].sort(),
         buildings: blds.length,
         beds,
@@ -213,4 +213,24 @@ export function companyDeals(state: AppState, orgId: string): CompanyDealRow[] {
       } satisfies CompanyDealRow;
     })
     .sort((a, b) => (b.deal.actualCloseDate ?? b.deal.createdAt).localeCompare(a.deal.actualCloseDate ?? a.deal.createdAt));
+}
+
+/** Buildings a contact is connected to — directly, or through their company's ownership/operations. */
+export function contactBuildings(state: AppState, contactId: string) {
+  const c = state.contacts.find((x) => x.id === contactId);
+  if (!c) return [];
+  const out = new Map<string, { building: Building; relation: string }>();
+  state.relationships
+    .filter((r) => r.contactId === contactId)
+    .forEach((r) => {
+      const b = state.buildings.find((x) => x.id === r.buildingId);
+      if (b) out.set(b.id, { building: b, relation: r.description ?? r.role });
+    });
+  state.ownerships
+    .filter((o) => o.isCurrent && o.organizationId === c.organizationId)
+    .forEach((o) => {
+      const b = state.buildings.find((x) => x.id === o.buildingId);
+      if (b && !out.has(b.id)) out.set(b.id, { building: b, relation: o.role === "property_owner" ? "Company owns" : o.role === "operator" ? "Company operates" : "Company affiliated" });
+    });
+  return [...out.values()].sort((a, b) => a.building.name.localeCompare(b.building.name));
 }

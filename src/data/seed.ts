@@ -20,7 +20,7 @@ import { buildingSpecs, type BuildingSpec } from "./buildingSpecs";
 import { generateCapitalProjects, generateCms, generateCondition, generateFinancials } from "./generators";
 import { BASELINE_DOCUMENTS, templateFor } from "./templates";
 
-export const STATE_VERSION = 4;
+export const STATE_VERSION = 5;
 
 const orgName = (id: string) => organizations.find((o) => o.id === id)?.name ?? "";
 const slug = (s: string) => s.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");

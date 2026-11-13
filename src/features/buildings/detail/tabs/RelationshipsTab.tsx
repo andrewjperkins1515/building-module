@@ -1,4 +1,5 @@
 import { Briefcase, Building2, Mail, Phone, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import type { Organization } from "@/types";
 import { useData } from "@/store/DataProvider";
 import { Badge } from "@/components/ui/primitives";
@@ -112,7 +113,9 @@ export function RelationshipsTab() {
                       <div className="flex items-center gap-2.5">
                         <Avatar name={c.name} />
                         <div>
-                          <div className="font-medium text-ink">{c.name}</div>
+                          <Link to={`/contacts/${c.id}`} className="font-medium text-ink hover:text-accent hover:underline">
+                            {c.name}
+                          </Link>
                           <div className="text-[11.5px] text-ink-3">{c.title}</div>
                         </div>
                       </div>

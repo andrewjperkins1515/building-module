@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Bell, Building2, ChevronRight, CornerDownLeft, FileText, LogOut, Menu, RotateCcw, Search, Settings, UserRound } from "lucide-react";
+import { Bell, Building2, ChevronRight, UserRound as UserIcon, CornerDownLeft, FileText, LogOut, Menu, RotateCcw, Search, Settings, UserRound } from "lucide-react";
 import { useCrumbState } from "./breadcrumbs";
 import { Button } from "@/components/ui/button";
 import {
@@ -44,18 +44,22 @@ function GlobalSearch() {
 
   const results = useMemo(() => {
     const t = q.trim().toLowerCase();
-    if (!t) return { buildings: [], docs: [] };
+    if (!t) return { buildings: [], contacts: [], docs: [] };
     const buildings = state.buildings
       .filter((b) =>
         [b.name, ...b.alternateNames, b.address.city, b.address.state, b.address.county, ...b.identifiers.map((i) => i.value)].some((s) => s.toLowerCase().includes(t)),
       )
       .slice(0, 6);
+    const contacts = state.contacts
+      .filter((c) => [c.name, c.email, c.title, state.organizations.find((o) => o.id === c.organizationId)?.name ?? ""].some((s) => s.toLowerCase().includes(t)))
+      .slice(0, 5);
     const docs = state.documentRequests.filter((d) => d.name.toLowerCase().includes(t)).slice(0, 4);
-    return { buildings, docs };
+    return { buildings, contacts, docs };
   }, [q, state]);
 
   const flat = [
     ...results.buildings.map((b) => ({ key: b.id, to: `/buildings/${b.id}` })),
+    ...results.contacts.map((c) => ({ key: c.id, to: `/contacts/${c.id}` })),
     ...results.docs.map((d) => ({ key: d.id, to: `/buildings/${d.buildingId}/documents?doc=${d.id}` })),
   ];
 
@@ -93,7 +97,7 @@ function GlobalSearch() {
                 setOpen(false);
               }
             }}
-            placeholder="Search buildings, provider numbers, documents…"
+            placeholder="Search buildings, contacts, provider #, documents…"
             className="h-8 w-full rounded-md border border-border bg-canvas pl-8 pr-12 text-[13px] text-ink placeholder:text-ink-4 focus:border-ring/50 focus:bg-background focus:outline-none focus:ring-2 focus:ring-ring/10"
           />
           <kbd className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded border border-border bg-background px-1.5 text-[10px] font-medium text-ink-4 sm:block">⌘K</kbd>
@@ -129,9 +133,26 @@ function GlobalSearch() {
                 {active === i && <CornerDownLeft className="size-3.5 text-ink-4" />}
               </button>
             ))}
+            {results.contacts.length > 0 && <div className="px-2 pb-1 pt-2 text-[11px] font-medium uppercase tracking-wide text-ink-4">Contacts</div>}
+            {results.contacts.map((c, j) => {
+              const i = results.buildings.length + j;
+              const org = state.organizations.find((o) => o.id === c.organizationId);
+              return (
+                <button key={c.id} onMouseEnter={() => setActive(i)} onClick={() => go(`/contacts/${c.id}`)} className={cn("flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left", active === i && "bg-subtle")}>
+                  <UserIcon className="size-4 shrink-0 text-ink-4" />
+                  <div className="min-w-0 flex-1">
+                    <div className="truncate text-[13px] font-medium text-ink">{c.name}</div>
+                    <div className="truncate text-[11.5px] text-ink-3">
+                      {c.title}
+                      {org ? ` · ${org.name}` : ""}
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
             {results.docs.length > 0 && <div className="px-2 pb-1 pt-2 text-[11px] font-medium uppercase tracking-wide text-ink-4">Documents</div>}
             {results.docs.map((d, j) => {
-              const i = results.buildings.length + j;
+              const i = results.buildings.length + results.contacts.length + j;
               const b = state.buildings.find((x) => x.id === d.buildingId);
               return (
                 <button
