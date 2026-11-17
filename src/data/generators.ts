@@ -122,7 +122,7 @@ export function generateCms(
   return {
     buildingId,
     providerNumber,
-    ratings: { overall: ratings.overall, health: ratings.health, staffing: ratings.staffing, qualityMeasures: ratings.qm },
+    ratings: { overall: ratings.overall, health: ratings.health, staffing: ratings.staffing, qualityMeasures: ratings.qm, longStayQm: clampStar(ratings.qm + (seed % 3 === 0 ? -1 : 0)), shortStayQm: clampStar(ratings.qm + (seed % 4 === 1 ? 1 : seed % 5 === 2 ? -1 : 0)) },
     staffing: {
       totalNurseHprd: total,
       rnHprd: rn,

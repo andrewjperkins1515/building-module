@@ -18,7 +18,7 @@ const TINTS = ["#e6ebf2", "#e9ece6", "#efe9e2", "#e8e6ef", "#e3ecef", "#ece8e4"]
 /** Renders an uploaded photo or a labeled placeholder for seeded photos. */
 export function PhotoView({ photo, building, className, large }: { photo: BuildingPhoto; building: Building; className?: string; large?: boolean }) {
   if (photo.dataUrl) return <img src={photo.dataUrl} alt={photo.caption} className={cn("h-full w-full object-cover", className)} />;
-  if (!photo.subject || photo.subject === "exterior") return <FacilityImage seed={building.photoSeed} type={building.facilityType} label={large} className={cn("h-full w-full", className)} />;
+  if (!photo.subject || photo.subject === "exterior") return <FacilityImage seed={building.photoSeed} type={building.facilityType} label={!!large} className={cn("h-full w-full", className)} />;
   const Icon = SUBJECT_ICON[photo.subject];
   const tint = TINTS[(building.photoSeed + photo.caption.length) % TINTS.length];
   return (

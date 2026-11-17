@@ -234,3 +234,31 @@ export function contactBuildings(state: AppState, contactId: string) {
     });
   return [...out.values()].sort((a, b) => a.building.name.localeCompare(b.building.name));
 }
+
+/** Everything the deal record and pipeline need, derived from the deal and its buildings. */
+export function dealView(state: AppState, deal: Deal) {
+  const rels = state.dealBuildings.filter((r) => r.dealId === deal.id);
+  const buildings = rels.map((r) => ({ rel: r, building: state.buildings.find((b) => b.id === r.buildingId) })).filter((x): x is { rel: typeof x.rel; building: Building } => !!x.building);
+  const licBeds = buildings.reduce((a, x) => a + x.building.licensedBeds.value, 0);
+  const totalLicBeds = deal.totalLicBedsOverride ?? licBeds;
+  const states = deal.statesOverride?.length ? deal.statesOverride : [...new Set(buildings.map((x) => x.building.address.state))].sort();
+  const totalBuildings = deal.totalBuildingsOverride ?? buildings.length;
+  const operatorIds = [...new Set(buildings.map((x) => currentOwnership(state, x.building.id).operator?.id).filter(Boolean) as string[])];
+  const currentOperatorIds = deal.currentOperatorOrgId ? [deal.currentOperatorOrgId] : operatorIds;
+  const org = (id?: string) => (id ? state.organizations.find((o) => o.id === id) : undefined);
+  return {
+    rels,
+    buildings,
+    totalBuildings,
+    totalLicBeds,
+    states,
+    pricePerBed: deal.askingPrice && totalLicBeds ? deal.askingPrice / totalLicBeds : undefined,
+    currentOperators: currentOperatorIds.map(org).filter((o): o is Organization => !!o),
+    seller: org(deal.sellerOrgId),
+    newOperator: org(deal.newOperatorOrgId),
+    jvPartner: org(deal.jvPartnerOrgId),
+    source: org(deal.sourceOrgId),
+    sourceContact: deal.sourceContactId ? state.contacts.find((c) => c.id === deal.sourceContactId) : undefined,
+    overridden: { states: !!deal.statesOverride?.length, buildings: deal.totalBuildingsOverride !== undefined, beds: deal.totalLicBedsOverride !== undefined },
+  };
+}

@@ -116,10 +116,10 @@ export function DealPreviewSheet({ dealId, onOpenChange }: { dealId: string | nu
               </div>
             </div>
             <div className="flex items-center justify-between gap-2 border-t border-border bg-canvas/60 px-5 py-3">
-              <span className="text-[11.5px] text-ink-4">Full deal workspace coming in the Deals module</span>
-              <Button asChild variant="outline" size="sm">
-                <Link to="/deals" onClick={() => onOpenChange(false)}>
-                  Open in Deals <ArrowUpRight />
+              <span className="text-[11.5px] text-ink-4">Contacts, vendors, reports and progress are on the deal record</span>
+              <Button asChild variant="accent" size="sm">
+                <Link to={`/deals/${deal.id}`} onClick={() => onOpenChange(false)}>
+                  Open deal record <ArrowUpRight />
                 </Link>
               </Button>
             </div>

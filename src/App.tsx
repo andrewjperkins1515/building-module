@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { Briefcase, FileText, Landmark, LayoutDashboard, ListChecks, PieChart } from "lucide-react";
+import { FileText, Landmark, LayoutDashboard, ListChecks, PieChart } from "lucide-react";
 import { DataProvider } from "@/store/DataProvider";
 import { ToastProvider } from "@/components/ui/toast";
 import { TooltipProvider } from "@/components/ui/overlays";
@@ -9,13 +9,14 @@ import { BuildingsDirectory } from "@/features/buildings/directory/BuildingsDire
 import { BuildingDetail } from "@/features/buildings/detail/BuildingDetail";
 import { PlaceholderPage } from "@/pages/PlaceholderPage";
 import { ContactsDirectory } from "@/features/contacts/ContactsDirectory";
+import { DealsDirectory } from "@/features/deals/DealsDirectory";
+import { DealRecord } from "@/features/deals/DealRecord";
 import { ContactDetail } from "@/features/contacts/ContactDetail";
 import { SettingsPage } from "@/pages/SettingsPage";
 import { NotFound } from "@/pages/NotFound";
 
 const PLACEHOLDERS = [
   { path: "dashboard", title: "Dashboard", icon: LayoutDashboard, description: "Pipeline summary, upcoming milestones and portfolio KPIs across all deals and assets." },
-  { path: "deals", title: "Deals", icon: Briefcase, description: "Deal pipeline from High-Level Review through LOI, PSA and close — with multi-building portfolio support." },
   { path: "organizations", title: "Organizations", icon: Landmark, description: "Owners, operators, parent companies and service providers with relationship history." },
   { path: "documents", title: "Documents", icon: FileText, description: "Cross-deal document library and diligence tracker. Building-level diligence is available today on each building's Documents tab." },
   { path: "tasks", title: "Tasks & Activity", icon: ListChecks, description: "Assigned tasks, follow-ups and a unified activity feed across the platform." },
@@ -35,6 +36,9 @@ export default function App() {
                   <Route path="buildings" element={<BuildingsDirectory />} />
                   <Route path="buildings/:buildingId" element={<BuildingDetail />} />
                   <Route path="buildings/:buildingId/:tab" element={<BuildingDetail />} />
+                  <Route path="deals" element={<DealsDirectory />} />
+                  <Route path="deals/:dealId" element={<DealRecord />} />
+                  <Route path="deals/:dealId/:tab" element={<DealRecord />} />
                   <Route path="contacts" element={<ContactsDirectory />} />
                   <Route path="contacts/:contactId" element={<ContactDetail />} />
                   <Route path="contacts/:contactId/:tab" element={<ContactDetail />} />

@@ -224,6 +224,8 @@ export function buildCommunications(s: Pick<AppState, "contacts" | "organization
   const now = Date.now();
 
   s.contacts.forEach((c, ci) => {
+    // Internal team members are not tracked as external correspondence.
+    if (c.organizationId === "org_od_holdings" && c.tags?.includes("Internal")) return;
     const r = seeded([...c.id].reduce((a, ch) => a * 31 + ch.charCodeAt(0), 7) >>> 0);
     const org = s.organizations.find((o) => o.id === c.organizationId);
     const deals = s.deals

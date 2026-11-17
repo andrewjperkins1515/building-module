@@ -2,7 +2,12 @@ import type {
   ActivityType,
   BuildingRelationshipRole,
   BuildingSystem,
+  AssetClass,
+  BuyerSellerRole,
   CompanyType,
+  DealKind,
+  ReportStatus,
+  VendorRole,
   ContactType,
   Sector,
   ConditionRating,
@@ -273,3 +278,60 @@ export const TEAM_MEMBERS = [
   "Daniel Okafor",
   "Rachel Kim",
 ];
+
+// ---------------------------------------------------------------------------
+// Deal record
+// ---------------------------------------------------------------------------
+
+export const DEAL_KINDS: DealKind[] = ["acquisition", "sale_leaseback", "joint_venture", "recapitalization", "refinance", "disposition"];
+export const DEAL_KIND_LABEL: Record<DealKind, string> = {
+  acquisition: "Acquisition",
+  sale_leaseback: "Sale-Leaseback",
+  joint_venture: "Joint Venture",
+  recapitalization: "Recapitalization",
+  refinance: "Refinance",
+  disposition: "Disposition",
+};
+
+export const ASSET_CLASSES: AssetClass[] = ["snf", "alf", "ilf", "mc", "ccrc", "mixed"];
+export const ASSET_CLASS_LABEL: Record<AssetClass, string> = {
+  snf: "Skilled Nursing",
+  alf: "Assisted Living",
+  ilf: "Independent Living",
+  mc: "Memory Care",
+  ccrc: "CCRC / Campus",
+  mixed: "Mixed Portfolio",
+};
+
+export const BUYER_SELLER_ROLES: BuyerSellerRole[] = ["team_lead", "support_1", "support_2", "in_house_counsel", "transaction_counsel", "financing_counsel", "regulatory_counsel"];
+export const BUYER_SELLER_ROLE_LABEL: Record<BuyerSellerRole, string> = {
+  team_lead: "Team Lead",
+  support_1: "Support 1",
+  support_2: "Support 2",
+  in_house_counsel: "In-House Counsel",
+  transaction_counsel: "Transaction Counsel",
+  financing_counsel: "Financing Counsel",
+  regulatory_counsel: "Regulatory / Licensure Counsel",
+};
+
+export const VENDOR_ROLES: VendorRole[] = ["survey", "title", "zoning", "environmental", "property_condition", "appraisal", "reimbursement", "operations"];
+export const VENDOR_ROLE_LABEL: Record<VendorRole, string> = {
+  survey: "Survey",
+  title: "Title",
+  zoning: "Zoning",
+  environmental: "Environmental",
+  property_condition: "Property Condition",
+  appraisal: "Appraisals",
+  reimbursement: "Reimbursement Consultant",
+  operations: "Operations Consultant",
+};
+
+export const REPORT_STATUSES: ReportStatus[] = ["not_ordered", "ordered", "in_progress", "draft_received", "final_received", "waived"];
+export const REPORT_STATUS_LABEL: Record<ReportStatus, string> = {
+  not_ordered: "Not Ordered",
+  ordered: "Ordered",
+  in_progress: "In Progress",
+  draft_received: "Draft Received",
+  final_received: "Final Received",
+  waived: "Waived",
+};

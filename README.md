@@ -47,6 +47,12 @@ Changes persist in the browser's `localStorage`. To restore the original dataset
 
 - **Communications tab** on each contact record: an inbox-style view of email threads, calls and meetings with that person (fictional dummy data standing in for the planned Outlook integration). Search, filter by type or deal, read full threads with attachments, reply via your email client, and log calls, meetings or emails manually.
 
+### Deals module
+- **Deals** in the sidebar: pipeline board by stage (High-Level Review → LOI → PSA → Closed) or table, with filters (status, deal type, asset class, state, lead), summary metrics and **New Deal**. Recorded market transactions are hidden unless "Market comps" is on.
+- **Deal record → Overview** follows the Deal Record Overview template: progress bar and stage tracker; deal summary (deal type, primary asset class, source company/contact, asking price, calculated price per bed, states, total buildings and licensed beds, current operator, seller, new operator, JV partner and %, projected closing, data room link); buyer and seller deal contacts by role with additional email distribution lists; third-party vendors; third-party reports (date ordered, status, expected delivery, link); and a CMS buildings table showing 10 rows, expandable. Contacts are chosen by typing a name; firm, email and phone fill in automatically. Buildings and contacts link to their records.
+- **Deal record → Progress**: checklist items with sub-items; completing sub-items advances the item, and items advance the deal's overall progress. The current items are a **starter checklist** pending the detailed Progress breakdown.
+- Change stage, mark a deal dead or abandoned (with reason) or reopen it; add or remove buildings.
+
 Also try: **Add Building** (CMS search, provider number e.g. `155921`, or manual), **Edit Building** (changing a CCN retires the old one into history), **Add to Deal**, **Sync now** in the Connected Data Room, and **⌘K** global search (works with provider numbers).
 
 ## Architecture

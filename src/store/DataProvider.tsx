@@ -5,6 +5,9 @@ import type {
   Building,
   BuildingPhoto,
   Communication,
+  Deal,
+  DealContactAssignment,
+  ThirdPartyReport,
   Contact,
   DealBuildingRelationship,
   Organization,
@@ -17,6 +20,7 @@ import type {
 import { buildSeedState, STATE_VERSION } from "@/data/seed";
 import { defaultContactType, defaultSectors } from "@/data/contactDefaults";
 import { buildCommunications } from "@/data/communications";
+import { toggleProgress } from "@/lib/progress";
 import { CURRENT_USER, DOC_STATUS_LABEL } from "@/lib/labels";
 import { nowIso, uid } from "@/lib/utils";
 import { templateFor, BASELINE_DOCUMENTS } from "@/data/templates";
@@ -59,6 +63,40 @@ function migrate(input: AppState): AppState | null {
   if (s.version === 5) {
     s = { ...s, version: 6, communications: buildCommunications(s) };
   }
+  if (s.version === 6) {
+    // Deals module: add new seed companies/contacts, deal record fields and extra CMS ratings,
+    // without touching anything the user already has.
+    const seed = buildSeedState();
+    const haveOrg = new Set(s.organizations.map((o) => o.id));
+    const haveContact = new Set(s.contacts.map((c) => c.id));
+    const newContacts = seed.contacts.filter((c) => !haveContact.has(c.id));
+    const newContactIds = new Set(newContacts.map((c) => c.id));
+    s = {
+      ...s,
+      version: 7,
+      organizations: [
+        ...s.organizations.map((o) => {
+          const so = seed.organizations.find((x) => x.id === o.id);
+          return so && !o.primaryContactId && so.primaryContactId ? { ...o, primaryContactId: so.primaryContactId } : o;
+        }),
+        ...seed.organizations.filter((o) => !haveOrg.has(o.id)),
+      ],
+      contacts: [...s.contacts, ...newContacts],
+      deals: s.deals.map((d) => {
+        const sd = seed.deals.find((x) => x.id === d.id);
+        if (!sd) return { ...d, contacts: [], reports: [], progress: [] };
+        const { id: _i, name: _n, stage: _s, status: _st, ...extras } = sd;
+        void _i; void _n; void _s; void _st;
+        const fresh = Object.fromEntries(Object.entries(extras).filter(([k]) => (d as unknown as Record<string, unknown>)[k] === undefined));
+        return { ...d, ...fresh };
+      }),
+      cms: s.cms.map((c) => {
+        const sc = seed.cms.find((x) => x.buildingId === c.buildingId);
+        return { ...c, ratings: { longStayQm: sc?.ratings.longStayQm ?? c.ratings.qualityMeasures, shortStayQm: sc?.ratings.shortStayQm ?? c.ratings.qualityMeasures, ...c.ratings } };
+      }),
+      communications: [...s.communications, ...seed.communications.filter((m) => m.contactIds.some((id) => newContactIds.has(id)))],
+    };
+  }
   return s.version === STATE_VERSION ? s : null;
 }
 
@@ -96,6 +134,13 @@ interface DataContextValue {
   removeBuildingPhoto: (buildingId: string, photoId: string) => void;
   setCoverPhoto: (buildingId: string, photoId: string) => void;
   addCommunication: (c: Omit<Communication, "id" | "threadId" | "source" | "loggedBy">) => void;
+  // Deals
+  updateDeal: (id: string, patch: Partial<Deal>, logTitle?: string) => void;
+  addDeal: (deal: Omit<Deal, "id" | "code" | "createdAt">, buildingIds: string[]) => string;
+  setDealContact: (dealId: string, a: Omit<DealContactAssignment, "contactId"> & { contactId?: string }) => void;
+  updateDealReport: (dealId: string, kind: ThirdPartyReport["kind"], patch: Partial<ThirdPartyReport>) => void;
+  toggleDealProgress: (dealId: string, itemId: string) => void;
+  removeDealBuilding: (relId: string) => void;
 }
 
 const DataContext = createContext<DataContextValue | null>(null);
@@ -507,6 +552,76 @@ export function DataProvider({ children }: { children: ReactNode }) {
     setState((s) => ({ ...s, communications: [{ ...c, id, threadId: id, source: "manual", loggedBy: CURRENT_USER.name }, ...s.communications] }));
   }, []);
 
+  /** Logs a deal event on each building in the deal (activity lives on buildings in this prototype). */
+  const dealActivities = (s: AppState, dealId: string, title: string, description?: string) =>
+    s.dealBuildings.filter((r) => r.dealId === dealId).map((r) => activity({ buildingId: r.buildingId, dealId, type: "deal_associated", title, description }));
+
+  const updateDeal = useCallback<DataContextValue["updateDeal"]>((id, patch, logTitle) => {
+    setState((s) => ({
+      ...s,
+      deals: s.deals.map((d) => (d.id === id ? { ...d, ...patch } : d)),
+      activities: logTitle ? [...dealActivities(s, id, logTitle), ...s.activities] : s.activities,
+    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const addDeal = useCallback<DataContextValue["addDeal"]>((deal, buildingIds) => {
+    const id = uid("deal");
+    const cur = stateRef.current;
+    const year = new Date().getFullYear();
+    const n = cur.deals.filter((d) => d.code.startsWith(`OD-${year}-`)).map((d) => Number(d.code.split("-")[2]) || 0);
+    const code = `OD-${year}-${String(Math.max(0, ...n) + 1).padStart(3, "0")}`;
+    setState((s) => {
+      const rels = buildingIds.map((buildingId) => ({ id: uid("db"), dealId: id, buildingId, role: (buildingIds.length > 1 ? "portfolio_asset" : "primary_asset") as DealBuildingRelationship["role"], addedAt: nowIso().slice(0, 10) }));
+      return {
+        ...s,
+        deals: [{ ...deal, id, code, createdAt: nowIso().slice(0, 10) }, ...s.deals],
+        dealBuildings: [...s.dealBuildings, ...rels],
+        activities: [...rels.map((r) => activity({ buildingId: r.buildingId, dealId: id, type: "deal_associated", title: `Added to ${deal.name}`, description: "New deal created" })), ...s.activities],
+      };
+    });
+    return id;
+  }, []);
+
+  const setDealContact = useCallback<DataContextValue["setDealContact"]>((dealId, a) => {
+    setState((s) => ({
+      ...s,
+      deals: s.deals.map((d) => {
+        if (d.id !== dealId) return d;
+        const rest = (d.contacts ?? []).filter((x) => !(x.side === a.side && x.role === a.role));
+        return { ...d, contacts: a.contactId ? [...rest, { ...a, contactId: a.contactId } as DealContactAssignment] : rest };
+      }),
+    }));
+  }, []);
+
+  const updateDealReport = useCallback<DataContextValue["updateDealReport"]>((dealId, kind, patch) => {
+    setState((s) => ({
+      ...s,
+      deals: s.deals.map((d) => {
+        if (d.id !== dealId) return d;
+        const reports = d.reports ?? [];
+        const exists = reports.some((r) => r.kind === kind);
+        return { ...d, reports: exists ? reports.map((r) => (r.kind === kind ? { ...r, ...patch } : r)) : [...reports, { kind, status: "not_ordered", ...patch }] };
+      }),
+    }));
+  }, []);
+
+  const toggleDealProgress = useCallback<DataContextValue["toggleDealProgress"]>((dealId, itemId) => {
+    setState((s) => ({ ...s, deals: s.deals.map((d) => (d.id === dealId ? { ...d, progress: toggleProgress(d.progress ?? [], itemId) } : d)) }));
+  }, []);
+
+  const removeDealBuilding = useCallback<DataContextValue["removeDealBuilding"]>((relId) => {
+    setState((s) => {
+      const rel = s.dealBuildings.find((r) => r.id === relId);
+      const deal = s.deals.find((d) => d.id === rel?.dealId);
+      return {
+        ...s,
+        dealBuildings: s.dealBuildings.filter((r) => r.id !== relId),
+        activities: rel ? [activity({ buildingId: rel.buildingId, dealId: rel.dealId, type: "deal_associated", title: `Removed from ${deal?.name ?? "deal"}` }), ...s.activities] : s.activities,
+      };
+    });
+  }, []);
+
   const value = useMemo<DataContextValue>(
     () => ({
       state,
@@ -539,6 +654,12 @@ export function DataProvider({ children }: { children: ReactNode }) {
       removeBuildingPhoto,
       setCoverPhoto,
       addCommunication,
+      updateDeal,
+      addDeal,
+      setDealContact,
+      updateDealReport,
+      toggleDealProgress,
+      removeDealBuilding,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [state],

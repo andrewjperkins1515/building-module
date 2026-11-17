@@ -264,6 +264,56 @@ export interface Deal {
   leadName: string;
   summary: string;
   createdAt: ISODate;
+
+  // --- Deal record overview (CRM) ---
+  dealKind?: DealKind;
+  assetClass?: AssetClass;
+  sourceOrgId?: ID;
+  sourceContactId?: ID;
+  /** Defaults to the operator of the deal's buildings when not set. */
+  currentOperatorOrgId?: ID;
+  newOperatorOrgId?: ID;
+  jvPartnerOrgId?: ID;
+  jvPct?: number;
+  dataRoomUrl?: string;
+  /** Manual overrides when not every building is in Owner Docket yet. */
+  statesOverride?: string[];
+  totalBuildingsOverride?: number;
+  totalLicBedsOverride?: number;
+  contacts?: DealContactAssignment[];
+  buyerDistribution?: string;
+  sellerDistribution?: string;
+  reports?: ThirdPartyReport[];
+  progress?: ProgressItem[];
+}
+
+export type DealKind = "acquisition" | "sale_leaseback" | "joint_venture" | "recapitalization" | "refinance" | "disposition";
+export type AssetClass = "snf" | "alf" | "ilf" | "mc" | "ccrc" | "mixed";
+
+export type BuyerSellerRole = "team_lead" | "support_1" | "support_2" | "in_house_counsel" | "transaction_counsel" | "financing_counsel" | "regulatory_counsel";
+export type VendorRole = "survey" | "title" | "zoning" | "environmental" | "property_condition" | "appraisal" | "reimbursement" | "operations";
+
+export type DealContactAssignment =
+  | { side: "buyer" | "seller"; role: BuyerSellerRole; contactId: ID }
+  | { side: "vendor"; role: VendorRole; contactId: ID };
+
+export type ReportStatus = "not_ordered" | "ordered" | "in_progress" | "draft_received" | "final_received" | "waived";
+
+export interface ThirdPartyReport {
+  kind: VendorRole;
+  dateOrdered?: ISODate;
+  status: ReportStatus;
+  expectedDate?: ISODate;
+  url?: string;
+}
+
+/** Hierarchical checklist item. Progress rolls up from sub-items to items to the deal. */
+export interface ProgressItem {
+  id: ID;
+  title: string;
+  done?: boolean;
+  completedAt?: ISODate;
+  children?: ProgressItem[];
 }
 
 export type DealBuildingRole = "primary_asset" | "portfolio_asset" | "add_on" | "excluded";
@@ -328,6 +378,8 @@ export interface CMSData {
     health: StarRating;
     staffing: StarRating;
     qualityMeasures: StarRating;
+    longStayQm?: StarRating;
+    shortStayQm?: StarRating;
   };
   staffing: {
     totalNurseHprd: number;

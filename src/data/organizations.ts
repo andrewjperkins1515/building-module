@@ -81,6 +81,12 @@ const baseContacts: SeedContact[] = [
 
 const extraOrganizations: Organization[] = [
   { id: "org_meridian_parent", name: "Meridian Capital Group", type: "investor", hqCity: "Chicago", hqState: "IL", description: "Private real estate investment firm; sponsor of Meridian Healthcare Properties." },
+  { id: "org_hartwell", name: "Hartwell & Pierce LLP", type: "law_firm", hqCity: "Chicago", hqState: "IL", description: "Seller-side healthcare real estate counsel." },
+  { id: "org_benchmark", name: "Benchmark Land Surveying", type: "consultant", hqCity: "Columbus", hqState: "OH", description: "ALTA/NSPS surveys nationwide." },
+  { id: "org_lakeside_title", name: "Lakeside Title Agency", type: "consultant", hqCity: "Chicago", hqState: "IL", description: "Commercial title and escrow." },
+  { id: "org_zoning_partners", name: "Zoning Verification Partners", type: "consultant", hqCity: "Atlanta", hqState: "GA", description: "Zoning reports and municipal compliance." },
+  { id: "org_ridgeway_val", name: "Ridgeway Valuation Advisors", type: "consultant", hqCity: "Chicago", hqState: "IL", description: "MAI appraisals for healthcare real estate." },
+  { id: "org_ridgeline", name: "Ridgeline Healthcare Partners", type: "investor", hqCity: "New York", hqState: "NY", description: "Institutional JV equity partner for seniors housing and post-acute." },
   { id: "org_summit_reit", name: "Summit Healthcare REIT", type: "owner", hqCity: "Phoenix", hqState: "AZ", description: "Non-traded healthcare REIT with seniors housing and post-acute assets in the Southwest." },
 ];
 
@@ -101,6 +107,8 @@ const ORG_PROFILES: Record<string, OrgProfile> = {
   org_lakeshore: { companyType: "bank", officeAddress: { street: "411 E Wisconsin Avenue", street2: "Floor 20", city: "Milwaukee", state: "WI", zip: "53202" }, acuityFocus: ["Skilled Nursing", "Assisted Living"], regionalFocus: ["Midwest"], stateFocus: ["WI", "IL", "MI"], primaryContactId: "ct_srao", tags: ["REO owner", "Motivated seller"] },
   org_summit_reit: { companyType: "reit", officeAddress: { street: "2390 E Camelback Road", street2: "Suite 300", city: "Phoenix", state: "AZ", zip: "85016" }, acuityFocus: ["Skilled Nursing", "Assisted Living", "Memory Care"], regionalFocus: ["Southwest", "Mountain West", "West Coast"], stateFocus: ["AZ", "NV", "CA", "CO"], primaryContactId: "ct_cford", tags: ["Capital recycling"] },
   org_sterling: { companyType: "finco" },
+  org_ridgeline: { companyType: "private", officeAddress: { street: "450 Park Avenue", street2: "Floor 22", city: "New York", state: "NY", zip: "10022" }, acuityFocus: ["Skilled Nursing", "Assisted Living", "Memory Care"], regionalFocus: ["National"], primaryContactId: "ct_ashah", tags: ["JV equity"] },
+  org_hartwell: { primaryContactId: "ct_ahartwell" },
   org_atlas: { companyType: "finco" },
   org_cedarbrook: { companyType: "private", parentOrgId: "org_cedarbrook_hold", primaryContactId: "ct_mdelgado" },
   org_northpoint: { companyType: "private", parentOrgId: "org_northpoint_hold" },
@@ -125,6 +133,26 @@ const extraContacts: SeedContact[] = [
   { id: "ct_mfisher", name: "Megan Fisher", title: "Relationship Manager, Healthcare", organizationId: "org_lakeshore", email: "mfisher@lakeshorebank.example", phone: "(414) 555-0171", rosterRole: "Lending" },
   { id: "ct_cford", name: "Catherine Ford", title: "SVP, Investments", organizationId: "org_summit_reit", email: "cford@summithreit.example", phone: "(602) 555-0128", rosterRole: "Decision maker" },
   { id: "ct_dlee", name: "Daniel Lee", title: "Asset Manager", organizationId: "org_summit_reit", email: "dlee@summithreit.example", phone: "(602) 555-0152", rosterRole: "Asset management" },
+  // Internal buyer team (OD Acquisition Holdings)
+  { id: "ct_jellis", name: "Jordan Ellis", title: "VP, Acquisitions", organizationId: "org_od_holdings", email: "jordan.ellis@example.com", phone: "(615) 555-0170", rosterRole: "Transactions", tags: ["Internal"] },
+  { id: "ct_evasquez", name: "Elena Vasquez", title: "VP, Acquisitions", organizationId: "org_od_holdings", email: "elena.vasquez@example.com", phone: "(615) 555-0171", rosterRole: "Transactions", tags: ["Internal"] },
+  { id: "ct_praman", name: "Priya Raman", title: "Acquisitions Associate", organizationId: "org_od_holdings", email: "priya.raman@example.com", phone: "(615) 555-0172", rosterRole: "Transactions", tags: ["Internal"] },
+  { id: "ct_mholloway", name: "Marcus Holloway", title: "Director, Asset Management", organizationId: "org_od_holdings", email: "marcus.holloway@example.com", phone: "(615) 555-0173", rosterRole: "Asset management", tags: ["Internal"] },
+  { id: "ct_dokafor", name: "Daniel Okafor", title: "Senior Associate", organizationId: "org_od_holdings", email: "daniel.okafor@example.com", phone: "(615) 555-0174", rosterRole: "Transactions", tags: ["Internal"] },
+  { id: "ct_rkim", name: "Rachel Kim", title: "Analyst", organizationId: "org_od_holdings", email: "rachel.kim@example.com", phone: "(615) 555-0175", rosterRole: "Transactions", tags: ["Internal"] },
+  { id: "ct_nbrooks", name: "Natalie Brooks", title: "General Counsel", organizationId: "org_od_holdings", email: "natalie.brooks@example.com", phone: "(615) 555-0176", rosterRole: "Legal", tags: ["Internal"], contactType: "lawyer" },
+  // Seller-side counsel and Meridian in-house counsel
+  { id: "ct_mfoley", name: "Michael Foley", title: "General Counsel", organizationId: "org_meridian", email: "mfoley@meridianhcp.example", phone: "(312) 555-0124", rosterRole: "Legal", contactType: "lawyer" },
+  { id: "ct_ahartwell", name: "Alan Hartwell", title: "Partner, Real Estate", organizationId: "org_hartwell", email: "ahartwell@hartwellpierce.example", phone: "(312) 555-0181", rosterRole: "Legal" },
+  { id: "ct_spierce", name: "Sandra Pierce", title: "Partner, Finance", organizationId: "org_hartwell", email: "spierce@hartwellpierce.example", phone: "(312) 555-0182", rosterRole: "Legal" },
+  { id: "ct_tquinn", name: "Theresa Quinn", title: "Counsel, Healthcare Regulatory", organizationId: "org_hartwell", email: "tquinn@hartwellpierce.example", phone: "(312) 555-0183", rosterRole: "Legal" },
+  // Third-party vendors
+  { id: "ct_rbenson", name: "Rick Benson", title: "Project Manager", organizationId: "org_benchmark", email: "rbenson@benchmarksurvey.example", phone: "(614) 555-0191", rosterRole: "Operations" },
+  { id: "ct_lmorales", name: "Lucia Morales", title: "Senior Escrow Officer", organizationId: "org_lakeside_title", email: "lmorales@lakesidetitle.example", phone: "(312) 555-0192", rosterRole: "Operations" },
+  { id: "ct_kgrady", name: "Kevin Grady", title: "Zoning Analyst", organizationId: "org_zoning_partners", email: "kgrady@zoningvp.example", phone: "(404) 555-0193", rosterRole: "Operations" },
+  { id: "ct_hlowe", name: "Hannah Lowe, MAI", title: "Managing Director", organizationId: "org_ridgeway_val", email: "hlowe@ridgewayval.example", phone: "(312) 555-0194", rosterRole: "Operations" },
+  { id: "ct_tbishop", name: "Tara Bishop", title: "VP, Operations Consulting", organizationId: "org_summit_mgmt", email: "tbishop@summitsenior.example", phone: "(404) 555-0195", rosterRole: "Operations" },
+  { id: "ct_ashah", name: "Arjun Shah", title: "Managing Director", organizationId: "org_ridgeline", email: "ashah@ridgelinehp.example", phone: "(212) 555-0196", rosterRole: "Decision maker" },
   { id: "ct_rortiz", name: "Rosa Ortiz", title: "Chief Operating Officer", organizationId: "org_sonoran", email: "rortiz@sonoranhp.example", phone: "(480) 555-0147", rosterRole: "Operations" },
 ];
 

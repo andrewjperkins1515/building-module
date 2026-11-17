@@ -20,8 +20,9 @@ import { buildingSpecs, type BuildingSpec } from "./buildingSpecs";
 import { generateCapitalProjects, generateCms, generateCondition, generateFinancials } from "./generators";
 import { BASELINE_DOCUMENTS, templateFor } from "./templates";
 import { buildCommunications } from "./communications";
+import { dealDetails } from "./dealDetails";
 
-export const STATE_VERSION = 6;
+export const STATE_VERSION = 7;
 
 const orgName = (id: string) => organizations.find((o) => o.id === id)?.name ?? "";
 const slug = (s: string) => s.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");
@@ -448,6 +449,7 @@ export function buildSeedState(): AppState {
     );
     state.dataRooms.push(buildDataRoom(s, docs, activeDeal?.name));
   }
+  state.deals = state.deals.map((d) => ({ ...d, ...dealDetails(d, state.dealBuildings, state.buildings) }));
   state.communications = buildCommunications(state);
   return state;
 }
