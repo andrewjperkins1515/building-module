@@ -8,6 +8,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
   Popover,
@@ -253,21 +255,33 @@ function Notifications() {
 }
 
 function UserMenu() {
-  const { resetDemo } = useData();
+  const { state, resetDemo, actingAs, setActingAs } = useData();
+  const team = state.contacts.filter((c) => c.organizationId === "org_od_holdings" && c.tags?.includes("Internal"));
+  const me = state.contacts.find((c) => c.id === actingAs.id);
   const navigate = useNavigate();
   const toast = useToast();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="rounded-full ring-offset-2 transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40" aria-label="Account menu">
-          <Avatar name={CURRENT_USER.name} size="md" />
+          <Avatar name={actingAs.name} size="md" />
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-72">
         <DropdownMenuLabel className="normal-case tracking-normal">
-          <div className="text-[13px] font-medium text-ink">{CURRENT_USER.name}</div>
-          <div className="text-xs font-normal text-ink-3">{CURRENT_USER.title}</div>
+          <div className="text-[13px] font-medium text-ink">{actingAs.name}</div>
+          <div className="text-xs font-normal text-ink-3">{me?.title ?? CURRENT_USER.title}</div>
         </DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuLabel>Acting as (prototype)</DropdownMenuLabel>
+        <DropdownMenuRadioGroup value={actingAs.id} onValueChange={(id) => { setActingAs(id); toast({ title: `Now acting as ${state.contacts.find((c) => c.id === id)?.name}`, description: "Approvals and actions are recorded under this person.", tone: "info" }); }}>
+          {team.map((c) => (
+            <DropdownMenuRadioItem key={c.id} value={c.id}>
+              <span className="flex-1 truncate">{c.name}</span>
+              <span className="text-[11px] text-ink-4">{c.title.replace("Acquisitions ", "")}</span>
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onSelect={() => navigate("/settings")}>
           <UserRound /> Profile & preferences

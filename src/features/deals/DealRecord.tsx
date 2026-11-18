@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowRightLeft, CircleSlash, FileText, Flag, LayoutDashboard, ListChecks, Pencil, RotateCcw, Trophy } from "lucide-react";
+import { ArrowRightLeft, CircleSlash, FileText, Flag, Sparkles, Undo2, LayoutDashboard, ListChecks, Pencil, RotateCcw, Trophy } from "lucide-react";
 import type { DealStage } from "@/types";
 import { useBreadcrumbs } from "@/components/layout/breadcrumbs";
 import { useData } from "@/store/DataProvider";
@@ -13,6 +13,8 @@ import { useToast } from "@/components/ui/toast";
 import { NotFound } from "@/pages/NotFound";
 import { ASSET_CLASS_LABEL, DEAL_KIND_LABEL, DEAL_STAGES, DEAL_STAGE_LABEL } from "@/lib/labels";
 import { todayIso } from "@/lib/utils";
+import { fmtRelative } from "@/lib/format";
+import { floorFor } from "@/lib/checklist";
 import { DealOverview } from "./DealOverview";
 import { ProgressTab } from "./ProgressTab";
 import { DealDocumentsTab } from "./DealDocumentsTab";
@@ -23,7 +25,7 @@ export function DealRecord() {
   const { dealId, tab } = useParams();
   const navigate = useNavigate();
   const toast = useToast();
-  const { state, updateDeal } = useData();
+  const { state, updateDeal, undoAutoAdvance, dismissAutoAdvance } = useData();
   const deal = state.deals.find((d) => d.id === dealId);
   const activeTab = tab === "progress" || tab === "documents" ? tab : "overview";
   const [editOpen, setEditOpen] = useState(false);
@@ -40,13 +42,13 @@ export function DealRecord() {
   const goTab = (t: string) => navigate(`/deals/${deal.id}${t === "overview" ? "" : `/${t}`}`);
   const moveTo = (stage: DealStage) => {
     if (stage === "closed") {
-      updateDeal(deal.id, { stage, status: "closed", actualCloseDate: deal.actualCloseDate ?? todayIso() }, `${deal.name} closed`);
+      updateDeal(deal.id, { stage, status: "closed", actualCloseDate: deal.actualCloseDate ?? todayIso(), milestoneFloor: floorFor(deal, stage), lastAutoAdvance: undefined }, `${deal.name} closed`);
       toast({ title: "Deal closed", description: "Next step: transition to Asset Management." });
     } else if (stage === "asset_management") {
-      updateDeal(deal.id, { stage, status: "closed", actualCloseDate: deal.actualCloseDate ?? todayIso() }, `${deal.name} transitioned to Asset Management`);
+      updateDeal(deal.id, { stage, status: "closed", actualCloseDate: deal.actualCloseDate ?? todayIso(), milestoneFloor: floorFor(deal, stage), lastAutoAdvance: undefined }, `${deal.name} transitioned to Asset Management`);
       toast({ title: "Transitioned to Asset Management", description: "The deal is officially finished." });
     } else {
-      updateDeal(deal.id, { stage, status: "active", skippedLoi: stage === "psa_signed" && DEAL_STAGES.indexOf(deal.stage) < 1 ? true : deal.skippedLoi }, `${deal.name} moved to ${DEAL_STAGE_LABEL[stage]}`);
+      updateDeal(deal.id, { stage, status: "active", milestoneFloor: floorFor(deal, stage), lastAutoAdvance: undefined, skippedLoi: stage === "psa_signed" && DEAL_STAGES.indexOf(deal.stage) < 1 ? true : stage === "high_level_review" || stage === "loi_signed" ? false : deal.skippedLoi }, `${deal.name} moved to ${DEAL_STAGE_LABEL[stage]}`);
       toast({ title: `Moved to ${DEAL_STAGE_LABEL[stage]}` });
     }
   };
@@ -96,7 +98,8 @@ export function DealRecord() {
               {inactive || deal.status === "closed" ? (
                 <DropdownMenuItem
                   onSelect={() => {
-                    updateDeal(deal.id, { status: "active", deadReason: undefined, actualCloseDate: undefined, stage: deal.stage === "closed" || deal.stage === "asset_management" ? "psa_signed" : deal.stage }, `${deal.name} reopened`);
+                    const back = deal.stage === "closed" || deal.stage === "asset_management" ? "psa_signed" : deal.stage;
+                    updateDeal(deal.id, { status: "active", deadReason: undefined, actualCloseDate: undefined, stage: back, milestoneFloor: floorFor(deal, deal.stage), lastAutoAdvance: undefined }, `${deal.name} reopened`);
                     toast({ title: "Deal reopened" });
                   }}
                 >
@@ -116,6 +119,26 @@ export function DealRecord() {
           </DropdownMenu>
         </div>
       </div>
+
+      {deal.lastAutoAdvance && !deal.lastAutoAdvance.dismissed && (
+        <div className="mt-4 flex flex-col gap-2 rounded-lg border border-success-line bg-success-soft/60 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-2.5 text-[13px]">
+            <Sparkles className="mt-0.5 size-4 shrink-0 text-success" />
+            <span className="text-ink-2">
+              Moved to <span className="font-semibold text-ink">{DEAL_STAGE_LABEL[deal.lastAutoAdvance.to]}</span> automatically — {deal.lastAutoAdvance.reason}.{" "}
+              <span className="text-ink-4">{fmtRelative(deal.lastAutoAdvance.at)}</span>
+            </span>
+          </div>
+          <div className="flex shrink-0 gap-2">
+            <Button size="sm" variant="outline" onClick={() => { undoAutoAdvance(deal.id); toast({ title: `Moved back to ${DEAL_STAGE_LABEL[deal.lastAutoAdvance!.from]}`, tone: "info" }); }}>
+              <Undo2 /> Undo
+            </Button>
+            <Button size="sm" variant="ghost" onClick={() => dismissAutoAdvance(deal.id)}>
+              Dismiss
+            </Button>
+          </div>
+        </div>
+      )}
 
       <Tabs value={activeTab} onValueChange={goTab} className="mt-6">
         <TabsList>

@@ -172,6 +172,7 @@ export function dealDetails(deal: Deal, rels: DealBuildingRelationship[], buildi
     sellerDistribution: deal.id === "deal_greatlakes" ? "dealteam@meridianhcp.example; hwalsh@calloway.example" : "",
     reports,
     progress: [],
+    dealApproverContactId: contacts.find((c) => c.side === "buyer" && c.role === "team_lead")?.contactId,
     checklist: isMarketComp ? [] : buildChecklist({ ...deal, contacts }, { ...CHECKLIST_PRESETS[stage], ...CHECKLIST_OVERRIDES[deal.id] }, deal.actualCloseDate ? `${deal.actualCloseDate}T17:00:00.000Z` : offsetDate(-3) + "T15:00:00.000Z"),
   };
 }

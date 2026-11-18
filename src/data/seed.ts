@@ -21,9 +21,9 @@ import { generateCapitalProjects, generateCms, generateCondition, generateFinanc
 import { BASELINE_DOCUMENTS, templateFor } from "./templates";
 import { buildCommunications } from "./communications";
 import { dealDetails } from "./dealDetails";
-import { applyAutoRules } from "@/lib/checklist";
+import { applyAutoRules, floorFor } from "@/lib/checklist";
 
-export const STATE_VERSION = 9;
+export const STATE_VERSION = 10;
 
 const orgName = (id: string) => organizations.find((o) => o.id === id)?.name ?? "";
 const slug = (s: string) => s.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");
@@ -452,6 +452,7 @@ export function buildSeedState(): AppState {
   }
   state.deals = state.deals.map((d) => ({ ...d, ...dealDetails(d, state.dealBuildings, state.buildings) }));
   state.deals = state.deals.map((d) => ({ ...d, checklist: applyAutoRules(d, state) ?? d.checklist }));
+  state.deals = state.deals.map((d) => ({ ...d, milestoneFloor: floorFor(d, d.stage) }));
   state.communications = buildCommunications(state);
   return state;
 }

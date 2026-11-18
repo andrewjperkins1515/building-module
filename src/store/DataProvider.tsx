@@ -20,14 +20,16 @@ import type {
 import { buildSeedState, STATE_VERSION } from "@/data/seed";
 import { defaultContactType, defaultSectors } from "@/data/contactDefaults";
 import { buildCommunications } from "@/data/communications";
-import { applyAutoRules, applyChecklistAction, buildChecklist, type ChecklistAction } from "@/lib/checklist";
-import { CURRENT_USER, DOC_STATUS_LABEL } from "@/lib/labels";
+import { applyAutoRules, applyChecklistAction, buildChecklist, canApprove, floorFor, pendingAutoAdvance, type ChecklistAction } from "@/lib/checklist";
+import { CURRENT_USER, DEAL_STAGE_LABEL, DOC_STATUS_LABEL } from "@/lib/labels";
 import { nowIso, uid } from "@/lib/utils";
 import { templateFor, BASELINE_DOCUMENTS } from "@/data/templates";
 import type { NewBuildingInput } from "./createBuilding";
 import { materializeNewBuilding } from "./createBuilding";
 
 const STORAGE_KEY = "owner-docket:prototype-state";
+const PERSONA_KEY = "owner-docket:acting-as";
+const DEFAULT_PERSONA = "ct_jellis";
 
 function loadState(): AppState {
   try {
@@ -116,6 +118,23 @@ function migrate(input: AppState): AppState | null {
       }),
     };
   }
+  if (s.version === 9) {
+    // Deal approver: the buyer team lead approves by default; item approvers that matched become "use deal approver".
+    s = {
+      ...s,
+      version: 10,
+      deals: s.deals.map((d) => {
+        const lead = d.contacts?.find((c) => c.side === "buyer" && c.role === "team_lead")?.contactId;
+        const approver = d.dealApproverContactId ?? lead;
+        return {
+          ...d,
+          dealApproverContactId: approver,
+          checklist: d.checklist?.map((i) => (i.approverContactId && i.approverContactId === approver ? { ...i, approverContactId: undefined } : i)),
+          milestoneFloor: d.milestoneFloor ?? floorFor(d, d.stage),
+        };
+      }),
+    };
+  }
   return s.version === STATE_VERSION ? s : null;
 }
 
@@ -158,7 +177,12 @@ interface DataContextValue {
   addDeal: (deal: Omit<Deal, "id" | "code" | "createdAt"> & { id?: string }, buildingIds: string[]) => string;
   setDealContact: (dealId: string, a: Omit<DealContactAssignment, "contactId"> & { contactId?: string }) => void;
   updateDealReport: (dealId: string, kind: ThirdPartyReport["kind"], patch: Partial<ThirdPartyReport>) => void;
-  checklistAction: (dealId: string, itemId: string, action: ChecklistAction) => void;
+  checklistAction: (dealId: string, itemId: string, action: ChecklistAction) => boolean;
+  setDealApprover: (dealId: string, contactId: string | undefined, applyToAll: boolean) => void;
+  undoAutoAdvance: (dealId: string) => void;
+  dismissAutoAdvance: (dealId: string) => void;
+  actingAs: { id: string; name: string };
+  setActingAs: (contactId: string) => void;
   setPhaseOverride: (dealId: string, key: string, value?: boolean) => void;
   removeDealBuilding: (relId: string) => void;
 }
@@ -169,6 +193,26 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<AppState>(loadState);
   const stateRef = useRef(state);
   stateRef.current = state;
+
+  // Prototype persona ("acting as"): who performs actions and approvals until user accounts exist.
+  const [actingAs, setActingAsState] = useState<string>(() => {
+    try {
+      return localStorage.getItem(PERSONA_KEY) || DEFAULT_PERSONA;
+    } catch {
+      return DEFAULT_PERSONA;
+    }
+  });
+  const actorRef = useRef<{ id: string; name: string }>({ id: actingAs, name: CURRENT_USER.name });
+  actorRef.current = { id: actingAs, name: state.contacts.find((c) => c.id === actingAs)?.name ?? CURRENT_USER.name };
+  const actorName = () => actorRef.current.name;
+  const setActingAs = useCallback((id: string) => {
+    setActingAsState(id);
+    try {
+      localStorage.setItem(PERSONA_KEY, id);
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   useEffect(() => {
     try {
@@ -181,7 +225,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const activity = (a: Omit<Activity, "id" | "timestamp" | "actor"> & { actor?: string }): Activity => ({
     id: uid("act"),
     timestamp: nowIso(),
-    actor: a.actor ?? CURRENT_USER.name,
+    actor: a.actor ?? actorName(),
     ...a,
   });
 
@@ -236,7 +280,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
 
   const addSiteVisit = useCallback<DataContextValue["addSiteVisit"]>((visit) => {
     setState((s) => {
-      const v: SiteVisit = { ...visit, id: uid("sv"), createdAt: nowIso(), createdBy: CURRENT_USER.name };
+      const v: SiteVisit = { ...visit, id: uid("sv"), createdAt: nowIso(), createdBy: actorName() };
       return {
         ...s,
         siteVisits: [v, ...s.siteVisits],
@@ -298,7 +342,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       documentRequests: mapDoc(s, id, (d) => ({
         ...d,
         ...patch,
-        comments: note ? [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text: note, createdAt: nowIso(), action: "status_change" }] : d.comments,
+        comments: note ? [...d.comments, { id: uid("cm"), author: actorName(), text: note, createdAt: nowIso(), action: "status_change" }] : d.comments,
       })),
     }));
   }, []);
@@ -307,7 +351,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     setState((s) => {
       const doc = s.documentRequests.find((d) => d.id === id);
       if (!doc || doc.status === status) return s;
-      const c: ReviewComment = { id: uid("cm"), author: CURRENT_USER.name, text: `Status changed from ${DOC_STATUS_LABEL[doc.status]} to ${DOC_STATUS_LABEL[status]}.`, createdAt: nowIso(), action: "status_change" };
+      const c: ReviewComment = { id: uid("cm"), author: actorName(), text: `Status changed from ${DOC_STATUS_LABEL[doc.status]} to ${DOC_STATUS_LABEL[status]}.`, createdAt: nowIso(), action: "status_change" };
       return {
         ...s,
         documentRequests: mapDoc(s, id, (d) => ({ ...d, status, comments: [...d.comments, c] })),
@@ -331,7 +375,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
         mimeType: file.type || "application/octet-stream",
         version,
         uploadedAt: nowIso(),
-        uploadedBy: CURRENT_USER.name,
+        uploadedBy: actorName(),
         source: "upload",
       };
       const nextStatus: DocumentStatus = ["approved"].includes(doc.status) ? "in_review" : "received";
@@ -341,7 +385,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
           ...d,
           files: [...d.files, f],
           status: nextStatus,
-          comments: [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text: `Uploaded ${file.name} (v${version}).`, createdAt: nowIso(), action: "comment" }],
+          comments: [...d.comments, { id: uid("cm"), author: actorName(), text: `Uploaded ${file.name} (v${version}).`, createdAt: nowIso(), action: "comment" }],
         })),
         buildings: touchBuilding(s, doc.buildingId),
         activities: [activity({ buildingId: doc.buildingId, dealId: doc.dealId, type: "document_uploaded", title: `${doc.name} uploaded`, description: `${file.name} · v${version}` }), ...s.activities],
@@ -359,8 +403,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
         documentRequests: mapDoc(s, id, (d) => ({
           ...d,
           status: action,
-          reviewer: d.reviewer ?? CURRENT_USER.name,
-          comments: [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text: comment || `Document ${verb}.`, createdAt: nowIso(), action }],
+          reviewer: d.reviewer ?? actorName(),
+          comments: [...d.comments, { id: uid("cm"), author: actorName(), text: comment || `Document ${verb}.`, createdAt: nowIso(), action }],
         })),
         buildings: touchBuilding(s, doc.buildingId),
         activities: [activity({ buildingId: doc.buildingId, dealId: doc.dealId, type: "document_reviewed", title: `${doc.name} ${verb}`, description: comment || undefined }), ...s.activities],
@@ -371,7 +415,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const addDocumentComment = useCallback<DataContextValue["addDocumentComment"]>((id, text) => {
     setState((s) => ({
       ...s,
-      documentRequests: mapDoc(s, id, (d) => ({ ...d, comments: [...d.comments, { id: uid("cm"), author: CURRENT_USER.name, text, createdAt: nowIso(), action: "comment" }] })),
+      documentRequests: mapDoc(s, id, (d) => ({ ...d, comments: [...d.comments, { id: uid("cm"), author: actorName(), text, createdAt: nowIso(), action: "comment" }] })),
     }));
   }, []);
 
@@ -545,7 +589,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
       ...s,
       buildings: s.buildings.map((b) =>
         b.id === buildingId
-          ? { ...b, updatedAt: nowIso(), photos: [...b.photos, ...photos.map((p) => ({ ...p, id: uid("ph"), uploadedAt: nowIso(), uploadedBy: CURRENT_USER.name }))] }
+          ? { ...b, updatedAt: nowIso(), photos: [...b.photos, ...photos.map((p) => ({ ...p, id: uid("ph"), uploadedAt: nowIso(), uploadedBy: actorName() }))] }
           : b,
       ),
       activities: [activity({ buildingId, type: "building_updated", title: `${photos.length} photo${photos.length === 1 ? "" : "s"} added` }), ...s.activities],
@@ -569,7 +613,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
 
   const addCommunication = useCallback<DataContextValue["addCommunication"]>((c) => {
     const id = uid("comm");
-    setState((s) => ({ ...s, communications: [{ ...c, id, threadId: id, source: "manual", loggedBy: CURRENT_USER.name }, ...s.communications] }));
+    setState((s) => ({ ...s, communications: [{ ...c, id, threadId: id, source: "manual", loggedBy: actorName() }, ...s.communications] }));
   }, []);
 
   /** Logs a deal event on each building in the deal (activity lives on buildings in this prototype). */
@@ -627,18 +671,53 @@ export function DataProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const checklistAction = useCallback<DataContextValue["checklistAction"]>((dealId, itemId, action) => {
+    // Only the assigned approver may approve, request changes or revoke approval.
+    if (action.type === "approve" || action.type === "request_changes" || action.type === "revoke_approval") {
+      const deal = stateRef.current.deals.find((d) => d.id === dealId);
+      const item = deal?.checklist?.find((i) => i.id === itemId);
+      if (!deal || !item || !canApprove(item, deal, actorRef.current.id)) return false;
+    }
     setState((s) => {
       const deal = s.deals.find((d) => d.id === dealId);
       const item = deal?.checklist?.find((i) => i.id === itemId);
       if (!deal || !item) return s;
-      const next = applyChecklistAction(item, action);
+      const next = applyChecklistAction(item, action, actorName());
       const acts: Activity[] = [];
       if (action.type === "approve" || action.type === "bypass") {
         acts.push(...dealActivities(s, dealId, action.type === "approve" ? `${item.title} approved` : `${item.title} marked not needed`, action.type === "bypass" ? action.reason : action.note));
       }
       return { ...s, deals: s.deals.map((d) => (d.id === dealId ? { ...d, checklist: d.checklist!.map((i) => (i.id === itemId ? next : i)) } : d)), activities: [...acts, ...s.activities] };
     });
+    return true;
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const setDealApprover = useCallback<DataContextValue["setDealApprover"]>((dealId, contactId, applyToAll) => {
+    setState((s) => ({
+      ...s,
+      deals: s.deals.map((d) =>
+        d.id === dealId
+          ? { ...d, dealApproverContactId: contactId, checklist: applyToAll ? d.checklist?.map((i) => (i.approverContactId ? { ...i, approverContactId: undefined } : i)) : d.checklist }
+          : d,
+      ),
+    }));
+  }, []);
+
+  const undoAutoAdvance = useCallback<DataContextValue["undoAutoAdvance"]>((dealId) => {
+    setState((s) => ({
+      ...s,
+      deals: s.deals.map((d) =>
+        d.id === dealId && d.lastAutoAdvance
+          ? { ...d, stage: d.lastAutoAdvance.from, status: d.lastAutoAdvance.fromStatus, skippedLoi: d.lastAutoAdvance.from === "high_level_review" || d.lastAutoAdvance.from === "loi_signed" ? false : d.skippedLoi, actualCloseDate: d.lastAutoAdvance.fromStatus === "closed" ? d.actualCloseDate : undefined, lastAutoAdvance: undefined }
+          : d,
+      ),
+      activities: [...dealActivities(s, dealId, "Automatic milestone move undone"), ...s.activities],
+    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const dismissAutoAdvance = useCallback<DataContextValue["dismissAutoAdvance"]>((dealId) => {
+    setState((s) => ({ ...s, deals: s.deals.map((d) => (d.id === dealId && d.lastAutoAdvance ? { ...d, lastAutoAdvance: { ...d.lastAutoAdvance, dismissed: true } } : d)) }));
   }, []);
 
   const setPhaseOverride = useCallback<DataContextValue["setPhaseOverride"]>((dealId, key, value) => {
@@ -657,8 +736,33 @@ export function DataProvider({ children }: { children: ReactNode }) {
   // System-driven checklist stages: whenever data changes, complete any auto stage whose condition is now met.
   useEffect(() => {
     const updates = state.deals.map((d) => [d.id, applyAutoRules(d, state)] as const).filter(([, c]) => c);
-    if (!updates.length) return;
-    setState((s) => ({ ...s, deals: s.deals.map((d) => { const u = updates.find(([id]) => id === d.id); return u ? { ...d, checklist: u[1]! } : d; }) }));
+    if (updates.length) {
+      setState((s) => ({ ...s, deals: s.deals.map((d) => { const u = updates.find(([id]) => id === d.id); return u ? { ...d, checklist: u[1]! } : d; }) }));
+      return;
+    }
+    // Milestone auto-advance: move deals forward as pipeline phases complete.
+    const moves = state.deals.map((d) => [d, pendingAutoAdvance(d)] as const).filter(([, m]) => m);
+    if (!moves.length) return;
+    setState((s) => {
+      let acts: Activity[] = [];
+      const deals = s.deals.map((d) => {
+        const m = moves.find(([x]) => x.id === d.id)?.[1];
+        if (!m) return d;
+        const closing = m.stage === "closed" || m.stage === "asset_management";
+        acts = [...acts, ...dealActivities(s, d.id, `${d.name} moved to ${DEAL_STAGE_LABEL[m.stage]} automatically`, m.reason)];
+        return {
+          ...d,
+          stage: m.stage,
+          status: closing ? ("closed" as const) : d.status,
+          actualCloseDate: closing ? (d.actualCloseDate ?? nowIso().slice(0, 10)) : d.actualCloseDate,
+          skippedLoi: d.skippedLoi || (m.stage === "psa_signed" && d.stage === "high_level_review"),
+          milestoneFloor: m.stage,
+          lastAutoAdvance: { from: d.stage, fromStatus: d.status, to: m.stage, at: nowIso(), reason: m.reason },
+        };
+      });
+      return { ...s, deals, activities: [...acts, ...s.activities] };
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
   const removeDealBuilding = useCallback<DataContextValue["removeDealBuilding"]>((relId) => {
@@ -711,10 +815,15 @@ export function DataProvider({ children }: { children: ReactNode }) {
       updateDealReport,
       checklistAction,
       setPhaseOverride,
+      setDealApprover,
+      undoAutoAdvance,
+      dismissAutoAdvance,
+      actingAs: actorRef.current,
+      setActingAs,
       removeDealBuilding,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [state],
+    [state, actingAs],
   );
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;

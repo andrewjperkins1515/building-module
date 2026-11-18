@@ -290,6 +290,14 @@ export interface Deal {
   checklist?: DealChecklistItem[];
   /** Manual overrides for pipeline-phase checklist items (key → done). */
   phaseOverrides?: Record<string, boolean>;
+  /** Default approver for every checklist item; items may override with their own approver. */
+  dealApproverContactId?: ID;
+  /** Move the deal's milestone forward automatically as pipeline phases complete (default on). */
+  autoAdvance?: boolean;
+  /** Highest milestone already reached/considered — auto-advance only moves beyond it. */
+  milestoneFloor?: DealStage;
+  /** Last automatic milestone move, shown with an Undo. */
+  lastAutoAdvance?: { from: DealStage; fromStatus: DealStatus; to: DealStage; at: ISODate; reason: string; dismissed?: boolean };
 }
 
 // ---------------------------------------------------------------------------
@@ -345,6 +353,7 @@ export interface DealChecklistItem {
   title: string;
   stages: ChecklistStage[];
   responsibleContactId?: ID;
+  /** Item-specific approver. When empty, the deal approver applies. */
   approverContactId?: ID;
   requiresResponsible: boolean;
   requiresDocument: boolean;

@@ -8,7 +8,7 @@
  *  - A stage with sub-items completes once every sub-item is done or marked N/A.
  *  - Deal progress = average progress of all items that are not bypassed ("not needed for this deal").
  */
-import type { AppState, ChecklistAutoRule, ChecklistDoc, ChecklistStage, Deal, DealChecklistItem } from "@/types";
+import type { AppState, ChecklistAutoRule, ChecklistDoc, ChecklistStage, Deal, DealChecklistItem, DealStage } from "@/types";
 import { CURRENT_USER } from "@/lib/labels";
 import { nowIso, uid } from "@/lib/utils";
 
@@ -190,7 +190,8 @@ export function buildChecklist(deal: Deal, presets: Record<string, ItemPreset> =
     const p = presets[t.key] ?? {};
     const doneStages = p.complete ? t.stages.length : Math.min(p.stages ?? 0, t.stages.length);
     const responsible = roleContact(deal, t.responsibleRole) ?? lead;
-    const approver = roleContact(deal, t.approverRole ?? "buyer:team_lead") ?? lead;
+    // Items without a specific approver role use the deal approver (set on the deal).
+    const approver = t.approverRole ? roleContact(deal, t.approverRole) : undefined;
     const approverName = "Deal team";
     const stages: ChecklistStage[] = t.stages.map((s, si) => {
       const stageDone = si < doneStages && !(s.completedByApproval && !p.complete);
@@ -519,4 +520,63 @@ export function phaseItemDone(deal: Deal, it: PhaseItemDef) {
   const o = deal.phaseOverrides?.[it.key];
   if (o !== undefined) return { done: o, manual: true };
   return { done: it.rule ? it.rule(deal) : false, manual: !it.rule };
+}
+
+
+// ---------------------------------------------------------------------------
+// Approvers
+// ---------------------------------------------------------------------------
+
+/** The approver for an item: its own approver, otherwise the deal approver. */
+export function effectiveApprover(item: DealChecklistItem, deal: Deal) {
+  return item.approverContactId ?? deal.dealApproverContactId;
+}
+
+export function canApprove(item: DealChecklistItem, deal: Deal, actorContactId?: string) {
+  const a = effectiveApprover(item, deal);
+  return !!a && a === actorContactId;
+}
+
+// ---------------------------------------------------------------------------
+// Milestone auto-advance (phases → milestones)
+// ---------------------------------------------------------------------------
+
+export const STAGE_ORDER: DealStage[] = ["high_level_review", "loi_signed", "psa_signed", "closed", "asset_management"];
+const PHASE_TARGET: Record<string, DealStage> = { sourced: "high_level_review", boe: "loi_signed", full_dd: "psa_signed", pre_closing: "closed" };
+
+export function phaseComplete(deal: Deal, phaseKey: string) {
+  const ph = PIPELINE_PHASES.find((p) => p.key === phaseKey);
+  return !!ph && ph.items.every((it) => phaseItemDone(deal, it).done);
+}
+
+/** Furthest milestone the completed phases support, or null. */
+export function phaseTargetStage(deal: Deal): { stage: DealStage; reason: string } | null {
+  let best: { stage: DealStage; reason: string } | null = null;
+  for (const ph of PIPELINE_PHASES) {
+    if (phaseComplete(deal, ph.key)) best = { stage: PHASE_TARGET[ph.key], reason: `${ph.title} complete` };
+  }
+  const post = deal.checklist?.find((i) => i.key === "post_closing");
+  if (post && (post.bypass || itemState(post) === "complete") && (deal.stage === "closed" || best?.stage === "closed")) {
+    best = { stage: "asset_management", reason: "Post Closing Follow Up complete" };
+  }
+  return best;
+}
+
+const idx = (s?: DealStage) => (s ? STAGE_ORDER.indexOf(s) : -1);
+
+/** The milestone move auto-advance would make now, or null. */
+export function pendingAutoAdvance(deal: Deal): { stage: DealStage; reason: string } | null {
+  if (deal.autoAdvance === false) return null;
+  if (deal.status === "dead" || deal.status === "abandoned") return null;
+  if (deal.code.startsWith("MKT")) return null;
+  const t = phaseTargetStage(deal);
+  if (!t) return null;
+  if (idx(t.stage) <= Math.max(idx(deal.stage), idx(deal.milestoneFloor))) return null;
+  return t;
+}
+
+/** Floor to record when a stage is set (manually or by seed) so existing completion doesn't re-trigger. */
+export function floorFor(deal: Deal, stage: DealStage): DealStage {
+  const t = phaseTargetStage({ ...deal, stage })?.stage;
+  return t && idx(t) > idx(stage) ? t : stage;
 }
