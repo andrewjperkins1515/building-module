@@ -2,11 +2,11 @@ import { ArrowRight, Check, CircleSlash } from "lucide-react";
 import type { Deal } from "@/types";
 import { Progress } from "@/components/ui/primitives";
 import { DEAL_STAGES, DEAL_STAGE_LABEL } from "@/lib/labels";
-import { countLeaves, overallProgress } from "@/lib/progress";
+import { checklistCounts, checklistProgress } from "@/lib/checklist";
 import { cn } from "@/lib/utils";
 
 export function progressPct(deal: Deal) {
-  return Math.round(overallProgress(deal.progress) * 100);
+  return Math.round(checklistProgress(deal.checklist) * 100);
 }
 
 /** Compact stage tracker (High-Level Review → LOI → PSA → Closed). */
@@ -50,7 +50,9 @@ export function StageTracker({ deal, className }: { deal: Deal; className?: stri
 /** Deal progress bar card — links to the Progress tab. */
 export function DealProgressCard({ deal, onOpen }: { deal: Deal; onOpen: () => void }) {
   const pct = progressPct(deal);
-  const { done, total } = countLeaves(deal.progress);
+  const counts = checklistCounts(deal.checklist);
+  const total = (deal.checklist?.length ?? 0) - counts.bypassed;
+  const done = counts.complete;
   return (
     <button onClick={onOpen} className="group block w-full rounded-lg border border-border bg-background p-4 text-left shadow-card transition-colors hover:border-border-strong">
       <div className="flex flex-wrap items-end justify-between gap-2">
@@ -59,7 +61,7 @@ export function DealProgressCard({ deal, onOpen }: { deal: Deal; onOpen: () => v
           <div className="mt-0.5 flex items-baseline gap-2">
             <span className="tabular text-[24px] font-semibold tracking-[-0.02em] text-ink">{pct}%</span>
             <span className="text-[12.5px] text-ink-3">
-              {total ? `${done} of ${total} checklist items complete` : "No checklist yet"}
+              {total ? `${done} of ${total} checklist items complete${counts.awaiting_approval ? ` · ${counts.awaiting_approval} awaiting approval` : ""}` : "No checklist"}
             </span>
           </div>
         </div>

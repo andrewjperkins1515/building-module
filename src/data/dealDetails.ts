@@ -2,43 +2,47 @@
  * Deal record overview data (fictional): classification, deal teams, vendors,
  * third-party reports and a provisional progress checklist.
  */
-import type { AssetClass, Building, BuyerSellerRole, Deal, DealBuildingRelationship, DealContactAssignment, ProgressItem, ReportStatus, ThirdPartyReport, VendorRole } from "@/types";
+import type { AssetClass, Building, BuyerSellerRole, Deal, DealBuildingRelationship, DealContactAssignment, ReportStatus, ThirdPartyReport, VendorRole } from "@/types";
 import { offsetDate } from "@/lib/utils";
+import { buildChecklist, CHECKLIST_TEMPLATE, type ItemPreset } from "@/lib/checklist";
 
-/**
- * STARTER checklist — placeholder until the detailed Progress breakdown is provided.
- * Structure: item → sub-items. Progress rolls up sub-items → item → deal.
- */
-export const STARTER_CHECKLIST: { key: string; title: string; children: string[] }[] = [
-  { key: "underwriting", title: "Initial underwriting", children: ["Financials received (T-12, census)", "CMS & survey history reviewed", "Valuation model complete", "Investment committee approval to pursue"] },
-  { key: "loi", title: "Letter of intent", children: ["LOI drafted", "LOI negotiated", "LOI executed"] },
-  { key: "psa", title: "Purchase & sale agreement", children: ["PSA draft received", "PSA negotiated", "PSA executed", "Earnest money deposited"] },
-  { key: "diligence", title: "Due diligence", children: ["Third-party reports ordered", "Financial diligence complete", "Legal & title diligence complete", "Site visits complete"] },
-  { key: "financing", title: "Financing", children: ["Term sheet executed", "Credit approval", "Loan documents finalized"] },
-  { key: "licensure", title: "Licensure / CHOW", children: ["CHOW application filed", "Licensure approval received"] },
-  { key: "closing", title: "Closing", children: ["Closing statement approved", "Funds wired", "Closing documents recorded"] },
-];
+const C: ItemPreset = { complete: true };
+const allComplete = (except: Record<string, ItemPreset> = {}) => Object.fromEntries(CHECKLIST_TEMPLATE.map((t) => [t.key, except[t.key] ?? C]));
 
-/** How many sub-items of each item are complete at a given stage. */
-const DONE_BY_STAGE: Record<Deal["stage"], Record<string, number>> = {
-  high_level_review: { underwriting: 2 },
-  loi_signed: { underwriting: 4, loi: 3, diligence: 1 },
-  psa_signed: { underwriting: 4, loi: 3, psa: 4, diligence: 3, financing: 1, licensure: 1 },
-  closed: { underwriting: 4, loi: 3, psa: 4, diligence: 4, financing: 3, licensure: 2, closing: 3 },
-  asset_management: { underwriting: 4, loi: 3, psa: 4, diligence: 4, financing: 3, licensure: 2, closing: 3 },
+/** How far each checklist item has progressed at each deal milestone (seed data). */
+export const CHECKLIST_PRESETS: Record<Deal["stage"], Record<string, ItemPreset>> = {
+  high_level_review: { nda: { stages: 2 }, model: { stages: 1 }, capital: { subs: 1 }, internal_approvals: { subs: 1 } },
+  loi_signed: { deal_sourced: C, nda: C, dd_requests: { stages: 1 }, capital: { stages: 1 }, model: { stages: 2 }, lease_term_sheet: { stages: 2 }, psa_loi: { stages: 2 }, internal_approvals: { subs: 2 }, third_party: { stages: 1 }, investment_summary: { stages: 3 } },
+  psa_signed: {
+    deal_sourced: C,
+    nda: C,
+    dd_requests: { stages: 3, submitted: true },
+    capital: { stages: 3, submitted: true },
+    model: { stages: 3 },
+    lease_term_sheet: C,
+    psa_loi: C,
+    internal_approvals: C,
+    title_escrow: { stages: 2 },
+    third_party: { stages: 3 },
+    investment_summary: C,
+    acquisition_docs: C,
+    lease_guaranty: { stages: 4 },
+    guarantor: { subs: 1 },
+    insurance: { subs: 2 },
+    accounting: { subs: 1 },
+  },
+  closed: allComplete({ post_closing: { subs: 1 }, handoff_am: {} }),
+  asset_management: allComplete(),
 };
 
-export function starterProgress(dealId: string, stage: Deal["stage"], skippedLoi = false, blank = false): ProgressItem[] {
-  const done = blank ? {} : DONE_BY_STAGE[stage];
-  return STARTER_CHECKLIST.map((it) => ({
-    id: `${dealId}_${it.key}`,
-    title: it.title,
-    children: it.children.map((title, i) => {
-      const isDone = i < (done[it.key] ?? 0) || (skippedLoi && it.key === "loi" && stage !== "high_level_review");
-      return { id: `${dealId}_${it.key}_${i}`, title: skippedLoi && it.key === "loi" && i === 0 ? `${title} (skipped — went direct to PSA)` : title, done: isDone, completedAt: isDone ? offsetDate(-(30 - i * 3)) : undefined };
-    }),
-  }));
-}
+/** Deal-specific adjustments, e.g. workflows a deal doesn't need. */
+const CHECKLIST_OVERRIDES: Record<string, Record<string, ItemPreset>> = {
+  deal_sunbelt: {
+    psa_loi: { bypass: "Went directly to PSA after the broker's best-and-final round — no LOI." },
+    lease_term_sheet: { bypass: "Existing operator (Ashford Senior Living) stays in place — no new lease." },
+    lease_guaranty: { bypass: "No new lease or guaranty — operator unchanged." },
+  },
+};
 
 const NAME_TO_CONTACT: Record<string, string> = {
   "Jordan Ellis": "ct_jellis",
@@ -167,6 +171,7 @@ export function dealDetails(deal: Deal, rels: DealBuildingRelationship[], buildi
     buyerDistribution: deal.id === "deal_greatlakes" ? "ic@odacquisitions.example; atlas-closing@atlasbridge.example; ashah@ridgelinehp.example" : "",
     sellerDistribution: deal.id === "deal_greatlakes" ? "dealteam@meridianhcp.example; hwalsh@calloway.example" : "",
     reports,
-    progress: isMarketComp ? [] : starterProgress(deal.id, stage, deal.skippedLoi),
+    progress: [],
+    checklist: isMarketComp ? [] : buildChecklist({ ...deal, contacts }, { ...CHECKLIST_PRESETS[stage], ...CHECKLIST_OVERRIDES[deal.id] }, deal.actualCloseDate ? `${deal.actualCloseDate}T17:00:00.000Z` : offsetDate(-3) + "T15:00:00.000Z"),
   };
 }

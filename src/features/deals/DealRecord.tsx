@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowRightLeft, CircleSlash, Flag, LayoutDashboard, ListChecks, Pencil, RotateCcw, Trophy } from "lucide-react";
+import { ArrowRightLeft, CircleSlash, FileText, Flag, LayoutDashboard, ListChecks, Pencil, RotateCcw, Trophy } from "lucide-react";
 import type { DealStage } from "@/types";
 import { useBreadcrumbs } from "@/components/layout/breadcrumbs";
 import { useData } from "@/store/DataProvider";
@@ -15,6 +15,7 @@ import { ASSET_CLASS_LABEL, DEAL_KIND_LABEL, DEAL_STAGES, DEAL_STAGE_LABEL } fro
 import { todayIso } from "@/lib/utils";
 import { DealOverview } from "./DealOverview";
 import { ProgressTab } from "./ProgressTab";
+import { DealDocumentsTab } from "./DealDocumentsTab";
 import { EditDealSheet } from "./EditDealSheet";
 import { progressPct } from "./DealProgress";
 
@@ -24,17 +25,18 @@ export function DealRecord() {
   const toast = useToast();
   const { state, updateDeal } = useData();
   const deal = state.deals.find((d) => d.id === dealId);
-  const activeTab = tab === "progress" ? "progress" : "overview";
+  const activeTab = tab === "progress" || tab === "documents" ? tab : "overview";
   const [editOpen, setEditOpen] = useState(false);
   const [deadOpen, setDeadOpen] = useState<null | "dead" | "abandoned">(null);
   const [reason, setReason] = useState("");
 
   useBreadcrumbs(
-    deal ? [{ label: "Deals", to: "/deals" }, { label: deal.name, to: `/deals/${deal.id}` }, ...(activeTab === "progress" ? [{ label: "Progress" }] : [])] : [{ label: "Deals", to: "/deals" }, { label: "Not found" }],
+    deal ? [{ label: "Deals", to: "/deals" }, { label: deal.name, to: `/deals/${deal.id}` }, ...(activeTab !== "overview" ? [{ label: activeTab === "progress" ? "Progress" : "Documents" }] : [])] : [{ label: "Deals", to: "/deals" }, { label: "Not found" }],
   );
   if (!deal) return <NotFound title="Deal not found" description="This deal may have been removed, or the link is incorrect." />;
 
   const inactive = deal.status === "dead" || deal.status === "abandoned";
+  const filed = (deal.checklist ?? []).reduce((a, i) => a + i.documents.filter((d) => d.status === "approved").length, 0);
   const goTab = (t: string) => navigate(`/deals/${deal.id}${t === "overview" ? "" : `/${t}`}`);
   const moveTo = (stage: DealStage) => {
     if (stage === "closed") {
@@ -122,11 +124,17 @@ export function DealRecord() {
           </TabsTrigger>
           <TabsTrigger value="progress">
             <ListChecks className="size-3.5 opacity-70" /> Progress
-            {(deal.progress?.length ?? 0) > 0 && <span className="tabular ml-0.5 rounded-full bg-subtle px-1.5 text-[10.5px] font-medium text-ink-3">{progressPct(deal)}%</span>}
+            {(deal.checklist?.length ?? 0) > 0 && <span className="tabular ml-0.5 rounded-full bg-subtle px-1.5 text-[10.5px] font-medium text-ink-3">{progressPct(deal)}%</span>}
+          </TabsTrigger>
+          <TabsTrigger value="documents">
+            <FileText className="size-3.5 opacity-70" /> Documents
+            {filed > 0 && <span className="tabular ml-0.5 rounded-full bg-subtle px-1.5 text-[10.5px] font-medium text-ink-3">{filed}</span>}
           </TabsTrigger>
         </TabsList>
       </Tabs>
-      <div className="mt-5">{activeTab === "progress" ? <ProgressTab deal={deal} /> : <DealOverview deal={deal} onEdit={() => setEditOpen(true)} onProgress={() => goTab("progress")} />}</div>
+      <div className="mt-5">
+        {activeTab === "progress" ? <ProgressTab deal={deal} /> : activeTab === "documents" ? <DealDocumentsTab deal={deal} /> : <DealOverview deal={deal} onEdit={() => setEditOpen(true)} onProgress={() => goTab("progress")} />}
+      </div>
 
       <EditDealSheet deal={deal} open={editOpen} onOpenChange={setEditOpen} />
       <Dialog open={!!deadOpen} onOpenChange={(o) => !o && setDeadOpen(null)}>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Briefcase } from "lucide-react";
-import type { AssetClass, DealKind, DealStage } from "@/types";
+import type { AssetClass, Deal, DealKind, DealStage } from "@/types";
 import { Dialog, DialogBody, DialogContent, DialogFooter, DialogHeader } from "@/components/ui/overlays";
 import { Button } from "@/components/ui/button";
 import { Checkbox, Input, Label } from "@/components/ui/primitives";
@@ -9,7 +9,8 @@ import { useData } from "@/store/DataProvider";
 import { ASSET_CLASSES, ASSET_CLASS_LABEL, CURRENT_USER, DEAL_KINDS, DEAL_KIND_LABEL, DEAL_STAGE_LABEL } from "@/lib/labels";
 import { useToast } from "@/components/ui/toast";
 import { uid } from "@/lib/utils";
-import { assetClassFor, starterProgress } from "@/data/dealDetails";
+import { assetClassFor } from "@/data/dealDetails";
+import { buildChecklist } from "@/lib/checklist";
 import { BuildingMultiSelect } from "./AddBuildingsDialog";
 import { SearchPicker, useContactItems, useOrgItems } from "./SearchPicker";
 
@@ -63,8 +64,12 @@ export function NewDealDialog({ open, onOpenChange, onCreated }: { open: boolean
     }
     const blds = state.buildings.filter((b) => buildingIds.includes(b.id));
     const leadContact = state.contacts.find((c) => c.id === lead);
+    const newId = uid("deal");
+    const contacts: Deal["contacts"] = lead ? [{ side: "buyer", role: "team_lead", contactId: lead }] : [];
+    const draft = { id: newId, code: "", contacts } as Deal;
     const id = addDeal(
       {
+        id: newId,
         name: name.trim(),
         type: buildingIds.length > 1 ? "portfolio" : "single_asset",
         stage,
@@ -79,9 +84,10 @@ export function NewDealDialog({ open, onOpenChange, onCreated }: { open: boolean
         summary: "",
         dealKind: kind,
         assetClass: asset === AUTO ? assetClassFor(blds) : (asset as AssetClass),
-        contacts: lead ? [{ side: "buyer", role: "team_lead", contactId: lead }] : [],
+        contacts,
         reports: [],
-        progress: starterProgress(uid("p"), stage, stage === "psa_signed" && skippedLoi, stage === "high_level_review"),
+        progress: [],
+        checklist: buildChecklist(draft, skippedLoi && stage === "psa_signed" ? { psa_loi: { bypass: "Went directly to PSA — no LOI." } } : {}),
         buyerDistribution: "",
         sellerDistribution: "",
       },

@@ -202,7 +202,7 @@ export function DealsDirectory() {
                           <span className="tabular font-medium text-ink">{fmtCurrency(deal.askingPrice ?? deal.purchasePrice, { compact: true })}</span>
                           {v.pricePerBed && <span className="tabular text-ink-4">{fmtCurrency(Math.round(v.pricePerBed / 1000) * 1000, { compact: true })}/bed</span>}
                         </div>
-                        {(deal.progress?.length ?? 0) > 0 && (
+                        {(deal.checklist?.length ?? 0) > 0 && (
                           <div className="mt-2.5 flex items-center gap-2">
                             <Progress value={pct} className="h-1.5" indicatorClassName={pct === 100 ? "bg-success" : undefined} />
                             <span className="tabular w-8 text-right text-[11px] text-ink-3">{pct}%</span>
@@ -272,7 +272,7 @@ export function DealsDirectory() {
                     <td className="tabular px-3 text-right">{v.pricePerBed ? fmtCurrency(Math.round(v.pricePerBed / 1000) * 1000, { compact: true }) : "—"}</td>
                     <td className="whitespace-nowrap px-3 text-ink-2">{fmtDate(deal.actualCloseDate ?? deal.projectedCloseDate)}</td>
                     <td className="pl-3 pr-4">
-                      {(deal.progress?.length ?? 0) > 0 ? (
+                      {(deal.checklist?.length ?? 0) > 0 ? (
                         <div className="flex w-32 items-center gap-2">
                           <Progress value={pct} className="h-1.5" indicatorClassName={pct === 100 ? "bg-success" : undefined} />
                           <span className="tabular w-8 text-right text-[11.5px] text-ink-3">{pct}%</span>

@@ -286,6 +286,74 @@ export interface Deal {
   sellerDistribution?: string;
   reports?: ThirdPartyReport[];
   progress?: ProgressItem[];
+  /** Deal Progress tab: structured checklist with stages, sign-off and documents. */
+  checklist?: DealChecklistItem[];
+  /** Manual overrides for pipeline-phase checklist items (key → done). */
+  phaseOverrides?: Record<string, boolean>;
+}
+
+// ---------------------------------------------------------------------------
+// Deal Progress checklist
+// ---------------------------------------------------------------------------
+
+/** System conditions that complete a stage automatically. */
+export type ChecklistAutoRule = "deal_created" | "has_buildings" | "has_dataroom" | "vendors_engaged" | "reports_drafts" | "reports_finals" | "transitioned_to_am";
+
+export interface ChecklistSubItem {
+  id: ID;
+  title: string;
+  status: "todo" | "done" | "na";
+}
+
+export interface ChecklistStage {
+  id: ID;
+  title: string;
+  status: "todo" | "done" | "skipped";
+  auto?: ChecklistAutoRule;
+  subItems?: ChecklistSubItem[];
+  /** Completed by the approver's sign-off (e.g. PSA LOI "Completed (Moved to file system)"). */
+  completedByApproval?: boolean;
+  completedAt?: ISODate;
+  completedBy?: string;
+  skipReason?: string;
+}
+
+export interface ChecklistDoc {
+  id: ID;
+  name: string;
+  size: number;
+  mimeType: string;
+  uploadedAt: ISODate;
+  uploadedBy: string;
+  status: "submitted" | "approved" | "rejected";
+  reviewedBy?: string;
+  reviewedAt?: ISODate;
+  reviewNote?: string;
+}
+
+export interface ChecklistEvent {
+  id: ID;
+  at: ISODate;
+  by: string;
+  text: string;
+  tone?: "default" | "success" | "warning" | "danger";
+}
+
+export interface DealChecklistItem {
+  id: ID;
+  key: string;
+  title: string;
+  stages: ChecklistStage[];
+  responsibleContactId?: ID;
+  approverContactId?: ID;
+  requiresResponsible: boolean;
+  requiresDocument: boolean;
+  approval: { status: "pending" | "approved"; by?: string; at?: ISODate; note?: string };
+  documentWaived?: { reason: string; by: string; at: ISODate };
+  documents: ChecklistDoc[];
+  /** Not needed for this deal — excluded from progress. */
+  bypass?: { reason: string; by: string; at: ISODate };
+  history: ChecklistEvent[];
 }
 
 export type DealKind = "acquisition" | "sale_leaseback" | "joint_venture" | "recapitalization" | "refinance" | "disposition";

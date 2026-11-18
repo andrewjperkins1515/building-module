@@ -20,7 +20,7 @@ import type {
 import { buildSeedState, STATE_VERSION } from "@/data/seed";
 import { defaultContactType, defaultSectors } from "@/data/contactDefaults";
 import { buildCommunications } from "@/data/communications";
-import { toggleProgress } from "@/lib/progress";
+import { applyAutoRules, applyChecklistAction, buildChecklist, type ChecklistAction } from "@/lib/checklist";
 import { CURRENT_USER, DOC_STATUS_LABEL } from "@/lib/labels";
 import { nowIso, uid } from "@/lib/utils";
 import { templateFor, BASELINE_DOCUMENTS } from "@/data/templates";
@@ -101,6 +101,21 @@ function migrate(input: AppState): AppState | null {
     // New final stage "Transitioned to Asset Management": the long-closed, operating Chestnut Hill deal is finished.
     s = { ...s, version: 8, deals: s.deals.map((d) => (d.id === "deal_keystone" && d.stage === "closed" && d.status === "closed" ? { ...d, stage: "asset_management" } : d)) };
   }
+  if (s.version === 8) {
+    // Deal Progress checklist: seeded deals get their checklist; user-created deals get a fresh one.
+    const seed = buildSeedState();
+    s = {
+      ...s,
+      version: 9,
+      deals: s.deals.map((d) => {
+        if (d.checklist?.length) return d;
+        const sd = seed.deals.find((x) => x.id === d.id);
+        const checklist = sd ? sd.checklist : d.code.startsWith("MKT") ? [] : buildChecklist(d);
+        const withList = { ...d, checklist };
+        return { ...withList, checklist: applyAutoRules(withList, s) ?? checklist };
+      }),
+    };
+  }
   return s.version === STATE_VERSION ? s : null;
 }
 
@@ -140,10 +155,11 @@ interface DataContextValue {
   addCommunication: (c: Omit<Communication, "id" | "threadId" | "source" | "loggedBy">) => void;
   // Deals
   updateDeal: (id: string, patch: Partial<Deal>, logTitle?: string) => void;
-  addDeal: (deal: Omit<Deal, "id" | "code" | "createdAt">, buildingIds: string[]) => string;
+  addDeal: (deal: Omit<Deal, "id" | "code" | "createdAt"> & { id?: string }, buildingIds: string[]) => string;
   setDealContact: (dealId: string, a: Omit<DealContactAssignment, "contactId"> & { contactId?: string }) => void;
   updateDealReport: (dealId: string, kind: ThirdPartyReport["kind"], patch: Partial<ThirdPartyReport>) => void;
-  toggleDealProgress: (dealId: string, itemId: string) => void;
+  checklistAction: (dealId: string, itemId: string, action: ChecklistAction) => void;
+  setPhaseOverride: (dealId: string, key: string, value?: boolean) => void;
   removeDealBuilding: (relId: string) => void;
 }
 
@@ -570,7 +586,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const addDeal = useCallback<DataContextValue["addDeal"]>((deal, buildingIds) => {
-    const id = uid("deal");
+    const id = deal.id ?? uid("deal");
     const cur = stateRef.current;
     const year = new Date().getFullYear();
     const n = cur.deals.filter((d) => d.code.startsWith(`OD-${year}-`)).map((d) => Number(d.code.split("-")[2]) || 0);
@@ -610,9 +626,40 @@ export function DataProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
-  const toggleDealProgress = useCallback<DataContextValue["toggleDealProgress"]>((dealId, itemId) => {
-    setState((s) => ({ ...s, deals: s.deals.map((d) => (d.id === dealId ? { ...d, progress: toggleProgress(d.progress ?? [], itemId) } : d)) }));
+  const checklistAction = useCallback<DataContextValue["checklistAction"]>((dealId, itemId, action) => {
+    setState((s) => {
+      const deal = s.deals.find((d) => d.id === dealId);
+      const item = deal?.checklist?.find((i) => i.id === itemId);
+      if (!deal || !item) return s;
+      const next = applyChecklistAction(item, action);
+      const acts: Activity[] = [];
+      if (action.type === "approve" || action.type === "bypass") {
+        acts.push(...dealActivities(s, dealId, action.type === "approve" ? `${item.title} approved` : `${item.title} marked not needed`, action.type === "bypass" ? action.reason : action.note));
+      }
+      return { ...s, deals: s.deals.map((d) => (d.id === dealId ? { ...d, checklist: d.checklist!.map((i) => (i.id === itemId ? next : i)) } : d)), activities: [...acts, ...s.activities] };
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const setPhaseOverride = useCallback<DataContextValue["setPhaseOverride"]>((dealId, key, value) => {
+    setState((s) => ({
+      ...s,
+      deals: s.deals.map((d) => {
+        if (d.id !== dealId) return d;
+        const o = { ...(d.phaseOverrides ?? {}) };
+        if (value === undefined) delete o[key];
+        else o[key] = value;
+        return { ...d, phaseOverrides: o };
+      }),
+    }));
+  }, []);
+
+  // System-driven checklist stages: whenever data changes, complete any auto stage whose condition is now met.
+  useEffect(() => {
+    const updates = state.deals.map((d) => [d.id, applyAutoRules(d, state)] as const).filter(([, c]) => c);
+    if (!updates.length) return;
+    setState((s) => ({ ...s, deals: s.deals.map((d) => { const u = updates.find(([id]) => id === d.id); return u ? { ...d, checklist: u[1]! } : d; }) }));
+  }, [state]);
 
   const removeDealBuilding = useCallback<DataContextValue["removeDealBuilding"]>((relId) => {
     setState((s) => {
@@ -662,7 +709,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
       addDeal,
       setDealContact,
       updateDealReport,
-      toggleDealProgress,
+      checklistAction,
+      setPhaseOverride,
       removeDealBuilding,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
