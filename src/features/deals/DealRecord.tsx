@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowRightLeft, CircleSlash, LayoutDashboard, ListChecks, Pencil, RotateCcw, Trophy } from "lucide-react";
+import { ArrowRightLeft, CircleSlash, Flag, LayoutDashboard, ListChecks, Pencil, RotateCcw, Trophy } from "lucide-react";
 import type { DealStage } from "@/types";
 import { useBreadcrumbs } from "@/components/layout/breadcrumbs";
 import { useData } from "@/store/DataProvider";
@@ -38,8 +38,11 @@ export function DealRecord() {
   const goTab = (t: string) => navigate(`/deals/${deal.id}${t === "overview" ? "" : `/${t}`}`);
   const moveTo = (stage: DealStage) => {
     if (stage === "closed") {
-      updateDeal(deal.id, { stage, status: "closed", actualCloseDate: todayIso() }, `${deal.name} closed`);
-      toast({ title: "Deal marked closed", description: "Moves to asset management." });
+      updateDeal(deal.id, { stage, status: "closed", actualCloseDate: deal.actualCloseDate ?? todayIso() }, `${deal.name} closed`);
+      toast({ title: "Deal closed", description: "Next step: transition to Asset Management." });
+    } else if (stage === "asset_management") {
+      updateDeal(deal.id, { stage, status: "closed", actualCloseDate: deal.actualCloseDate ?? todayIso() }, `${deal.name} transitioned to Asset Management`);
+      toast({ title: "Transitioned to Asset Management", description: "The deal is officially finished." });
     } else {
       updateDeal(deal.id, { stage, status: "active", skippedLoi: stage === "psa_signed" && DEAL_STAGES.indexOf(deal.stage) < 1 ? true : deal.skippedLoi }, `${deal.name} moved to ${DEAL_STAGE_LABEL[stage]}`);
       toast({ title: `Moved to ${DEAL_STAGE_LABEL[stage]}` });
@@ -82,7 +85,7 @@ export function DealRecord() {
               <DropdownMenuLabel>Move to stage</DropdownMenuLabel>
               {DEAL_STAGES.map((s) => (
                 <DropdownMenuItem key={s} disabled={s === deal.stage && deal.status !== "dead" && deal.status !== "abandoned"} onSelect={() => moveTo(s)}>
-                  {s === "closed" ? <Trophy /> : <span className="size-4" />}
+                  {s === "closed" ? <Trophy /> : s === "asset_management" ? <Flag /> : <span className="size-4" />}
                   {DEAL_STAGE_LABEL[s]}
                   {s === deal.stage && <span className="ml-auto text-[11px] text-ink-4">Current</span>}
                 </DropdownMenuItem>
@@ -91,7 +94,7 @@ export function DealRecord() {
               {inactive || deal.status === "closed" ? (
                 <DropdownMenuItem
                   onSelect={() => {
-                    updateDeal(deal.id, { status: "active", deadReason: undefined, actualCloseDate: undefined, stage: deal.stage === "closed" ? "psa_signed" : deal.stage }, `${deal.name} reopened`);
+                    updateDeal(deal.id, { status: "active", deadReason: undefined, actualCloseDate: undefined, stage: deal.stage === "closed" || deal.stage === "asset_management" ? "psa_signed" : deal.stage }, `${deal.name} reopened`);
                     toast({ title: "Deal reopened" });
                   }}
                 >

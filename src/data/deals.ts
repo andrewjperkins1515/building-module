@@ -82,7 +82,7 @@ export function buildDeals(): Deal[] {
       name: "Chestnut Hill Acquisition",
       code: "OD-2023-004",
       type: "single_asset",
-      stage: "closed",
+      stage: "asset_management",
       status: "closed",
       skippedLoi: false,
       sellerOrgId: "org_keystone",

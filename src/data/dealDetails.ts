@@ -25,6 +25,7 @@ const DONE_BY_STAGE: Record<Deal["stage"], Record<string, number>> = {
   loi_signed: { underwriting: 4, loi: 3, diligence: 1 },
   psa_signed: { underwriting: 4, loi: 3, psa: 4, diligence: 3, financing: 1, licensure: 1 },
   closed: { underwriting: 4, loi: 3, psa: 4, diligence: 4, financing: 3, licensure: 2, closing: 3 },
+  asset_management: { underwriting: 4, loi: 3, psa: 4, diligence: 4, financing: 3, licensure: 2, closing: 3 },
 };
 
 export function starterProgress(dealId: string, stage: Deal["stage"], skippedLoi = false, blank = false): ProgressItem[] {
@@ -100,6 +101,7 @@ const REPORT_PLAN: Record<Deal["stage"], Partial<Record<VendorRole, ReportStatus
   loi_signed: { environmental: "ordered", property_condition: "ordered", appraisal: "not_ordered" },
   psa_signed: { survey: "final_received", title: "final_received", zoning: "draft_received", environmental: "final_received", property_condition: "draft_received", appraisal: "in_progress", reimbursement: "ordered", operations: "not_ordered" },
   closed: { survey: "final_received", title: "final_received", zoning: "final_received", environmental: "final_received", property_condition: "final_received", appraisal: "final_received", reimbursement: "final_received", operations: "waived" },
+  asset_management: { survey: "final_received", title: "final_received", zoning: "final_received", environmental: "final_received", property_condition: "final_received", appraisal: "final_received", reimbursement: "final_received", operations: "waived" },
 };
 
 export function assetClassFor(buildings: Building[]): AssetClass | undefined {
@@ -115,7 +117,8 @@ export function dealDetails(deal: Deal, rels: DealBuildingRelationship[], buildi
   const isMarketComp = deal.code.startsWith("MKT");
   const dealBuildings = rels.filter((r) => r.dealId === deal.id).map((r) => buildings.find((b) => b.id === r.buildingId)).filter((b): b is Building => !!b);
   const stage = deal.stage;
-  const reached = (s: Deal["stage"]) => ["high_level_review", "loi_signed", "psa_signed", "closed"].indexOf(stage) >= ["high_level_review", "loi_signed", "psa_signed", "closed"].indexOf(s);
+  const order: Deal["stage"][] = ["high_level_review", "loi_signed", "psa_signed", "closed", "asset_management"];
+  const reached = (s: Deal["stage"]) => order.indexOf(stage) >= order.indexOf(s);
   const dataRoomUrl = isMarketComp || stage === "high_level_review" ? undefined : `https://odacquisitions.sharepoint.example/sites/deals/${deal.code}`;
 
   const contacts: DealContactAssignment[] = [];

@@ -238,7 +238,8 @@ export interface BuildingRelationship {
 // Deals
 // ---------------------------------------------------------------------------
 
-export type DealStage = "high_level_review" | "loi_signed" | "psa_signed" | "closed";
+/** "closed" = transaction closed; "asset_management" = transitioned to Asset Management, deal officially finished. */
+export type DealStage = "high_level_review" | "loi_signed" | "psa_signed" | "closed" | "asset_management";
 export type DealStatus = "active" | "closed" | "dead" | "abandoned";
 export type DealType = "single_asset" | "portfolio";
 

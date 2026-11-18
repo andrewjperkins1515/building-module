@@ -97,6 +97,10 @@ function migrate(input: AppState): AppState | null {
       communications: [...s.communications, ...seed.communications.filter((m) => m.contactIds.some((id) => newContactIds.has(id)))],
     };
   }
+  if (s.version === 7) {
+    // New final stage "Transitioned to Asset Management": the long-closed, operating Chestnut Hill deal is finished.
+    s = { ...s, version: 8, deals: s.deals.map((d) => (d.id === "deal_keystone" && d.stage === "closed" && d.status === "closed" ? { ...d, stage: "asset_management" } : d)) };
+  }
   return s.version === STATE_VERSION ? s : null;
 }
 

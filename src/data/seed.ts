@@ -22,7 +22,7 @@ import { BASELINE_DOCUMENTS, templateFor } from "./templates";
 import { buildCommunications } from "./communications";
 import { dealDetails } from "./dealDetails";
 
-export const STATE_VERSION = 7;
+export const STATE_VERSION = 8;
 
 const orgName = (id: string) => organizations.find((o) => o.id === id)?.name ?? "";
 const slug = (s: string) => s.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");

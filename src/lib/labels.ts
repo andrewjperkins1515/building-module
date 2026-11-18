@@ -103,13 +103,14 @@ export const RELATIONSHIP_ROLE_LABEL: Record<BuildingRelationshipRole, string> =
   other: "Other",
 };
 
-export const DEAL_STAGES: DealStage[] = ["high_level_review", "loi_signed", "psa_signed", "closed"];
+export const DEAL_STAGES: DealStage[] = ["high_level_review", "loi_signed", "psa_signed", "closed", "asset_management"];
 
 export const DEAL_STAGE_LABEL: Record<DealStage, string> = {
   high_level_review: "High-Level Review",
   loi_signed: "LOI Signed",
   psa_signed: "PSA Signed",
-  closed: "Closed / Asset Mgmt",
+  closed: "Deal Closed",
+  asset_management: "Transitioned to Asset Management",
 };
 
 export const DEAL_STATUS_LABEL: Record<DealStatus, string> = {

@@ -170,7 +170,7 @@ export function DealsDirectory() {
         {filtered.length === 0 ? (
           <EmptyState icon={SearchX} title="No deals match" description="Adjust the filters, or start a new deal." action={<Button variant="accent" onClick={() => setNewOpen(true)}><Plus /> New Deal</Button>} />
         ) : view === "board" ? (
-          <div className="scrollbar-thin grid auto-cols-[minmax(270px,1fr)] grid-flow-col gap-3 overflow-x-auto p-3">
+          <div className="scrollbar-thin grid auto-cols-[minmax(220px,1fr)] grid-flow-col gap-3 overflow-x-auto p-3">
             {DEAL_STAGES.map((stage: DealStage) => {
               const col = filtered.filter((r) => r.deal.stage === stage);
               return (

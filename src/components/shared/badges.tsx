@@ -93,7 +93,7 @@ export function DocStatusBadge({ status, className }: { status: DocumentStatus; 
 
 export function DealStageBadge({ stage, status }: { stage: DealStage; status: DealStatus }) {
   if (status === "dead" || status === "abandoned") return <Badge tone="neutral" className="text-ink-3 line-through decoration-ink-4/60">{DEAL_STAGE_LABEL[stage]}</Badge>;
-  const tone: Record<DealStage, BadgeTone> = { high_level_review: "neutral", loi_signed: "info", psa_signed: "accent", closed: "success" };
+  const tone: Record<DealStage, BadgeTone> = { high_level_review: "neutral", loi_signed: "info", psa_signed: "accent", closed: "success", asset_management: "dark" };
   return <Badge tone={tone[stage]}>{DEAL_STAGE_LABEL[stage]}</Badge>;
 }
 
