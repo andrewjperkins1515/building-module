@@ -1,0 +1,702 @@
+[
+  {
+    "acuityFocus": [
+      "Skilled Nursing",
+      "Assisted Living"
+    ],
+    "regionalFocus": [
+      "Midwest"
+    ],
+    "stateFocus": [
+      "MI",
+      "OH",
+      "IN",
+      "IL"
+    ],
+    "tags": [
+      "Seller",
+      "Repeat counterparty"
+    ],
+    "id": "org_meridian",
+    "name": "Meridian Healthcare Properties",
+    "type": "owner",
+    "hqCity": "Chicago",
+    "hqState": "IL",
+    "website": "meridianhcp.example",
+    "description": "Private healthcare real estate owner with a Midwest SNF concentration.",
+    "companyType": "private",
+    "parentOrgId": "org_meridian_parent",
+    "officeAddress": {
+      "street": "225 W Wacker Drive",
+      "street2": "Suite 1800",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60606"
+    },
+    "primaryContactId": "ct_rcole"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing",
+      "Assisted Living",
+      "Memory Care"
+    ],
+    "regionalFocus": [
+      "Northeast",
+      "Mid-Atlantic"
+    ],
+    "stateFocus": [
+      "PA",
+      "NJ",
+      "NY",
+      "MD"
+    ],
+    "tags": [
+      "Former owner"
+    ],
+    "id": "org_keystone",
+    "name": "Keystone Senior Realty Trust",
+    "type": "owner",
+    "hqCity": "Philadelphia",
+    "hqState": "PA",
+    "website": "keystonesrt.example",
+    "description": "Non-traded REIT focused on post-acute and senior housing.",
+    "companyType": "reit",
+    "officeAddress": {
+      "street": "1735 Market Street",
+      "street2": "Suite 2600",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19103"
+    },
+    "primaryContactId": "ct_ewright"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing"
+    ],
+    "regionalFocus": [
+      "Southeast"
+    ],
+    "stateFocus": [
+      "FL",
+      "GA"
+    ],
+    "tags": [
+      "Family office",
+      "Off-market"
+    ],
+    "id": "org_harborview",
+    "name": "Harborview Capital Partners",
+    "type": "owner",
+    "hqCity": "Tampa",
+    "hqState": "FL",
+    "description": "Family office investing in Southeast healthcare real estate.",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "100 N Tampa Street",
+      "street2": "Suite 2400",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33602"
+    },
+    "primaryContactId": "ct_otaylor"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing"
+    ],
+    "regionalFocus": [
+      "Southeast",
+      "Midwest"
+    ],
+    "stateFocus": [
+      "KY",
+      "TN"
+    ],
+    "tags": [
+      "Owner-operator"
+    ],
+    "id": "org_bluegrass_props",
+    "name": "Bluegrass Care Properties LLC",
+    "type": "owner",
+    "hqCity": "Louisville",
+    "hqState": "KY",
+    "description": "Regional owner-operator real estate entity.",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "400 W Market Street",
+      "street2": "Suite 1200",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40202"
+    },
+    "primaryContactId": "ct_mwebb"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing"
+    ],
+    "regionalFocus": [
+      "Midwest",
+      "Southeast"
+    ],
+    "stateFocus": [
+      "OH",
+      "PA",
+      "NC"
+    ],
+    "tags": [
+      "Re-engaged"
+    ],
+    "id": "org_tricounty",
+    "name": "Tri-County Healthcare Holdings",
+    "type": "owner",
+    "hqCity": "Columbus",
+    "hqState": "OH",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "41 S High Street",
+      "street2": "Suite 2100",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43215"
+    },
+    "primaryContactId": "ct_dross"
+  },
+  {
+    "acuityFocus": [
+      "Assisted Living",
+      "Memory Care"
+    ],
+    "regionalFocus": [
+      "Southwest"
+    ],
+    "stateFocus": [
+      "TX",
+      "OK"
+    ],
+    "tags": [
+      "Fund exit"
+    ],
+    "id": "org_sunbelt",
+    "name": "Sunbelt Senior Housing Fund II",
+    "type": "owner",
+    "hqCity": "Dallas",
+    "hqState": "TX",
+    "description": "Closed-end fund; seller of Texas seniors housing assets.",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "2200 Ross Avenue",
+      "street2": "Suite 4500",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75201"
+    },
+    "primaryContactId": "ct_avega"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing",
+      "Assisted Living"
+    ],
+    "regionalFocus": [
+      "National"
+    ],
+    "stateFocus": [],
+    "tags": [
+      "Internal"
+    ],
+    "id": "org_od_holdings",
+    "name": "OD Acquisition Holdings LLC",
+    "type": "investor",
+    "hqCity": "Nashville",
+    "hqState": "TN",
+    "description": "Buyer entity for platform acquisitions.",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "1600 West End Avenue",
+      "street2": "Suite 900",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37203"
+    },
+    "primaryContactId": "ct_gwhitman"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_cedarbrook",
+    "name": "Cedarbrook Health Services",
+    "type": "operator",
+    "hqCity": "Grand Rapids",
+    "hqState": "MI",
+    "description": "Operates 22 SNFs across MI, OH and IN.",
+    "companyType": "private",
+    "parentOrgId": "org_cedarbrook_hold",
+    "primaryContactId": "ct_mdelgado"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_ashford",
+    "name": "Ashford Senior Living",
+    "type": "operator",
+    "hqCity": "San Antonio",
+    "hqState": "TX",
+    "description": "Assisted living and memory care operator."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_northpoint",
+    "name": "Northpoint Care Group",
+    "type": "operator",
+    "hqCity": "Nashville",
+    "hqState": "TN",
+    "description": "Mid-size post-acute operator, 31 facilities.",
+    "companyType": "private",
+    "parentOrgId": "org_northpoint_hold"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_riverside_rp",
+    "name": "Riverside Rehabilitation Partners",
+    "type": "operator",
+    "hqCity": "Sarasota",
+    "hqState": "FL",
+    "description": "Short-term rehab focused operator."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_pinnacle",
+    "name": "Pinnacle Post-Acute",
+    "type": "operator",
+    "hqCity": "Harrisburg",
+    "hqState": "PA",
+    "description": "Regional operator; tenant on closed Keystone transaction."
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing"
+    ],
+    "regionalFocus": [
+      "Midwest"
+    ],
+    "stateFocus": [
+      "MO",
+      "AR"
+    ],
+    "tags": [],
+    "id": "org_willow",
+    "name": "Willow Creek Senior Care",
+    "type": "operator",
+    "hqCity": "Springfield",
+    "hqState": "MO",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "1880 E Battlefield Street",
+      "city": "Springfield",
+      "state": "MO",
+      "zip": "65804"
+    },
+    "primaryContactId": "ct_hdunn"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_coastal",
+    "name": "Coastal Carolina Health",
+    "type": "operator",
+    "hqCity": "Wilmington",
+    "hqState": "NC"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing"
+    ],
+    "regionalFocus": [
+      "Midwest"
+    ],
+    "stateFocus": [
+      "IL"
+    ],
+    "tags": [],
+    "id": "org_heartland",
+    "name": "Heartland Prairie Care",
+    "type": "operator",
+    "hqCity": "Peoria",
+    "hqState": "IL",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "4120 N Knoxville Avenue",
+      "city": "Peoria",
+      "state": "IL",
+      "zip": "61614"
+    },
+    "primaryContactId": "ct_bnolan"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing"
+    ],
+    "regionalFocus": [
+      "Southwest"
+    ],
+    "stateFocus": [
+      "AZ"
+    ],
+    "tags": [],
+    "id": "org_sonoran",
+    "name": "Sonoran Health Partners",
+    "type": "operator",
+    "hqCity": "Phoenix",
+    "hqState": "AZ",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "4800 N Scottsdale Road",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "zip": "85251"
+    },
+    "primaryContactId": "ct_rortiz"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_evergreen_prev",
+    "name": "Evergreen Care Centers (former)",
+    "type": "operator",
+    "hqCity": "Indianapolis",
+    "hqState": "IN",
+    "description": "Former operator; exited Indiana market in 2021."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_cedarbrook_hold",
+    "name": "Cedarbrook Holdings, Inc.",
+    "type": "parent",
+    "hqCity": "Grand Rapids",
+    "hqState": "MI"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_northpoint_hold",
+    "name": "Northpoint Healthcare Holdings",
+    "type": "parent",
+    "hqCity": "Nashville",
+    "hqState": "TN"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_summit_mgmt",
+    "name": "Summit Senior Management",
+    "type": "management",
+    "hqCity": "Atlanta",
+    "hqState": "GA",
+    "description": "Third-party manager for seniors housing communities."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_calloway",
+    "name": "Calloway Healthcare Advisors",
+    "type": "broker",
+    "hqCity": "Chicago",
+    "hqState": "IL",
+    "description": "Healthcare real estate investment sales.",
+    "primaryContactId": "ct_hwalsh"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_stonebridge",
+    "name": "Stonebridge Capital Markets",
+    "type": "broker",
+    "hqCity": "Dallas",
+    "hqState": "TX"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing",
+      "Assisted Living"
+    ],
+    "regionalFocus": [
+      "Midwest"
+    ],
+    "stateFocus": [
+      "WI",
+      "IL",
+      "MI"
+    ],
+    "tags": [
+      "REO owner",
+      "Motivated seller"
+    ],
+    "id": "org_lakeshore",
+    "name": "Lakeshore Commercial Bank",
+    "type": "lender",
+    "hqCity": "Milwaukee",
+    "hqState": "WI",
+    "companyType": "bank",
+    "officeAddress": {
+      "street": "411 E Wisconsin Avenue",
+      "street2": "Floor 20",
+      "city": "Milwaukee",
+      "state": "WI",
+      "zip": "53202"
+    },
+    "primaryContactId": "ct_srao"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_sterling",
+    "name": "Sterling HUD Lending Group",
+    "type": "lender",
+    "hqCity": "Washington",
+    "hqState": "DC",
+    "description": "HUD 232 lender.",
+    "companyType": "finco"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_atlas",
+    "name": "Atlas Bridge Finance",
+    "type": "lender",
+    "hqCity": "New York",
+    "hqState": "NY",
+    "description": "Bridge-to-HUD lender.",
+    "companyType": "finco"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_whitaker",
+    "name": "Whitaker & Lowe LLP",
+    "type": "law_firm",
+    "hqCity": "Nashville",
+    "hqState": "TN",
+    "description": "Buyer-side healthcare transactional counsel."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_brennan",
+    "name": "Brennan Ross Healthcare Law",
+    "type": "law_firm",
+    "hqCity": "Cleveland",
+    "hqState": "OH",
+    "description": "Regulatory and licensure counsel."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_clearline",
+    "name": "Clearline Property Assessments",
+    "type": "consultant",
+    "hqCity": "Columbus",
+    "hqState": "OH",
+    "description": "Property condition assessments and environmental reports."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_veritas",
+    "name": "Veritas Healthcare Consulting",
+    "type": "consultant",
+    "hqCity": "Atlanta",
+    "hqState": "GA",
+    "description": "Clinical and regulatory diligence."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [
+      "National"
+    ],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_meridian_parent",
+    "name": "Meridian Capital Group",
+    "type": "investor",
+    "hqCity": "Chicago",
+    "hqState": "IL",
+    "description": "Private real estate investment firm; sponsor of Meridian Healthcare Properties.",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "225 W Wacker Drive",
+      "street2": "Suite 1900",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60606"
+    }
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_hartwell",
+    "name": "Hartwell & Pierce LLP",
+    "type": "law_firm",
+    "hqCity": "Chicago",
+    "hqState": "IL",
+    "description": "Seller-side healthcare real estate counsel.",
+    "primaryContactId": "ct_ahartwell"
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_benchmark",
+    "name": "Benchmark Land Surveying",
+    "type": "consultant",
+    "hqCity": "Columbus",
+    "hqState": "OH",
+    "description": "ALTA/NSPS surveys nationwide."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_lakeside_title",
+    "name": "Lakeside Title Agency",
+    "type": "consultant",
+    "hqCity": "Chicago",
+    "hqState": "IL",
+    "description": "Commercial title and escrow."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_zoning_partners",
+    "name": "Zoning Verification Partners",
+    "type": "consultant",
+    "hqCity": "Atlanta",
+    "hqState": "GA",
+    "description": "Zoning reports and municipal compliance."
+  },
+  {
+    "acuityFocus": [],
+    "regionalFocus": [],
+    "stateFocus": [],
+    "tags": [],
+    "id": "org_ridgeway_val",
+    "name": "Ridgeway Valuation Advisors",
+    "type": "consultant",
+    "hqCity": "Chicago",
+    "hqState": "IL",
+    "description": "MAI appraisals for healthcare real estate."
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing",
+      "Assisted Living",
+      "Memory Care"
+    ],
+    "regionalFocus": [
+      "National"
+    ],
+    "stateFocus": [],
+    "tags": [
+      "JV equity"
+    ],
+    "id": "org_ridgeline",
+    "name": "Ridgeline Healthcare Partners",
+    "type": "investor",
+    "hqCity": "New York",
+    "hqState": "NY",
+    "description": "Institutional JV equity partner for seniors housing and post-acute.",
+    "companyType": "private",
+    "officeAddress": {
+      "street": "450 Park Avenue",
+      "street2": "Floor 22",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10022"
+    },
+    "primaryContactId": "ct_ashah"
+  },
+  {
+    "acuityFocus": [
+      "Skilled Nursing",
+      "Assisted Living",
+      "Memory Care"
+    ],
+    "regionalFocus": [
+      "Southwest",
+      "Mountain West",
+      "West Coast"
+    ],
+    "stateFocus": [
+      "AZ",
+      "NV",
+      "CA",
+      "CO"
+    ],
+    "tags": [
+      "Capital recycling"
+    ],
+    "id": "org_summit_reit",
+    "name": "Summit Healthcare REIT",
+    "type": "owner",
+    "hqCity": "Phoenix",
+    "hqState": "AZ",
+    "description": "Non-traded healthcare REIT with seniors housing and post-acute assets in the Southwest.",
+    "companyType": "reit",
+    "officeAddress": {
+      "street": "2390 E Camelback Road",
+      "street2": "Suite 300",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85016"
+    },
+    "primaryContactId": "ct_cford"
+  }
+]

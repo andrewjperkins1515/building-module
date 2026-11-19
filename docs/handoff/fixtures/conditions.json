@@ -1,0 +1,2070 @@
+[
+  {
+    "buildingId": "bld_maplegrove",
+    "overall": "good",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-08-22",
+    "construction": "Wood frame on slab, brick veneer",
+    "sprinklered": "full",
+    "generator": "400 kW diesel, 2017",
+    "parkingSpaces": 86,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-06-08",
+        "notes": "Modified bitumen membrane in serviceable condition; no active leaks observed.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-09-22",
+        "notes": "Rooftop units replaced 2019–2021; PTACs in resident rooms functioning.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "good",
+        "installYear": 2017,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-08-04",
+        "notes": "Copper domestic lines; water heaters replaced 2020.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "good",
+        "installYear": 2017,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-08-17",
+        "notes": "Main switchgear adequate; generator load tested monthly.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "good",
+        "installYear": 2016,
+        "remainingUsefulLifeYrs": 14,
+        "lastAssessed": "2026-07-04",
+        "notes": "Fully sprinklered; fire alarm panel upgraded; no K-tag citations last survey.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "good",
+        "installYear": 2020,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-06-07",
+        "notes": "Hydraulic elevator modernized 2018.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "interiors",
+        "rating": "good",
+        "installYear": 2022,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-07-23",
+        "notes": "Resident rooms renovated within last 5 years.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "fair",
+        "installYear": 2009,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-05-20",
+        "notes": "Asphalt cracking; seal and restripe recommended.",
+        "source": "site_visit"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_maplegrove_dm_0",
+        "system": "site",
+        "description": "Asphalt cracking",
+        "estimatedCost": 67000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_maplegrove_ren_1",
+        "year": 2010,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 414000
+      },
+      {
+        "id": "bld_maplegrove_ren_2",
+        "year": 2021,
+        "description": "Nurse call system replacement",
+        "cost": 131000
+      },
+      {
+        "id": "bld_maplegrove_ren_3",
+        "year": 2022,
+        "description": "Resident room and corridor refresh (flooring, lighting, millwork)",
+        "cost": 1306000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_lakeview",
+    "overall": "fair",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-08-31",
+    "construction": "Steel frame, masonry exterior",
+    "sprinklered": "full",
+    "generator": "250 kW diesel, 2006",
+    "parkingSpaces": 52,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "fair",
+        "installYear": 2005,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-09-06",
+        "notes": "Localized ponding at north wing; minor flashing repairs recommended.",
+        "source": "site_visit"
+      },
+      {
+        "system": "hvac",
+        "rating": "good",
+        "installYear": 2023,
+        "remainingUsefulLifeYrs": 14,
+        "lastAssessed": "2026-07-24",
+        "notes": "Rooftop units replaced 2019–2021; PTACs in resident rooms functioning.",
+        "source": "site_visit"
+      },
+      {
+        "system": "plumbing",
+        "rating": "fair",
+        "installYear": 2009,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-08-28",
+        "notes": "Galvanized branch lines in original wing; occasional pressure issues.",
+        "source": "site_visit"
+      },
+      {
+        "system": "electrical",
+        "rating": "fair",
+        "installYear": 1999,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-05-24",
+        "notes": "Panels adequate; generator transfer switch should be replaced in 3–5 years.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "fair",
+        "installYear": 2000,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-04-14",
+        "notes": "Fully sprinklered; minor K-tag citations corrected; smoke barrier penetrations noted.",
+        "source": "site_visit"
+      },
+      {
+        "system": "elevators",
+        "rating": "fair",
+        "installYear": 2001,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-05-20",
+        "notes": "Original controller; parts availability limited.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "interiors",
+        "rating": "fair",
+        "installYear": 1997,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-08-09",
+        "notes": "Common areas updated; resident rooms dated.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "poor",
+        "installYear": 1997,
+        "remainingUsefulLifeYrs": 5,
+        "lastAssessed": "2026-09-11",
+        "notes": "Drainage issues at loading dock; lot replacement needed.",
+        "source": "site_visit"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_lakeview_dm_0",
+        "system": "roof",
+        "description": "Localized ponding at north wing",
+        "estimatedCost": 49000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_lakeview_dm_1",
+        "system": "plumbing",
+        "description": "Galvanized branch lines in original wing",
+        "estimatedCost": 51000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_lakeview_dm_2",
+        "system": "electrical",
+        "description": "Panels adequate",
+        "estimatedCost": 30000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_lakeview_dm_3",
+        "system": "life_safety",
+        "description": "Fully sprinklered",
+        "estimatedCost": 65000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_lakeview_dm_4",
+        "system": "elevators",
+        "description": "Original controller",
+        "estimatedCost": 41000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_lakeview_dm_5",
+        "system": "interiors",
+        "description": "Common areas updated",
+        "estimatedCost": 54000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_lakeview_dm_6",
+        "system": "site",
+        "description": "Drainage issues at loading dock",
+        "estimatedCost": 236000,
+        "priority": "short_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_lakeview_ren_1",
+        "year": 2010,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 257000
+      },
+      {
+        "id": "bld_lakeview_ren_2",
+        "year": 2021,
+        "description": "Nurse call system replacement",
+        "cost": 131000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_brookhaven",
+    "overall": "poor",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-07-31",
+    "construction": "Steel frame, masonry exterior",
+    "sprinklered": "full",
+    "generator": "250 kW diesel, 2006",
+    "parkingSpaces": 81,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "poor",
+        "installYear": 2009,
+        "remainingUsefulLifeYrs": 3,
+        "lastAssessed": "2026-06-06",
+        "notes": "Membrane at end of useful life; multiple patched leaks above resident corridors.",
+        "source": "site_visit"
+      },
+      {
+        "system": "hvac",
+        "rating": "poor",
+        "installYear": 2000,
+        "remainingUsefulLifeYrs": 6,
+        "lastAssessed": "2026-08-20",
+        "notes": "Original boilers and chiller; inconsistent temperatures reported in west wing.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "poor",
+        "installYear": 1999,
+        "remainingUsefulLifeYrs": 6,
+        "lastAssessed": "2026-09-14",
+        "notes": "Cast iron waste lines with recurring backups; scoping recommended.",
+        "source": "site_visit"
+      },
+      {
+        "system": "electrical",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-08-03",
+        "notes": "Panels adequate; generator transfer switch should be replaced in 3–5 years.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "life_safety",
+        "rating": "fair",
+        "installYear": 2000,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-06-08",
+        "notes": "Fully sprinklered; minor K-tag citations corrected; smoke barrier penetrations noted.",
+        "source": "site_visit"
+      },
+      {
+        "system": "elevators",
+        "rating": "poor",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 6,
+        "lastAssessed": "2026-06-23",
+        "notes": "Frequent outages; modernization required.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "interiors",
+        "rating": "poor",
+        "installYear": 2002,
+        "remainingUsefulLifeYrs": 5,
+        "lastAssessed": "2026-04-20",
+        "notes": "Worn finishes, dated bathrooms, institutional feel.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "fair",
+        "installYear": 2006,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-09-01",
+        "notes": "Asphalt cracking; seal and restripe recommended.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_brookhaven_dm_0",
+        "system": "roof",
+        "description": "Membrane at end of useful life",
+        "estimatedCost": 166000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_brookhaven_dm_1",
+        "system": "hvac",
+        "description": "Original boilers and chiller",
+        "estimatedCost": 124000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_brookhaven_dm_2",
+        "system": "plumbing",
+        "description": "Cast iron waste lines with recurring backups",
+        "estimatedCost": 179000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_brookhaven_dm_3",
+        "system": "electrical",
+        "description": "Panels adequate",
+        "estimatedCost": 65000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_brookhaven_dm_4",
+        "system": "life_safety",
+        "description": "Fully sprinklered",
+        "estimatedCost": 41000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_brookhaven_dm_5",
+        "system": "elevators",
+        "description": "Frequent outages",
+        "estimatedCost": 285000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_brookhaven_dm_6",
+        "system": "interiors",
+        "description": "Worn finishes, dated bathrooms, institutional feel.",
+        "estimatedCost": 260000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_brookhaven_dm_7",
+        "system": "site",
+        "description": "Asphalt cracking",
+        "estimatedCost": 70000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_brookhaven_ren_1",
+        "year": 2013,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 419000
+      },
+      {
+        "id": "bld_brookhaven_ren_2",
+        "year": 2016,
+        "description": "Nurse call system replacement",
+        "cost": 182000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_harborpointe",
+    "overall": "good",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-09-25",
+    "construction": "Wood frame, vinyl and stone exterior",
+    "sprinklered": "full",
+    "generator": "350 kW diesel, 2014",
+    "parkingSpaces": 86,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "good",
+        "installYear": 2020,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-10-03",
+        "notes": "Modified bitumen membrane in serviceable condition; no active leaks observed.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "good",
+        "installYear": 2022,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-09-28",
+        "notes": "Rooftop units replaced 2019–2021; PTACs in resident rooms functioning.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "good",
+        "installYear": 2020,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-07-24",
+        "notes": "Copper domestic lines; water heaters replaced 2020.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "good",
+        "installYear": 2018,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-10-05",
+        "notes": "Main switchgear adequate; generator load tested monthly.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "fair",
+        "installYear": 2012,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-05-12",
+        "notes": "Fully sprinklered; minor K-tag citations corrected; smoke barrier penetrations noted.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "good",
+        "installYear": 2016,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-08-22",
+        "notes": "Hydraulic elevator modernized 2018.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "good",
+        "installYear": 2022,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-08-28",
+        "notes": "Resident rooms renovated within last 5 years.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "good",
+        "installYear": 2020,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-04-17",
+        "notes": "Parking lot resurfaced; ADA compliant.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_harborpointe_dm_0",
+        "system": "life_safety",
+        "description": "Fully sprinklered",
+        "estimatedCost": 63000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_harborpointe_ren_1",
+        "year": 2020,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 649000
+      },
+      {
+        "id": "bld_harborpointe_ren_2",
+        "year": 2016,
+        "description": "Nurse call system replacement",
+        "cost": 248000
+      },
+      {
+        "id": "bld_harborpointe_ren_3",
+        "year": 2022,
+        "description": "Resident room and corridor refresh (flooring, lighting, millwork)",
+        "cost": 1359000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_bluegrass",
+    "overall": "fair",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-07-26",
+    "construction": "Wood frame, vinyl and stone exterior",
+    "sprinklered": "full",
+    "generator": "350 kW diesel, 2014",
+    "parkingSpaces": 104,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "fair",
+        "installYear": 2000,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-06-29",
+        "notes": "Localized ponding at north wing; minor flashing repairs recommended.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "fair",
+        "installYear": 1997,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-08-18",
+        "notes": "Chiller nearing end of life; PTAC replacement program ~40% complete.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "fair",
+        "installYear": 1996,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-10-13",
+        "notes": "Galvanized branch lines in original wing; occasional pressure issues.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "poor",
+        "installYear": 2004,
+        "remainingUsefulLifeYrs": 4,
+        "lastAssessed": "2026-10-09",
+        "notes": "Federal Pacific panels in service wing; generator undersized for full HVAC load.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "life_safety",
+        "rating": "fair",
+        "installYear": 1997,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-08-15",
+        "notes": "Fully sprinklered; minor K-tag citations corrected; smoke barrier penetrations noted.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "good",
+        "installYear": 2023,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-08-08",
+        "notes": "Hydraulic elevator modernized 2018.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "interiors",
+        "rating": "poor",
+        "installYear": 2002,
+        "remainingUsefulLifeYrs": 3,
+        "lastAssessed": "2026-04-23",
+        "notes": "Worn finishes, dated bathrooms, institutional feel.",
+        "source": "site_visit"
+      },
+      {
+        "system": "site",
+        "rating": "fair",
+        "installYear": 2009,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-06-08",
+        "notes": "Asphalt cracking; seal and restripe recommended.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_bluegrass_dm_0",
+        "system": "roof",
+        "description": "Localized ponding at north wing",
+        "estimatedCost": 58000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_bluegrass_dm_1",
+        "system": "hvac",
+        "description": "Chiller nearing end of life",
+        "estimatedCost": 34000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_bluegrass_dm_2",
+        "system": "plumbing",
+        "description": "Galvanized branch lines in original wing",
+        "estimatedCost": 66000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_bluegrass_dm_3",
+        "system": "electrical",
+        "description": "Federal Pacific panels in service wing",
+        "estimatedCost": 147000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_bluegrass_dm_4",
+        "system": "life_safety",
+        "description": "Fully sprinklered",
+        "estimatedCost": 27000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_bluegrass_dm_5",
+        "system": "interiors",
+        "description": "Worn finishes, dated bathrooms, institutional feel.",
+        "estimatedCost": 195000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_bluegrass_dm_6",
+        "system": "site",
+        "description": "Asphalt cracking",
+        "estimatedCost": 30000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_bluegrass_ren_1",
+        "year": 2012,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 531000
+      },
+      {
+        "id": "bld_bluegrass_ren_2",
+        "year": 2019,
+        "description": "Nurse call system replacement",
+        "cost": 172000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_clearwater",
+    "overall": "good",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-07-10",
+    "construction": "Load-bearing masonry, concrete slab",
+    "sprinklered": "full",
+    "generator": "400 kW diesel, 2017",
+    "parkingSpaces": 90,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "fair",
+        "installYear": 2004,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-05-15",
+        "notes": "Localized ponding at north wing; minor flashing repairs recommended.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "good",
+        "installYear": 2020,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-10-13",
+        "notes": "Rooftop units replaced 2019–2021; PTACs in resident rooms functioning.",
+        "source": "site_visit"
+      },
+      {
+        "system": "plumbing",
+        "rating": "good",
+        "installYear": 2019,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-09-15",
+        "notes": "Copper domestic lines; water heaters replaced 2020.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "good",
+        "installYear": 2015,
+        "remainingUsefulLifeYrs": 14,
+        "lastAssessed": "2026-07-17",
+        "notes": "Main switchgear adequate; generator load tested monthly.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "life_safety",
+        "rating": "good",
+        "installYear": 2018,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-04-10",
+        "notes": "Fully sprinklered; fire alarm panel upgraded; no K-tag citations last survey.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-09-11",
+        "notes": "Hydraulic elevator modernized 2018.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "interiors",
+        "rating": "good",
+        "installYear": 2017,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-09-07",
+        "notes": "Resident rooms renovated within last 5 years.",
+        "source": "site_visit"
+      },
+      {
+        "system": "site",
+        "rating": "good",
+        "installYear": 2020,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-09-19",
+        "notes": "Parking lot resurfaced; ADA compliant.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_clearwater_dm_0",
+        "system": "roof",
+        "description": "Localized ponding at north wing",
+        "estimatedCost": 70000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_clearwater_ren_1",
+        "year": 2013,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 538000
+      },
+      {
+        "id": "bld_clearwater_ren_2",
+        "year": 2021,
+        "description": "Nurse call system replacement",
+        "cost": 205000
+      },
+      {
+        "id": "bld_clearwater_ren_3",
+        "year": 2022,
+        "description": "Resident room and corridor refresh (flooring, lighting, millwork)",
+        "cost": 1466000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_cumberland",
+    "overall": "poor",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-07-23",
+    "construction": "Load-bearing masonry, concrete slab",
+    "sprinklered": "full",
+    "generator": "400 kW diesel, 2017",
+    "parkingSpaces": 81,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "poor",
+        "installYear": 2002,
+        "remainingUsefulLifeYrs": 4,
+        "lastAssessed": "2026-07-13",
+        "notes": "Membrane at end of useful life; multiple patched leaks above resident corridors.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "fair",
+        "installYear": 1999,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-06-14",
+        "notes": "Chiller nearing end of life; PTAC replacement program ~40% complete.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "fair",
+        "installYear": 2004,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-06-11",
+        "notes": "Galvanized branch lines in original wing; occasional pressure issues.",
+        "source": "site_visit"
+      },
+      {
+        "system": "electrical",
+        "rating": "poor",
+        "installYear": 1998,
+        "remainingUsefulLifeYrs": 5,
+        "lastAssessed": "2026-06-13",
+        "notes": "Federal Pacific panels in service wing; generator undersized for full HVAC load.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "life_safety",
+        "rating": "critical",
+        "installYear": 1996,
+        "remainingUsefulLifeYrs": 3,
+        "lastAssessed": "2026-04-23",
+        "notes": "Open life-safety deficiencies; fire alarm panel obsolete and unsupported.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "critical",
+        "installYear": 2006,
+        "remainingUsefulLifeYrs": 0,
+        "lastAssessed": "2026-10-18",
+        "notes": "Out of service; state inspection failed.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "critical",
+        "installYear": 2002,
+        "remainingUsefulLifeYrs": 2,
+        "lastAssessed": "2026-04-04",
+        "notes": "Significant finish damage; infection-control concerns.",
+        "source": "site_visit"
+      },
+      {
+        "system": "site",
+        "rating": "poor",
+        "installYear": 2001,
+        "remainingUsefulLifeYrs": 4,
+        "lastAssessed": "2026-08-05",
+        "notes": "Drainage issues at loading dock; lot replacement needed.",
+        "source": "site_visit"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_cumberland_dm_0",
+        "system": "roof",
+        "description": "Membrane at end of useful life",
+        "estimatedCost": 249000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_cumberland_dm_1",
+        "system": "hvac",
+        "description": "Chiller nearing end of life",
+        "estimatedCost": 63000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_cumberland_dm_2",
+        "system": "plumbing",
+        "description": "Galvanized branch lines in original wing",
+        "estimatedCost": 59000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_cumberland_dm_3",
+        "system": "electrical",
+        "description": "Federal Pacific panels in service wing",
+        "estimatedCost": 250000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_cumberland_dm_4",
+        "system": "life_safety",
+        "description": "Open life-safety deficiencies",
+        "estimatedCost": 556000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_cumberland_dm_5",
+        "system": "elevators",
+        "description": "Out of service",
+        "estimatedCost": 522000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_cumberland_dm_6",
+        "system": "interiors",
+        "description": "Significant finish damage",
+        "estimatedCost": 380000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_cumberland_dm_7",
+        "system": "site",
+        "description": "Drainage issues at loading dock",
+        "estimatedCost": 266000,
+        "priority": "short_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_cumberland_ren_1",
+        "year": 2011,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 585000
+      },
+      {
+        "id": "bld_cumberland_ren_2",
+        "year": 2016,
+        "description": "Nurse call system replacement",
+        "cost": 151000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_riverside",
+    "overall": "good",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-09-01",
+    "construction": "Wood frame on slab, brick veneer",
+    "sprinklered": "full",
+    "generator": "500 kW natural gas, 2019",
+    "parkingSpaces": 106,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "good",
+        "installYear": 2016,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-04-21",
+        "notes": "Modified bitumen membrane in serviceable condition; no active leaks observed.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 14,
+        "lastAssessed": "2026-04-21",
+        "notes": "Rooftop units replaced 2019–2021; PTACs in resident rooms functioning.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "good",
+        "installYear": 2019,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-06-05",
+        "notes": "Copper domestic lines; water heaters replaced 2020.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "good",
+        "installYear": 2023,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-05-03",
+        "notes": "Main switchgear adequate; generator load tested monthly.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "good",
+        "installYear": 2019,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-10-03",
+        "notes": "Fully sprinklered; fire alarm panel upgraded; no K-tag citations last survey.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "good",
+        "installYear": 2022,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-07-01",
+        "notes": "Hydraulic elevator modernized 2018.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "fair",
+        "installYear": 2015,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-07-27",
+        "notes": "Common areas updated; resident rooms dated.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "good",
+        "installYear": 2019,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-08-11",
+        "notes": "Parking lot resurfaced; ADA compliant.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_riverside_dm_0",
+        "system": "interiors",
+        "description": "Common areas updated",
+        "estimatedCost": 53000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_riverside_ren_1",
+        "year": 2023,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 419000
+      },
+      {
+        "id": "bld_riverside_ren_2",
+        "year": 2020,
+        "description": "Nurse call system replacement",
+        "cost": 129000
+      },
+      {
+        "id": "bld_riverside_ren_3",
+        "year": 2023,
+        "description": "Resident room and corridor refresh (flooring, lighting, millwork)",
+        "cost": 1067000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_magnolia",
+    "overall": "fair",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-08-07",
+    "construction": "Steel frame, masonry exterior",
+    "sprinklered": "full",
+    "generator": "350 kW diesel, 2014",
+    "parkingSpaces": 73,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-04-10",
+        "notes": "Localized ponding at north wing; minor flashing repairs recommended.",
+        "source": "site_visit"
+      },
+      {
+        "system": "hvac",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-09-14",
+        "notes": "Chiller nearing end of life; PTAC replacement program ~40% complete.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-07-17",
+        "notes": "Galvanized branch lines in original wing; occasional pressure issues.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-08-24",
+        "notes": "Panels adequate; generator transfer switch should be replaced in 3–5 years.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "poor",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 5,
+        "lastAssessed": "2026-06-02",
+        "notes": "Partial sprinkler coverage in attic; multiple open K-tag deficiencies.",
+        "source": "site_visit"
+      },
+      {
+        "system": "elevators",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-08-20",
+        "notes": "Original controller; parts availability limited.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-09-07",
+        "notes": "Common areas updated; resident rooms dated.",
+        "source": "site_visit"
+      },
+      {
+        "system": "site",
+        "rating": "fair",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-10-08",
+        "notes": "Asphalt cracking; seal and restripe recommended.",
+        "source": "site_visit"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_magnolia_dm_0",
+        "system": "roof",
+        "description": "Localized ponding at north wing",
+        "estimatedCost": 52000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_magnolia_dm_1",
+        "system": "hvac",
+        "description": "Chiller nearing end of life",
+        "estimatedCost": 54000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_magnolia_dm_2",
+        "system": "plumbing",
+        "description": "Galvanized branch lines in original wing",
+        "estimatedCost": 39000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_magnolia_dm_3",
+        "system": "electrical",
+        "description": "Panels adequate",
+        "estimatedCost": 46000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_magnolia_dm_4",
+        "system": "life_safety",
+        "description": "Partial sprinkler coverage in attic",
+        "estimatedCost": 182000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_magnolia_dm_5",
+        "system": "elevators",
+        "description": "Original controller",
+        "estimatedCost": 47000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_magnolia_dm_6",
+        "system": "interiors",
+        "description": "Common areas updated",
+        "estimatedCost": 55000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_magnolia_dm_7",
+        "system": "site",
+        "description": "Asphalt cracking",
+        "estimatedCost": 36000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_magnolia_ren_1",
+        "year": 2016,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 313000
+      },
+      {
+        "id": "bld_magnolia_ren_2",
+        "year": 2017,
+        "description": "Nurse call system replacement",
+        "cost": 145000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_liveoak",
+    "overall": "good",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-09-17",
+    "construction": "Wood frame on slab, brick veneer",
+    "sprinklered": "full",
+    "generator": "250 kW diesel, 2006",
+    "parkingSpaces": 79,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "good",
+        "installYear": 2018,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-07-29",
+        "notes": "Modified bitumen membrane in serviceable condition; no active leaks observed.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "fair",
+        "installYear": 2017,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-09-07",
+        "notes": "Chiller nearing end of life; PTAC replacement program ~40% complete.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "good",
+        "installYear": 2023,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-06-04",
+        "notes": "Copper domestic lines; water heaters replaced 2020.",
+        "source": "site_visit"
+      },
+      {
+        "system": "electrical",
+        "rating": "fair",
+        "installYear": 2017,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-06-09",
+        "notes": "Panels adequate; generator transfer switch should be replaced in 3–5 years.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 14,
+        "lastAssessed": "2026-07-16",
+        "notes": "Fully sprinklered; fire alarm panel upgraded; no K-tag citations last survey.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "fair",
+        "installYear": 2017,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-05-27",
+        "notes": "Original controller; parts availability limited.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "interiors",
+        "rating": "good",
+        "installYear": 2023,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-04-12",
+        "notes": "Resident rooms renovated within last 5 years.",
+        "source": "site_visit"
+      },
+      {
+        "system": "site",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-06-25",
+        "notes": "Parking lot resurfaced; ADA compliant.",
+        "source": "site_visit"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_liveoak_dm_0",
+        "system": "hvac",
+        "description": "Chiller nearing end of life",
+        "estimatedCost": 41000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_liveoak_dm_1",
+        "system": "electrical",
+        "description": "Panels adequate",
+        "estimatedCost": 53000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_liveoak_dm_2",
+        "system": "elevators",
+        "description": "Original controller",
+        "estimatedCost": 59000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_liveoak_ren_1",
+        "year": 2025,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 438000
+      },
+      {
+        "id": "bld_liveoak_ren_2",
+        "year": 2021,
+        "description": "Nurse call system replacement",
+        "cost": 163000
+      },
+      {
+        "id": "bld_liveoak_ren_3",
+        "year": 2022,
+        "description": "Resident room and corridor refresh (flooring, lighting, millwork)",
+        "cost": 685000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_chestnut",
+    "overall": "good",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-09-15",
+    "construction": "Wood frame, vinyl and stone exterior",
+    "sprinklered": "full",
+    "generator": "250 kW diesel, 2006",
+    "parkingSpaces": 92,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "good",
+        "installYear": 2023,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-06-27",
+        "notes": "Modified bitumen membrane in serviceable condition; no active leaks observed.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "good",
+        "installYear": 2016,
+        "remainingUsefulLifeYrs": 14,
+        "lastAssessed": "2026-06-27",
+        "notes": "Rooftop units replaced 2019–2021; PTACs in resident rooms functioning.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "fair",
+        "installYear": 2004,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-06-15",
+        "notes": "Galvanized branch lines in original wing; occasional pressure issues.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-04-26",
+        "notes": "Main switchgear adequate; generator load tested monthly.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "life_safety",
+        "rating": "good",
+        "installYear": 2021,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-06-19",
+        "notes": "Fully sprinklered; fire alarm panel upgraded; no K-tag citations last survey.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "good",
+        "installYear": 2015,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-06-28",
+        "notes": "Hydraulic elevator modernized 2018.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "good",
+        "installYear": 2016,
+        "remainingUsefulLifeYrs": 14,
+        "lastAssessed": "2026-08-16",
+        "notes": "Resident rooms renovated within last 5 years.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "good",
+        "installYear": 2022,
+        "remainingUsefulLifeYrs": 15,
+        "lastAssessed": "2026-04-17",
+        "notes": "Parking lot resurfaced; ADA compliant.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_chestnut_dm_0",
+        "system": "plumbing",
+        "description": "Galvanized branch lines in original wing",
+        "estimatedCost": 63000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_chestnut_ren_1",
+        "year": 2013,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 546000
+      },
+      {
+        "id": "bld_chestnut_ren_2",
+        "year": 2018,
+        "description": "Nurse call system replacement",
+        "cost": 224000
+      },
+      {
+        "id": "bld_chestnut_ren_3",
+        "year": 2024,
+        "description": "Resident room and corridor refresh (flooring, lighting, millwork)",
+        "cost": 1326000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_seaside",
+    "overall": "poor",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-07-13",
+    "construction": "Wood frame on slab, brick veneer",
+    "sprinklered": "full",
+    "generator": "400 kW diesel, 2017",
+    "parkingSpaces": 68,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "critical",
+        "installYear": 2006,
+        "remainingUsefulLifeYrs": 2,
+        "lastAssessed": "2026-10-06",
+        "notes": "Active leaks in 6 resident rooms; full replacement required within 12 months.",
+        "source": "site_visit"
+      },
+      {
+        "system": "hvac",
+        "rating": "fair",
+        "installYear": 2005,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-05-10",
+        "notes": "Chiller nearing end of life; PTAC replacement program ~40% complete.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "critical",
+        "installYear": 2006,
+        "remainingUsefulLifeYrs": 2,
+        "lastAssessed": "2026-04-15",
+        "notes": "Repeated waste line failures; Legionella water management plan deficient.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "critical",
+        "installYear": 2000,
+        "remainingUsefulLifeYrs": 0,
+        "lastAssessed": "2026-05-14",
+        "notes": "Generator failed load test; panels require replacement.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "poor",
+        "installYear": 1999,
+        "remainingUsefulLifeYrs": 5,
+        "lastAssessed": "2026-10-15",
+        "notes": "Partial sprinkler coverage in attic; multiple open K-tag deficiencies.",
+        "source": "site_visit"
+      },
+      {
+        "system": "elevators",
+        "rating": "fair",
+        "installYear": 1999,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-10-10",
+        "notes": "Original controller; parts availability limited.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "fair",
+        "installYear": 1996,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-06-04",
+        "notes": "Common areas updated; resident rooms dated.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "critical",
+        "installYear": 2003,
+        "remainingUsefulLifeYrs": 2,
+        "lastAssessed": "2026-09-29",
+        "notes": "Trip hazards and failed drainage.",
+        "source": "site_visit"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_seaside_dm_0",
+        "system": "roof",
+        "description": "Active leaks in 6 resident rooms",
+        "estimatedCost": 307000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_seaside_dm_1",
+        "system": "hvac",
+        "description": "Chiller nearing end of life",
+        "estimatedCost": 39000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_seaside_dm_2",
+        "system": "plumbing",
+        "description": "Repeated waste line failures",
+        "estimatedCost": 516000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_seaside_dm_3",
+        "system": "electrical",
+        "description": "Generator failed load test",
+        "estimatedCost": 481000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_seaside_dm_4",
+        "system": "life_safety",
+        "description": "Partial sprinkler coverage in attic",
+        "estimatedCost": 143000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_seaside_dm_5",
+        "system": "elevators",
+        "description": "Original controller",
+        "estimatedCost": 65000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_seaside_dm_6",
+        "system": "interiors",
+        "description": "Common areas updated",
+        "estimatedCost": 39000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_seaside_dm_7",
+        "system": "site",
+        "description": "Trip hazards and failed drainage.",
+        "estimatedCost": 384000,
+        "priority": "immediate"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_seaside_ren_1",
+        "year": 2012,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 622000
+      },
+      {
+        "id": "bld_seaside_ren_2",
+        "year": 2019,
+        "description": "Nurse call system replacement",
+        "cost": 240000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_ozark",
+    "overall": "critical",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-08-10",
+    "construction": "Wood frame, vinyl and stone exterior",
+    "sprinklered": "partial",
+    "generator": "500 kW natural gas, 2019",
+    "parkingSpaces": 108,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "critical",
+        "installYear": 2007,
+        "remainingUsefulLifeYrs": 1,
+        "lastAssessed": "2026-06-27",
+        "notes": "Active leaks in 6 resident rooms; full replacement required within 12 months.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "critical",
+        "installYear": 2008,
+        "remainingUsefulLifeYrs": 1,
+        "lastAssessed": "2026-05-04",
+        "notes": "Chiller failure summer 2025 required rental unit; immediate replacement needed.",
+        "source": "site_visit"
+      },
+      {
+        "system": "plumbing",
+        "rating": "critical",
+        "installYear": 2001,
+        "remainingUsefulLifeYrs": 3,
+        "lastAssessed": "2026-04-17",
+        "notes": "Repeated waste line failures; Legionella water management plan deficient.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "critical",
+        "installYear": 1999,
+        "remainingUsefulLifeYrs": 3,
+        "lastAssessed": "2026-05-22",
+        "notes": "Generator failed load test; panels require replacement.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "critical",
+        "installYear": 2006,
+        "remainingUsefulLifeYrs": 3,
+        "lastAssessed": "2026-07-18",
+        "notes": "Open life-safety deficiencies; fire alarm panel obsolete and unsupported.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "critical",
+        "installYear": 2006,
+        "remainingUsefulLifeYrs": 0,
+        "lastAssessed": "2026-10-03",
+        "notes": "Out of service; state inspection failed.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "interiors",
+        "rating": "critical",
+        "installYear": 2003,
+        "remainingUsefulLifeYrs": 0,
+        "lastAssessed": "2026-10-02",
+        "notes": "Significant finish damage; infection-control concerns.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "critical",
+        "installYear": 2007,
+        "remainingUsefulLifeYrs": 0,
+        "lastAssessed": "2026-04-09",
+        "notes": "Trip hazards and failed drainage.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_ozark_dm_0",
+        "system": "roof",
+        "description": "Active leaks in 6 resident rooms",
+        "estimatedCost": 229000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_ozark_dm_1",
+        "system": "hvac",
+        "description": "Chiller failure summer 2025 required rental unit",
+        "estimatedCost": 583000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_ozark_dm_2",
+        "system": "plumbing",
+        "description": "Repeated waste line failures",
+        "estimatedCost": 363000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_ozark_dm_3",
+        "system": "electrical",
+        "description": "Generator failed load test",
+        "estimatedCost": 237000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_ozark_dm_4",
+        "system": "life_safety",
+        "description": "Open life-safety deficiencies",
+        "estimatedCost": 424000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_ozark_dm_5",
+        "system": "elevators",
+        "description": "Out of service",
+        "estimatedCost": 246000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_ozark_dm_6",
+        "system": "interiors",
+        "description": "Significant finish damage",
+        "estimatedCost": 450000,
+        "priority": "immediate"
+      },
+      {
+        "id": "bld_ozark_dm_7",
+        "system": "site",
+        "description": "Trip hazards and failed drainage.",
+        "estimatedCost": 565000,
+        "priority": "immediate"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_ozark_ren_1",
+        "year": 2013,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 635000
+      },
+      {
+        "id": "bld_ozark_ren_2",
+        "year": 2021,
+        "description": "Nurse call system replacement",
+        "cost": 253000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_prairieview",
+    "overall": "fair",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-06-08",
+    "construction": "Wood frame on slab, brick veneer",
+    "sprinklered": "full",
+    "generator": "400 kW diesel, 2017",
+    "parkingSpaces": 40,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "fair",
+        "installYear": 2004,
+        "remainingUsefulLifeYrs": 8,
+        "lastAssessed": "2026-09-04",
+        "notes": "Localized ponding at north wing; minor flashing repairs recommended.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "fair",
+        "installYear": 1998,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-09-14",
+        "notes": "Chiller nearing end of life; PTAC replacement program ~40% complete.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "fair",
+        "installYear": 1996,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-09-11",
+        "notes": "Galvanized branch lines in original wing; occasional pressure issues.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "good",
+        "installYear": 2022,
+        "remainingUsefulLifeYrs": 17,
+        "lastAssessed": "2026-05-04",
+        "notes": "Main switchgear adequate; generator load tested monthly.",
+        "source": "site_visit"
+      },
+      {
+        "system": "life_safety",
+        "rating": "poor",
+        "installYear": 1998,
+        "remainingUsefulLifeYrs": 5,
+        "lastAssessed": "2026-05-08",
+        "notes": "Partial sprinkler coverage in attic; multiple open K-tag deficiencies.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "elevators",
+        "rating": "fair",
+        "installYear": 1997,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-05-05",
+        "notes": "Original controller; parts availability limited.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "fair",
+        "installYear": 1998,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-09-02",
+        "notes": "Common areas updated; resident rooms dated.",
+        "source": "site_visit"
+      },
+      {
+        "system": "site",
+        "rating": "poor",
+        "installYear": 2009,
+        "remainingUsefulLifeYrs": 6,
+        "lastAssessed": "2026-07-11",
+        "notes": "Drainage issues at loading dock; lot replacement needed.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_prairieview_dm_0",
+        "system": "roof",
+        "description": "Localized ponding at north wing",
+        "estimatedCost": 35000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_prairieview_dm_1",
+        "system": "hvac",
+        "description": "Chiller nearing end of life",
+        "estimatedCost": 66000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_prairieview_dm_2",
+        "system": "plumbing",
+        "description": "Galvanized branch lines in original wing",
+        "estimatedCost": 61000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_prairieview_dm_3",
+        "system": "life_safety",
+        "description": "Partial sprinkler coverage in attic",
+        "estimatedCost": 170000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_prairieview_dm_4",
+        "system": "elevators",
+        "description": "Original controller",
+        "estimatedCost": 49000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_prairieview_dm_5",
+        "system": "interiors",
+        "description": "Common areas updated",
+        "estimatedCost": 70000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_prairieview_dm_6",
+        "system": "site",
+        "description": "Drainage issues at loading dock",
+        "estimatedCost": 295000,
+        "priority": "short_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_prairieview_ren_1",
+        "year": 2008,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 415000
+      },
+      {
+        "id": "bld_prairieview_ren_2",
+        "year": 2019,
+        "description": "Nurse call system replacement",
+        "cost": 255000
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_desertwillow",
+    "overall": "fair",
+    "assessedBy": "Clearline Property Assessments",
+    "assessmentDate": "2026-07-22",
+    "construction": "Load-bearing masonry, concrete slab",
+    "sprinklered": "full",
+    "generator": "250 kW diesel, 2006",
+    "parkingSpaces": 112,
+    "systems": [
+      {
+        "system": "roof",
+        "rating": "fair",
+        "installYear": 2001,
+        "remainingUsefulLifeYrs": 9,
+        "lastAssessed": "2026-04-16",
+        "notes": "Localized ponding at north wing; minor flashing repairs recommended.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "hvac",
+        "rating": "fair",
+        "installYear": 2005,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-08-31",
+        "notes": "Chiller nearing end of life; PTAC replacement program ~40% complete.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "plumbing",
+        "rating": "good",
+        "installYear": 2023,
+        "remainingUsefulLifeYrs": 16,
+        "lastAssessed": "2026-10-11",
+        "notes": "Copper domestic lines; water heaters replaced 2020.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "electrical",
+        "rating": "fair",
+        "installYear": 2003,
+        "remainingUsefulLifeYrs": 10,
+        "lastAssessed": "2026-06-17",
+        "notes": "Panels adequate; generator transfer switch should be replaced in 3–5 years.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "life_safety",
+        "rating": "fair",
+        "installYear": 2001,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-09-04",
+        "notes": "Fully sprinklered; minor K-tag citations corrected; smoke barrier penetrations noted.",
+        "source": "site_visit"
+      },
+      {
+        "system": "elevators",
+        "rating": "poor",
+        "installYear": 2001,
+        "remainingUsefulLifeYrs": 6,
+        "lastAssessed": "2026-08-26",
+        "notes": "Frequent outages; modernization required.",
+        "source": "site_visit"
+      },
+      {
+        "system": "interiors",
+        "rating": "poor",
+        "installYear": 2001,
+        "remainingUsefulLifeYrs": 3,
+        "lastAssessed": "2026-09-25",
+        "notes": "Worn finishes, dated bathrooms, institutional feel.",
+        "source": "third_party_report"
+      },
+      {
+        "system": "site",
+        "rating": "fair",
+        "installYear": 2004,
+        "remainingUsefulLifeYrs": 7,
+        "lastAssessed": "2026-08-15",
+        "notes": "Asphalt cracking; seal and restripe recommended.",
+        "source": "third_party_report"
+      }
+    ],
+    "deferredMaintenance": [
+      {
+        "id": "bld_desertwillow_dm_0",
+        "system": "roof",
+        "description": "Localized ponding at north wing",
+        "estimatedCost": 33000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_desertwillow_dm_1",
+        "system": "hvac",
+        "description": "Chiller nearing end of life",
+        "estimatedCost": 52000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_desertwillow_dm_2",
+        "system": "electrical",
+        "description": "Panels adequate",
+        "estimatedCost": 67000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_desertwillow_dm_3",
+        "system": "life_safety",
+        "description": "Fully sprinklered",
+        "estimatedCost": 48000,
+        "priority": "long_term"
+      },
+      {
+        "id": "bld_desertwillow_dm_4",
+        "system": "elevators",
+        "description": "Frequent outages",
+        "estimatedCost": 149000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_desertwillow_dm_5",
+        "system": "interiors",
+        "description": "Worn finishes, dated bathrooms, institutional feel.",
+        "estimatedCost": 167000,
+        "priority": "short_term"
+      },
+      {
+        "id": "bld_desertwillow_dm_6",
+        "system": "site",
+        "description": "Asphalt cracking",
+        "estimatedCost": 45000,
+        "priority": "long_term"
+      }
+    ],
+    "renovations": [
+      {
+        "id": "bld_desertwillow_ren_1",
+        "year": 2012,
+        "description": "Rehab gym and therapy suite expansion",
+        "cost": 434000
+      },
+      {
+        "id": "bld_desertwillow_ren_2",
+        "year": 2021,
+        "description": "Nurse call system replacement",
+        "cost": 211000
+      }
+    ]
+  }
+]

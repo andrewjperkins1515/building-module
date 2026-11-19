@@ -3,3 +3,6 @@ dist
 *.local
 .DS_Store
 *.tsbuildinfo
+
+# Browser test output
+e2e/output

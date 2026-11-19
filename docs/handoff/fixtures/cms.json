@@ -1,0 +1,3189 @@
+[
+  {
+    "buildingId": "bld_maplegrove",
+    "providerNumber": "235418",
+    "ratings": {
+      "overall": 4,
+      "health": 4,
+      "staffing": 3,
+      "qualityMeasures": 5,
+      "longStayQm": 4,
+      "shortStayQm": 5
+    },
+    "staffing": {
+      "totalNurseHprd": 3.21,
+      "rnHprd": 0.67,
+      "lpnHprd": 0.85,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.84,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 58
+    },
+    "surveys": [
+      {
+        "id": "bld_maplegrove_sv_0",
+        "date": "2026-09-26",
+        "type": "standard",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_maplegrove_cs_0",
+        "date": "2026-09-07",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_maplegrove_fs",
+        "date": "2026-05-17",
+        "type": "fire_safety",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      },
+      {
+        "id": "bld_maplegrove_sv_1",
+        "date": "2025-07-13",
+        "type": "standard",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_maplegrove_sv_2",
+        "date": "2024-07-14",
+        "type": "standard",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "E"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_maplegrove_def_0_0",
+        "surveyDate": "2026-09-26",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_0_1",
+        "surveyDate": "2026-09-26",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_0_2",
+        "surveyDate": "2026-09-26",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_cdef_0",
+        "surveyDate": "2026-09-07",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_1_0",
+        "surveyDate": "2025-07-13",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_1_1",
+        "surveyDate": "2025-07-13",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_1_2",
+        "surveyDate": "2025-07-13",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_2_0",
+        "surveyDate": "2024-07-14",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_2_1",
+        "surveyDate": "2024-07-14",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_2_2",
+        "surveyDate": "2024-07-14",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_maplegrove_def_2_3",
+        "surveyDate": "2024-07-14",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 4,
+        "health": 5,
+        "staffing": 3,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 3,
+        "health": 4,
+        "staffing": 3,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 5,
+        "health": 4,
+        "staffing": 3,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 4,
+        "health": 5,
+        "staffing": 3,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 4,
+        "health": 3,
+        "staffing": 3,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 4,
+        "health": 3,
+        "staffing": 3,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 4,
+        "health": 4,
+        "staffing": 3,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 4,
+        "health": 4,
+        "staffing": 3,
+        "qualityMeasures": 5
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-10T14:47:59.102Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_lakeview",
+    "providerNumber": "366204",
+    "ratings": {
+      "overall": 3,
+      "health": 3,
+      "staffing": 3,
+      "qualityMeasures": 4,
+      "longStayQm": 4,
+      "shortStayQm": 3
+    },
+    "staffing": {
+      "totalNurseHprd": 3.06,
+      "rnHprd": 0.65,
+      "lpnHprd": 0.85,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.97,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 57
+    },
+    "surveys": [
+      {
+        "id": "bld_lakeview_cs_1",
+        "date": "2026-08-26",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_lakeview_sv_0",
+        "date": "2026-08-15",
+        "type": "standard",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "F"
+      },
+      {
+        "id": "bld_lakeview_fs",
+        "date": "2026-05-20",
+        "type": "fire_safety",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      },
+      {
+        "id": "bld_lakeview_sv_1",
+        "date": "2025-07-22",
+        "type": "standard",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_lakeview_cs_0",
+        "date": "2025-05-04",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_lakeview_sv_2",
+        "date": "2024-10-09",
+        "type": "standard",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "E"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_lakeview_cdef_1",
+        "surveyDate": "2026-08-26",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_0_0",
+        "surveyDate": "2026-08-15",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_0_1",
+        "surveyDate": "2026-08-15",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_0_2",
+        "surveyDate": "2026-08-15",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_0_3",
+        "surveyDate": "2026-08-15",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_1_0",
+        "surveyDate": "2025-07-22",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_1_1",
+        "surveyDate": "2025-07-22",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_1_2",
+        "surveyDate": "2025-07-22",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_1_3",
+        "surveyDate": "2025-07-22",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_cdef_0",
+        "surveyDate": "2025-05-04",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_2_0",
+        "surveyDate": "2024-10-09",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_2_1",
+        "surveyDate": "2024-10-09",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_2_2",
+        "surveyDate": "2024-10-09",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_lakeview_def_2_3",
+        "surveyDate": "2024-10-09",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 3,
+        "health": 3,
+        "staffing": 3,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 3,
+        "health": 4,
+        "staffing": 3,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 3,
+        "health": 4,
+        "staffing": 3,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 4,
+        "health": 4,
+        "staffing": 3,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 3,
+        "health": 3,
+        "staffing": 3,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 3,
+        "health": 2,
+        "staffing": 3,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 3,
+        "health": 3,
+        "staffing": 3,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 3,
+        "health": 3,
+        "staffing": 3,
+        "qualityMeasures": 4
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-12T16:13:47.888Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_brookhaven",
+    "providerNumber": "155733",
+    "ratings": {
+      "overall": 2,
+      "health": 2,
+      "staffing": 2,
+      "qualityMeasures": 3,
+      "longStayQm": 3,
+      "shortStayQm": 3
+    },
+    "staffing": {
+      "totalNurseHprd": 2.85,
+      "rnHprd": 0.6,
+      "lpnHprd": 0.83,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.61,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 58
+    },
+    "surveys": [
+      {
+        "id": "bld_brookhaven_sv_0",
+        "date": "2026-09-16",
+        "type": "standard",
+        "deficiencyCount": 6,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_brookhaven_cs_3",
+        "date": "2026-08-01",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_brookhaven_fs",
+        "date": "2026-06-19",
+        "type": "fire_safety",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_brookhaven_cs_0",
+        "date": "2026-06-12",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_brookhaven_sv_1",
+        "date": "2025-08-16",
+        "type": "standard",
+        "deficiencyCount": 6,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_brookhaven_cs_1",
+        "date": "2025-03-24",
+        "type": "complaint",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_brookhaven_cs_2",
+        "date": "2025-01-15",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_brookhaven_sv_2",
+        "date": "2024-09-16",
+        "type": "standard",
+        "deficiencyCount": 6,
+        "highestScopeSeverity": "F"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_brookhaven_def_0_0",
+        "surveyDate": "2026-09-16",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "E",
+        "status": "open"
+      },
+      {
+        "id": "bld_brookhaven_def_0_1",
+        "surveyDate": "2026-09-16",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_0_2",
+        "surveyDate": "2026-09-16",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_0_3",
+        "surveyDate": "2026-09-16",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_cdef_3",
+        "surveyDate": "2026-08-01",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_fsdef",
+        "surveyDate": "2026-06-19",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "open"
+      },
+      {
+        "id": "bld_brookhaven_cdef_0",
+        "surveyDate": "2026-06-12",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_1_0",
+        "surveyDate": "2025-08-16",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_1_1",
+        "surveyDate": "2025-08-16",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_1_2",
+        "surveyDate": "2025-08-16",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_1_3",
+        "surveyDate": "2025-08-16",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_cdef_1",
+        "surveyDate": "2025-03-24",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_cdef_2",
+        "surveyDate": "2025-01-15",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_2_0",
+        "surveyDate": "2024-09-16",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_2_1",
+        "surveyDate": "2024-09-16",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_2_2",
+        "surveyDate": "2024-09-16",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_brookhaven_def_2_3",
+        "surveyDate": "2024-09-16",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [
+      {
+        "id": "bld_brookhaven_pen_1",
+        "date": "2025-12-01",
+        "type": "civil_money_penalty",
+        "amount": 28272,
+        "description": "Civil money penalty following standard survey."
+      }
+    ],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 3,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 2,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 2,
+        "health": 1,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 2,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 1,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 2,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 2,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-17T11:48:53.031Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_bluegrass",
+    "providerNumber": "185402",
+    "ratings": {
+      "overall": 3,
+      "health": 3,
+      "staffing": 4,
+      "qualityMeasures": 3,
+      "longStayQm": 2,
+      "shortStayQm": 4
+    },
+    "staffing": {
+      "totalNurseHprd": 3.62,
+      "rnHprd": 0.75,
+      "lpnHprd": 0.76,
+      "cnaHprd": 2.11,
+      "stateAvgTotalHprd": 3.64,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 51
+    },
+    "surveys": [
+      {
+        "id": "bld_bluegrass_sv_0",
+        "date": "2026-09-30",
+        "type": "standard",
+        "deficiencyCount": 7,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_bluegrass_fs",
+        "date": "2026-09-05",
+        "type": "fire_safety",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      },
+      {
+        "id": "bld_bluegrass_cs_1",
+        "date": "2026-07-09",
+        "type": "complaint",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_bluegrass_cs_0",
+        "date": "2026-06-10",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_bluegrass_sv_1",
+        "date": "2025-08-26",
+        "type": "standard",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "F"
+      },
+      {
+        "id": "bld_bluegrass_sv_2",
+        "date": "2024-08-02",
+        "type": "standard",
+        "deficiencyCount": 7,
+        "highestScopeSeverity": "E"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_bluegrass_def_0_0",
+        "surveyDate": "2026-09-30",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_0_1",
+        "surveyDate": "2026-09-30",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_0_2",
+        "surveyDate": "2026-09-30",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_0_3",
+        "surveyDate": "2026-09-30",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_cdef_1",
+        "surveyDate": "2026-07-09",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_cdef_0",
+        "surveyDate": "2026-06-10",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_1_0",
+        "surveyDate": "2025-08-26",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_1_1",
+        "surveyDate": "2025-08-26",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_1_2",
+        "surveyDate": "2025-08-26",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_1_3",
+        "surveyDate": "2025-08-26",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_2_0",
+        "surveyDate": "2024-08-02",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_2_1",
+        "surveyDate": "2024-08-02",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_2_2",
+        "surveyDate": "2024-08-02",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_bluegrass_def_2_3",
+        "surveyDate": "2024-08-02",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 4,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 3,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 2,
+        "health": 2,
+        "staffing": 4,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 4,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 2,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 3,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 3,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 3,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 3
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-09T19:12:58.592Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_clearwater",
+    "providerNumber": "185617",
+    "ratings": {
+      "overall": 4,
+      "health": 3,
+      "staffing": 4,
+      "qualityMeasures": 5,
+      "longStayQm": 5,
+      "shortStayQm": 5
+    },
+    "staffing": {
+      "totalNurseHprd": 3.43,
+      "rnHprd": 0.78,
+      "lpnHprd": 0.92,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.99,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 44
+    },
+    "surveys": [
+      {
+        "id": "bld_clearwater_sv_0",
+        "date": "2026-09-24",
+        "type": "standard",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_clearwater_cs_1",
+        "date": "2026-09-23",
+        "type": "complaint",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_clearwater_fs",
+        "date": "2026-09-04",
+        "type": "fire_safety",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      },
+      {
+        "id": "bld_clearwater_cs_2",
+        "date": "2026-07-01",
+        "type": "complaint",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_clearwater_sv_1",
+        "date": "2025-09-23",
+        "type": "standard",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_clearwater_cs_0",
+        "date": "2025-09-13",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_clearwater_sv_2",
+        "date": "2024-09-01",
+        "type": "standard",
+        "deficiencyCount": 6,
+        "highestScopeSeverity": "F"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_clearwater_def_0_0",
+        "surveyDate": "2026-09-24",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_0_1",
+        "surveyDate": "2026-09-24",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_0_2",
+        "surveyDate": "2026-09-24",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_0_3",
+        "surveyDate": "2026-09-24",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_cdef_1",
+        "surveyDate": "2026-09-23",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_cdef_2",
+        "surveyDate": "2026-07-01",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_1_0",
+        "surveyDate": "2025-09-23",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_1_1",
+        "surveyDate": "2025-09-23",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_1_2",
+        "surveyDate": "2025-09-23",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_1_3",
+        "surveyDate": "2025-09-23",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_cdef_0",
+        "surveyDate": "2025-09-13",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_2_0",
+        "surveyDate": "2024-09-01",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_2_1",
+        "surveyDate": "2024-09-01",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_2_2",
+        "surveyDate": "2024-09-01",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_clearwater_def_2_3",
+        "surveyDate": "2024-09-01",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 5,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 3,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 4,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 4,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 4,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 4,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 4,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 5
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-09T09:40:07.758Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_cumberland",
+    "providerNumber": "445390",
+    "ratings": {
+      "overall": 2,
+      "health": 1,
+      "staffing": 3,
+      "qualityMeasures": 3,
+      "longStayQm": 3,
+      "shortStayQm": 4
+    },
+    "staffing": {
+      "totalNurseHprd": 3.19,
+      "rnHprd": 0.66,
+      "lpnHprd": 0.8,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.74,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 56
+    },
+    "surveys": [
+      {
+        "id": "bld_cumberland_sv_0",
+        "date": "2026-09-09",
+        "type": "standard",
+        "deficiencyCount": 11,
+        "highestScopeSeverity": "J"
+      },
+      {
+        "id": "bld_cumberland_cs_3",
+        "date": "2026-06-25",
+        "type": "complaint",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_cumberland_cs_2",
+        "date": "2026-06-23",
+        "type": "complaint",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_cumberland_fs",
+        "date": "2026-06-15",
+        "type": "fire_safety",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_cumberland_sv_1",
+        "date": "2025-09-21",
+        "type": "standard",
+        "deficiencyCount": 9,
+        "highestScopeSeverity": "F"
+      },
+      {
+        "id": "bld_cumberland_cs_1",
+        "date": "2025-09-18",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_cumberland_cs_0",
+        "date": "2025-07-28",
+        "type": "complaint",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_cumberland_sv_2",
+        "date": "2024-07-23",
+        "type": "standard",
+        "deficiencyCount": 12,
+        "highestScopeSeverity": "E"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_cumberland_def_0_0",
+        "surveyDate": "2026-09-09",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "J",
+        "status": "open"
+      },
+      {
+        "id": "bld_cumberland_def_0_1",
+        "surveyDate": "2026-09-09",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_0_2",
+        "surveyDate": "2026-09-09",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_0_3",
+        "surveyDate": "2026-09-09",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_cdef_3",
+        "surveyDate": "2026-06-25",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_cdef_2",
+        "surveyDate": "2026-06-23",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_fsdef",
+        "surveyDate": "2026-06-15",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "open"
+      },
+      {
+        "id": "bld_cumberland_def_1_0",
+        "surveyDate": "2025-09-21",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_1_1",
+        "surveyDate": "2025-09-21",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_1_2",
+        "surveyDate": "2025-09-21",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_1_3",
+        "surveyDate": "2025-09-21",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_cdef_1",
+        "surveyDate": "2025-09-18",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_cdef_0",
+        "surveyDate": "2025-07-28",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_2_0",
+        "surveyDate": "2024-07-23",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_2_1",
+        "surveyDate": "2024-07-23",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_2_2",
+        "surveyDate": "2024-07-23",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_cumberland_def_2_3",
+        "surveyDate": "2024-07-23",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [
+      {
+        "id": "bld_cumberland_pen_1",
+        "date": "2025-11-15",
+        "type": "civil_money_penalty",
+        "amount": 19153,
+        "description": "Civil money penalty following standard survey."
+      },
+      {
+        "id": "bld_cumberland_pen_2",
+        "date": "2026-07-22",
+        "type": "payment_denial",
+        "description": "Denial of payment for new admissions (DPNA), 21 days."
+      },
+      {
+        "id": "bld_cumberland_pen_3",
+        "date": "2025-07-27",
+        "type": "civil_money_penalty",
+        "amount": 99982,
+        "description": "Per-day CMP related to immediate jeopardy citation."
+      }
+    ],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 3,
+        "health": 2,
+        "staffing": 3,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 3,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 1,
+        "health": 1,
+        "staffing": 3,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 2,
+        "health": 1,
+        "staffing": 3,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 2,
+        "health": 1,
+        "staffing": 3,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 3,
+        "health": 1,
+        "staffing": 3,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 2,
+        "health": 1,
+        "staffing": 3,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 2,
+        "health": 1,
+        "staffing": 3,
+        "qualityMeasures": 3
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": true,
+    "lastRefreshedAt": "2026-11-08T21:03:10.915Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_riverside",
+    "providerNumber": "686231",
+    "ratings": {
+      "overall": 5,
+      "health": 5,
+      "staffing": 4,
+      "qualityMeasures": 5,
+      "longStayQm": 4,
+      "shortStayQm": 5
+    },
+    "staffing": {
+      "totalNurseHprd": 3.49,
+      "rnHprd": 0.74,
+      "lpnHprd": 0.81,
+      "cnaHprd": 1.94,
+      "stateAvgTotalHprd": 3.98,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 45
+    },
+    "surveys": [
+      {
+        "id": "bld_riverside_fs",
+        "date": "2026-09-03",
+        "type": "fire_safety",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      },
+      {
+        "id": "bld_riverside_sv_0",
+        "date": "2026-08-25",
+        "type": "standard",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_riverside_sv_1",
+        "date": "2025-09-29",
+        "type": "standard",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      },
+      {
+        "id": "bld_riverside_sv_2",
+        "date": "2024-08-13",
+        "type": "standard",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_riverside_def_0_0",
+        "surveyDate": "2026-08-25",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_riverside_def_0_1",
+        "surveyDate": "2026-08-25",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 5,
+        "health": 5,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 5,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 4,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 5,
+        "health": 5,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 5,
+        "health": 5,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 5,
+        "health": 5,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 5,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 5
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 5,
+        "health": 5,
+        "staffing": 4,
+        "qualityMeasures": 5
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-16T14:34:12.507Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_chestnut",
+    "providerNumber": "396841",
+    "ratings": {
+      "overall": 4,
+      "health": 4,
+      "staffing": 4,
+      "qualityMeasures": 4,
+      "longStayQm": 3,
+      "shortStayQm": 5
+    },
+    "staffing": {
+      "totalNurseHprd": 3.61,
+      "rnHprd": 0.76,
+      "lpnHprd": 0.82,
+      "cnaHprd": 2.03,
+      "stateAvgTotalHprd": 3.81,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 47
+    },
+    "surveys": [
+      {
+        "id": "bld_chestnut_sv_0",
+        "date": "2026-08-28",
+        "type": "standard",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "F"
+      },
+      {
+        "id": "bld_chestnut_fs",
+        "date": "2026-08-11",
+        "type": "fire_safety",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_chestnut_sv_1",
+        "date": "2025-09-02",
+        "type": "standard",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_chestnut_cs_0",
+        "date": "2025-06-01",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_chestnut_sv_2",
+        "date": "2024-09-15",
+        "type": "standard",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "E"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_chestnut_def_0_0",
+        "surveyDate": "2026-08-28",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_0_1",
+        "surveyDate": "2026-08-28",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_0_2",
+        "surveyDate": "2026-08-28",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_0_3",
+        "surveyDate": "2026-08-28",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_fsdef",
+        "surveyDate": "2026-08-11",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_1_0",
+        "surveyDate": "2025-09-02",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_1_1",
+        "surveyDate": "2025-09-02",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_1_2",
+        "surveyDate": "2025-09-02",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_1_3",
+        "surveyDate": "2025-09-02",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_cdef_0",
+        "surveyDate": "2025-06-01",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_2_0",
+        "surveyDate": "2024-09-15",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_2_1",
+        "surveyDate": "2024-09-15",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_chestnut_def_2_2",
+        "surveyDate": "2024-09-15",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 5,
+        "health": 5,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 4,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 3,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 4,
+        "health": 5,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 4,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 4,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 4,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 4,
+        "health": 4,
+        "staffing": 4,
+        "qualityMeasures": 4
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-15T23:13:53.597Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_seaside",
+    "providerNumber": "345288",
+    "ratings": {
+      "overall": 2,
+      "health": 2,
+      "staffing": 2,
+      "qualityMeasures": 3,
+      "longStayQm": 3,
+      "shortStayQm": 4
+    },
+    "staffing": {
+      "totalNurseHprd": 2.75,
+      "rnHprd": 0.57,
+      "lpnHprd": 0.76,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.62,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 59
+    },
+    "surveys": [
+      {
+        "id": "bld_seaside_sv_0",
+        "date": "2026-09-07",
+        "type": "standard",
+        "deficiencyCount": 9,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_seaside_cs_2",
+        "date": "2026-07-19",
+        "type": "complaint",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_seaside_cs_3",
+        "date": "2026-05-29",
+        "type": "complaint",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_seaside_cs_0",
+        "date": "2026-05-26",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_seaside_fs",
+        "date": "2026-04-28",
+        "type": "fire_safety",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_seaside_sv_1",
+        "date": "2025-08-18",
+        "type": "standard",
+        "deficiencyCount": 9,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_seaside_cs_1",
+        "date": "2025-05-18",
+        "type": "complaint",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_seaside_sv_2",
+        "date": "2024-08-31",
+        "type": "standard",
+        "deficiencyCount": 10,
+        "highestScopeSeverity": "F"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_seaside_def_0_0",
+        "surveyDate": "2026-09-07",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "open"
+      },
+      {
+        "id": "bld_seaside_def_0_1",
+        "surveyDate": "2026-09-07",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_0_2",
+        "surveyDate": "2026-09-07",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_0_3",
+        "surveyDate": "2026-09-07",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_cdef_2",
+        "surveyDate": "2026-07-19",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_cdef_3",
+        "surveyDate": "2026-05-29",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_cdef_0",
+        "surveyDate": "2026-05-26",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_fsdef",
+        "surveyDate": "2026-04-28",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "open"
+      },
+      {
+        "id": "bld_seaside_def_1_0",
+        "surveyDate": "2025-08-18",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_1_1",
+        "surveyDate": "2025-08-18",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_1_2",
+        "surveyDate": "2025-08-18",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_1_3",
+        "surveyDate": "2025-08-18",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_cdef_1",
+        "surveyDate": "2025-05-18",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_2_0",
+        "surveyDate": "2024-08-31",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_2_1",
+        "surveyDate": "2024-08-31",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_2_2",
+        "surveyDate": "2024-08-31",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_seaside_def_2_3",
+        "surveyDate": "2024-08-31",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [
+      {
+        "id": "bld_seaside_pen_1",
+        "date": "2026-04-02",
+        "type": "civil_money_penalty",
+        "amount": 63509,
+        "description": "Civil money penalty following standard survey."
+      }
+    ],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 3,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 2,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 2,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 2,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 2,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 2,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 3
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-11T05:31:25.813Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_ozark",
+    "providerNumber": "265902",
+    "ratings": {
+      "overall": 1,
+      "health": 1,
+      "staffing": 1,
+      "qualityMeasures": 2,
+      "longStayQm": 2,
+      "shortStayQm": 3
+    },
+    "staffing": {
+      "totalNurseHprd": 2.48,
+      "rnHprd": 0.5,
+      "lpnHprd": 0.81,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.73,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 63
+    },
+    "surveys": [
+      {
+        "id": "bld_ozark_cs_2",
+        "date": "2026-10-09",
+        "type": "complaint",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_ozark_sv_0",
+        "date": "2026-08-06",
+        "type": "standard",
+        "deficiencyCount": 9,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_ozark_cs_1",
+        "date": "2026-07-15",
+        "type": "complaint",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_ozark_fs",
+        "date": "2026-05-29",
+        "type": "fire_safety",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_ozark_sv_1",
+        "date": "2025-10-09",
+        "type": "standard",
+        "deficiencyCount": 8,
+        "highestScopeSeverity": "F"
+      },
+      {
+        "id": "bld_ozark_cs_0",
+        "date": "2025-09-27",
+        "type": "complaint",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_ozark_cs_3",
+        "date": "2025-05-04",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_ozark_sv_2",
+        "date": "2024-09-24",
+        "type": "standard",
+        "deficiencyCount": 9,
+        "highestScopeSeverity": "F"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_ozark_cdef_2",
+        "surveyDate": "2026-10-09",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_0_0",
+        "surveyDate": "2026-08-06",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "E",
+        "status": "open"
+      },
+      {
+        "id": "bld_ozark_def_0_1",
+        "surveyDate": "2026-08-06",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_0_2",
+        "surveyDate": "2026-08-06",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_0_3",
+        "surveyDate": "2026-08-06",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_cdef_1",
+        "surveyDate": "2026-07-15",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_fsdef",
+        "surveyDate": "2026-05-29",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "open"
+      },
+      {
+        "id": "bld_ozark_def_1_0",
+        "surveyDate": "2025-10-09",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_1_1",
+        "surveyDate": "2025-10-09",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_1_2",
+        "surveyDate": "2025-10-09",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_1_3",
+        "surveyDate": "2025-10-09",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_cdef_0",
+        "surveyDate": "2025-09-27",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_cdef_3",
+        "surveyDate": "2025-05-04",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_2_0",
+        "surveyDate": "2024-09-24",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_2_1",
+        "surveyDate": "2024-09-24",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_2_2",
+        "surveyDate": "2024-09-24",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_ozark_def_2_3",
+        "surveyDate": "2024-09-24",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [
+      {
+        "id": "bld_ozark_pen_1",
+        "date": "2026-03-04",
+        "type": "civil_money_penalty",
+        "amount": 29462,
+        "description": "Civil money penalty following standard survey."
+      },
+      {
+        "id": "bld_ozark_pen_2",
+        "date": "2026-07-22",
+        "type": "payment_denial",
+        "description": "Denial of payment for new admissions (DPNA), 21 days."
+      },
+      {
+        "id": "bld_ozark_pen_3",
+        "date": "2025-07-27",
+        "type": "civil_money_penalty",
+        "amount": 60788,
+        "description": "Per-day CMP related to immediate jeopardy citation."
+      }
+    ],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 2,
+        "health": 2,
+        "staffing": 1,
+        "qualityMeasures": 2
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 1,
+        "health": 2,
+        "staffing": 1,
+        "qualityMeasures": 2
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 1,
+        "health": 1,
+        "staffing": 1,
+        "qualityMeasures": 2
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 1,
+        "health": 1,
+        "staffing": 1,
+        "qualityMeasures": 2
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 2,
+        "health": 1,
+        "staffing": 1,
+        "qualityMeasures": 2
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 1,
+        "health": 1,
+        "staffing": 1,
+        "qualityMeasures": 2
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 1,
+        "health": 1,
+        "staffing": 1,
+        "qualityMeasures": 2
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 1,
+        "health": 1,
+        "staffing": 1,
+        "qualityMeasures": 2
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": true,
+    "lastRefreshedAt": "2026-11-16T21:28:13.481Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_prairieview",
+    "providerNumber": "146519",
+    "ratings": {
+      "overall": 3,
+      "health": 3,
+      "staffing": 2,
+      "qualityMeasures": 4,
+      "longStayQm": 3,
+      "shortStayQm": 5
+    },
+    "staffing": {
+      "totalNurseHprd": 2.75,
+      "rnHprd": 0.58,
+      "lpnHprd": 0.73,
+      "cnaHprd": 1.8,
+      "stateAvgTotalHprd": 3.68,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 56
+    },
+    "surveys": [
+      {
+        "id": "bld_prairieview_sv_0",
+        "date": "2026-07-29",
+        "type": "standard",
+        "deficiencyCount": 6,
+        "highestScopeSeverity": "F"
+      },
+      {
+        "id": "bld_prairieview_fs",
+        "date": "2026-04-20",
+        "type": "fire_safety",
+        "deficiencyCount": 0,
+        "highestScopeSeverity": "—"
+      },
+      {
+        "id": "bld_prairieview_cs_1",
+        "date": "2026-04-07",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_prairieview_cs_0",
+        "date": "2025-08-30",
+        "type": "complaint",
+        "deficiencyCount": 2,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_prairieview_sv_1",
+        "date": "2025-07-14",
+        "type": "standard",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_prairieview_sv_2",
+        "date": "2024-10-08",
+        "type": "standard",
+        "deficiencyCount": 5,
+        "highestScopeSeverity": "D"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_prairieview_def_0_0",
+        "surveyDate": "2026-07-29",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_0_1",
+        "surveyDate": "2026-07-29",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_0_2",
+        "surveyDate": "2026-07-29",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_0_3",
+        "surveyDate": "2026-07-29",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_cdef_1",
+        "surveyDate": "2026-04-07",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_cdef_0",
+        "surveyDate": "2025-08-30",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_1_0",
+        "surveyDate": "2025-07-14",
+        "tag": "K0918",
+        "category": "Life safety",
+        "description": "Electrical systems — generator load test not documented monthly.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_1_1",
+        "surveyDate": "2025-07-14",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_1_2",
+        "surveyDate": "2025-07-14",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_1_3",
+        "surveyDate": "2025-07-14",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_2_0",
+        "surveyDate": "2024-10-08",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_2_1",
+        "surveyDate": "2024-10-08",
+        "tag": "F761",
+        "category": "Pharmacy services",
+        "description": "Label/store drugs and biologicals — expired medications in medication cart.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_2_2",
+        "surveyDate": "2024-10-08",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_prairieview_def_2_3",
+        "surveyDate": "2024-10-08",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 4,
+        "health": 4,
+        "staffing": 2,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 2,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 3,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 4,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 2,
+        "health": 2,
+        "staffing": 2,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 3,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 3,
+        "health": 3,
+        "staffing": 2,
+        "qualityMeasures": 4
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-12T10:50:16.967Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  },
+  {
+    "buildingId": "bld_desertwillow",
+    "providerNumber": "035284",
+    "ratings": {
+      "overall": 3,
+      "health": 2,
+      "staffing": 4,
+      "qualityMeasures": 4,
+      "longStayQm": 4,
+      "shortStayQm": 5
+    },
+    "staffing": {
+      "totalNurseHprd": 3.52,
+      "rnHprd": 0.79,
+      "lpnHprd": 0.83,
+      "cnaHprd": 1.9,
+      "stateAvgTotalHprd": 3.99,
+      "nationalAvgTotalHprd": 3.82,
+      "nurseTurnoverPct": 45
+    },
+    "surveys": [
+      {
+        "id": "bld_desertwillow_cs_0",
+        "date": "2026-10-06",
+        "type": "complaint",
+        "deficiencyCount": 4,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_desertwillow_sv_0",
+        "date": "2026-09-18",
+        "type": "standard",
+        "deficiencyCount": 6,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_desertwillow_fs",
+        "date": "2026-09-11",
+        "type": "fire_safety",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_desertwillow_cs_2",
+        "date": "2025-11-09",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_desertwillow_cs_1",
+        "date": "2025-10-09",
+        "type": "complaint",
+        "deficiencyCount": 3,
+        "highestScopeSeverity": "D"
+      },
+      {
+        "id": "bld_desertwillow_cs_3",
+        "date": "2025-08-12",
+        "type": "complaint",
+        "deficiencyCount": 1,
+        "highestScopeSeverity": "E"
+      },
+      {
+        "id": "bld_desertwillow_sv_1",
+        "date": "2025-08-09",
+        "type": "standard",
+        "deficiencyCount": 6,
+        "highestScopeSeverity": "G"
+      },
+      {
+        "id": "bld_desertwillow_sv_2",
+        "date": "2024-08-03",
+        "type": "standard",
+        "deficiencyCount": 10,
+        "highestScopeSeverity": "F"
+      }
+    ],
+    "deficiencies": [
+      {
+        "id": "bld_desertwillow_cdef_0",
+        "surveyDate": "2026-10-06",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_0_0",
+        "surveyDate": "2026-09-18",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "G",
+        "status": "open"
+      },
+      {
+        "id": "bld_desertwillow_def_0_1",
+        "surveyDate": "2026-09-18",
+        "tag": "F656",
+        "category": "Care planning",
+        "description": "Develop/implement comprehensive care plan — care plan not updated after readmission.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_0_2",
+        "surveyDate": "2026-09-18",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_0_3",
+        "surveyDate": "2026-09-18",
+        "tag": "F684",
+        "category": "Quality of care",
+        "description": "Quality of care — delayed physician notification of change in condition.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_fsdef",
+        "surveyDate": "2026-09-11",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_cdef_2",
+        "surveyDate": "2025-11-09",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_cdef_1",
+        "surveyDate": "2025-10-09",
+        "tag": "F584",
+        "category": "Environment",
+        "description": "Safe/clean/comfortable/homelike environment — damaged wall surfaces and odors in east wing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_cdef_3",
+        "surveyDate": "2025-08-12",
+        "tag": "F812",
+        "category": "Food & nutrition",
+        "description": "Food procurement, store/prepare/serve — refrigerator temperature logs incomplete.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_1_0",
+        "surveyDate": "2025-08-09",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "G",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_1_1",
+        "surveyDate": "2025-08-09",
+        "tag": "F725",
+        "category": "Nursing services",
+        "description": "Sufficient nursing staff — call light response times exceeded policy on night shift.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_1_2",
+        "surveyDate": "2025-08-09",
+        "tag": "F880",
+        "category": "Infection control",
+        "description": "Infection prevention & control — hand hygiene not performed between resident contacts.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_1_3",
+        "surveyDate": "2025-08-09",
+        "tag": "F600",
+        "category": "Abuse & neglect",
+        "description": "Free from abuse and neglect — allegation not reported within required timeframe.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_2_0",
+        "surveyDate": "2024-08-03",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_2_1",
+        "surveyDate": "2024-08-03",
+        "tag": "F686",
+        "category": "Quality of care",
+        "description": "Treatment/services to prevent/heal pressure ulcers — repositioning schedule not followed.",
+        "scopeSeverity": "D",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_2_2",
+        "surveyDate": "2024-08-03",
+        "tag": "F689",
+        "category": "Accidents & supervision",
+        "description": "Free of accident hazards/supervision/devices — fall interventions not implemented per care plan.",
+        "scopeSeverity": "F",
+        "status": "corrected"
+      },
+      {
+        "id": "bld_desertwillow_def_2_3",
+        "surveyDate": "2024-08-03",
+        "tag": "K0353",
+        "category": "Life safety",
+        "description": "Sprinkler system maintenance and testing — quarterly inspection documentation missing.",
+        "scopeSeverity": "E",
+        "status": "corrected"
+      }
+    ],
+    "penalties": [
+      {
+        "id": "bld_desertwillow_pen_1",
+        "date": "2026-02-11",
+        "type": "civil_money_penalty",
+        "amount": 71678,
+        "description": "Civil money penalty following standard survey."
+      }
+    ],
+    "ratingHistory": [
+      {
+        "period": "Q4 2024",
+        "overall": 2,
+        "health": 1,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2025",
+        "overall": 2,
+        "health": 1,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2025",
+        "overall": 3,
+        "health": 3,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q4 2025",
+        "overall": 3,
+        "health": 2,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q1 2026",
+        "overall": 3,
+        "health": 1,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q2 2026",
+        "overall": 3,
+        "health": 1,
+        "staffing": 4,
+        "qualityMeasures": 4
+      },
+      {
+        "period": "Q3 2026",
+        "overall": 3,
+        "health": 2,
+        "staffing": 4,
+        "qualityMeasures": 4
+      }
+    ],
+    "specialFocusFacility": false,
+    "abuseIcon": false,
+    "lastRefreshedAt": "2026-11-09T08:28:44.884Z",
+    "sourceLabel": "Mock CMS Care Compare extract (prototype data)"
+  }
+]

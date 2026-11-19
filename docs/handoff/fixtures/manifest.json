@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-11-19T14:33:42.862Z",
+  "stateVersion": 10,
+  "counts": {
+    "buildings": 15,
+    "organizations": 37,
+    "contacts": 55,
+    "ownerships": 42,
+    "relationships": 96,
+    "deals": 12,
+    "dealBuildings": 20,
+    "cms": 12,
+    "conditions": 15,
+    "capitalProjects": 39,
+    "financials": 15,
+    "siteVisits": 13,
+    "documentRequests": 265,
+    "activities": 203,
+    "dataRooms": 15,
+    "communications": 265
+  }
+}

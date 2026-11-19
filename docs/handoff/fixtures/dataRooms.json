@@ -1,0 +1,452 @@
+[
+  {
+    "buildingId": "bld_maplegrove",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Great Lakes Portfolio / Maple Grove",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T10:28:54.837Z",
+    "recentFiles": [
+      {
+        "id": "bld_maplegrove_doc_license_f1_dr",
+        "name": "Maple_Grove_Current_facility_license.pdf",
+        "importedAt": "2026-10-08T14:33:42.836Z",
+        "size": 2249785,
+        "matchedRequestId": "bld_maplegrove_doc_license"
+      },
+      {
+        "id": "bld_maplegrove_doc_survey_2567_f1_dr",
+        "name": "Maple_Grove_CMS_2567_survey_reports_3_years.pdf",
+        "importedAt": "2026-11-15T14:33:42.837Z",
+        "size": 461274,
+        "matchedRequestId": "bld_maplegrove_doc_survey_2567"
+      },
+      {
+        "id": "bld_maplegrove_doc_poc_f1_dr",
+        "name": "Maple_Grove_Plans_of_correction.pdf",
+        "importedAt": "2026-11-15T14:33:42.837Z",
+        "size": 3608877,
+        "matchedRequestId": "bld_maplegrove_doc_poc"
+      },
+      {
+        "id": "bld_maplegrove_doc_cert_occupancy_f1_dr",
+        "name": "Maple_Grove_Certificate_of_occupancy.pdf",
+        "importedAt": "2026-11-13T14:33:42.837Z",
+        "size": 1140470,
+        "matchedRequestId": "bld_maplegrove_doc_cert_occupancy"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_lakeview",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Great Lakes Portfolio / Lakeview Terrace",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T11:12:06.838Z",
+    "recentFiles": [
+      {
+        "id": "bld_lakeview_doc_license_f1_dr",
+        "name": "Lakeview_Terrace_Current_facility_license.pdf",
+        "importedAt": "2026-11-11T14:33:42.838Z",
+        "size": 2075802,
+        "matchedRequestId": "bld_lakeview_doc_license"
+      },
+      {
+        "id": "bld_lakeview_doc_floor_plan_f1_dr",
+        "name": "Lakeview_Terrace_Floor_plan.pdf",
+        "importedAt": "2026-10-10T14:33:42.838Z",
+        "size": 2673440,
+        "matchedRequestId": "bld_lakeview_doc_floor_plan"
+      },
+      {
+        "id": "bld_lakeview_doc_cert_letters_f1_dr",
+        "name": "Lakeview_Terrace_Medicare_Medicaid_certification_letters.pdf",
+        "importedAt": "2026-10-12T14:33:42.838Z",
+        "size": 3993012,
+        "matchedRequestId": "bld_lakeview_doc_cert_letters"
+      },
+      {
+        "id": "bld_lakeview_doc_poc_f1_dr",
+        "name": "Lakeview_Terrace_Plans_of_correction.pdf",
+        "importedAt": "2026-10-14T14:33:42.838Z",
+        "size": 1202564,
+        "matchedRequestId": "bld_lakeview_doc_poc"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_brookhaven",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Great Lakes Portfolio / Brookhaven Nursing",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T11:55:18.839Z",
+    "recentFiles": [
+      {
+        "id": "bld_brookhaven_doc_license_f1_dr",
+        "name": "Brookhaven_Nursing_Current_facility_license.pdf",
+        "importedAt": "2026-10-19T14:33:42.839Z",
+        "size": 475800,
+        "matchedRequestId": "bld_brookhaven_doc_license"
+      },
+      {
+        "id": "bld_brookhaven_doc_cert_letters_f1_dr",
+        "name": "Brookhaven_Nursing_Medicare_Medicaid_certification_letters.pdf",
+        "importedAt": "2026-11-16T14:33:42.839Z",
+        "size": 4100246,
+        "matchedRequestId": "bld_brookhaven_doc_cert_letters"
+      },
+      {
+        "id": "bld_brookhaven_doc_poc_f1_dr",
+        "name": "Brookhaven_Nursing_Plans_of_correction.pdf",
+        "importedAt": "2026-11-14T14:33:42.839Z",
+        "size": 2265452,
+        "matchedRequestId": "bld_brookhaven_doc_poc"
+      },
+      {
+        "id": "bld_brookhaven_doc_cert_occupancy_f1_dr",
+        "name": "Brookhaven_Nursing_Certificate_of_occupancy.pdf",
+        "importedAt": "2026-10-28T14:33:42.839Z",
+        "size": 3193610,
+        "matchedRequestId": "bld_brookhaven_doc_cert_occupancy"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_harborpointe",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Great Lakes Portfolio / Harbor Pointe",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T12:38:30.840Z",
+    "recentFiles": [
+      {
+        "id": "bld_harborpointe_doc_license_f1_dr",
+        "name": "Harbor_Pointe_Current_facility_license.pdf",
+        "importedAt": "2026-10-31T14:33:42.840Z",
+        "size": 2382477,
+        "matchedRequestId": "bld_harborpointe_doc_license"
+      },
+      {
+        "id": "bld_harborpointe_doc_floor_plan_f2_dr",
+        "name": "Harbor_Pointe_Floor_plan_v2.pdf",
+        "importedAt": "2026-10-26T14:33:42.840Z",
+        "size": 1834980,
+        "matchedRequestId": "bld_harborpointe_doc_floor_plan"
+      },
+      {
+        "id": "bld_harborpointe_doc_alta_f1_dr",
+        "name": "Harbor_Pointe_ALTA_NSPS_land_title_survey.pdf",
+        "importedAt": "2026-11-10T14:33:42.840Z",
+        "size": 4332321,
+        "matchedRequestId": "bld_harborpointe_doc_alta"
+      },
+      {
+        "id": "bld_harborpointe_doc_t12_f1_dr",
+        "name": "Harbor_Pointe_Trailing_12_month_P_L.pdf",
+        "importedAt": "2026-10-24T14:33:42.840Z",
+        "size": 1576593,
+        "matchedRequestId": "bld_harborpointe_doc_t12"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_bluegrass",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Bluegrass Trio / Bluegrass Manor",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T09:45:42.840Z",
+    "recentFiles": [
+      {
+        "id": "bld_bluegrass_doc_cert_letters_f1_dr",
+        "name": "Bluegrass_Manor_Medicare_Medicaid_certification_letters.pdf",
+        "importedAt": "2026-10-25T14:33:42.840Z",
+        "size": 2729560,
+        "matchedRequestId": "bld_bluegrass_doc_cert_letters"
+      },
+      {
+        "id": "bld_bluegrass_doc_survey_2567_f1_dr",
+        "name": "Bluegrass_Manor_CMS_2567_survey_reports_3_years.pdf",
+        "importedAt": "2026-11-12T14:33:42.840Z",
+        "size": 3299014,
+        "matchedRequestId": "bld_bluegrass_doc_survey_2567"
+      },
+      {
+        "id": "bld_bluegrass_doc_census_f1_dr",
+        "name": "Bluegrass_Manor_Census_payer_mix_reports.pdf",
+        "importedAt": "2026-10-22T14:33:42.840Z",
+        "size": 464504,
+        "matchedRequestId": "bld_bluegrass_doc_census"
+      },
+      {
+        "id": "bld_bluegrass_doc_lease_f1_dr",
+        "name": "Bluegrass_Manor_Existing_operating_lease.pdf",
+        "importedAt": "2026-10-15T14:33:42.840Z",
+        "size": 3750379,
+        "matchedRequestId": "bld_bluegrass_doc_lease"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_clearwater",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Bluegrass Trio / Clearwater Ridge",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T10:28:54.841Z",
+    "recentFiles": [
+      {
+        "id": "bld_clearwater_doc_cert_occupancy_f1_dr",
+        "name": "Clearwater_Ridge_Certificate_of_occupancy.pdf",
+        "importedAt": "2026-10-25T14:33:42.841Z",
+        "size": 2083958,
+        "matchedRequestId": "bld_clearwater_doc_cert_occupancy"
+      },
+      {
+        "id": "bld_clearwater_doc_tax_bills_f1_dr",
+        "name": "Clearwater_Ridge_Real_estate_tax_bills.pdf",
+        "importedAt": "2026-10-15T14:33:42.841Z",
+        "size": 3940024,
+        "matchedRequestId": "bld_clearwater_doc_tax_bills"
+      },
+      {
+        "id": "bld_clearwater_doc_contracts_f1_dr",
+        "name": "Clearwater_Ridge_Vendor_service_contracts.pdf",
+        "importedAt": "2026-10-26T14:33:42.841Z",
+        "size": 2555277,
+        "matchedRequestId": "bld_clearwater_doc_contracts"
+      },
+      {
+        "id": "bld_clearwater_doc_phase1_f2_dr",
+        "name": "Clearwater_Ridge_Phase_I_environmental_site_assessment_v2.pdf",
+        "importedAt": "2026-11-16T14:33:42.841Z",
+        "size": 3270325,
+        "matchedRequestId": "bld_clearwater_doc_phase1"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_cumberland",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Bluegrass Trio / Cumberland Hills",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T11:12:06.841Z",
+    "recentFiles": [
+      {
+        "id": "bld_cumberland_doc_license_f1_dr",
+        "name": "Cumberland_Hills_Current_facility_license.pdf",
+        "importedAt": "2026-10-29T14:33:42.841Z",
+        "size": 928715,
+        "matchedRequestId": "bld_cumberland_doc_license"
+      },
+      {
+        "id": "bld_cumberland_doc_floor_plan_f1_dr",
+        "name": "Cumberland_Hills_Floor_plan.pdf",
+        "importedAt": "2026-10-20T14:33:42.841Z",
+        "size": 2385086,
+        "matchedRequestId": "bld_cumberland_doc_floor_plan"
+      },
+      {
+        "id": "bld_cumberland_doc_survey_2567_f1_dr",
+        "name": "Cumberland_Hills_CMS_2567_survey_reports_3_years.pdf",
+        "importedAt": "2026-10-12T14:33:42.841Z",
+        "size": 3011301,
+        "matchedRequestId": "bld_cumberland_doc_survey_2567"
+      },
+      {
+        "id": "bld_cumberland_doc_cert_occupancy_f1_dr",
+        "name": "Cumberland_Hills_Certificate_of_occupancy.pdf",
+        "importedAt": "2026-11-07T14:33:42.841Z",
+        "size": 753184,
+        "matchedRequestId": "bld_cumberland_doc_cert_occupancy"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_riverside",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Riverside Gardens Post-Acute / Riverside Gardens",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T11:55:18.842Z",
+    "recentFiles": [
+      {
+        "id": "bld_riverside_doc_floor_plan_f1_dr",
+        "name": "Riverside_Gardens_Floor_plan.pdf",
+        "importedAt": "2026-11-15T14:33:42.841Z",
+        "size": 2251775,
+        "matchedRequestId": "bld_riverside_doc_floor_plan"
+      },
+      {
+        "id": "bld_riverside_doc_cert_letters_f1_dr",
+        "name": "Riverside_Gardens_Medicare_Medicaid_certification_letters.pdf",
+        "importedAt": "2026-10-27T14:33:42.841Z",
+        "size": 1622541,
+        "matchedRequestId": "bld_riverside_doc_cert_letters"
+      },
+      {
+        "id": "bld_riverside_doc_poc_f1_dr",
+        "name": "Riverside_Gardens_Plans_of_correction.pdf",
+        "importedAt": "2026-11-16T14:33:42.841Z",
+        "size": 1418343,
+        "matchedRequestId": "bld_riverside_doc_poc"
+      },
+      {
+        "id": "bld_riverside_doc_alta_f1_dr",
+        "name": "Riverside_Gardens_ALTA_NSPS_land_title_survey.pdf",
+        "importedAt": "2026-10-23T14:33:42.841Z",
+        "size": 2878500,
+        "matchedRequestId": "bld_riverside_doc_alta"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_magnolia",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Sunbelt ALF Pair / Magnolia Court",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T12:38:30.842Z",
+    "recentFiles": [
+      {
+        "id": "bld_magnolia_doc_license_f1_dr",
+        "name": "Magnolia_Court_Current_facility_license.pdf",
+        "importedAt": "2026-11-04T14:33:42.842Z",
+        "size": 4044996,
+        "matchedRequestId": "bld_magnolia_doc_license"
+      },
+      {
+        "id": "bld_magnolia_doc_floor_plan_f1_dr",
+        "name": "Magnolia_Court_Floor_plan.pdf",
+        "importedAt": "2026-10-24T14:33:42.842Z",
+        "size": 2485346,
+        "matchedRequestId": "bld_magnolia_doc_floor_plan"
+      },
+      {
+        "id": "bld_magnolia_doc_cert_occupancy_f1_dr",
+        "name": "Magnolia_Court_Certificate_of_occupancy.pdf",
+        "importedAt": "2026-11-06T14:33:42.842Z",
+        "size": 2957309,
+        "matchedRequestId": "bld_magnolia_doc_cert_occupancy"
+      },
+      {
+        "id": "bld_magnolia_doc_alta_f2_dr",
+        "name": "Magnolia_Court_ALTA_NSPS_land_title_survey_v2.pdf",
+        "importedAt": "2026-11-06T14:33:42.842Z",
+        "size": 3747009,
+        "matchedRequestId": "bld_magnolia_doc_alta"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_liveoak",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Sunbelt ALF Pair / Live Oak",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T09:45:42.843Z",
+    "recentFiles": [
+      {
+        "id": "bld_liveoak_doc_floor_plan_f1_dr",
+        "name": "Live_Oak_Floor_plan.pdf",
+        "importedAt": "2026-10-21T14:33:42.843Z",
+        "size": 4421416,
+        "matchedRequestId": "bld_liveoak_doc_floor_plan"
+      },
+      {
+        "id": "bld_liveoak_doc_cert_occupancy_f1_dr",
+        "name": "Live_Oak_Certificate_of_occupancy.pdf",
+        "importedAt": "2026-10-20T14:33:42.843Z",
+        "size": 4069351,
+        "matchedRequestId": "bld_liveoak_doc_cert_occupancy"
+      },
+      {
+        "id": "bld_liveoak_doc_t12_f1_dr",
+        "name": "Live_Oak_Trailing_12_month_P_L.pdf",
+        "importedAt": "2026-11-01T14:33:42.843Z",
+        "size": 1097235,
+        "matchedRequestId": "bld_liveoak_doc_t12"
+      },
+      {
+        "id": "bld_liveoak_doc_lease_f1_dr",
+        "name": "Live_Oak_Existing_operating_lease.pdf",
+        "importedAt": "2026-10-23T14:33:42.843Z",
+        "size": 2576874,
+        "matchedRequestId": "bld_liveoak_doc_lease"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_chestnut",
+    "provider": "sharepoint",
+    "siteName": "",
+    "folderPath": "",
+    "status": "not_connected",
+    "recentFiles": []
+  },
+  {
+    "buildingId": "bld_seaside",
+    "provider": "sharepoint",
+    "siteName": "OD Acquisitions",
+    "folderPath": "Deals / Seaside Pines Re-engagement / Seaside Pines",
+    "status": "connected",
+    "lastSyncAt": "2026-11-19T11:12:06.844Z",
+    "recentFiles": [
+      {
+        "id": "bld_seaside_doc_license_f1_dr",
+        "name": "Seaside_Pines_Current_facility_license.pdf",
+        "importedAt": "2026-10-08T14:33:42.844Z",
+        "size": 205983,
+        "matchedRequestId": "bld_seaside_doc_license"
+      },
+      {
+        "id": "bld_seaside_doc_floor_plan_f1_dr",
+        "name": "Seaside_Pines_Floor_plan.pdf",
+        "importedAt": "2026-10-15T14:33:42.844Z",
+        "size": 1584473,
+        "matchedRequestId": "bld_seaside_doc_floor_plan"
+      },
+      {
+        "id": "bld_seaside_doc_poc_f2_dr",
+        "name": "Seaside_Pines_Plans_of_correction_v2.pdf",
+        "importedAt": "2026-10-26T14:33:42.844Z",
+        "size": 3735122,
+        "matchedRequestId": "bld_seaside_doc_poc"
+      },
+      {
+        "id": "bld_seaside_doc_title_f1_dr",
+        "name": "Seaside_Pines_Title_commitment.pdf",
+        "importedAt": "2026-10-18T14:33:42.844Z",
+        "size": 1603461,
+        "matchedRequestId": "bld_seaside_doc_title"
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_ozark",
+    "provider": "sharepoint",
+    "siteName": "",
+    "folderPath": "",
+    "status": "not_connected",
+    "recentFiles": []
+  },
+  {
+    "buildingId": "bld_prairieview",
+    "provider": "sharepoint",
+    "siteName": "",
+    "folderPath": "",
+    "status": "not_connected",
+    "recentFiles": []
+  },
+  {
+    "buildingId": "bld_desertwillow",
+    "provider": "sharepoint",
+    "siteName": "",
+    "folderPath": "",
+    "status": "not_connected",
+    "recentFiles": []
+  }
+]

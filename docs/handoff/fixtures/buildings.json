@@ -1,0 +1,2068 @@
+[
+  {
+    "id": "bld_maplegrove",
+    "name": "Maple Grove Health & Rehabilitation Center",
+    "alternateNames": [
+      "Maple Grove Care Center",
+      "Maple Grove H&R"
+    ],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "4410 Burton Ridge Drive SE",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "zip": "49546",
+      "county": "Kent",
+      "mapX": 0.5880907135084271,
+      "mapY": 0.6694544788450003
+    },
+    "identifiers": [
+      {
+        "id": "bld_maplegrove_id_ccn",
+        "type": "cms_ccn",
+        "value": "235418",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_maplegrove_id_lic",
+        "type": "state_license",
+        "value": "MI-NH-4410238",
+        "issuer": "MI Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_maplegrove_id_npi",
+        "type": "npi",
+        "value": "1427091835",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 120,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 124,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 106,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 1998,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 58400,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 2,
+    "acreage": 6.2,
+    "privateRooms": 52,
+    "semiPrivateRooms": 34,
+    "verificationStatus": "partially_verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 3,
+    "photos": [
+      {
+        "id": "bld_maplegrove_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-06-06T14:33:42.824Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_maplegrove_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-06-06T14:33:42.824Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_maplegrove_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-06-06T14:33:42.824Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_maplegrove_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-06-06T14:33:42.824Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_maplegrove_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2026-06-06T14:33:42.824Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_maplegrove_photo_5",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-06-06T14:33:42.824Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_maplegrove_photo_6",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-06-06T14:33:42.824Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Portfolio anchor",
+      "Medicare focus"
+    ],
+    "createdAt": "2026-06-04T14:33:42.824Z",
+    "updatedAt": "2026-11-15T14:33:42.824Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_lakeview",
+    "name": "Lakeview Terrace Care Center",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "2280 Bayshore Parkway",
+      "city": "Toledo",
+      "state": "OH",
+      "zip": "43611",
+      "county": "Lucas",
+      "mapX": 0.3046819012612104,
+      "mapY": 0.3625180679373443
+    },
+    "identifiers": [
+      {
+        "id": "bld_lakeview_id_ccn",
+        "type": "cms_ccn",
+        "value": "366204",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_lakeview_id_lic",
+        "type": "state_license",
+        "value": "OH-NF-0366204",
+        "issuer": "OH Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_lakeview_id_npi",
+        "type": "npi",
+        "value": "1538274910",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 98,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 98,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 81,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "yearBuilt": {
+      "value": 1984,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 44200,
+      "meta": {
+        "source": "third_party_report",
+        "asOf": "2026-09-10",
+        "verification": "verified"
+      }
+    },
+    "stories": 1,
+    "acreage": 4.8,
+    "privateRooms": 22,
+    "semiPrivateRooms": 38,
+    "verificationStatus": "verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 7,
+    "photos": [
+      {
+        "id": "bld_lakeview_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-06-06T14:33:42.838Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_lakeview_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-06-06T14:33:42.838Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_lakeview_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-06-06T14:33:42.838Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_lakeview_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-06-06T14:33:42.838Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_lakeview_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2026-06-06T14:33:42.838Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_lakeview_photo_5",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-06-06T14:33:42.838Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_lakeview_photo_6",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-06-06T14:33:42.838Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [],
+    "createdAt": "2026-06-04T14:33:42.838Z",
+    "updatedAt": "2026-11-11T14:33:42.838Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_brookhaven",
+    "name": "Brookhaven Nursing & Rehabilitation",
+    "alternateNames": [
+      "Evergreen of Fort Wayne"
+    ],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "7815 Coldwater Road",
+      "city": "Fort Wayne",
+      "state": "IN",
+      "zip": "46825",
+      "county": "Allen",
+      "mapX": 0.5046348194591701,
+      "mapY": 0.4152603654190898
+    },
+    "identifiers": [
+      {
+        "id": "bld_brookhaven_id_ccn",
+        "type": "cms_ccn",
+        "value": "155733",
+        "issuer": "CMS",
+        "effectiveFrom": "2021-06-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_brookhaven_id_ccn_prior_0",
+        "type": "cms_ccn",
+        "value": "155219",
+        "issuer": "CMS",
+        "effectiveFrom": "2009-01-01",
+        "effectiveTo": "2021-05-31",
+        "isCurrent": false,
+        "note": "Retired at CHOW from Evergreen Care Centers to Cedarbrook."
+      },
+      {
+        "id": "bld_brookhaven_id_lic",
+        "type": "state_license",
+        "value": "IN-CHF-155733",
+        "issuer": "IN Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_brookhaven_id_npi",
+        "type": "npi",
+        "value": "1902837465",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 150,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified"
+      }
+    },
+    "licensedBeds": {
+      "value": 156,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 119,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 1976,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified"
+      }
+    },
+    "squareFeet": {
+      "value": 67900,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 2,
+    "acreage": 7.5,
+    "privateRooms": 28,
+    "semiPrivateRooms": 61,
+    "verificationStatus": "needs_review",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 11,
+    "photos": [
+      {
+        "id": "bld_brookhaven_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-06-06T14:33:42.839Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_brookhaven_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-06-06T14:33:42.839Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_brookhaven_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-06-06T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_brookhaven_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-06-06T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_brookhaven_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2026-06-06T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_brookhaven_photo_5",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-06-06T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_brookhaven_photo_6",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-06-06T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Turnaround",
+      "HVAC replacement"
+    ],
+    "createdAt": "2026-06-04T14:33:42.839Z",
+    "updatedAt": "2026-11-16T14:33:42.839Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_harborpointe",
+    "name": "Harbor Pointe Senior Living",
+    "alternateNames": [],
+    "facilityType": "assisted_living",
+    "address": {
+      "street": "1650 Huron Commons Blvd",
+      "city": "Ann Arbor",
+      "state": "MI",
+      "zip": "48105",
+      "county": "Washtenaw",
+      "mapX": 0.5759099643677473,
+      "mapY": 0.5102986444719135
+    },
+    "identifiers": [
+      {
+        "id": "bld_harborpointe_id_lic",
+        "type": "state_license",
+        "value": "MI-HFA-AH810233",
+        "issuer": "MI Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 86,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 92,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 79,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "yearBuilt": {
+      "value": 2012,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 71300,
+      "meta": {
+        "source": "third_party_report",
+        "asOf": "2026-09-10",
+        "verification": "verified"
+      }
+    },
+    "stories": 3,
+    "acreage": 5.1,
+    "privateRooms": 86,
+    "semiPrivateRooms": 0,
+    "verificationStatus": "verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 5,
+    "photos": [
+      {
+        "id": "bld_harborpointe_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-07-20T14:33:42.839Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_harborpointe_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-07-20T14:33:42.839Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_harborpointe_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-07-20T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_harborpointe_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-07-20T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_harborpointe_photo_4",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-07-20T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_harborpointe_photo_5",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-07-20T14:33:42.839Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Private pay"
+    ],
+    "createdAt": "2026-07-18T14:33:42.839Z",
+    "updatedAt": "2026-11-13T14:33:42.839Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_bluegrass",
+    "name": "Bluegrass Manor Healthcare",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "900 Tates Creek Road",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40502",
+      "county": "Fayette",
+      "mapX": 0.37949156723916533,
+      "mapY": 0.5007968046702445
+    },
+    "identifiers": [
+      {
+        "id": "bld_bluegrass_id_ccn",
+        "type": "cms_ccn",
+        "value": "185402",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_bluegrass_id_lic",
+        "type": "state_license",
+        "value": "KY-NF-100248",
+        "issuer": "KY Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_bluegrass_id_npi",
+        "type": "npi",
+        "value": "1720394856",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 110,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 110,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 92,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 1991,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 49800,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 1,
+    "acreage": 5.6,
+    "privateRooms": 30,
+    "semiPrivateRooms": 40,
+    "verificationStatus": "partially_verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 9,
+    "photos": [
+      {
+        "id": "bld_bluegrass_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_bluegrass_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_bluegrass_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_bluegrass_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_bluegrass_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_bluegrass_photo_5",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_bluegrass_photo_6",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Owner-operated"
+    ],
+    "createdAt": "2026-08-31T14:33:42.840Z",
+    "updatedAt": "2026-11-18T14:33:42.840Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_clearwater",
+    "name": "Clearwater Ridge Rehabilitation",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "315 Scottsville Road",
+      "city": "Bowling Green",
+      "state": "KY",
+      "zip": "42104",
+      "county": "Warren",
+      "mapX": 0.5265290597453713,
+      "mapY": 0.4791832573711872
+    },
+    "identifiers": [
+      {
+        "id": "bld_clearwater_id_ccn",
+        "type": "cms_ccn",
+        "value": "185617",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_clearwater_id_lic",
+        "type": "state_license",
+        "value": "KY-NF-100391",
+        "issuer": "KY Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_clearwater_id_npi",
+        "type": "npi",
+        "value": "1386402917",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 92,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 96,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 84,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "yearBuilt": {
+      "value": 2004,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 46100,
+      "meta": {
+        "source": "third_party_report",
+        "asOf": "2026-09-10",
+        "verification": "verified"
+      }
+    },
+    "stories": 1,
+    "acreage": 6,
+    "privateRooms": 44,
+    "semiPrivateRooms": 24,
+    "verificationStatus": "verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 13,
+    "photos": [
+      {
+        "id": "bld_clearwater_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_clearwater_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_clearwater_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_clearwater_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_clearwater_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_clearwater_photo_5",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_clearwater_photo_6",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-09-02T14:33:42.840Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [],
+    "createdAt": "2026-08-31T14:33:42.840Z",
+    "updatedAt": "2026-11-14T14:33:42.840Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_cumberland",
+    "name": "Cumberland Hills Nursing Center",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "6020 Middlebrook Pike",
+      "city": "Knoxville",
+      "state": "TN",
+      "zip": "37909",
+      "county": "Knox",
+      "mapX": 0.5708601184189319,
+      "mapY": 0.45926479529589415
+    },
+    "identifiers": [
+      {
+        "id": "bld_cumberland_id_ccn",
+        "type": "cms_ccn",
+        "value": "445390",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_cumberland_id_lic",
+        "type": "state_license",
+        "value": "TN-NH-00512",
+        "issuer": "TN Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_cumberland_id_npi",
+        "type": "npi",
+        "value": "1093847562",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 132,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified"
+      }
+    },
+    "licensedBeds": {
+      "value": 132,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "unverified"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 101,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 1979,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "unverified"
+      }
+    },
+    "squareFeet": {
+      "value": 57600,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 2,
+    "acreage": 4.2,
+    "privateRooms": 18,
+    "semiPrivateRooms": 57,
+    "verificationStatus": "unverified",
+    "lastVerifiedAt": null,
+    "photoSeed": 17,
+    "photos": [
+      {
+        "id": "bld_cumberland_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-09-02T14:33:42.841Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_cumberland_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-09-02T14:33:42.841Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_cumberland_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-09-02T14:33:42.841Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_cumberland_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-09-02T14:33:42.841Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_cumberland_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2026-09-02T14:33:42.841Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Survey risk"
+    ],
+    "createdAt": "2026-08-31T14:33:42.841Z",
+    "updatedAt": "2026-11-10T14:33:42.841Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_riverside",
+    "name": "Riverside Gardens Post-Acute",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "5100 Bee Ridge Road",
+      "city": "Sarasota",
+      "state": "FL",
+      "zip": "34233",
+      "county": "Sarasota",
+      "mapX": 0.4729164886288345,
+      "mapY": 0.5487473329529167
+    },
+    "identifiers": [
+      {
+        "id": "bld_riverside_id_ccn",
+        "type": "cms_ccn",
+        "value": "686231",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_riverside_id_lic",
+        "type": "state_license",
+        "value": "FL-SNF-1802231",
+        "issuer": "FL Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_riverside_id_npi",
+        "type": "npi",
+        "value": "1265019384",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 120,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 120,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 109,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 2015,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 72500,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 2,
+    "acreage": 8.3,
+    "privateRooms": 96,
+    "semiPrivateRooms": 12,
+    "verificationStatus": "partially_verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 21,
+    "photos": [
+      {
+        "id": "bld_riverside_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-10-31T14:33:42.841Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_riverside_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-10-31T14:33:42.841Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_riverside_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-10-31T14:33:42.841Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_riverside_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-10-31T14:33:42.841Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_riverside_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2026-10-31T14:33:42.841Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Off-market",
+      "Five-star"
+    ],
+    "createdAt": "2026-10-29T14:33:42.841Z",
+    "updatedAt": "2026-11-15T14:33:42.841Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_magnolia",
+    "name": "Magnolia Court Assisted Living",
+    "alternateNames": [],
+    "facilityType": "assisted_living",
+    "address": {
+      "street": "12750 Huebner Road",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "78230",
+      "county": "Bexar",
+      "mapX": 0.5391749927774072,
+      "mapY": 0.5045914456248284
+    },
+    "identifiers": [
+      {
+        "id": "bld_magnolia_id_lic",
+        "type": "state_license",
+        "value": "TX-ALF-106622",
+        "issuer": "TX Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 72,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 80,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 63,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "yearBuilt": {
+      "value": 2008,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 58900,
+      "meta": {
+        "source": "third_party_report",
+        "asOf": "2026-09-10",
+        "verification": "verified"
+      }
+    },
+    "stories": 2,
+    "acreage": 4.4,
+    "privateRooms": 72,
+    "semiPrivateRooms": 0,
+    "verificationStatus": "verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 25,
+    "photos": [
+      {
+        "id": "bld_magnolia_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_magnolia_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_magnolia_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_magnolia_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_magnolia_photo_4",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_magnolia_photo_5",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [],
+    "createdAt": "2026-07-07T14:33:42.842Z",
+    "updatedAt": "2026-11-11T14:33:42.842Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_liveoak",
+    "name": "Live Oak Memory Care",
+    "alternateNames": [],
+    "facilityType": "memory_care",
+    "address": {
+      "street": "8605 Mesa Drive",
+      "city": "Austin",
+      "state": "TX",
+      "zip": "78759",
+      "county": "Travis",
+      "mapX": 0.38424480995163324,
+      "mapY": 0.6445787134580314
+    },
+    "identifiers": [
+      {
+        "id": "bld_liveoak_id_lic",
+        "type": "state_license",
+        "value": "TX-ALF-C-108815",
+        "issuer": "TX Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 48,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 52,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 44,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "yearBuilt": {
+      "value": 2017,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 33400,
+      "meta": {
+        "source": "third_party_report",
+        "asOf": "2026-09-10",
+        "verification": "verified"
+      }
+    },
+    "stories": 1,
+    "acreage": 3.1,
+    "privateRooms": 44,
+    "semiPrivateRooms": 4,
+    "verificationStatus": "verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 29,
+    "photos": [
+      {
+        "id": "bld_liveoak_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_liveoak_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_liveoak_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_liveoak_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_liveoak_photo_4",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_liveoak_photo_5",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2026-07-09T14:33:42.842Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Memory care"
+    ],
+    "createdAt": "2026-07-07T14:33:42.842Z",
+    "updatedAt": "2026-11-16T14:33:42.842Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_chestnut",
+    "name": "Chestnut Hill Rehabilitation & Nursing",
+    "alternateNames": [
+      "Keystone Chestnut Hill"
+    ],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "3200 Linglestown Road",
+      "city": "Harrisburg",
+      "state": "PA",
+      "zip": "17110",
+      "county": "Dauphin",
+      "mapX": 0.5203076283447444,
+      "mapY": 0.5427374088205397
+    },
+    "identifiers": [
+      {
+        "id": "bld_chestnut_id_ccn",
+        "type": "cms_ccn",
+        "value": "396841",
+        "issuer": "CMS",
+        "effectiveFrom": "2023-07-14",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_chestnut_id_ccn_prior_0",
+        "type": "cms_ccn",
+        "value": "395127",
+        "issuer": "CMS",
+        "effectiveFrom": "1996-02-01",
+        "effectiveTo": "2023-07-13",
+        "isCurrent": false,
+        "note": "Retired at July 2023 CHOW (sale-leaseback to OD / Pinnacle)."
+      },
+      {
+        "id": "bld_chestnut_id_lic",
+        "type": "state_license",
+        "value": "PA-LTC-139921",
+        "issuer": "PA Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_chestnut_id_npi",
+        "type": "npi",
+        "value": "1649201837",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 140,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 140,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 128,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "yearBuilt": {
+      "value": 1995,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 63100,
+      "meta": {
+        "source": "third_party_report",
+        "asOf": "2026-09-10",
+        "verification": "verified"
+      }
+    },
+    "stories": 3,
+    "acreage": 5.9,
+    "privateRooms": 48,
+    "semiPrivateRooms": 46,
+    "verificationStatus": "verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 33,
+    "photos": [
+      {
+        "id": "bld_chestnut_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2023-01-21T14:33:42.843Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_chestnut_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2023-01-21T14:33:42.843Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_chestnut_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2023-01-21T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_chestnut_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2023-01-21T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_chestnut_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2023-01-21T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_chestnut_photo_5",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2023-01-21T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_chestnut_photo_6",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2023-01-21T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Owned",
+      "HUD 232"
+    ],
+    "createdAt": "2023-01-19T14:33:42.843Z",
+    "updatedAt": "2026-11-12T14:33:42.843Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_seaside",
+    "name": "Seaside Pines Health Center",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "2401 Oleander Drive",
+      "city": "Wilmington",
+      "state": "NC",
+      "zip": "28403",
+      "county": "New Hanover",
+      "mapX": 0.5065243846736849,
+      "mapY": 0.5882444924674928
+    },
+    "identifiers": [
+      {
+        "id": "bld_seaside_id_ccn",
+        "type": "cms_ccn",
+        "value": "345288",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_seaside_id_lic",
+        "type": "state_license",
+        "value": "NC-NH-0711",
+        "issuer": "NC Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_seaside_id_npi",
+        "type": "npi",
+        "value": "1174930285",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 104,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified"
+      }
+    },
+    "licensedBeds": {
+      "value": 110,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 77,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 1972,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified"
+      }
+    },
+    "squareFeet": {
+      "value": 45300,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 1,
+    "acreage": 3.8,
+    "privateRooms": 12,
+    "semiPrivateRooms": 46,
+    "verificationStatus": "needs_review",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 37,
+    "photos": [
+      {
+        "id": "bld_seaside_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2024-04-15T14:33:42.843Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_seaside_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2024-04-15T14:33:42.843Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_seaside_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2024-04-15T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_seaside_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2024-04-15T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_seaside_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2024-04-15T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_seaside_photo_5",
+        "caption": "Typical resident room",
+        "subject": "resident_room",
+        "uploadedAt": "2024-04-15T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_seaside_photo_6",
+        "caption": "Courtyard",
+        "subject": "courtyard",
+        "uploadedAt": "2024-04-15T14:33:42.843Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Re-engaged",
+      "Roof"
+    ],
+    "createdAt": "2024-04-13T14:33:42.843Z",
+    "updatedAt": "2026-11-17T14:33:42.843Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_ozark",
+    "name": "Ozark Valley Care Center",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "1880 E Battlefield Street",
+      "city": "Springfield",
+      "state": "MO",
+      "zip": "65804",
+      "county": "Greene",
+      "mapX": 0.6404056988656521,
+      "mapY": 0.5404415007680654
+    },
+    "identifiers": [
+      {
+        "id": "bld_ozark_id_ccn",
+        "type": "cms_ccn",
+        "value": "265902",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_ozark_id_lic",
+        "type": "state_license",
+        "value": "MO-SNF-1042",
+        "issuer": "MO Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_ozark_id_npi",
+        "type": "npi",
+        "value": "1810293746",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 88,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 90,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 61,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 1969,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 38200,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 1,
+    "acreage": 3.2,
+    "privateRooms": 8,
+    "semiPrivateRooms": 40,
+    "verificationStatus": "partially_verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 41,
+    "photos": [
+      {
+        "id": "bld_ozark_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2025-05-25T14:33:42.844Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_ozark_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2025-05-25T14:33:42.844Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_ozark_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2025-05-25T14:33:42.844Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_ozark_photo_3",
+        "caption": "Main dining room",
+        "subject": "dining",
+        "uploadedAt": "2025-05-25T14:33:42.844Z",
+        "uploadedBy": "Jordan Ellis"
+      },
+      {
+        "id": "bld_ozark_photo_4",
+        "caption": "Therapy gym",
+        "subject": "therapy",
+        "uploadedAt": "2025-05-25T14:33:42.844Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "SFF candidate"
+    ],
+    "createdAt": "2025-05-23T14:33:42.844Z",
+    "updatedAt": "2026-11-13T14:33:42.844Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_prairieview",
+    "name": "Prairie View Nursing Home",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "4120 N Knoxville Avenue",
+      "city": "Peoria",
+      "state": "IL",
+      "zip": "61614",
+      "county": "Peoria",
+      "mapX": 0.3148782023228705,
+      "mapY": 0.3240296147763729
+    },
+    "identifiers": [
+      {
+        "id": "bld_prairieview_id_ccn",
+        "type": "cms_ccn",
+        "value": "146519",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_prairieview_id_lic",
+        "type": "state_license",
+        "value": "IL-LTC-0049812",
+        "issuer": "IL Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_prairieview_id_npi",
+        "type": "npi",
+        "value": "1528394017",
+        "issuer": "NPPES",
+        "effectiveFrom": "2008-05-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 75,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "licensedBeds": {
+      "value": 75,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 63,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 1988,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "verified",
+        "verifiedBy": "Priya Raman"
+      }
+    },
+    "squareFeet": {
+      "value": 33900,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 1,
+    "acreage": 2.9,
+    "privateRooms": 15,
+    "semiPrivateRooms": 30,
+    "verificationStatus": "partially_verified",
+    "lastVerifiedAt": "2026-11-01",
+    "photoSeed": 45,
+    "photos": [
+      {
+        "id": "bld_prairieview_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-09-20T14:33:42.844Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_prairieview_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-09-20T14:33:42.844Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_prairieview_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-09-20T14:33:42.844Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Watchlist",
+      "REO"
+    ],
+    "createdAt": "2026-09-18T14:33:42.844Z",
+    "updatedAt": "2026-11-18T14:33:42.844Z",
+    "createdBy": "Jordan Ellis"
+  },
+  {
+    "id": "bld_desertwillow",
+    "name": "Desert Willow Healthcare",
+    "alternateNames": [],
+    "facilityType": "skilled_nursing",
+    "address": {
+      "street": "2650 E Southern Avenue",
+      "city": "Mesa",
+      "state": "AZ",
+      "zip": "85204",
+      "county": "Maricopa",
+      "mapX": 0.4495845437049866,
+      "mapY": 0.5170384994708002
+    },
+    "identifiers": [
+      {
+        "id": "bld_desertwillow_id_ccn",
+        "type": "cms_ccn",
+        "value": "035284",
+        "issuer": "CMS",
+        "effectiveFrom": "2004-01-01",
+        "isCurrent": true
+      },
+      {
+        "id": "bld_desertwillow_id_lic",
+        "type": "state_license",
+        "value": "AZ-NCF-4518",
+        "issuer": "AZ Department of Health",
+        "effectiveFrom": "2026-01-23",
+        "isCurrent": true
+      }
+    ],
+    "certifiedBeds": {
+      "value": 128,
+      "meta": {
+        "source": "cms_mock",
+        "asOf": "2026-11-07",
+        "verification": "verified"
+      }
+    },
+    "licensedBeds": {
+      "value": 128,
+      "meta": {
+        "source": "state_license",
+        "asOf": "2026-10-10",
+        "verification": "unverified"
+      }
+    },
+    "averageDailyCensus": {
+      "value": 98,
+      "meta": {
+        "source": "operator_report",
+        "asOf": "2026-10-30",
+        "verification": "unverified"
+      }
+    },
+    "yearBuilt": {
+      "value": 2001,
+      "meta": {
+        "source": "public_record",
+        "asOf": "2026-08-21",
+        "verification": "unverified"
+      }
+    },
+    "squareFeet": {
+      "value": 61200,
+      "meta": {
+        "source": "broker_om",
+        "asOf": "2026-09-10",
+        "verification": "needs_review"
+      }
+    },
+    "stories": 2,
+    "acreage": 6.7,
+    "privateRooms": 40,
+    "semiPrivateRooms": 44,
+    "verificationStatus": "unverified",
+    "lastVerifiedAt": null,
+    "photoSeed": 49,
+    "photos": [
+      {
+        "id": "bld_desertwillow_photo_0",
+        "caption": "Front elevation",
+        "subject": "exterior",
+        "uploadedAt": "2026-11-12T14:33:42.844Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_desertwillow_photo_1",
+        "caption": "Main entrance",
+        "subject": "entrance",
+        "uploadedAt": "2026-11-12T14:33:42.844Z",
+        "uploadedBy": "Broker OM"
+      },
+      {
+        "id": "bld_desertwillow_photo_2",
+        "caption": "Lobby & reception",
+        "subject": "lobby",
+        "uploadedAt": "2026-11-12T14:33:42.844Z",
+        "uploadedBy": "Jordan Ellis"
+      }
+    ],
+    "tags": [
+      "Broker teaser"
+    ],
+    "createdAt": "2026-11-10T14:33:42.844Z",
+    "updatedAt": "2026-11-14T14:33:42.844Z",
+    "createdBy": "Jordan Ellis"
+  }
+]

@@ -1,0 +1,1842 @@
+[
+  {
+    "id": "bld_maplegrove_act_13",
+    "buildingId": "bld_maplegrove",
+    "type": "document_reviewed",
+    "title": "CMS-2567 survey reports (3 years) approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-11-17T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_14",
+    "buildingId": "bld_maplegrove",
+    "type": "document_reviewed",
+    "title": "Plans of correction approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-11-17T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_18",
+    "buildingId": "bld_maplegrove",
+    "type": "note",
+    "title": "Note added",
+    "description": "Operator confirmed census of 106 as of last Friday; Medicare ADC trending up after new hospital partnership.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-11-16T09:45:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_7",
+    "buildingId": "bld_maplegrove",
+    "type": "document_uploaded",
+    "title": "CMS-2567 survey reports (3 years) uploaded",
+    "description": "Maple_Grove_CMS_2567_survey_reports_3_years.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-15T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_8",
+    "buildingId": "bld_maplegrove",
+    "type": "document_uploaded",
+    "title": "Plans of correction uploaded",
+    "description": "Maple_Grove_Plans_of_correction.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-15T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_4",
+    "buildingId": "bld_maplegrove",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-14T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_9",
+    "buildingId": "bld_maplegrove",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Maple_Grove_Certificate_of_occupancy.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-13T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_15",
+    "buildingId": "bld_maplegrove",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Full building walkthrough with PCA consultant. Building is well maintained overall; second-floor east wing PTACs are ori…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-08T14:33:42.837Z",
+    "dealId": "deal_greatlakes"
+  },
+  {
+    "id": "bld_maplegrove_act_12",
+    "buildingId": "bld_maplegrove",
+    "type": "document_reviewed",
+    "title": "Medicare / Medicaid certification letters returned for revision",
+    "description": "Document is incomplete — missing pages for the most recent period. Requested a complete copy.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-11-07T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_6",
+    "buildingId": "bld_maplegrove",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Maple_Grove_Medicare_Medicaid_certification_letters.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-04T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_17",
+    "buildingId": "bld_maplegrove",
+    "type": "verification_changed",
+    "title": "Marked partially verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_maplegrove_act_10",
+    "buildingId": "bld_maplegrove",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Maple_Grove_ALTA_NSPS_land_title_survey.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-12T14:33:42.837Z"
+  },
+  {
+    "id": "bld_maplegrove_act_11",
+    "buildingId": "bld_maplegrove",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-10-10T14:33:42.836Z"
+  },
+  {
+    "id": "bld_maplegrove_act_5",
+    "buildingId": "bld_maplegrove",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Maple_Grove_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-08T14:33:42.836Z"
+  },
+  {
+    "id": "bld_maplegrove_act_16",
+    "buildingId": "bld_maplegrove",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Initial tour during marketing process. Strong curb appeal and clinical leadership. Census at 108. Operator open to new l…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-07-01T14:33:42.837Z",
+    "dealId": "deal_greatlakes"
+  },
+  {
+    "id": "bld_maplegrove_act_1",
+    "buildingId": "bld_maplegrove",
+    "type": "deal_associated",
+    "title": "Added to Great Lakes Portfolio",
+    "dealId": "deal_greatlakes",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-06-12T15:20:00.000Z"
+  },
+  {
+    "id": "bld_maplegrove_act_0",
+    "buildingId": "bld_maplegrove",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 235418 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-06-04T14:33:42.824Z"
+  },
+  {
+    "id": "bld_maplegrove_act_3",
+    "buildingId": "bld_maplegrove",
+    "type": "deal_associated",
+    "title": "Added to Meridian Michigan / Ohio Pair",
+    "dealId": "deal_mkt_meridian2023",
+    "actor": "Jordan Ellis",
+    "timestamp": "2023-03-01T15:20:00.000Z"
+  },
+  {
+    "id": "bld_maplegrove_act_2",
+    "buildingId": "bld_maplegrove",
+    "type": "deal_associated",
+    "title": "Added to Maple Grove Sale (Tri-County → Meridian)",
+    "dealId": "deal_mkt_maple2017",
+    "actor": "Jordan Ellis",
+    "timestamp": "2017-08-31T15:20:00.000Z"
+  },
+  {
+    "id": "bld_lakeview_act_4",
+    "buildingId": "bld_lakeview",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-17T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_11",
+    "buildingId": "bld_lakeview",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-11-13T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_5",
+    "buildingId": "bld_lakeview",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Lakeview_Terrace_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-11T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_14",
+    "buildingId": "bld_lakeview",
+    "type": "document_reviewed",
+    "title": "ALTA / NSPS land title survey approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-11-11T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_10",
+    "buildingId": "bld_lakeview",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Lakeview_Terrace_ALTA_NSPS_land_title_survey.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-09T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_15",
+    "buildingId": "bld_lakeview",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building is functional with typical age-related wear. HVAC and resident room finishes will need investment within 3–5 ye…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.838Z",
+    "dealId": "deal_greatlakes"
+  },
+  {
+    "id": "bld_lakeview_act_16",
+    "buildingId": "bld_lakeview",
+    "type": "verification_changed",
+    "title": "Marked verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_lakeview_act_12",
+    "buildingId": "bld_lakeview",
+    "type": "document_reviewed",
+    "title": "Plans of correction approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-16T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_8",
+    "buildingId": "bld_lakeview",
+    "type": "document_uploaded",
+    "title": "Plans of correction uploaded",
+    "description": "Lakeview_Terrace_Plans_of_correction.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-14T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_7",
+    "buildingId": "bld_lakeview",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Lakeview_Terrace_Medicare_Medicaid_certification_letters.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-12T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_13",
+    "buildingId": "bld_lakeview",
+    "type": "document_reviewed",
+    "title": "Certificate of occupancy approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-12T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_6",
+    "buildingId": "bld_lakeview",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Lakeview_Terrace_Floor_plan.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-10T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_9",
+    "buildingId": "bld_lakeview",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Lakeview_Terrace_Certificate_of_occupancy.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-10T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_1",
+    "buildingId": "bld_lakeview",
+    "type": "deal_associated",
+    "title": "Added to Great Lakes Portfolio",
+    "dealId": "deal_greatlakes",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-06-12T15:20:00.000Z"
+  },
+  {
+    "id": "bld_lakeview_act_0",
+    "buildingId": "bld_lakeview",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 366204 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-06-04T14:33:42.838Z"
+  },
+  {
+    "id": "bld_lakeview_act_3",
+    "buildingId": "bld_lakeview",
+    "type": "deal_associated",
+    "title": "Added to Meridian Michigan / Ohio Pair",
+    "dealId": "deal_mkt_meridian2023",
+    "actor": "Jordan Ellis",
+    "timestamp": "2023-03-01T15:20:00.000Z"
+  },
+  {
+    "id": "bld_lakeview_act_2",
+    "buildingId": "bld_lakeview",
+    "type": "deal_associated",
+    "title": "Added to Lakeview & Brookhaven Acquisition",
+    "dealId": "deal_mkt_meridian2019",
+    "actor": "Jordan Ellis",
+    "timestamp": "2019-11-15T15:20:00.000Z"
+  },
+  {
+    "id": "bld_brookhaven_act_6",
+    "buildingId": "bld_brookhaven",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Brookhaven_Nursing_Medicare_Medicaid_certification_letters.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-16T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_7",
+    "buildingId": "bld_brookhaven",
+    "type": "document_uploaded",
+    "title": "Plans of correction uploaded",
+    "description": "Brookhaven_Nursing_Plans_of_correction_v2.pdf · v2 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-16T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_12",
+    "buildingId": "bld_brookhaven",
+    "type": "document_reviewed",
+    "title": "Plans of correction approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-11-16T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_11",
+    "buildingId": "bld_brookhaven",
+    "type": "document_reviewed",
+    "title": "Floor plan approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-11-14T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_3",
+    "buildingId": "bld_brookhaven",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-13T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_5",
+    "buildingId": "bld_brookhaven",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Brookhaven_Nursing_Floor_plan.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-12T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_14",
+    "buildingId": "bld_brookhaven",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Significant deferred maintenance observed. Roof leaks in multiple resident rooms and aging central plant. Capex reserve …",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.839Z",
+    "dealId": "deal_greatlakes"
+  },
+  {
+    "id": "bld_brookhaven_act_15",
+    "buildingId": "bld_brookhaven",
+    "type": "verification_changed",
+    "title": "Marked as needing review",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_brookhaven_act_13",
+    "buildingId": "bld_brookhaven",
+    "type": "document_reviewed",
+    "title": "Certificate of occupancy approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-30T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_8",
+    "buildingId": "bld_brookhaven",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Brookhaven_Nursing_Certificate_of_occupancy.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-28T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_9",
+    "buildingId": "bld_brookhaven",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Brookhaven_Nursing_ALTA_NSPS_land_title_survey_v2.pdf · v2 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-27T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_10",
+    "buildingId": "bld_brookhaven",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-21T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_4",
+    "buildingId": "bld_brookhaven",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Brookhaven_Nursing_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-19T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_1",
+    "buildingId": "bld_brookhaven",
+    "type": "deal_associated",
+    "title": "Added to Great Lakes Portfolio",
+    "dealId": "deal_greatlakes",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-06-12T15:20:00.000Z"
+  },
+  {
+    "id": "bld_brookhaven_act_0",
+    "buildingId": "bld_brookhaven",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 155733 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-06-04T14:33:42.839Z"
+  },
+  {
+    "id": "bld_brookhaven_act_2",
+    "buildingId": "bld_brookhaven",
+    "type": "deal_associated",
+    "title": "Added to Lakeview & Brookhaven Acquisition",
+    "dealId": "deal_mkt_meridian2019",
+    "actor": "Jordan Ellis",
+    "timestamp": "2019-11-15T15:20:00.000Z"
+  },
+  {
+    "id": "bld_harborpointe_act_6",
+    "buildingId": "bld_harborpointe",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Harbor_Pointe_ALTA_NSPS_land_title_survey_v2.pdf · v2 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-12T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_12",
+    "buildingId": "bld_harborpointe",
+    "type": "document_reviewed",
+    "title": "ALTA / NSPS land title survey approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-11-12T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_13",
+    "buildingId": "bld_harborpointe",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns iden…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.840Z",
+    "dealId": "deal_greatlakes"
+  },
+  {
+    "id": "bld_harborpointe_act_9",
+    "buildingId": "bld_harborpointe",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-02T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_14",
+    "buildingId": "bld_harborpointe",
+    "type": "verification_changed",
+    "title": "Marked verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_harborpointe_act_3",
+    "buildingId": "bld_harborpointe",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Harbor_Pointe_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-31T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_4",
+    "buildingId": "bld_harborpointe",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Harbor_Pointe_Floor_plan_v2.pdf · v2 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-26T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_10",
+    "buildingId": "bld_harborpointe",
+    "type": "document_reviewed",
+    "title": "Floor plan approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-10-26T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_7",
+    "buildingId": "bld_harborpointe",
+    "type": "document_uploaded",
+    "title": "Trailing 12-month P&L uploaded",
+    "description": "Harbor_Pointe_Trailing_12_month_P_L.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-24T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_11",
+    "buildingId": "bld_harborpointe",
+    "type": "document_reviewed",
+    "title": "Certificate of occupancy approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-11T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_8",
+    "buildingId": "bld_harborpointe",
+    "type": "document_uploaded",
+    "title": "Census & payer mix reports uploaded",
+    "description": "Harbor_Pointe_Census_payer_mix_reports.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-10T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_5",
+    "buildingId": "bld_harborpointe",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Harbor_Pointe_Certificate_of_occupancy.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-09T14:33:42.840Z"
+  },
+  {
+    "id": "bld_harborpointe_act_1",
+    "buildingId": "bld_harborpointe",
+    "type": "deal_associated",
+    "title": "Added to Great Lakes Portfolio",
+    "dealId": "deal_greatlakes",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-07-22T15:20:00.000Z"
+  },
+  {
+    "id": "bld_harborpointe_act_0",
+    "buildingId": "bld_harborpointe",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Created from state licensure record.",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-07-18T14:33:42.839Z"
+  },
+  {
+    "id": "bld_harborpointe_act_2",
+    "buildingId": "bld_harborpointe",
+    "type": "deal_associated",
+    "title": "Added to Harbor Pointe Acquisition",
+    "dealId": "deal_mkt_harbor2020",
+    "actor": "Jordan Ellis",
+    "timestamp": "2020-06-30T15:20:00.000Z"
+  },
+  {
+    "id": "bld_bluegrass_act_2",
+    "buildingId": "bld_bluegrass",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-15T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_6",
+    "buildingId": "bld_bluegrass",
+    "type": "document_uploaded",
+    "title": "CMS-2567 survey reports (3 years) uploaded",
+    "description": "Bluegrass_Manor_CMS_2567_survey_reports_3_years_v2.pdf · v2 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-14T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_12",
+    "buildingId": "bld_bluegrass",
+    "type": "document_reviewed",
+    "title": "CMS-2567 survey reports (3 years) approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-14T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_13",
+    "buildingId": "bld_bluegrass",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building is functional with typical age-related wear. HVAC and resident room finishes will need investment within 3–5 ye…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.840Z",
+    "dealId": "deal_bluegrass"
+  },
+  {
+    "id": "bld_bluegrass_act_14",
+    "buildingId": "bld_bluegrass",
+    "type": "verification_changed",
+    "title": "Marked partially verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_bluegrass_act_11",
+    "buildingId": "bld_bluegrass",
+    "type": "document_reviewed",
+    "title": "Medicare / Medicaid certification letters approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-27T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_5",
+    "buildingId": "bld_bluegrass",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Bluegrass_Manor_Medicare_Medicaid_certification_letters.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-25T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_8",
+    "buildingId": "bld_bluegrass",
+    "type": "document_uploaded",
+    "title": "Title commitment uploaded",
+    "description": "Bluegrass_Manor_Title_commitment.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-24T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_7",
+    "buildingId": "bld_bluegrass",
+    "type": "document_uploaded",
+    "title": "Census & payer mix reports uploaded",
+    "description": "Bluegrass_Manor_Census_payer_mix_reports.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-22T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_10",
+    "buildingId": "bld_bluegrass",
+    "type": "document_reviewed",
+    "title": "Floor plan approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-17T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_4",
+    "buildingId": "bld_bluegrass",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Bluegrass_Manor_Floor_plan.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-15T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_9",
+    "buildingId": "bld_bluegrass",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-10-12T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_3",
+    "buildingId": "bld_bluegrass",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Bluegrass_Manor_Current_facility_license.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-10T14:33:42.840Z"
+  },
+  {
+    "id": "bld_bluegrass_act_1",
+    "buildingId": "bld_bluegrass",
+    "type": "deal_associated",
+    "title": "Added to Bluegrass Trio",
+    "dealId": "deal_bluegrass",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-09-06T15:20:00.000Z"
+  },
+  {
+    "id": "bld_bluegrass_act_0",
+    "buildingId": "bld_bluegrass",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 185402 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-08-31T14:33:42.840Z"
+  },
+  {
+    "id": "bld_clearwater_act_4",
+    "buildingId": "bld_clearwater",
+    "type": "document_uploaded",
+    "title": "CMS-2567 survey reports (3 years) uploaded",
+    "description": "Clearwater_Ridge_CMS_2567_survey_reports_3_years.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-16T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_2",
+    "buildingId": "bld_clearwater",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-11T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_13",
+    "buildingId": "bld_clearwater",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns iden…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.841Z",
+    "dealId": "deal_bluegrass"
+  },
+  {
+    "id": "bld_clearwater_act_14",
+    "buildingId": "bld_clearwater",
+    "type": "verification_changed",
+    "title": "Marked verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_clearwater_act_9",
+    "buildingId": "bld_clearwater",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-30T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_3",
+    "buildingId": "bld_clearwater",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Clearwater_Ridge_Current_facility_license.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-28T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_12",
+    "buildingId": "bld_clearwater",
+    "type": "document_reviewed",
+    "title": "Vendor & service contracts approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-10-28T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_10",
+    "buildingId": "bld_clearwater",
+    "type": "document_reviewed",
+    "title": "Certificate of occupancy approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-10-27T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_5",
+    "buildingId": "bld_clearwater",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Clearwater_Ridge_Certificate_of_occupancy.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-25T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_6",
+    "buildingId": "bld_clearwater",
+    "type": "document_uploaded",
+    "title": "Trailing 12-month P&L uploaded",
+    "description": "Clearwater_Ridge_Trailing_12_month_P_L.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-16T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_8",
+    "buildingId": "bld_clearwater",
+    "type": "document_uploaded",
+    "title": "Real estate tax bills uploaded",
+    "description": "Clearwater_Ridge_Real_estate_tax_bills.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-15T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_11",
+    "buildingId": "bld_clearwater",
+    "type": "document_reviewed",
+    "title": "Accounts receivable aging returned for revision",
+    "description": "Document is incomplete — missing pages for the most recent period. Requested a complete copy.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-13T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_7",
+    "buildingId": "bld_clearwater",
+    "type": "document_uploaded",
+    "title": "Accounts receivable aging uploaded",
+    "description": "Clearwater_Ridge_Accounts_receivable_aging.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-10T14:33:42.841Z"
+  },
+  {
+    "id": "bld_clearwater_act_1",
+    "buildingId": "bld_clearwater",
+    "type": "deal_associated",
+    "title": "Added to Bluegrass Trio",
+    "dealId": "deal_bluegrass",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-09-06T15:20:00.000Z"
+  },
+  {
+    "id": "bld_clearwater_act_0",
+    "buildingId": "bld_clearwater",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 185617 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-08-31T14:33:42.840Z"
+  },
+  {
+    "id": "bld_cumberland_act_2",
+    "buildingId": "bld_cumberland",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-14T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_11",
+    "buildingId": "bld_cumberland",
+    "type": "document_reviewed",
+    "title": "Certificate of occupancy approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-09T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_13",
+    "buildingId": "bld_cumberland",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Significant deferred maintenance observed. Roof leaks in multiple resident rooms and aging central plant. Capex reserve …",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.841Z",
+    "dealId": "deal_bluegrass"
+  },
+  {
+    "id": "bld_cumberland_act_12",
+    "buildingId": "bld_cumberland",
+    "type": "document_reviewed",
+    "title": "ALTA / NSPS land title survey approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-11-08T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_7",
+    "buildingId": "bld_cumberland",
+    "type": "document_uploaded",
+    "title": "Plans of correction uploaded",
+    "description": "Cumberland_Hills_Plans_of_correction.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-07T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_8",
+    "buildingId": "bld_cumberland",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Cumberland_Hills_Certificate_of_occupancy.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-07T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_5",
+    "buildingId": "bld_cumberland",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Cumberland_Hills_Medicare_Medicaid_certification_letters.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-03T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_3",
+    "buildingId": "bld_cumberland",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Cumberland_Hills_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-29T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_9",
+    "buildingId": "bld_cumberland",
+    "type": "document_reviewed",
+    "title": "Floor plan returned for revision",
+    "description": "Document is incomplete — missing pages for the most recent period. Requested a complete copy.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-23T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_4",
+    "buildingId": "bld_cumberland",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Cumberland_Hills_Floor_plan.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-20T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_10",
+    "buildingId": "bld_cumberland",
+    "type": "document_reviewed",
+    "title": "CMS-2567 survey reports (3 years) returned for revision",
+    "description": "Document is incomplete — missing pages for the most recent period. Requested a complete copy.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-15T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_6",
+    "buildingId": "bld_cumberland",
+    "type": "document_uploaded",
+    "title": "CMS-2567 survey reports (3 years) uploaded",
+    "description": "Cumberland_Hills_CMS_2567_survey_reports_3_years.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-12T14:33:42.841Z"
+  },
+  {
+    "id": "bld_cumberland_act_1",
+    "buildingId": "bld_cumberland",
+    "type": "deal_associated",
+    "title": "Added to Bluegrass Trio",
+    "dealId": "deal_bluegrass",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-09-06T15:20:00.000Z"
+  },
+  {
+    "id": "bld_cumberland_act_0",
+    "buildingId": "bld_cumberland",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 445390 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-08-31T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_9",
+    "buildingId": "bld_riverside",
+    "type": "document_reviewed",
+    "title": "Floor plan returned for revision",
+    "description": "Document is incomplete — missing pages for the most recent period. Requested a complete copy.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-11-18T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_2",
+    "buildingId": "bld_riverside",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-17T14:33:42.842Z"
+  },
+  {
+    "id": "bld_riverside_act_6",
+    "buildingId": "bld_riverside",
+    "type": "document_uploaded",
+    "title": "Plans of correction uploaded",
+    "description": "Riverside_Gardens_Plans_of_correction.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-16T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_3",
+    "buildingId": "bld_riverside",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Riverside_Gardens_Floor_plan.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-15T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_5",
+    "buildingId": "bld_riverside",
+    "type": "document_uploaded",
+    "title": "CMS-2567 survey reports (3 years) uploaded",
+    "description": "Riverside_Gardens_CMS_2567_survey_reports_3_years.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-10T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_13",
+    "buildingId": "bld_riverside",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns iden…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.842Z",
+    "dealId": "deal_riverside"
+  },
+  {
+    "id": "bld_riverside_act_14",
+    "buildingId": "bld_riverside",
+    "type": "verification_changed",
+    "title": "Marked partially verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_riverside_act_1",
+    "buildingId": "bld_riverside",
+    "type": "deal_associated",
+    "title": "Added to Riverside Gardens Post-Acute",
+    "dealId": "deal_riverside",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-10-31T15:20:00.000Z"
+  },
+  {
+    "id": "bld_riverside_act_0",
+    "buildingId": "bld_riverside",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 686231 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-10-29T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_10",
+    "buildingId": "bld_riverside",
+    "type": "document_reviewed",
+    "title": "Medicare / Medicaid certification letters approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-10-29T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_12",
+    "buildingId": "bld_riverside",
+    "type": "document_reviewed",
+    "title": "Medicare cost reports (3 years) returned for revision",
+    "description": "Document is incomplete — missing pages for the most recent period. Requested a complete copy.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-10-28T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_4",
+    "buildingId": "bld_riverside",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Riverside_Gardens_Medicare_Medicaid_certification_letters.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-27T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_7",
+    "buildingId": "bld_riverside",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Riverside_Gardens_ALTA_NSPS_land_title_survey_v2.pdf · v2 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-25T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_8",
+    "buildingId": "bld_riverside",
+    "type": "document_uploaded",
+    "title": "Medicare cost reports (3 years) uploaded",
+    "description": "Riverside_Gardens_Medicare_cost_reports_3_years.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-25T14:33:42.841Z"
+  },
+  {
+    "id": "bld_riverside_act_11",
+    "buildingId": "bld_riverside",
+    "type": "document_reviewed",
+    "title": "ALTA / NSPS land title survey approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-25T14:33:42.841Z"
+  },
+  {
+    "id": "bld_magnolia_act_6",
+    "buildingId": "bld_magnolia",
+    "type": "document_uploaded",
+    "title": "Trailing 12-month P&L uploaded",
+    "description": "Magnolia_Court_Trailing_12_month_P_L.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-16T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_12",
+    "buildingId": "bld_magnolia",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building is functional with typical age-related wear. HVAC and resident room finishes will need investment within 3–5 ye…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.842Z",
+    "dealId": "deal_sunbelt"
+  },
+  {
+    "id": "bld_magnolia_act_10",
+    "buildingId": "bld_magnolia",
+    "type": "document_reviewed",
+    "title": "Certificate of occupancy approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-08T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_7",
+    "buildingId": "bld_magnolia",
+    "type": "document_uploaded",
+    "title": "Census & payer mix reports uploaded",
+    "description": "Magnolia_Court_Census_payer_mix_reports.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-07T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_4",
+    "buildingId": "bld_magnolia",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Magnolia_Court_Certificate_of_occupancy.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-06T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_5",
+    "buildingId": "bld_magnolia",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Magnolia_Court_ALTA_NSPS_land_title_survey_v2.pdf · v2 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-06T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_8",
+    "buildingId": "bld_magnolia",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-06T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_11",
+    "buildingId": "bld_magnolia",
+    "type": "document_reviewed",
+    "title": "ALTA / NSPS land title survey approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-06T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_2",
+    "buildingId": "bld_magnolia",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Magnolia_Court_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-04T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_13",
+    "buildingId": "bld_magnolia",
+    "type": "verification_changed",
+    "title": "Marked verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_magnolia_act_3",
+    "buildingId": "bld_magnolia",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Magnolia_Court_Floor_plan_v2.pdf · v2 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-26T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_9",
+    "buildingId": "bld_magnolia",
+    "type": "document_reviewed",
+    "title": "Floor plan approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-26T14:33:42.842Z"
+  },
+  {
+    "id": "bld_magnolia_act_1",
+    "buildingId": "bld_magnolia",
+    "type": "deal_associated",
+    "title": "Added to Sunbelt ALF Pair",
+    "dealId": "deal_sunbelt",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-07-11T15:20:00.000Z"
+  },
+  {
+    "id": "bld_magnolia_act_0",
+    "buildingId": "bld_magnolia",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Created from state licensure record.",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-07-07T14:33:42.842Z"
+  },
+  {
+    "id": "bld_liveoak_act_8",
+    "buildingId": "bld_liveoak",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-11-17T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_2",
+    "buildingId": "bld_liveoak",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Live_Oak_Current_facility_license.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-15T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_12",
+    "buildingId": "bld_liveoak",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns iden…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.843Z",
+    "dealId": "deal_sunbelt"
+  },
+  {
+    "id": "bld_liveoak_act_7",
+    "buildingId": "bld_liveoak",
+    "type": "document_uploaded",
+    "title": "Census & payer mix reports uploaded",
+    "description": "Live_Oak_Census_payer_mix_reports.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-03T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_13",
+    "buildingId": "bld_liveoak",
+    "type": "verification_changed",
+    "title": "Marked verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_liveoak_act_6",
+    "buildingId": "bld_liveoak",
+    "type": "document_uploaded",
+    "title": "Trailing 12-month P&L uploaded",
+    "description": "Live_Oak_Trailing_12_month_P_L.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-11-01T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_11",
+    "buildingId": "bld_liveoak",
+    "type": "document_reviewed",
+    "title": "ALTA / NSPS land title survey approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-29T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_5",
+    "buildingId": "bld_liveoak",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Live_Oak_ALTA_NSPS_land_title_survey.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-27T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_9",
+    "buildingId": "bld_liveoak",
+    "type": "document_reviewed",
+    "title": "Floor plan approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-10-23T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_10",
+    "buildingId": "bld_liveoak",
+    "type": "document_reviewed",
+    "title": "Certificate of occupancy approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-22T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_3",
+    "buildingId": "bld_liveoak",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Live_Oak_Floor_plan.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-21T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_4",
+    "buildingId": "bld_liveoak",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Live_Oak_Certificate_of_occupancy.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-20T14:33:42.843Z"
+  },
+  {
+    "id": "bld_liveoak_act_1",
+    "buildingId": "bld_liveoak",
+    "type": "deal_associated",
+    "title": "Added to Sunbelt ALF Pair",
+    "dealId": "deal_sunbelt",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-07-11T15:20:00.000Z"
+  },
+  {
+    "id": "bld_liveoak_act_0",
+    "buildingId": "bld_liveoak",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Created from state licensure record.",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-07-07T14:33:42.842Z"
+  },
+  {
+    "id": "bld_chestnut_act_2",
+    "buildingId": "bld_chestnut",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-12T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_13",
+    "buildingId": "bld_chestnut",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns iden…",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.843Z",
+    "dealId": "deal_keystone"
+  },
+  {
+    "id": "bld_chestnut_act_7",
+    "buildingId": "bld_chestnut",
+    "type": "document_uploaded",
+    "title": "Plans of correction uploaded",
+    "description": "Chestnut_Hill_Plans_of_correction_v2.pdf · v2 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-05T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_14",
+    "buildingId": "bld_chestnut",
+    "type": "verification_changed",
+    "title": "Marked verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_chestnut_act_5",
+    "buildingId": "bld_chestnut",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Chestnut_Hill_Medicare_Medicaid_certification_letters_v2.pdf · v2 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-30T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_11",
+    "buildingId": "bld_chestnut",
+    "type": "document_reviewed",
+    "title": "Medicare / Medicaid certification letters approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-30T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_10",
+    "buildingId": "bld_chestnut",
+    "type": "document_reviewed",
+    "title": "Floor plan approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-10-29T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_4",
+    "buildingId": "bld_chestnut",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Chestnut_Hill_Floor_plan.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-27T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_9",
+    "buildingId": "bld_chestnut",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-10-25T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_8",
+    "buildingId": "bld_chestnut",
+    "type": "document_uploaded",
+    "title": "Certificate of occupancy uploaded",
+    "description": "Chestnut_Hill_Certificate_of_occupancy_v2.pdf · v2 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-24T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_3",
+    "buildingId": "bld_chestnut",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Chestnut_Hill_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-23T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_12",
+    "buildingId": "bld_chestnut",
+    "type": "document_reviewed",
+    "title": "CMS-2567 survey reports (3 years) approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Marcus Holloway",
+    "timestamp": "2026-10-19T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_6",
+    "buildingId": "bld_chestnut",
+    "type": "document_uploaded",
+    "title": "CMS-2567 survey reports (3 years) uploaded",
+    "description": "Chestnut_Hill_CMS_2567_survey_reports_3_years.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-17T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_0",
+    "buildingId": "bld_chestnut",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 396841 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2023-01-19T14:33:42.843Z"
+  },
+  {
+    "id": "bld_chestnut_act_1",
+    "buildingId": "bld_chestnut",
+    "type": "deal_associated",
+    "title": "Added to Chestnut Hill Acquisition",
+    "dealId": "deal_keystone",
+    "actor": "Jordan Ellis",
+    "timestamp": "2023-01-09T15:20:00.000Z"
+  },
+  {
+    "id": "bld_seaside_act_3",
+    "buildingId": "bld_seaside",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-15T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_16",
+    "buildingId": "bld_seaside",
+    "type": "note",
+    "title": "Prior diligence carried forward",
+    "description": "Documents from Carolina Coast (OD-2024-011) linked to new deal. Roof report must be refreshed.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-11-12T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_2",
+    "buildingId": "bld_seaside",
+    "type": "deal_associated",
+    "title": "Added to Seaside Pines Re-engagement",
+    "dealId": "deal_seaside",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-11T15:20:00.000Z"
+  },
+  {
+    "id": "bld_seaside_act_14",
+    "buildingId": "bld_seaside",
+    "type": "site_visit",
+    "title": "Site visit completed",
+    "description": "Significant deferred maintenance observed. Roof leaks in multiple resident rooms and aging central plant. Capex reserve …",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-09T14:33:42.844Z",
+    "dealId": "deal_seaside"
+  },
+  {
+    "id": "bld_seaside_act_15",
+    "buildingId": "bld_seaside",
+    "type": "verification_changed",
+    "title": "Marked as needing review",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_seaside_act_7",
+    "buildingId": "bld_seaside",
+    "type": "document_uploaded",
+    "title": "Plans of correction uploaded",
+    "description": "Seaside_Pines_Plans_of_correction_v2.pdf · v2 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-26T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_13",
+    "buildingId": "bld_seaside",
+    "type": "document_reviewed",
+    "title": "Plans of correction approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-10-26T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_12",
+    "buildingId": "bld_seaside",
+    "type": "document_reviewed",
+    "title": "CMS-2567 survey reports (3 years) approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-24T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_6",
+    "buildingId": "bld_seaside",
+    "type": "document_uploaded",
+    "title": "CMS-2567 survey reports (3 years) uploaded",
+    "description": "Seaside_Pines_CMS_2567_survey_reports_3_years.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-22T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_8",
+    "buildingId": "bld_seaside",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Seaside_Pines_ALTA_NSPS_land_title_survey.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-22T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_11",
+    "buildingId": "bld_seaside",
+    "type": "document_reviewed",
+    "title": "Floor plan returned for revision",
+    "description": "Document is incomplete — missing pages for the most recent period. Requested a complete copy.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-18T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_9",
+    "buildingId": "bld_seaside",
+    "type": "document_uploaded",
+    "title": "Trailing 12-month P&L uploaded",
+    "description": "Seaside_Pines_Trailing_12_month_P_L.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-16T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_5",
+    "buildingId": "bld_seaside",
+    "type": "document_uploaded",
+    "title": "Floor plan uploaded",
+    "description": "Seaside_Pines_Floor_plan.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-15T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_10",
+    "buildingId": "bld_seaside",
+    "type": "document_reviewed",
+    "title": "Current facility license approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-10-10T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_4",
+    "buildingId": "bld_seaside",
+    "type": "document_uploaded",
+    "title": "Current facility license uploaded",
+    "description": "Seaside_Pines_Current_facility_license.pdf · v1 via SharePoint sync",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-08T14:33:42.844Z"
+  },
+  {
+    "id": "bld_seaside_act_0",
+    "buildingId": "bld_seaside",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 345288 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2024-04-13T14:33:42.843Z"
+  },
+  {
+    "id": "bld_seaside_act_1",
+    "buildingId": "bld_seaside",
+    "type": "deal_associated",
+    "title": "Added to Carolina Coast",
+    "dealId": "deal_carolina",
+    "actor": "Jordan Ellis",
+    "timestamp": "2024-04-02T15:20:00.000Z"
+  },
+  {
+    "id": "bld_ozark_act_10",
+    "buildingId": "bld_ozark",
+    "type": "document_reviewed",
+    "title": "Title commitment rejected",
+    "description": "Wrong facility — file references a different provider number.",
+    "actor": "Daniel Okafor",
+    "timestamp": "2026-11-17T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_6",
+    "buildingId": "bld_ozark",
+    "type": "document_uploaded",
+    "title": "Title commitment uploaded",
+    "description": "Ozark_Valley_Title_commitment.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-16T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_2",
+    "buildingId": "bld_ozark",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-11T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_8",
+    "buildingId": "bld_ozark",
+    "type": "document_uploaded",
+    "title": "Site visit photo log uploaded",
+    "description": "Ozark_Valley_Site_visit_photo_log.pdf · v1 via upload",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-05T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_4",
+    "buildingId": "bld_ozark",
+    "type": "document_uploaded",
+    "title": "ALTA / NSPS land title survey uploaded",
+    "description": "Ozark_Valley_ALTA_NSPS_land_title_survey.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-11-03T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_11",
+    "buildingId": "bld_ozark",
+    "type": "verification_changed",
+    "title": "Marked partially verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_ozark_act_5",
+    "buildingId": "bld_ozark",
+    "type": "document_uploaded",
+    "title": "Accounts receivable aging uploaded",
+    "description": "Ozark_Valley_Accounts_receivable_aging.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-29T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_9",
+    "buildingId": "bld_ozark",
+    "type": "document_reviewed",
+    "title": "Medicare / Medicaid certification letters approved",
+    "description": "Reviewed against data tape; no exceptions.",
+    "actor": "Elena Vasquez",
+    "timestamp": "2026-10-20T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_3",
+    "buildingId": "bld_ozark",
+    "type": "document_uploaded",
+    "title": "Medicare / Medicaid certification letters uploaded",
+    "description": "Ozark_Valley_Medicare_Medicaid_certification_letters.pdf · v1 via upload",
+    "actor": "Ryan Foster",
+    "timestamp": "2026-10-18T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_7",
+    "buildingId": "bld_ozark",
+    "type": "document_uploaded",
+    "title": "Capital expenditure history (5 years) uploaded",
+    "description": "Ozark_Valley_Capital_expenditure_history_5_years.pdf · v1 via SharePoint sync",
+    "actor": "Data room sync",
+    "timestamp": "2026-10-17T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_0",
+    "buildingId": "bld_ozark",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 265902 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2025-05-23T14:33:42.844Z"
+  },
+  {
+    "id": "bld_ozark_act_1",
+    "buildingId": "bld_ozark",
+    "type": "deal_associated",
+    "title": "Added to Ozark Valley",
+    "dealId": "deal_ozark",
+    "actor": "Jordan Ellis",
+    "timestamp": "2025-05-12T15:20:00.000Z"
+  },
+  {
+    "id": "bld_prairieview_act_1",
+    "buildingId": "bld_prairieview",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-14T14:33:42.844Z"
+  },
+  {
+    "id": "bld_prairieview_act_2",
+    "buildingId": "bld_prairieview",
+    "type": "verification_changed",
+    "title": "Marked partially verified",
+    "description": "Bed counts reconciled against state license.",
+    "actor": "Priya Raman",
+    "timestamp": "2026-11-01T17:05:00.000Z"
+  },
+  {
+    "id": "bld_prairieview_act_0",
+    "buildingId": "bld_prairieview",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 146519 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-09-18T14:33:42.844Z"
+  },
+  {
+    "id": "bld_desertwillow_act_1",
+    "buildingId": "bld_desertwillow",
+    "type": "cms_refreshed",
+    "title": "CMS data refreshed",
+    "description": "Q3 2026 star ratings and staffing data loaded (mock extract).",
+    "actor": "System",
+    "timestamp": "2026-11-17T14:33:42.844Z"
+  },
+  {
+    "id": "bld_desertwillow_act_0",
+    "buildingId": "bld_desertwillow",
+    "type": "building_created",
+    "title": "Building record created",
+    "description": "Imported from CMS provider 035284 (mock).",
+    "actor": "Jordan Ellis",
+    "timestamp": "2026-11-10T14:33:42.844Z"
+  }
+]

@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "export:fixtures": "vite-node scripts/export-fixtures.ts",
+    "e2e": "node e2e/run-all.cjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",
@@ -37,8 +41,10 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^5.2.0",
+    "playwright": "1.63.0",
     "tailwindcss": "^4.3.5",
     "typescript": "5.9",
-    "vite": "^7.3.8"
+    "vite": "^7.3.8",
+    "vitest": "^3.2.7"
   }
 }

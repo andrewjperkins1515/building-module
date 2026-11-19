@@ -1,0 +1,1388 @@
+[
+  {
+    "mobilePhone": "(312) 555-1440",
+    "linkedIn": "linkedin.com/in/helen-walsh-example",
+    "dob": "1978-11-21",
+    "personalEmail": "helen.walsh@personal.example",
+    "mailingAddress": {
+      "street": "4184 Lakeview Drive",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60616"
+    },
+    "tags": [],
+    "id": "ct_hwalsh",
+    "name": "Helen Walsh",
+    "title": "Managing Director",
+    "organizationId": "org_calloway",
+    "email": "hwalsh@calloway.example",
+    "phone": "(312) 555-0142",
+    "contactType": "broker",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-1400",
+    "linkedIn": "linkedin.com/in/ben-carter-example",
+    "dob": "1972-11-11",
+    "personalEmail": "ben.carter@personal.example",
+    "mailingAddress": {
+      "street": "2265 Lakeview Drive",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60616"
+    },
+    "tags": [],
+    "id": "ct_bcarter",
+    "name": "Ben Carter",
+    "title": "Analyst",
+    "organizationId": "org_calloway",
+    "email": "bcarter@calloway.example",
+    "phone": "(312) 555-0177",
+    "contactType": "broker",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(214) 555-2477",
+    "linkedIn": "linkedin.com/in/thomas-nguyen-example",
+    "dob": "1973-02-11",
+    "personalEmail": "thomas.nguyen@personal.example",
+    "mailingAddress": {
+      "street": "4098 Maple Avenue",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75254"
+    },
+    "tags": [],
+    "id": "ct_tnguyen",
+    "name": "Thomas Nguyen",
+    "title": "Senior Vice President",
+    "organizationId": "org_stonebridge",
+    "email": "tnguyen@stonebridge.example",
+    "phone": "(214) 555-0119",
+    "contactType": "broker",
+    "sectors": [
+      "alf",
+      "ilf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(616) 555-7207",
+    "linkedIn": "linkedin.com/in/maria-delgado-example",
+    "dob": "1984-02-02",
+    "personalEmail": "maria.delgado@personal.example",
+    "mailingAddress": {
+      "street": "9519 Chestnut Court",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "zip": "49584"
+    },
+    "tags": [],
+    "id": "ct_mdelgado",
+    "name": "Maria Delgado",
+    "title": "Chief Executive Officer",
+    "organizationId": "org_cedarbrook",
+    "email": "mdelgado@cedarbrook.example",
+    "phone": "(616) 555-0101",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(616) 555-2665",
+    "linkedIn": "linkedin.com/in/ryan-foster-example",
+    "dob": "1976-06-27",
+    "personalEmail": "ryan.foster@personal.example",
+    "mailingAddress": {
+      "street": "678 Hillcrest Road",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "zip": "49566"
+    },
+    "tags": [],
+    "id": "ct_rfoster",
+    "name": "Ryan Foster",
+    "title": "Regional Director of Operations",
+    "organizationId": "org_cedarbrook",
+    "email": "rfoster@cedarbrook.example",
+    "phone": "(616) 555-0164",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(616) 555-4409",
+    "linkedIn": "linkedin.com/in/laura-bishop-example",
+    "dob": "1980-10-15",
+    "personalEmail": "laura.bishop@personal.example",
+    "mailingAddress": {
+      "street": "3860 Lakeview Drive",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "zip": "49595"
+    },
+    "tags": [],
+    "id": "ct_lbishop",
+    "name": "Laura Bishop",
+    "title": "Administrator, Maple Grove",
+    "organizationId": "org_cedarbrook",
+    "email": "lbishop@cedarbrook.example",
+    "phone": "(616) 555-0188",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-1948",
+    "linkedIn": "linkedin.com/in/gautam-patel-example",
+    "dob": "1962-07-19",
+    "personalEmail": "gautam.patel@personal.example",
+    "mailingAddress": {
+      "street": "3738 Willow Bend",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37229"
+    },
+    "tags": [],
+    "id": "ct_gpatel",
+    "name": "Gautam Patel",
+    "title": "Chief Financial Officer",
+    "organizationId": "org_northpoint",
+    "email": "gpatel@northpoint.example",
+    "phone": "(615) 555-0133",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-9142",
+    "linkedIn": "linkedin.com/in/amanda-hughes-example",
+    "dob": "1974-01-04",
+    "personalEmail": "amanda.hughes@personal.example",
+    "mailingAddress": {
+      "street": "4965 Lakeview Drive",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60676"
+    },
+    "tags": [],
+    "id": "ct_ahughes",
+    "name": "Amanda Hughes",
+    "title": "VP, Asset Management",
+    "organizationId": "org_meridian",
+    "email": "ahughes@meridianhcp.example",
+    "phone": "(312) 555-0150",
+    "rosterRole": "Asset management",
+    "notes": "Point person for property-level questions and site access.",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(210) 555-4789",
+    "linkedIn": "linkedin.com/in/sofia-reyes-example",
+    "dob": "1980-04-01",
+    "personalEmail": "sofia.reyes@personal.example",
+    "mailingAddress": {
+      "street": "4218 Lakeview Drive",
+      "city": "San Antonio",
+      "state": "TX",
+      "zip": "75294"
+    },
+    "tags": [],
+    "id": "ct_sreyes",
+    "name": "Sofia Reyes",
+    "title": "Executive Director",
+    "organizationId": "org_ashford",
+    "email": "sreyes@ashford.example",
+    "phone": "(210) 555-0126",
+    "contactType": "operator",
+    "sectors": [
+      "alf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-8379",
+    "linkedIn": "linkedin.com/in/david-morgan-example",
+    "dob": "1970-10-28",
+    "personalEmail": "david.morgan@personal.example",
+    "mailingAddress": {
+      "street": "6065 Briar Lane",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37292"
+    },
+    "tags": [],
+    "id": "ct_dmorgan",
+    "name": "David Morgan",
+    "title": "Partner",
+    "organizationId": "org_whitaker",
+    "email": "dmorgan@whitakerlowe.example",
+    "phone": "(615) 555-0110",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-9436",
+    "linkedIn": "linkedin.com/in/karen-chen-example",
+    "dob": "1975-07-25",
+    "personalEmail": "karen.chen@personal.example",
+    "mailingAddress": {
+      "street": "9516 Chestnut Court",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37233"
+    },
+    "tags": [],
+    "id": "ct_kchen",
+    "name": "Karen Chen",
+    "title": "Associate",
+    "organizationId": "org_whitaker",
+    "email": "kchen@whitakerlowe.example",
+    "phone": "(615) 555-0111",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(216) 555-6905",
+    "linkedIn": "linkedin.com/in/james-obrien-example",
+    "dob": "1963-07-03",
+    "personalEmail": "james.obrien@personal.example",
+    "mailingAddress": {
+      "street": "5954 Chestnut Court",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "43283"
+    },
+    "tags": [],
+    "id": "ct_jobrien",
+    "name": "James O'Brien",
+    "title": "Licensure Counsel",
+    "organizationId": "org_brennan",
+    "email": "jobrien@brennanross.example",
+    "phone": "(216) 555-0145",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(202) 555-9793",
+    "linkedIn": "linkedin.com/in/patrick-mills-example",
+    "dob": "1977-01-18",
+    "personalEmail": "patrick.mills@personal.example",
+    "mailingAddress": {
+      "street": "1052 Briar Lane",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20074"
+    },
+    "tags": [],
+    "id": "ct_pmills",
+    "name": "Patrick Mills",
+    "title": "Director, Originations",
+    "organizationId": "org_sterling",
+    "email": "pmills@sterlinghud.example",
+    "phone": "(202) 555-0193",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(212) 555-3112",
+    "linkedIn": "linkedin.com/in/naomi-sato-example",
+    "dob": "1987-07-14",
+    "personalEmail": "naomi.sato@personal.example",
+    "mailingAddress": {
+      "street": "5333 Oak Street",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10045"
+    },
+    "tags": [],
+    "id": "ct_nsato",
+    "name": "Naomi Sato",
+    "title": "Vice President",
+    "organizationId": "org_atlas",
+    "email": "nsato@atlasbridge.example",
+    "phone": "(212) 555-0172",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(614) 555-9350",
+    "linkedIn": "linkedin.com/in/william-grant-example",
+    "dob": "1970-11-23",
+    "personalEmail": "william.grant@personal.example",
+    "mailingAddress": {
+      "street": "6981 Lakeview Drive",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43271"
+    },
+    "tags": [],
+    "id": "ct_wgrant",
+    "name": "William Grant",
+    "title": "Project Manager",
+    "organizationId": "org_clearline",
+    "email": "wgrant@clearline.example",
+    "phone": "(614) 555-0154",
+    "contactType": "vendor_dd",
+    "sectors": [
+      "snf",
+      "alf",
+      "ilf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(404) 555-7396",
+    "linkedIn": "linkedin.com/in/erin-brooks-example",
+    "dob": "1983-08-02",
+    "personalEmail": "erin.brooks@personal.example",
+    "mailingAddress": {
+      "street": "7713 Chestnut Court",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30329"
+    },
+    "tags": [],
+    "id": "ct_ebrooks",
+    "name": "Erin Brooks",
+    "title": "Clinical Consultant",
+    "organizationId": "org_veritas",
+    "email": "ebrooks@veritas.example",
+    "phone": "(404) 555-0138",
+    "contactType": "vendor_dd",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(941) 555-5149",
+    "linkedIn": "linkedin.com/in/carlos-ramirez-example",
+    "dob": "1981-05-17",
+    "personalEmail": "carlos.ramirez@personal.example",
+    "mailingAddress": {
+      "street": "5114 Hillcrest Road",
+      "city": "Sarasota",
+      "state": "FL",
+      "zip": "33657"
+    },
+    "tags": [],
+    "id": "ct_cramirez",
+    "name": "Carlos Ramirez",
+    "title": "Chief Operating Officer",
+    "organizationId": "org_riverside_rp",
+    "email": "cramirez@riversiderp.example",
+    "phone": "(941) 555-0127",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(717) 555-9762",
+    "linkedIn": "linkedin.com/in/jennifer-lin-example",
+    "dob": "1970-06-21",
+    "personalEmail": "jennifer.lin@personal.example",
+    "mailingAddress": {
+      "street": "7526 Briar Lane",
+      "city": "Harrisburg",
+      "state": "PA",
+      "zip": "19164"
+    },
+    "tags": [],
+    "id": "ct_jlin",
+    "name": "Jennifer Lin",
+    "title": "Administrator",
+    "organizationId": "org_pinnacle",
+    "email": "jlin@pinnacle.example",
+    "phone": "(717) 555-0185",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(502) 555-6187",
+    "linkedIn": "linkedin.com/in/michael-webb-example",
+    "dob": "1972-05-23",
+    "personalEmail": "michael.webb@personal.example",
+    "mailingAddress": {
+      "street": "4897 Maple Avenue",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40256"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_mwebb",
+    "name": "Michael Webb",
+    "title": "Principal",
+    "organizationId": "org_bluegrass_props",
+    "email": "mwebb@bluegrasscp.example",
+    "phone": "(502) 555-0161",
+    "rosterRole": "Decision maker",
+    "notes": "Second-generation owner; open to seller financing.",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(813) 555-4077",
+    "linkedIn": "linkedin.com/in/olivia-taylor-example",
+    "dob": "1960-03-16",
+    "personalEmail": "olivia.taylor@personal.example",
+    "mailingAddress": {
+      "street": "7018 Ridgeway Lane",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33653"
+    },
+    "tags": [],
+    "id": "ct_otaylor",
+    "name": "Olivia Taylor",
+    "title": "Director of Real Estate",
+    "organizationId": "org_harborview",
+    "email": "otaylor@harborview.example",
+    "phone": "(813) 555-0108",
+    "rosterRole": "Real estate",
+    "notes": "Introduced Riverside Gardens off-market.",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-6814",
+    "linkedIn": "linkedin.com/in/robert-cole-example",
+    "dob": "1968-10-27",
+    "personalEmail": "robert.cole@personal.example",
+    "mailingAddress": {
+      "street": "5691 Hillcrest Road",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60672"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_rcole",
+    "name": "Robert Cole",
+    "title": "Chief Executive Officer",
+    "organizationId": "org_meridian",
+    "email": "rcole@meridianhcp.example",
+    "phone": "(312) 555-0102",
+    "rosterRole": "Decision maker",
+    "notes": "Final say on dispositions. Prefers calls before 9am CT.",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-5326",
+    "linkedIn": "linkedin.com/in/linda-park-example",
+    "dob": "1960-02-24",
+    "personalEmail": "linda.park@personal.example",
+    "mailingAddress": {
+      "street": "1662 Lakeview Drive",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60644"
+    },
+    "tags": [],
+    "id": "ct_lpark",
+    "name": "Linda Park",
+    "title": "Chief Financial Officer",
+    "organizationId": "org_meridian",
+    "email": "lpark@meridianhcp.example",
+    "phone": "(312) 555-0118",
+    "rosterRole": "Finance",
+    "notes": "Owns data room access and financial reporting packages.",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-9258",
+    "linkedIn": "linkedin.com/in/jason-simmons-example",
+    "dob": "1978-11-05",
+    "personalEmail": "jason.simmons@personal.example",
+    "mailingAddress": {
+      "street": "6057 Briar Lane",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60658"
+    },
+    "tags": [],
+    "id": "ct_jsimmons",
+    "name": "Jason Simmons",
+    "title": "Director of Acquisitions",
+    "organizationId": "org_meridian",
+    "email": "jsimmons@meridianhcp.example",
+    "phone": "(312) 555-0131",
+    "rosterRole": "Transactions",
+    "notes": "Day-to-day contact on Great Lakes diligence.",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(215) 555-4651",
+    "linkedIn": "linkedin.com/in/evelyn-wright-example",
+    "dob": "1958-01-03",
+    "personalEmail": "evelyn.wright@personal.example",
+    "mailingAddress": {
+      "street": "8146 Briar Lane",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19128"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_ewright",
+    "name": "Evelyn Wright",
+    "title": "Chief Investment Officer",
+    "organizationId": "org_keystone",
+    "email": "ewright@keystonesrt.example",
+    "phone": "(215) 555-0144",
+    "rosterRole": "Decision maker",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(215) 555-6019",
+    "linkedIn": "linkedin.com/in/tom-baker-example",
+    "dob": "1971-12-22",
+    "personalEmail": "tom.baker@personal.example",
+    "mailingAddress": {
+      "street": "2502 Oak Street",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19154"
+    },
+    "tags": [],
+    "id": "ct_tbaker",
+    "name": "Tom Baker",
+    "title": "Portfolio Manager",
+    "organizationId": "org_keystone",
+    "email": "tbaker@keystonesrt.example",
+    "phone": "(215) 555-0167",
+    "rosterRole": "Asset management",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(813) 555-6255",
+    "linkedIn": "linkedin.com/in/peter-lang-example",
+    "dob": "1963-01-19",
+    "personalEmail": "peter.lang@personal.example",
+    "mailingAddress": {
+      "street": "1109 Briar Lane",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33649"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_plang",
+    "name": "Peter Lang",
+    "title": "Principal",
+    "organizationId": "org_harborview",
+    "email": "plang@harborview.example",
+    "phone": "(813) 555-0122",
+    "rosterRole": "Decision maker",
+    "notes": "Family principal; prefers in-person meetings.",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(502) 555-5638",
+    "linkedIn": "linkedin.com/in/sarah-green-example",
+    "dob": "1985-02-15",
+    "personalEmail": "sarah.green@personal.example",
+    "mailingAddress": {
+      "street": "9229 Hillcrest Road",
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40266"
+    },
+    "tags": [],
+    "id": "ct_sgreen",
+    "name": "Sarah Green",
+    "title": "Controller",
+    "organizationId": "org_bluegrass_props",
+    "email": "sgreen@bluegrasscp.example",
+    "phone": "(502) 555-0179",
+    "rosterRole": "Finance",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(614) 555-8169",
+    "linkedIn": "linkedin.com/in/douglas-ross-example",
+    "dob": "1962-12-27",
+    "personalEmail": "douglas.ross@personal.example",
+    "mailingAddress": {
+      "street": "5095 Oak Street",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43295"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_dross",
+    "name": "Douglas Ross",
+    "title": "Managing Partner",
+    "organizationId": "org_tricounty",
+    "email": "dross@tricountyhh.example",
+    "phone": "(614) 555-0113",
+    "rosterRole": "Decision maker",
+    "notes": "Re-opened Seaside Pines conversation at reduced price.",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(614) 555-7053",
+    "linkedIn": "linkedin.com/in/kelly-moore-example",
+    "dob": "1985-05-18",
+    "personalEmail": "kelly.moore@personal.example",
+    "mailingAddress": {
+      "street": "1830 Oak Street",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43251"
+    },
+    "tags": [],
+    "id": "ct_kmoore",
+    "name": "Kelly Moore",
+    "title": "VP, Finance",
+    "organizationId": "org_tricounty",
+    "email": "kmoore@tricountyhh.example",
+    "phone": "(614) 555-0148",
+    "rosterRole": "Finance",
+    "contactType": "investor",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(214) 555-3666",
+    "linkedIn": "linkedin.com/in/andre-vega-example",
+    "dob": "1961-06-22",
+    "personalEmail": "andre.vega@personal.example",
+    "mailingAddress": {
+      "street": "4938 Maple Avenue",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75242"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_avega",
+    "name": "Andre Vega",
+    "title": "Managing Director",
+    "organizationId": "org_sunbelt",
+    "email": "avega@sunbeltshf.example",
+    "phone": "(214) 555-0163",
+    "rosterRole": "Decision maker",
+    "contactType": "investor",
+    "sectors": [
+      "alf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-9552",
+    "linkedIn": "linkedin.com/in/grace-whitman-example",
+    "dob": "1979-05-27",
+    "personalEmail": "grace.whitman@personal.example",
+    "mailingAddress": {
+      "street": "4608 Hillcrest Road",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37294"
+    },
+    "tags": [],
+    "id": "ct_gwhitman",
+    "name": "Grace Whitman",
+    "title": "Asset Manager",
+    "organizationId": "org_od_holdings",
+    "email": "gwhitman@odholdings.example",
+    "phone": "(615) 555-0186",
+    "rosterRole": "Asset management",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(417) 555-5775",
+    "linkedIn": "linkedin.com/in/harold-dunn-example",
+    "dob": "1983-02-16",
+    "personalEmail": "harold.dunn@personal.example",
+    "mailingAddress": {
+      "street": "4882 Briar Lane",
+      "city": "Springfield",
+      "state": "MO",
+      "zip": "65839"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_hdunn",
+    "name": "Harold Dunn",
+    "title": "Owner & CEO",
+    "organizationId": "org_willow",
+    "email": "hdunn@willowcreek.example",
+    "phone": "(417) 555-0109",
+    "rosterRole": "Decision maker",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(309) 555-7783",
+    "linkedIn": "linkedin.com/in/brian-nolan-example",
+    "dob": "1970-08-18",
+    "personalEmail": "brian.nolan@personal.example",
+    "mailingAddress": {
+      "street": "4342 Willow Bend",
+      "city": "Peoria",
+      "state": "IL",
+      "zip": "60650"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_bnolan",
+    "name": "Brian Nolan",
+    "title": "President",
+    "organizationId": "org_heartland",
+    "email": "bnolan@heartlandprairie.example",
+    "phone": "(309) 555-0157",
+    "rosterRole": "Decision maker",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(414) 555-7405",
+    "linkedIn": "linkedin.com/in/sanjay-rao-example",
+    "dob": "1974-07-16",
+    "personalEmail": "sanjay.rao@personal.example",
+    "mailingAddress": {
+      "street": "6867 Hillcrest Road",
+      "city": "Milwaukee",
+      "state": "WI",
+      "zip": "53221"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_srao",
+    "name": "Sanjay Rao",
+    "title": "SVP, Special Assets",
+    "organizationId": "org_lakeshore",
+    "email": "srao@lakeshorebank.example",
+    "phone": "(414) 555-0136",
+    "rosterRole": "Decision maker",
+    "notes": "Running the REO disposition for Prairie View. Wants a clean, quick close.",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(414) 555-7405",
+    "linkedIn": "linkedin.com/in/megan-fisher-example",
+    "dob": "1969-06-04",
+    "personalEmail": "megan.fisher@personal.example",
+    "mailingAddress": {
+      "street": "5257 Ridgeway Lane",
+      "city": "Milwaukee",
+      "state": "WI",
+      "zip": "53291"
+    },
+    "tags": [],
+    "id": "ct_mfisher",
+    "name": "Megan Fisher",
+    "title": "Relationship Manager, Healthcare",
+    "organizationId": "org_lakeshore",
+    "email": "mfisher@lakeshorebank.example",
+    "phone": "(414) 555-0171",
+    "rosterRole": "Lending",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(602) 555-5341",
+    "linkedIn": "linkedin.com/in/catherine-ford-example",
+    "dob": "1976-10-06",
+    "personalEmail": "catherine.ford@personal.example",
+    "mailingAddress": {
+      "street": "1690 Briar Lane",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85051"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_cford",
+    "name": "Catherine Ford",
+    "title": "SVP, Investments",
+    "organizationId": "org_summit_reit",
+    "email": "cford@summithreit.example",
+    "phone": "(602) 555-0128",
+    "rosterRole": "Decision maker",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(602) 555-8563",
+    "linkedIn": "linkedin.com/in/daniel-lee-example",
+    "dob": "1958-01-02",
+    "personalEmail": "daniel.lee@personal.example",
+    "mailingAddress": {
+      "street": "8753 Chestnut Court",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85053"
+    },
+    "tags": [],
+    "id": "ct_dlee",
+    "name": "Daniel Lee",
+    "title": "Asset Manager",
+    "organizationId": "org_summit_reit",
+    "email": "dlee@summithreit.example",
+    "phone": "(602) 555-0152",
+    "rosterRole": "Asset management",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-8151",
+    "linkedIn": "linkedin.com/in/jordan-ellis-example",
+    "dob": "1962-04-10",
+    "personalEmail": "jordan.ellis@personal.example",
+    "mailingAddress": {
+      "street": "8444 Briar Lane",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37213"
+    },
+    "tags": [
+      "Internal"
+    ],
+    "id": "ct_jellis",
+    "name": "Jordan Ellis",
+    "title": "VP, Acquisitions",
+    "organizationId": "org_od_holdings",
+    "email": "jordan.ellis@example.com",
+    "phone": "(615) 555-0170",
+    "rosterRole": "Transactions",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-6158",
+    "linkedIn": "linkedin.com/in/elena-vasquez-example",
+    "dob": "1974-04-15",
+    "personalEmail": "elena.vasquez@personal.example",
+    "mailingAddress": {
+      "street": "7772 Oak Street",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37224"
+    },
+    "tags": [
+      "Internal"
+    ],
+    "id": "ct_evasquez",
+    "name": "Elena Vasquez",
+    "title": "VP, Acquisitions",
+    "organizationId": "org_od_holdings",
+    "email": "elena.vasquez@example.com",
+    "phone": "(615) 555-0171",
+    "rosterRole": "Transactions",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-3458",
+    "linkedIn": "linkedin.com/in/priya-raman-example",
+    "dob": "1974-03-16",
+    "personalEmail": "priya.raman@personal.example",
+    "mailingAddress": {
+      "street": "8231 Willow Bend",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37282"
+    },
+    "tags": [
+      "Internal"
+    ],
+    "id": "ct_praman",
+    "name": "Priya Raman",
+    "title": "Acquisitions Associate",
+    "organizationId": "org_od_holdings",
+    "email": "priya.raman@example.com",
+    "phone": "(615) 555-0172",
+    "rosterRole": "Transactions",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-3238",
+    "linkedIn": "linkedin.com/in/marcus-holloway-example",
+    "dob": "1965-03-20",
+    "personalEmail": "marcus.holloway@personal.example",
+    "mailingAddress": {
+      "street": "6062 Ridgeway Lane",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37277"
+    },
+    "tags": [
+      "Internal"
+    ],
+    "id": "ct_mholloway",
+    "name": "Marcus Holloway",
+    "title": "Director, Asset Management",
+    "organizationId": "org_od_holdings",
+    "email": "marcus.holloway@example.com",
+    "phone": "(615) 555-0173",
+    "rosterRole": "Asset management",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-7868",
+    "linkedIn": "linkedin.com/in/daniel-okafor-example",
+    "dob": "1977-08-13",
+    "personalEmail": "daniel.okafor@personal.example",
+    "mailingAddress": {
+      "street": "4454 Chestnut Court",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37215"
+    },
+    "tags": [
+      "Internal"
+    ],
+    "id": "ct_dokafor",
+    "name": "Daniel Okafor",
+    "title": "Senior Associate",
+    "organizationId": "org_od_holdings",
+    "email": "daniel.okafor@example.com",
+    "phone": "(615) 555-0174",
+    "rosterRole": "Transactions",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-8012",
+    "linkedIn": "linkedin.com/in/rachel-kim-example",
+    "dob": "1962-07-13",
+    "personalEmail": "rachel.kim@personal.example",
+    "mailingAddress": {
+      "street": "5933 Willow Bend",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37277"
+    },
+    "tags": [
+      "Internal"
+    ],
+    "id": "ct_rkim",
+    "name": "Rachel Kim",
+    "title": "Analyst",
+    "organizationId": "org_od_holdings",
+    "email": "rachel.kim@example.com",
+    "phone": "(615) 555-0175",
+    "rosterRole": "Transactions",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(615) 555-5645",
+    "linkedIn": "linkedin.com/in/natalie-brooks-example",
+    "dob": "1966-10-10",
+    "personalEmail": "natalie.brooks@personal.example",
+    "mailingAddress": {
+      "street": "6575 Willow Bend",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": "37259"
+    },
+    "tags": [
+      "Internal"
+    ],
+    "id": "ct_nbrooks",
+    "name": "Natalie Brooks",
+    "title": "General Counsel",
+    "organizationId": "org_od_holdings",
+    "email": "natalie.brooks@example.com",
+    "phone": "(615) 555-0176",
+    "rosterRole": "Legal",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-9883",
+    "linkedIn": "linkedin.com/in/michael-foley-example",
+    "dob": "1981-07-18",
+    "personalEmail": "michael.foley@personal.example",
+    "mailingAddress": {
+      "street": "3341 Willow Bend",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60612"
+    },
+    "tags": [],
+    "id": "ct_mfoley",
+    "name": "Michael Foley",
+    "title": "General Counsel",
+    "organizationId": "org_meridian",
+    "email": "mfoley@meridianhcp.example",
+    "phone": "(312) 555-0124",
+    "rosterRole": "Legal",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf",
+      "alf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-4105",
+    "linkedIn": "linkedin.com/in/alan-hartwell-example",
+    "dob": "1963-09-08",
+    "personalEmail": "alan.hartwell@personal.example",
+    "mailingAddress": {
+      "street": "7231 Maple Avenue",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60686"
+    },
+    "tags": [],
+    "id": "ct_ahartwell",
+    "name": "Alan Hartwell",
+    "title": "Partner, Real Estate",
+    "organizationId": "org_hartwell",
+    "email": "ahartwell@hartwellpierce.example",
+    "phone": "(312) 555-0181",
+    "rosterRole": "Legal",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-9297",
+    "linkedIn": "linkedin.com/in/sandra-pierce-example",
+    "dob": "1970-11-08",
+    "personalEmail": "sandra.pierce@personal.example",
+    "mailingAddress": {
+      "street": "7591 Willow Bend",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60671"
+    },
+    "tags": [],
+    "id": "ct_spierce",
+    "name": "Sandra Pierce",
+    "title": "Partner, Finance",
+    "organizationId": "org_hartwell",
+    "email": "spierce@hartwellpierce.example",
+    "phone": "(312) 555-0182",
+    "rosterRole": "Legal",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-1012",
+    "linkedIn": "linkedin.com/in/theresa-quinn-example",
+    "dob": "1973-04-10",
+    "personalEmail": "theresa.quinn@personal.example",
+    "mailingAddress": {
+      "street": "2799 Maple Avenue",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60651"
+    },
+    "tags": [],
+    "id": "ct_tquinn",
+    "name": "Theresa Quinn",
+    "title": "Counsel, Healthcare Regulatory",
+    "organizationId": "org_hartwell",
+    "email": "tquinn@hartwellpierce.example",
+    "phone": "(312) 555-0183",
+    "rosterRole": "Legal",
+    "contactType": "lawyer",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(614) 555-3946",
+    "linkedIn": "linkedin.com/in/rick-benson-example",
+    "dob": "1965-01-06",
+    "personalEmail": "rick.benson@personal.example",
+    "mailingAddress": {
+      "street": "8219 Willow Bend",
+      "city": "Columbus",
+      "state": "OH",
+      "zip": "43228"
+    },
+    "tags": [],
+    "id": "ct_rbenson",
+    "name": "Rick Benson",
+    "title": "Project Manager",
+    "organizationId": "org_benchmark",
+    "email": "rbenson@benchmarksurvey.example",
+    "phone": "(614) 555-0191",
+    "rosterRole": "Operations",
+    "contactType": "vendor_dd",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-2174",
+    "linkedIn": "linkedin.com/in/lucia-morales-example",
+    "dob": "1958-05-23",
+    "personalEmail": "lucia.morales@personal.example",
+    "mailingAddress": {
+      "street": "9444 Maple Avenue",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60625"
+    },
+    "tags": [],
+    "id": "ct_lmorales",
+    "name": "Lucia Morales",
+    "title": "Senior Escrow Officer",
+    "organizationId": "org_lakeside_title",
+    "email": "lmorales@lakesidetitle.example",
+    "phone": "(312) 555-0192",
+    "rosterRole": "Operations",
+    "contactType": "vendor_dd",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(404) 555-8200",
+    "linkedIn": "linkedin.com/in/kevin-grady-example",
+    "dob": "1979-04-17",
+    "personalEmail": "kevin.grady@personal.example",
+    "mailingAddress": {
+      "street": "6300 Lakeview Drive",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30326"
+    },
+    "tags": [],
+    "id": "ct_kgrady",
+    "name": "Kevin Grady",
+    "title": "Zoning Analyst",
+    "organizationId": "org_zoning_partners",
+    "email": "kgrady@zoningvp.example",
+    "phone": "(404) 555-0193",
+    "rosterRole": "Operations",
+    "contactType": "vendor_dd",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(312) 555-2886",
+    "linkedIn": "linkedin.com/in/hannah-lowemai-example",
+    "dob": "1972-03-13",
+    "personalEmail": "hannah.lowemai@personal.example",
+    "mailingAddress": {
+      "street": "9852 Chestnut Court",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60627"
+    },
+    "tags": [],
+    "id": "ct_hlowe",
+    "name": "Hannah Lowe, MAI",
+    "title": "Managing Director",
+    "organizationId": "org_ridgeway_val",
+    "email": "hlowe@ridgewayval.example",
+    "phone": "(312) 555-0194",
+    "rosterRole": "Operations",
+    "contactType": "vendor_dd",
+    "sectors": [
+      "snf"
+    ]
+  },
+  {
+    "mobilePhone": "(404) 555-2765",
+    "linkedIn": "linkedin.com/in/tara-bishop-example",
+    "dob": "1958-03-20",
+    "personalEmail": "tara.bishop@personal.example",
+    "mailingAddress": {
+      "street": "9624 Chestnut Court",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30339"
+    },
+    "tags": [],
+    "id": "ct_tbishop",
+    "name": "Tara Bishop",
+    "title": "VP, Operations Consulting",
+    "organizationId": "org_summit_mgmt",
+    "email": "tbishop@summitsenior.example",
+    "phone": "(404) 555-0195",
+    "rosterRole": "Operations",
+    "contactType": "vendor_operating",
+    "sectors": [
+      "alf",
+      "ilf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(212) 555-5231",
+    "linkedIn": "linkedin.com/in/arjun-shah-example",
+    "dob": "1986-09-07",
+    "personalEmail": "arjun.shah@personal.example",
+    "mailingAddress": {
+      "street": "2867 Willow Bend",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10048"
+    },
+    "tags": [
+      "Decision maker"
+    ],
+    "id": "ct_ashah",
+    "name": "Arjun Shah",
+    "title": "Managing Director",
+    "organizationId": "org_ridgeline",
+    "email": "ashah@ridgelinehp.example",
+    "phone": "(212) 555-0196",
+    "rosterRole": "Decision maker",
+    "contactType": "investor",
+    "sectors": [
+      "snf",
+      "alf",
+      "mc"
+    ]
+  },
+  {
+    "mobilePhone": "(480) 555-8122",
+    "linkedIn": "linkedin.com/in/rosa-ortiz-example",
+    "dob": "1982-12-12",
+    "personalEmail": "rosa.ortiz@personal.example",
+    "mailingAddress": {
+      "street": "494 Willow Bend",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zip": "85090"
+    },
+    "tags": [],
+    "id": "ct_rortiz",
+    "name": "Rosa Ortiz",
+    "title": "Chief Operating Officer",
+    "organizationId": "org_sonoran",
+    "email": "rortiz@sonoranhp.example",
+    "phone": "(480) 555-0147",
+    "rosterRole": "Operations",
+    "contactType": "operator",
+    "sectors": [
+      "snf"
+    ]
+  }
+]

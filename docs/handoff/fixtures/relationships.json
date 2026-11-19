@@ -1,0 +1,766 @@
+[
+  {
+    "id": "bld_maplegrove_rel_0",
+    "buildingId": "bld_maplegrove",
+    "role": "broker",
+    "organizationId": "org_calloway",
+    "contactId": "ct_hwalsh",
+    "description": "Sell-side broker, Great Lakes Portfolio"
+  },
+  {
+    "id": "bld_maplegrove_rel_1",
+    "buildingId": "bld_maplegrove",
+    "role": "lender",
+    "organizationId": "org_lakeshore",
+    "description": "Existing mortgage lender"
+  },
+  {
+    "id": "bld_maplegrove_rel_2",
+    "buildingId": "bld_maplegrove",
+    "role": "lender",
+    "organizationId": "org_atlas",
+    "contactId": "ct_nsato",
+    "description": "Acquisition financing (proposed)"
+  },
+  {
+    "id": "bld_maplegrove_rel_3",
+    "buildingId": "bld_maplegrove",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_maplegrove_rel_4",
+    "buildingId": "bld_maplegrove",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_maplegrove_rel_5",
+    "buildingId": "bld_maplegrove",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_maplegrove_rel_6",
+    "buildingId": "bld_maplegrove",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_maplegrove_rel_7",
+    "buildingId": "bld_maplegrove",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_mdelgado",
+    "description": "Chief Executive Officer"
+  },
+  {
+    "id": "bld_maplegrove_rel_8",
+    "buildingId": "bld_maplegrove",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_rfoster",
+    "description": "Regional Director of Operations"
+  },
+  {
+    "id": "bld_maplegrove_rel_9",
+    "buildingId": "bld_maplegrove",
+    "role": "key_contact",
+    "organizationId": "org_meridian",
+    "contactId": "ct_ahughes",
+    "description": "VP, Asset Management, ownership"
+  },
+  {
+    "id": "bld_lakeview_rel_0",
+    "buildingId": "bld_lakeview",
+    "role": "broker",
+    "organizationId": "org_calloway",
+    "contactId": "ct_hwalsh",
+    "description": "Sell-side broker, Great Lakes Portfolio"
+  },
+  {
+    "id": "bld_lakeview_rel_1",
+    "buildingId": "bld_lakeview",
+    "role": "lender",
+    "organizationId": "org_lakeshore",
+    "description": "Existing mortgage lender"
+  },
+  {
+    "id": "bld_lakeview_rel_2",
+    "buildingId": "bld_lakeview",
+    "role": "lender",
+    "organizationId": "org_atlas",
+    "contactId": "ct_nsato",
+    "description": "Acquisition financing (proposed)"
+  },
+  {
+    "id": "bld_lakeview_rel_3",
+    "buildingId": "bld_lakeview",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_lakeview_rel_4",
+    "buildingId": "bld_lakeview",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_lakeview_rel_5",
+    "buildingId": "bld_lakeview",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_lakeview_rel_6",
+    "buildingId": "bld_lakeview",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_lakeview_rel_7",
+    "buildingId": "bld_lakeview",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_mdelgado",
+    "description": "Chief Executive Officer"
+  },
+  {
+    "id": "bld_lakeview_rel_8",
+    "buildingId": "bld_lakeview",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_rfoster",
+    "description": "Regional Director of Operations"
+  },
+  {
+    "id": "bld_lakeview_rel_9",
+    "buildingId": "bld_lakeview",
+    "role": "key_contact",
+    "organizationId": "org_meridian",
+    "contactId": "ct_ahughes",
+    "description": "VP, Asset Management, ownership"
+  },
+  {
+    "id": "bld_brookhaven_rel_0",
+    "buildingId": "bld_brookhaven",
+    "role": "broker",
+    "organizationId": "org_calloway",
+    "contactId": "ct_hwalsh",
+    "description": "Sell-side broker, Great Lakes Portfolio"
+  },
+  {
+    "id": "bld_brookhaven_rel_1",
+    "buildingId": "bld_brookhaven",
+    "role": "lender",
+    "organizationId": "org_atlas",
+    "contactId": "ct_nsato",
+    "description": "Acquisition financing (proposed)"
+  },
+  {
+    "id": "bld_brookhaven_rel_2",
+    "buildingId": "bld_brookhaven",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_brookhaven_rel_3",
+    "buildingId": "bld_brookhaven",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_brookhaven_rel_4",
+    "buildingId": "bld_brookhaven",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_brookhaven_rel_5",
+    "buildingId": "bld_brookhaven",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_brookhaven_rel_6",
+    "buildingId": "bld_brookhaven",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_mdelgado",
+    "description": "Chief Executive Officer"
+  },
+  {
+    "id": "bld_brookhaven_rel_7",
+    "buildingId": "bld_brookhaven",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_rfoster",
+    "description": "Regional Director of Operations"
+  },
+  {
+    "id": "bld_brookhaven_rel_8",
+    "buildingId": "bld_brookhaven",
+    "role": "key_contact",
+    "organizationId": "org_meridian",
+    "contactId": "ct_ahughes",
+    "description": "VP, Asset Management, ownership"
+  },
+  {
+    "id": "bld_harborpointe_rel_0",
+    "buildingId": "bld_harborpointe",
+    "role": "broker",
+    "organizationId": "org_calloway",
+    "contactId": "ct_hwalsh",
+    "description": "Sell-side broker, Great Lakes Portfolio"
+  },
+  {
+    "id": "bld_harborpointe_rel_1",
+    "buildingId": "bld_harborpointe",
+    "role": "lender",
+    "organizationId": "org_atlas",
+    "contactId": "ct_nsato",
+    "description": "Acquisition financing (proposed)"
+  },
+  {
+    "id": "bld_harborpointe_rel_2",
+    "buildingId": "bld_harborpointe",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_harborpointe_rel_3",
+    "buildingId": "bld_harborpointe",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_harborpointe_rel_4",
+    "buildingId": "bld_harborpointe",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_mdelgado",
+    "description": "Chief Executive Officer"
+  },
+  {
+    "id": "bld_harborpointe_rel_5",
+    "buildingId": "bld_harborpointe",
+    "role": "key_contact",
+    "organizationId": "org_cedarbrook",
+    "contactId": "ct_rfoster",
+    "description": "Regional Director of Operations"
+  },
+  {
+    "id": "bld_harborpointe_rel_6",
+    "buildingId": "bld_harborpointe",
+    "role": "key_contact",
+    "organizationId": "org_meridian",
+    "contactId": "ct_ahughes",
+    "description": "VP, Asset Management, ownership"
+  },
+  {
+    "id": "bld_bluegrass_rel_0",
+    "buildingId": "bld_bluegrass",
+    "role": "broker",
+    "organizationId": "org_calloway",
+    "contactId": "ct_hwalsh",
+    "description": "Sell-side broker, Bluegrass Trio"
+  },
+  {
+    "id": "bld_bluegrass_rel_1",
+    "buildingId": "bld_bluegrass",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_bluegrass_rel_2",
+    "buildingId": "bld_bluegrass",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_bluegrass_rel_3",
+    "buildingId": "bld_bluegrass",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_bluegrass_rel_4",
+    "buildingId": "bld_bluegrass",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_bluegrass_rel_5",
+    "buildingId": "bld_bluegrass",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_mwebb",
+    "description": "Principal"
+  },
+  {
+    "id": "bld_bluegrass_rel_6",
+    "buildingId": "bld_bluegrass",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_sgreen",
+    "description": "Controller"
+  },
+  {
+    "id": "bld_bluegrass_rel_7",
+    "buildingId": "bld_bluegrass",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_mwebb",
+    "description": "Principal, ownership"
+  },
+  {
+    "id": "bld_clearwater_rel_0",
+    "buildingId": "bld_clearwater",
+    "role": "broker",
+    "organizationId": "org_calloway",
+    "contactId": "ct_hwalsh",
+    "description": "Sell-side broker, Bluegrass Trio"
+  },
+  {
+    "id": "bld_clearwater_rel_1",
+    "buildingId": "bld_clearwater",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_clearwater_rel_2",
+    "buildingId": "bld_clearwater",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_clearwater_rel_3",
+    "buildingId": "bld_clearwater",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_clearwater_rel_4",
+    "buildingId": "bld_clearwater",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_clearwater_rel_5",
+    "buildingId": "bld_clearwater",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_mwebb",
+    "description": "Principal"
+  },
+  {
+    "id": "bld_clearwater_rel_6",
+    "buildingId": "bld_clearwater",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_sgreen",
+    "description": "Controller"
+  },
+  {
+    "id": "bld_clearwater_rel_7",
+    "buildingId": "bld_clearwater",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_mwebb",
+    "description": "Principal, ownership"
+  },
+  {
+    "id": "bld_cumberland_rel_0",
+    "buildingId": "bld_cumberland",
+    "role": "broker",
+    "organizationId": "org_calloway",
+    "contactId": "ct_hwalsh",
+    "description": "Sell-side broker, Bluegrass Trio"
+  },
+  {
+    "id": "bld_cumberland_rel_1",
+    "buildingId": "bld_cumberland",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_cumberland_rel_2",
+    "buildingId": "bld_cumberland",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_cumberland_rel_3",
+    "buildingId": "bld_cumberland",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_cumberland_rel_4",
+    "buildingId": "bld_cumberland",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_cumberland_rel_5",
+    "buildingId": "bld_cumberland",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_mwebb",
+    "description": "Principal"
+  },
+  {
+    "id": "bld_cumberland_rel_6",
+    "buildingId": "bld_cumberland",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_sgreen",
+    "description": "Controller"
+  },
+  {
+    "id": "bld_cumberland_rel_7",
+    "buildingId": "bld_cumberland",
+    "role": "key_contact",
+    "organizationId": "org_bluegrass_props",
+    "contactId": "ct_mwebb",
+    "description": "Principal, ownership"
+  },
+  {
+    "id": "bld_riverside_rel_0",
+    "buildingId": "bld_riverside",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_riverside_rel_1",
+    "buildingId": "bld_riverside",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_riverside_rel_2",
+    "buildingId": "bld_riverside",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_riverside_rel_3",
+    "buildingId": "bld_riverside",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_riverside_rel_4",
+    "buildingId": "bld_riverside",
+    "role": "key_contact",
+    "organizationId": "org_riverside_rp",
+    "contactId": "ct_cramirez",
+    "description": "Chief Operating Officer"
+  },
+  {
+    "id": "bld_riverside_rel_5",
+    "buildingId": "bld_riverside",
+    "role": "key_contact",
+    "organizationId": "org_harborview",
+    "contactId": "ct_otaylor",
+    "description": "Director of Real Estate, ownership"
+  },
+  {
+    "id": "bld_magnolia_rel_0",
+    "buildingId": "bld_magnolia",
+    "role": "broker",
+    "organizationId": "org_stonebridge",
+    "contactId": "ct_tnguyen",
+    "description": "Sell-side broker, Sunbelt ALF Pair"
+  },
+  {
+    "id": "bld_magnolia_rel_1",
+    "buildingId": "bld_magnolia",
+    "role": "lender",
+    "organizationId": "org_lakeshore",
+    "description": "Existing mortgage lender"
+  },
+  {
+    "id": "bld_magnolia_rel_2",
+    "buildingId": "bld_magnolia",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_magnolia_rel_3",
+    "buildingId": "bld_magnolia",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_magnolia_rel_4",
+    "buildingId": "bld_magnolia",
+    "role": "key_contact",
+    "organizationId": "org_ashford",
+    "contactId": "ct_sreyes",
+    "description": "Executive Director"
+  },
+  {
+    "id": "bld_magnolia_rel_5",
+    "buildingId": "bld_magnolia",
+    "role": "key_contact",
+    "organizationId": "org_sunbelt",
+    "contactId": "ct_avega",
+    "description": "Managing Director, ownership"
+  },
+  {
+    "id": "bld_liveoak_rel_0",
+    "buildingId": "bld_liveoak",
+    "role": "broker",
+    "organizationId": "org_stonebridge",
+    "contactId": "ct_tnguyen",
+    "description": "Sell-side broker, Sunbelt ALF Pair"
+  },
+  {
+    "id": "bld_liveoak_rel_1",
+    "buildingId": "bld_liveoak",
+    "role": "lender",
+    "organizationId": "org_lakeshore",
+    "description": "Acquisition financing (proposed)"
+  },
+  {
+    "id": "bld_liveoak_rel_2",
+    "buildingId": "bld_liveoak",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_liveoak_rel_3",
+    "buildingId": "bld_liveoak",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_liveoak_rel_4",
+    "buildingId": "bld_liveoak",
+    "role": "key_contact",
+    "organizationId": "org_ashford",
+    "contactId": "ct_sreyes",
+    "description": "Executive Director"
+  },
+  {
+    "id": "bld_liveoak_rel_5",
+    "buildingId": "bld_liveoak",
+    "role": "key_contact",
+    "organizationId": "org_sunbelt",
+    "contactId": "ct_avega",
+    "description": "Managing Director, ownership"
+  },
+  {
+    "id": "bld_chestnut_rel_0",
+    "buildingId": "bld_chestnut",
+    "role": "lender",
+    "organizationId": "org_sterling",
+    "contactId": "ct_pmills",
+    "description": "Existing mortgage lender"
+  },
+  {
+    "id": "bld_chestnut_rel_1",
+    "buildingId": "bld_chestnut",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_chestnut_rel_2",
+    "buildingId": "bld_chestnut",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_chestnut_rel_3",
+    "buildingId": "bld_chestnut",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_chestnut_rel_4",
+    "buildingId": "bld_chestnut",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_chestnut_rel_5",
+    "buildingId": "bld_chestnut",
+    "role": "administrator",
+    "organizationId": "org_pinnacle",
+    "contactId": "ct_jlin",
+    "description": "Administrator"
+  },
+  {
+    "id": "bld_chestnut_rel_6",
+    "buildingId": "bld_chestnut",
+    "role": "key_contact",
+    "organizationId": "org_od_holdings",
+    "contactId": "ct_gwhitman",
+    "description": "Asset Manager, ownership"
+  },
+  {
+    "id": "bld_seaside_rel_0",
+    "buildingId": "bld_seaside",
+    "role": "attorney",
+    "organizationId": "org_whitaker",
+    "contactId": "ct_dmorgan",
+    "description": "Buyer transactional counsel"
+  },
+  {
+    "id": "bld_seaside_rel_1",
+    "buildingId": "bld_seaside",
+    "role": "attorney",
+    "organizationId": "org_brennan",
+    "contactId": "ct_jobrien",
+    "description": "CHOW & licensure counsel"
+  },
+  {
+    "id": "bld_seaside_rel_2",
+    "buildingId": "bld_seaside",
+    "role": "consultant",
+    "organizationId": "org_clearline",
+    "contactId": "ct_wgrant",
+    "description": "PCA & Phase I ESA"
+  },
+  {
+    "id": "bld_seaside_rel_3",
+    "buildingId": "bld_seaside",
+    "role": "consultant",
+    "organizationId": "org_veritas",
+    "contactId": "ct_ebrooks",
+    "description": "Clinical & regulatory diligence"
+  },
+  {
+    "id": "bld_seaside_rel_4",
+    "buildingId": "bld_seaside",
+    "role": "key_contact",
+    "organizationId": "org_tricounty",
+    "contactId": "ct_dross",
+    "description": "Managing Partner, ownership"
+  },
+  {
+    "id": "bld_ozark_rel_0",
+    "buildingId": "bld_ozark",
+    "role": "key_contact",
+    "organizationId": "org_willow",
+    "contactId": "ct_hdunn",
+    "description": "Owner & CEO"
+  },
+  {
+    "id": "bld_ozark_rel_1",
+    "buildingId": "bld_ozark",
+    "role": "key_contact",
+    "organizationId": "org_willow",
+    "contactId": "ct_hdunn",
+    "description": "Owner & CEO, ownership"
+  },
+  {
+    "id": "bld_prairieview_rel_0",
+    "buildingId": "bld_prairieview",
+    "role": "key_contact",
+    "organizationId": "org_heartland",
+    "contactId": "ct_bnolan",
+    "description": "President"
+  },
+  {
+    "id": "bld_prairieview_rel_1",
+    "buildingId": "bld_prairieview",
+    "role": "key_contact",
+    "organizationId": "org_lakeshore",
+    "contactId": "ct_srao",
+    "description": "SVP, Special Assets, ownership"
+  },
+  {
+    "id": "bld_desertwillow_rel_0",
+    "buildingId": "bld_desertwillow",
+    "role": "key_contact",
+    "organizationId": "org_sonoran",
+    "contactId": "ct_rortiz",
+    "description": "Chief Operating Officer"
+  },
+  {
+    "id": "bld_desertwillow_rel_1",
+    "buildingId": "bld_desertwillow",
+    "role": "key_contact",
+    "organizationId": "org_summit_reit",
+    "contactId": "ct_cford",
+    "description": "SVP, Investments, ownership"
+  }
+]

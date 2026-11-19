@@ -4,6 +4,8 @@ A functional, interactive prototype of the **Building Module** for Owner Docket,
 
 > **All data is fictional.** CMS ratings, surveys and financials are mock/illustrative data generated for demonstration. There are no live CMS, SharePoint, Outlook or mapping integrations.
 
+> **Development team:** start with the handoff package in [`docs/handoff/`](docs/handoff/README.md) — architecture, data model, proposed database schema and API, business rules (with tests), per-module specs, decisions log, backlog, demo-data fixtures and screenshots.
+
 ## Run locally
 
 Requires Node.js 20+.
@@ -17,6 +19,8 @@ Open http://localhost:5173. Other scripts:
 
 ```bash
 npm run build      # type-check + production build to dist/
+npm test           # business-rule unit tests (Vitest)
+npm run e2e        # browser smoke scripts (needs the dev server running; run `npx playwright install chromium` once)
 npm run preview    # serve the production build
 npm run typecheck  # TypeScript only
 ```

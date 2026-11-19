@@ -1,0 +1,178 @@
+[
+  {
+    "id": "db_1",
+    "dealId": "deal_greatlakes",
+    "buildingId": "bld_maplegrove",
+    "role": "portfolio_asset",
+    "priceAllocation": 27400000,
+    "allocationBasis": "Appraised value",
+    "addedAt": "2026-06-12",
+    "notes": "Anchor asset; strongest CMS profile in portfolio."
+  },
+  {
+    "id": "db_2",
+    "dealId": "deal_greatlakes",
+    "buildingId": "bld_lakeview",
+    "role": "portfolio_asset",
+    "priceAllocation": 18150000,
+    "allocationBasis": "Appraised value",
+    "addedAt": "2026-06-12"
+  },
+  {
+    "id": "db_3",
+    "dealId": "deal_greatlakes",
+    "buildingId": "bld_brookhaven",
+    "role": "portfolio_asset",
+    "priceAllocation": 21900000,
+    "allocationBasis": "Appraised value",
+    "addedAt": "2026-06-12",
+    "notes": "Turnaround thesis; rent credit negotiated for HVAC."
+  },
+  {
+    "id": "db_4",
+    "dealId": "deal_greatlakes",
+    "buildingId": "bld_harborpointe",
+    "role": "add_on",
+    "priceAllocation": 15300000,
+    "allocationBasis": "Seller allocation",
+    "addedAt": "2026-07-22",
+    "notes": "Added at PSA at seller's request."
+  },
+  {
+    "id": "db_5",
+    "dealId": "deal_bluegrass",
+    "buildingId": "bld_bluegrass",
+    "role": "portfolio_asset",
+    "priceAllocation": 14800000,
+    "allocationBasis": "Per-bed allocation",
+    "addedAt": "2026-09-06"
+  },
+  {
+    "id": "db_6",
+    "dealId": "deal_bluegrass",
+    "buildingId": "bld_clearwater",
+    "role": "portfolio_asset",
+    "priceAllocation": 13100000,
+    "allocationBasis": "Per-bed allocation",
+    "addedAt": "2026-09-06"
+  },
+  {
+    "id": "db_7",
+    "dealId": "deal_bluegrass",
+    "buildingId": "bld_cumberland",
+    "role": "portfolio_asset",
+    "priceAllocation": 13100000,
+    "allocationBasis": "Per-bed allocation",
+    "addedAt": "2026-09-06"
+  },
+  {
+    "id": "db_8",
+    "dealId": "deal_riverside",
+    "buildingId": "bld_riverside",
+    "role": "primary_asset",
+    "addedAt": "2026-10-31"
+  },
+  {
+    "id": "db_9",
+    "dealId": "deal_sunbelt",
+    "buildingId": "bld_magnolia",
+    "role": "portfolio_asset",
+    "priceAllocation": 11200000,
+    "allocationBasis": "PSA Schedule B",
+    "addedAt": "2026-07-11"
+  },
+  {
+    "id": "db_10",
+    "dealId": "deal_sunbelt",
+    "buildingId": "bld_liveoak",
+    "role": "portfolio_asset",
+    "priceAllocation": 7700000,
+    "allocationBasis": "PSA Schedule B",
+    "addedAt": "2026-07-11"
+  },
+  {
+    "id": "db_11",
+    "dealId": "deal_keystone",
+    "buildingId": "bld_chestnut",
+    "role": "primary_asset",
+    "priceAllocation": 21400000,
+    "allocationBasis": "Purchase price",
+    "addedAt": "2023-01-09"
+  },
+  {
+    "id": "db_12",
+    "dealId": "deal_carolina",
+    "buildingId": "bld_seaside",
+    "role": "primary_asset",
+    "priceAllocation": 15500000,
+    "allocationBasis": "LOI price",
+    "addedAt": "2024-04-02"
+  },
+  {
+    "id": "db_13",
+    "dealId": "deal_seaside",
+    "buildingId": "bld_seaside",
+    "role": "primary_asset",
+    "priceAllocation": 12900000,
+    "allocationBasis": "Seller ask",
+    "addedAt": "2026-11-11",
+    "notes": "Re-engaged; prior diligence from OD-2024-011 carried forward."
+  },
+  {
+    "id": "db_14",
+    "dealId": "deal_ozark",
+    "buildingId": "bld_ozark",
+    "role": "primary_asset",
+    "addedAt": "2025-05-12"
+  },
+  {
+    "id": "db_15",
+    "dealId": "deal_mkt_maple2017",
+    "buildingId": "bld_maplegrove",
+    "role": "primary_asset",
+    "priceAllocation": 16200000,
+    "allocationBasis": "Recorded sale price",
+    "addedAt": "2017-08-31"
+  },
+  {
+    "id": "db_16",
+    "dealId": "deal_mkt_meridian2019",
+    "buildingId": "bld_lakeview",
+    "role": "portfolio_asset",
+    "priceAllocation": 10900000,
+    "allocationBasis": "Recorded deed",
+    "addedAt": "2019-11-15"
+  },
+  {
+    "id": "db_17",
+    "dealId": "deal_mkt_meridian2019",
+    "buildingId": "bld_brookhaven",
+    "role": "portfolio_asset",
+    "priceAllocation": 13600000,
+    "allocationBasis": "Recorded deed",
+    "addedAt": "2019-11-15"
+  },
+  {
+    "id": "db_18",
+    "dealId": "deal_mkt_harbor2020",
+    "buildingId": "bld_harborpointe",
+    "role": "primary_asset",
+    "priceAllocation": 13100000,
+    "allocationBasis": "Recorded sale price",
+    "addedAt": "2020-06-30"
+  },
+  {
+    "id": "db_19",
+    "dealId": "deal_mkt_meridian2023",
+    "buildingId": "bld_maplegrove",
+    "role": "portfolio_asset",
+    "addedAt": "2023-03-01"
+  },
+  {
+    "id": "db_20",
+    "dealId": "deal_mkt_meridian2023",
+    "buildingId": "bld_lakeview",
+    "role": "portfolio_asset",
+    "addedAt": "2023-03-01"
+  }
+]

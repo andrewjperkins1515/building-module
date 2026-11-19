@@ -1,0 +1,817 @@
+[
+  {
+    "id": "sv_maple_2",
+    "buildingId": "bld_maplegrove",
+    "dealId": "deal_greatlakes",
+    "date": "2026-11-07",
+    "type": "diligence_inspection",
+    "participants": [
+      "Jordan Ellis",
+      "Marcus Holloway",
+      "William Grant (Clearline)",
+      "Laura Bishop (Administrator)"
+    ],
+    "summary": "Full building walkthrough with PCA consultant. Building is well maintained overall; second-floor east wing PTACs are original and noisy. Roof replaced 2019 and in good condition. Generator transfer switch flagged for replacement within 3 years. Therapy gym recently expanded and a strong selling point.",
+    "conditionRatings": {
+      "roof": "good",
+      "hvac": "fair",
+      "plumbing": "good",
+      "electrical": "fair",
+      "life_safety": "good"
+    },
+    "observations": [
+      {
+        "id": "ob_m1",
+        "text": "Original PTAC units in 2nd floor east wing (22 rooms) — replacement recommended.",
+        "severity": "medium",
+        "system": "hvac",
+        "status": "open"
+      },
+      {
+        "id": "ob_m2",
+        "text": "Automatic transfer switch is 2004 vintage; parts availability limited.",
+        "severity": "medium",
+        "system": "electrical",
+        "status": "open"
+      },
+      {
+        "id": "ob_m3",
+        "text": "Minor ceiling staining near nurse station B — confirmed historical, roof replaced since.",
+        "severity": "low",
+        "system": "roof",
+        "status": "resolved"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_m1",
+        "title": "Obtain PTAC replacement quote from operator",
+        "assignee": "Marcus Holloway",
+        "dueDate": "2026-11-25",
+        "done": false
+      },
+      {
+        "id": "fu_m2",
+        "title": "Confirm generator load test logs for last 12 months",
+        "assignee": "Priya Raman",
+        "dueDate": "2026-11-17",
+        "done": false
+      },
+      {
+        "id": "fu_m3",
+        "title": "Request roof warranty transfer documentation",
+        "assignee": "Jordan Ellis",
+        "dueDate": "2026-11-14",
+        "done": true
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_m1",
+        "caption": "Main entrance & porte-cochère",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_m2",
+        "caption": "Expanded therapy gym",
+        "area": "Therapy"
+      },
+      {
+        "id": "ph_m3",
+        "caption": "PTAC unit, room 214",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_m4",
+        "caption": "Roof — north wing membrane",
+        "area": "Roof"
+      },
+      {
+        "id": "ph_m5",
+        "caption": "Generator & ATS enclosure",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-08T14:33:42.837Z"
+  },
+  {
+    "id": "sv_maple_1",
+    "buildingId": "bld_maplegrove",
+    "dealId": "deal_greatlakes",
+    "date": "2026-06-30",
+    "type": "initial_tour",
+    "participants": [
+      "Jordan Ellis",
+      "Helen Walsh (Calloway)",
+      "Maria Delgado (Cedarbrook)"
+    ],
+    "summary": "Initial tour during marketing process. Strong curb appeal and clinical leadership. Census at 108. Operator open to new long-term lease structure.",
+    "conditionRatings": {
+      "roof": "good",
+      "hvac": "fair",
+      "interiors": "good"
+    },
+    "observations": [
+      {
+        "id": "ob_m0",
+        "text": "Dining room furniture dated; cosmetic only.",
+        "severity": "low",
+        "system": "interiors",
+        "status": "resolved"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_m0",
+        "title": "Request 24-month census by payer",
+        "assignee": "Priya Raman",
+        "dueDate": "2026-07-07",
+        "done": true
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_m0a",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_m0b",
+        "caption": "Main dining room",
+        "area": "Common area"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-07-01T14:33:42.837Z"
+  },
+  {
+    "id": "sv_bld_lakeview_1",
+    "buildingId": "bld_lakeview",
+    "dealId": "deal_greatlakes",
+    "date": "2026-09-24",
+    "type": "diligence_inspection",
+    "participants": [
+      "Marcus Holloway",
+      "Jordan Ellis",
+      "Maria Delgado (Operator)"
+    ],
+    "summary": "Building is functional with typical age-related wear. HVAC and resident room finishes will need investment within 3–5 years.",
+    "conditionRatings": {
+      "roof": "fair",
+      "hvac": "fair",
+      "plumbing": "fair",
+      "electrical": "fair",
+      "life_safety": "fair"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_lakeview_1",
+        "text": "Water staining on ceiling tiles in multiple resident rooms.",
+        "severity": "high",
+        "system": "roof",
+        "status": "open"
+      },
+      {
+        "id": "ob_bld_lakeview_2",
+        "text": "Chiller is original equipment; maintenance logs incomplete.",
+        "severity": "medium",
+        "system": "hvac",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_lakeview_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Marcus Holloway",
+        "dueDate": "2026-11-28",
+        "done": false
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_lakeview_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_lakeview_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_lakeview_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.838Z"
+  },
+  {
+    "id": "sv_bld_brookhaven_1",
+    "buildingId": "bld_brookhaven",
+    "dealId": "deal_greatlakes",
+    "date": "2026-11-04",
+    "type": "initial_tour",
+    "participants": [
+      "Marcus Holloway",
+      "Daniel Okafor",
+      "Maria Delgado (Operator)"
+    ],
+    "summary": "Significant deferred maintenance observed. Roof leaks in multiple resident rooms and aging central plant. Capex reserve must be reflected in pricing.",
+    "conditionRatings": {
+      "roof": "poor",
+      "hvac": "poor",
+      "plumbing": "poor",
+      "electrical": "fair",
+      "life_safety": "fair"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_brookhaven_1",
+        "text": "Water staining on ceiling tiles in multiple resident rooms.",
+        "severity": "high",
+        "system": "roof",
+        "status": "open"
+      },
+      {
+        "id": "ob_bld_brookhaven_2",
+        "text": "Chiller is original equipment; maintenance logs incomplete.",
+        "severity": "medium",
+        "system": "hvac",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_brookhaven_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Jordan Ellis",
+        "dueDate": "2026-12-02",
+        "done": false
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_brookhaven_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_brookhaven_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_brookhaven_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.839Z"
+  },
+  {
+    "id": "sv_bld_harborpointe_1",
+    "buildingId": "bld_harborpointe",
+    "dealId": "deal_greatlakes",
+    "date": "2026-10-14",
+    "type": "diligence_inspection",
+    "participants": [
+      "Marcus Holloway",
+      "Elena Vasquez",
+      "Maria Delgado (Operator)"
+    ],
+    "summary": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns identified.",
+    "conditionRatings": {
+      "roof": "good",
+      "hvac": "fair",
+      "plumbing": "good",
+      "electrical": "fair",
+      "life_safety": "good"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_harborpointe_1",
+        "text": "Parking lot needs seal coat and restriping.",
+        "severity": "low",
+        "system": "site",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_harborpointe_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Elena Vasquez",
+        "dueDate": "2026-11-14",
+        "done": true
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_harborpointe_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_harborpointe_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_harborpointe_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.840Z"
+  },
+  {
+    "id": "sv_bld_bluegrass_1",
+    "buildingId": "bld_bluegrass",
+    "dealId": "deal_bluegrass",
+    "date": "2026-11-06",
+    "type": "initial_tour",
+    "participants": [
+      "Daniel Okafor",
+      "Jordan Ellis",
+      "Michael Webb (Operator)"
+    ],
+    "summary": "Building is functional with typical age-related wear. HVAC and resident room finishes will need investment within 3–5 years.",
+    "conditionRatings": {
+      "roof": "fair",
+      "hvac": "fair",
+      "plumbing": "fair",
+      "electrical": "fair",
+      "life_safety": "fair"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_bluegrass_1",
+        "text": "Water staining on ceiling tiles in multiple resident rooms.",
+        "severity": "high",
+        "system": "roof",
+        "status": "open"
+      },
+      {
+        "id": "ob_bld_bluegrass_2",
+        "text": "Chiller is original equipment; maintenance logs incomplete.",
+        "severity": "medium",
+        "system": "hvac",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_bluegrass_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Priya Raman",
+        "dueDate": "2026-11-18",
+        "done": false
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_bluegrass_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_bluegrass_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_bluegrass_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.840Z"
+  },
+  {
+    "id": "sv_bld_clearwater_1",
+    "buildingId": "bld_clearwater",
+    "dealId": "deal_bluegrass",
+    "date": "2026-09-12",
+    "type": "initial_tour",
+    "participants": [
+      "Jordan Ellis",
+      "Marcus Holloway",
+      "Michael Webb (Operator)"
+    ],
+    "summary": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns identified.",
+    "conditionRatings": {
+      "roof": "good",
+      "hvac": "fair",
+      "plumbing": "good",
+      "electrical": "fair",
+      "life_safety": "good"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_clearwater_1",
+        "text": "Parking lot needs seal coat and restriping.",
+        "severity": "low",
+        "system": "site",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_clearwater_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Marcus Holloway",
+        "dueDate": "2026-11-29",
+        "done": false
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_clearwater_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_clearwater_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_clearwater_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.841Z"
+  },
+  {
+    "id": "sv_bld_cumberland_1",
+    "buildingId": "bld_cumberland",
+    "dealId": "deal_bluegrass",
+    "date": "2026-09-25",
+    "type": "initial_tour",
+    "participants": [
+      "Daniel Okafor",
+      "Priya Raman",
+      "Michael Webb (Operator)"
+    ],
+    "summary": "Significant deferred maintenance observed. Roof leaks in multiple resident rooms and aging central plant. Capex reserve must be reflected in pricing.",
+    "conditionRatings": {
+      "roof": "poor",
+      "hvac": "poor",
+      "plumbing": "poor",
+      "electrical": "fair",
+      "life_safety": "fair"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_cumberland_1",
+        "text": "Water staining on ceiling tiles in multiple resident rooms.",
+        "severity": "high",
+        "system": "roof",
+        "status": "open"
+      },
+      {
+        "id": "ob_bld_cumberland_2",
+        "text": "Chiller is original equipment; maintenance logs incomplete.",
+        "severity": "medium",
+        "system": "hvac",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_cumberland_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Jordan Ellis",
+        "dueDate": "2026-11-27",
+        "done": true
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_cumberland_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_cumberland_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_cumberland_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.841Z"
+  },
+  {
+    "id": "sv_bld_riverside_1",
+    "buildingId": "bld_riverside",
+    "dealId": "deal_riverside",
+    "date": "2026-10-30",
+    "type": "initial_tour",
+    "participants": [
+      "Elena Vasquez",
+      "Daniel Okafor",
+      "Carlos Ramirez (Operator)"
+    ],
+    "summary": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns identified.",
+    "conditionRatings": {
+      "roof": "good",
+      "hvac": "fair",
+      "plumbing": "good",
+      "electrical": "fair",
+      "life_safety": "good"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_riverside_1",
+        "text": "Parking lot needs seal coat and restriping.",
+        "severity": "low",
+        "system": "site",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_riverside_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Marcus Holloway",
+        "dueDate": "2026-11-29",
+        "done": false
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_riverside_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_riverside_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_riverside_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.842Z"
+  },
+  {
+    "id": "sv_bld_magnolia_1",
+    "buildingId": "bld_magnolia",
+    "dealId": "deal_sunbelt",
+    "date": "2026-09-29",
+    "type": "diligence_inspection",
+    "participants": [
+      "Marcus Holloway",
+      "Elena Vasquez",
+      "Sofia Reyes (Operator)"
+    ],
+    "summary": "Building is functional with typical age-related wear. HVAC and resident room finishes will need investment within 3–5 years.",
+    "conditionRatings": {
+      "roof": "fair",
+      "hvac": "fair",
+      "plumbing": "fair",
+      "electrical": "fair",
+      "life_safety": "fair"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_magnolia_1",
+        "text": "Water staining on ceiling tiles in multiple resident rooms.",
+        "severity": "high",
+        "system": "roof",
+        "status": "open"
+      },
+      {
+        "id": "ob_bld_magnolia_2",
+        "text": "Chiller is original equipment; maintenance logs incomplete.",
+        "severity": "medium",
+        "system": "hvac",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_magnolia_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Marcus Holloway",
+        "dueDate": "2026-12-01",
+        "done": false
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_magnolia_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_magnolia_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_magnolia_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.842Z"
+  },
+  {
+    "id": "sv_bld_liveoak_1",
+    "buildingId": "bld_liveoak",
+    "dealId": "deal_sunbelt",
+    "date": "2026-10-18",
+    "type": "diligence_inspection",
+    "participants": [
+      "Daniel Okafor",
+      "Priya Raman",
+      "Sofia Reyes (Operator)"
+    ],
+    "summary": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns identified.",
+    "conditionRatings": {
+      "roof": "good",
+      "hvac": "fair",
+      "plumbing": "good",
+      "electrical": "fair",
+      "life_safety": "good"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_liveoak_1",
+        "text": "Parking lot needs seal coat and restriping.",
+        "severity": "low",
+        "system": "site",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_liveoak_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Jordan Ellis",
+        "dueDate": "2026-11-24",
+        "done": true
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_liveoak_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_liveoak_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_liveoak_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.843Z"
+  },
+  {
+    "id": "sv_bld_chestnut_1",
+    "buildingId": "bld_chestnut",
+    "dealId": "deal_keystone",
+    "date": "2026-09-16",
+    "type": "diligence_inspection",
+    "participants": [
+      "Elena Vasquez",
+      "Priya Raman",
+      "Jennifer Lin (Operator)"
+    ],
+    "summary": "Building presents well; recent capital investment evident in common areas. Staff engagement high. No major concerns identified.",
+    "conditionRatings": {
+      "roof": "good",
+      "hvac": "fair",
+      "plumbing": "good",
+      "electrical": "fair",
+      "life_safety": "good"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_chestnut_1",
+        "text": "Parking lot needs seal coat and restriping.",
+        "severity": "low",
+        "system": "site",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_chestnut_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Marcus Holloway",
+        "dueDate": "2026-11-21",
+        "done": false
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_chestnut_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_chestnut_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_chestnut_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.843Z"
+  },
+  {
+    "id": "sv_bld_seaside_1",
+    "buildingId": "bld_seaside",
+    "dealId": "deal_seaside",
+    "date": "2026-09-21",
+    "type": "initial_tour",
+    "participants": [
+      "Marcus Holloway",
+      "Elena Vasquez",
+      "Administrator (Operator)"
+    ],
+    "summary": "Significant deferred maintenance observed. Roof leaks in multiple resident rooms and aging central plant. Capex reserve must be reflected in pricing.",
+    "conditionRatings": {
+      "roof": "poor",
+      "hvac": "poor",
+      "plumbing": "poor",
+      "electrical": "fair",
+      "life_safety": "fair"
+    },
+    "observations": [
+      {
+        "id": "ob_bld_seaside_1",
+        "text": "Water staining on ceiling tiles in multiple resident rooms.",
+        "severity": "high",
+        "system": "roof",
+        "status": "open"
+      },
+      {
+        "id": "ob_bld_seaside_2",
+        "text": "Chiller is original equipment; maintenance logs incomplete.",
+        "severity": "medium",
+        "system": "hvac",
+        "status": "open"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "fu_bld_seaside_1",
+        "title": "Request 3 years of capex invoices",
+        "assignee": "Jordan Ellis",
+        "dueDate": "2026-11-28",
+        "done": true
+      }
+    ],
+    "photos": [
+      {
+        "id": "ph_bld_seaside_1",
+        "caption": "Front elevation",
+        "area": "Exterior"
+      },
+      {
+        "id": "ph_bld_seaside_2",
+        "caption": "Typical resident room",
+        "area": "Resident room"
+      },
+      {
+        "id": "ph_bld_seaside_3",
+        "caption": "Mechanical room",
+        "area": "Mechanical"
+      }
+    ],
+    "createdBy": "Jordan Ellis",
+    "createdAt": "2026-11-09T14:33:42.844Z"
+  }
+]

@@ -47,7 +47,7 @@ function loadState(): AppState {
 }
 
 /** Upgrade saved prototype data in place so demo edits survive new releases. */
-function migrate(input: AppState): AppState | null {
+export function migrate(input: AppState): AppState | null {
   let s = input;
   if (s.version < 4) return null; // too old — reseed
   if (s.version === 4) {

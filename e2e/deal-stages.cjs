@@ -1,0 +1,31 @@
+const { chromium } = require("playwright");
+const OUT = require("path").join(__dirname, "output");
+require("fs").mkdirSync(OUT, { recursive: true });
+(async () => {
+  const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1480, height: 1000 } });
+  const errors = []; p.on("pageerror", (e) => errors.push(e.message)); p.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+  const step = (s) => console.log("✓", s);
+  await p.goto((process.env.BASE_URL || "http://localhost:5173") + "/deals"); await p.evaluate(() => localStorage.clear()); await p.reload(); await p.waitForSelector("h1");
+  // migrate a v7 save
+  await p.evaluate(() => { const k = "owner-docket:prototype-state"; const s = JSON.parse(localStorage.getItem(k)); s.version = 7; s.deals = s.deals.map((d) => d.id === "deal_keystone" ? { ...d, stage: "closed" } : d); s.deals[1].name += " (edited)"; localStorage.setItem(k, JSON.stringify(s)); });
+  await p.reload(); await p.waitForSelector("h1");
+  const st = await p.evaluate(() => JSON.parse(localStorage.getItem("owner-docket:prototype-state")));
+  step(`Migration v${st.version}: Chestnut stage=${st.deals.find((d) => d.id === "deal_keystone").stage}, edit kept=${st.deals[1].name.endsWith("(edited)")}`);
+  const cols = await p.locator("span.text-\\[12\\.5px\\].font-semibold.text-ink-2").allInnerTexts();
+  step(`Board columns: ${cols.join(" | ")}`);
+  step(`Board fits (no horizontal scroll): ${await p.evaluate(() => { const g = document.querySelector(".grid-flow-col"); return g.scrollWidth <= g.clientWidth; })}`);
+  await p.screenshot({ path: `${OUT}/s1-board.png` });
+  await p.goto((process.env.BASE_URL || "http://localhost:5173") + "/deals/deal_keystone"); await p.waitForSelector("h1");
+  step(`Chestnut tracker: ${(await p.locator("ol").first().innerText()).replace(/\n/g, " · ")}`);
+  await p.goto((process.env.BASE_URL || "http://localhost:5173") + "/deals/deal_sunbelt"); await p.waitForSelector("h1");
+  await p.click("button:has-text('Change stage')"); await p.click("[role=menuitem]:has-text('Deal Closed')"); await p.waitForTimeout(200);
+  step(`After Deal Closed: ${(await p.locator("h1 + div").innerText()).replace(/\n/g, " ")}`);
+  await p.screenshot({ path: `${OUT}/s2-closed.png` });
+  await p.click("button:has-text('Change stage')"); await p.click("[role=menuitem]:has-text('Transitioned to Asset Management')"); await p.waitForTimeout(200);
+  step(`After Asset Mgmt: ${(await p.locator("h1 + div").innerText()).replace(/\n/g, " ")}`);
+  await p.screenshot({ path: `${OUT}/s3-am.png` });
+  const m = await b.newPage({ viewport: { width: 390, height: 844 } }); await m.goto((process.env.BASE_URL || "http://localhost:5173") + "/deals/deal_keystone"); await m.waitForSelector("h1");
+  await m.screenshot({ path: `${OUT}/s4-mobile.png` });
+  step(`Mobile overflow: ${await m.evaluate(() => document.documentElement.scrollWidth > window.innerWidth)}`);
+  console.log("errors:", errors.length ? errors : "none"); await b.close();
+})().catch((e) => { console.error("FAILED", e.message.split("\n")[0]); process.exit(1); });

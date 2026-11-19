@@ -1,0 +1,1283 @@
+[
+  {
+    "buildingId": "bld_maplegrove",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 11376493,
+        "operatingExpenses": 9724644,
+        "ebitdar": 1651849,
+        "rent": 932872,
+        "ebitda": 718977,
+        "noi": 1083024,
+        "occupancyPct": 84.4,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 12354038,
+        "operatingExpenses": 10386502,
+        "ebitdar": 1967536,
+        "rent": 1013031,
+        "ebitda": 954505,
+        "noi": 1349834,
+        "occupancyPct": 86.8,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 12939498,
+        "operatingExpenses": 10820291,
+        "ebitdar": 2119207,
+        "rent": 1061039,
+        "ebitda": 1058168,
+        "noi": 1472232,
+        "occupancyPct": 87.7,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 13184037,
+        "operatingExpenses": 10956678,
+        "ebitdar": 2227359,
+        "rent": 1081091,
+        "ebitda": 1146268,
+        "noi": 1568157,
+        "occupancyPct": 88,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 24,
+      "medicaid": 50,
+      "managedCare": 14,
+      "privatePay": 9,
+      "other": 3
+    },
+    "payerMixAsOf": "2026-09-30",
+    "debt": {
+      "lenderOrgId": "org_lakeshore",
+      "loanType": "Bank term loan",
+      "originalAmount": 14160000,
+      "balance": 12480000,
+      "rate": "SOFR + 3.25%",
+      "originationDate": "2021-04-15",
+      "maturityDate": "2027-08-06"
+    },
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 212642
+      },
+      {
+        "year": 2023,
+        "amount": 232166
+      },
+      {
+        "year": 2024,
+        "amount": 248871
+      },
+      {
+        "year": 2025,
+        "amount": 233827
+      },
+      {
+        "year": 2026,
+        "amount": 222278
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_lakeview",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 7607916,
+        "operatingExpenses": 6458758,
+        "ebitdar": 1149158,
+        "rent": 623849,
+        "ebitda": 525309,
+        "noi": 768762,
+        "occupancyPct": 79.3,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 8182706,
+        "operatingExpenses": 6847001,
+        "ebitdar": 1335705,
+        "rent": 670982,
+        "ebitda": 664723,
+        "noi": 926570,
+        "occupancyPct": 80.8,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 8654827,
+        "operatingExpenses": 7251635,
+        "ebitdar": 1403192,
+        "rent": 709696,
+        "ebitda": 693496,
+        "noi": 970451,
+        "occupancyPct": 82.4,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 8849202,
+        "operatingExpenses": 7394660,
+        "ebitdar": 1454542,
+        "rent": 725635,
+        "ebitda": 728907,
+        "noi": 1012082,
+        "occupancyPct": 83,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 16,
+      "medicaid": 59,
+      "managedCare": 10,
+      "privatePay": 11,
+      "other": 4
+    },
+    "payerMixAsOf": "2026-09-30",
+    "debt": {
+      "lenderOrgId": "org_lakeshore",
+      "loanType": "Bank term loan",
+      "originalAmount": 11564000,
+      "balance": 10192000,
+      "rate": "SOFR + 3.25%",
+      "originationDate": "2021-04-15",
+      "maturityDate": "2027-08-06"
+    },
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 144623
+      },
+      {
+        "year": 2023,
+        "amount": 151182
+      },
+      {
+        "year": 2024,
+        "amount": 95465
+      },
+      {
+        "year": 2025,
+        "amount": 90020
+      },
+      {
+        "year": 2026,
+        "amount": 98301
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_brookhaven",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 10481862,
+        "operatingExpenses": 8879377,
+        "ebitdar": 1602485,
+        "rent": 859513,
+        "ebitda": 742972,
+        "noi": 1078392,
+        "occupancyPct": 75.7,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 11330828,
+        "operatingExpenses": 9494436,
+        "ebitdar": 1836392,
+        "rent": 929128,
+        "ebitda": 907264,
+        "noi": 1269851,
+        "occupancyPct": 77.5,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 11995446,
+        "operatingExpenses": 10175574,
+        "ebitdar": 1819872,
+        "rent": 983627,
+        "ebitda": 836245,
+        "noi": 1220100,
+        "occupancyPct": 79.2,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 12268069,
+        "operatingExpenses": 10184439,
+        "ebitdar": 2083630,
+        "rent": 1005982,
+        "ebitda": 1077648,
+        "noi": 1470227,
+        "occupancyPct": 79.7,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 14,
+      "medicaid": 63,
+      "managedCare": 8,
+      "privatePay": 12,
+      "other": 3
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 258521
+      },
+      {
+        "year": 2023,
+        "amount": 145010
+      },
+      {
+        "year": 2024,
+        "amount": 323113
+      },
+      {
+        "year": 2025,
+        "amount": 227102
+      },
+      {
+        "year": 2026,
+        "amount": 338331
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_harborpointe",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 4887281,
+        "operatingExpenses": 3268067,
+        "ebitdar": 1619214,
+        "rent": 537601,
+        "ebitda": 1081613,
+        "noi": 1374850,
+        "occupancyPct": 88.3,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 5287330,
+        "operatingExpenses": 3440199,
+        "ebitdar": 1847131,
+        "rent": 581606,
+        "ebitda": 1265525,
+        "noi": 1582765,
+        "occupancyPct": 90.5,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 5516343,
+        "operatingExpenses": 3601583,
+        "ebitdar": 1914760,
+        "rent": 606798,
+        "ebitda": 1307962,
+        "noi": 1638943,
+        "occupancyPct": 91,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 5670889,
+        "operatingExpenses": 3707051,
+        "ebitdar": 1963838,
+        "rent": 623798,
+        "ebitda": 1340040,
+        "noi": 1680294,
+        "occupancyPct": 92.2,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 0,
+      "medicaid": 14,
+      "managedCare": 0,
+      "privatePay": 86,
+      "other": 0
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 140721
+      },
+      {
+        "year": 2023,
+        "amount": 156734
+      },
+      {
+        "year": 2024,
+        "amount": 81447
+      },
+      {
+        "year": 2025,
+        "amount": 125612
+      },
+      {
+        "year": 2026,
+        "amount": 129541
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_bluegrass",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 8361631,
+        "operatingExpenses": 7180196,
+        "ebitdar": 1181435,
+        "rent": 0,
+        "ebitda": 1181435,
+        "noi": 763353,
+        "occupancyPct": 80.1,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 9015541,
+        "operatingExpenses": 7807142,
+        "ebitdar": 1208399,
+        "rent": 0,
+        "ebitda": 1208399,
+        "noi": 757622,
+        "occupancyPct": 81.8,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 9522376,
+        "operatingExpenses": 7933779,
+        "ebitdar": 1588597,
+        "rent": 0,
+        "ebitda": 1588597,
+        "noi": 1112478,
+        "occupancyPct": 83.3,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 9680352,
+        "operatingExpenses": 8185241,
+        "ebitdar": 1495111,
+        "rent": 0,
+        "ebitda": 1495111,
+        "noi": 1011093,
+        "occupancyPct": 83.4,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 17,
+      "medicaid": 58,
+      "managedCare": 10,
+      "privatePay": 12,
+      "other": 3
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 153686
+      },
+      {
+        "year": 2023,
+        "amount": 216527
+      },
+      {
+        "year": 2024,
+        "amount": 148172
+      },
+      {
+        "year": 2025,
+        "amount": 160363
+      },
+      {
+        "year": 2026,
+        "amount": 161582
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_clearwater",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 8459994,
+        "operatingExpenses": 7283835,
+        "ebitdar": 1176159,
+        "rent": 0,
+        "ebitda": 1176159,
+        "noi": 753159,
+        "occupancyPct": 88,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 9065999,
+        "operatingExpenses": 7595915,
+        "ebitdar": 1470084,
+        "rent": 0,
+        "ebitda": 1470084,
+        "noi": 1016784,
+        "occupancyPct": 89.4,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 9574206,
+        "operatingExpenses": 8252337,
+        "ebitdar": 1321869,
+        "rent": 0,
+        "ebitda": 1321869,
+        "noi": 843159,
+        "occupancyPct": 91,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 9796908,
+        "operatingExpenses": 8397711,
+        "ebitdar": 1399197,
+        "rent": 0,
+        "ebitda": 1399197,
+        "noi": 909352,
+        "occupancyPct": 91.7,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 21,
+      "medicaid": 57,
+      "managedCare": 13,
+      "privatePay": 6,
+      "other": 3
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 120092
+      },
+      {
+        "year": 2023,
+        "amount": 185031
+      },
+      {
+        "year": 2024,
+        "amount": 170153
+      },
+      {
+        "year": 2025,
+        "amount": 135054
+      },
+      {
+        "year": 2026,
+        "amount": 192537
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_cumberland",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 8536946,
+        "operatingExpenses": 7212327,
+        "ebitdar": 1324619,
+        "rent": 0,
+        "ebitda": 1324619,
+        "noi": 897772,
+        "occupancyPct": 73.5,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 9163059,
+        "operatingExpenses": 7852108,
+        "ebitdar": 1310951,
+        "rent": 0,
+        "ebitda": 1310951,
+        "noi": 852798,
+        "occupancyPct": 74.7,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 9594668,
+        "operatingExpenses": 8216074,
+        "ebitdar": 1378594,
+        "rent": 0,
+        "ebitda": 1378594,
+        "noi": 898861,
+        "occupancyPct": 75.4,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 9896209,
+        "operatingExpenses": 8284156,
+        "ebitdar": 1612053,
+        "rent": 0,
+        "ebitda": 1612053,
+        "noi": 1117243,
+        "occupancyPct": 76.6,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 12,
+      "medicaid": 67,
+      "managedCare": 7,
+      "privatePay": 9,
+      "other": 5
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 296427
+      },
+      {
+        "year": 2023,
+        "amount": 220961
+      },
+      {
+        "year": 2024,
+        "amount": 139014
+      },
+      {
+        "year": 2025,
+        "amount": 285203
+      },
+      {
+        "year": 2026,
+        "amount": 280140
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_riverside",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 14248378,
+        "operatingExpenses": 12306720,
+        "ebitdar": 1941658,
+        "rent": 1168367,
+        "ebitda": 773291,
+        "noi": 1229239,
+        "occupancyPct": 87.7,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 15292023,
+        "operatingExpenses": 13058050,
+        "ebitdar": 2233973,
+        "rent": 1253946,
+        "ebitda": 980027,
+        "noi": 1469372,
+        "occupancyPct": 89.2,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 16036611,
+        "operatingExpenses": 13421996,
+        "ebitdar": 2614615,
+        "rent": 1315002,
+        "ebitda": 1299613,
+        "noi": 1812784,
+        "occupancyPct": 90.2,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 16421478,
+        "operatingExpenses": 13776718,
+        "ebitdar": 2644760,
+        "rent": 1346561,
+        "ebitda": 1298199,
+        "noi": 1823686,
+        "occupancyPct": 91,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 32,
+      "medicaid": 35,
+      "managedCare": 20,
+      "privatePay": 10,
+      "other": 3
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 275963
+      },
+      {
+        "year": 2023,
+        "amount": 232462
+      },
+      {
+        "year": 2024,
+        "amount": 232406
+      },
+      {
+        "year": 2025,
+        "amount": 220849
+      },
+      {
+        "year": 2026,
+        "amount": 181716
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_magnolia",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 3400644,
+        "operatingExpenses": 2286573,
+        "ebitdar": 1114071,
+        "rent": 374071,
+        "ebitda": 740000,
+        "noi": 944039,
+        "occupancyPct": 83.6,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 3693767,
+        "operatingExpenses": 2465317,
+        "ebitdar": 1228450,
+        "rent": 406314,
+        "ebitda": 822136,
+        "noi": 1043762,
+        "occupancyPct": 86,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 3889850,
+        "operatingExpenses": 2580730,
+        "ebitdar": 1309120,
+        "rent": 427884,
+        "ebitda": 881236,
+        "noi": 1114628,
+        "occupancyPct": 87.4,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 3934138,
+        "operatingExpenses": 2565721,
+        "ebitdar": 1368417,
+        "rent": 432755,
+        "ebitda": 935662,
+        "noi": 1171710,
+        "occupancyPct": 87,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 0,
+      "medicaid": 14,
+      "managedCare": 0,
+      "privatePay": 86,
+      "other": 0
+    },
+    "payerMixAsOf": "2026-09-30",
+    "debt": {
+      "lenderOrgId": "org_lakeshore",
+      "loanType": "Bank term loan",
+      "originalAmount": 8496000,
+      "balance": 7488000,
+      "rate": "SOFR + 3.25%",
+      "originationDate": "2021-04-15",
+      "maturityDate": "2027-08-06"
+    },
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 153433
+      },
+      {
+        "year": 2023,
+        "amount": 117617
+      },
+      {
+        "year": 2024,
+        "amount": 96644
+      },
+      {
+        "year": 2025,
+        "amount": 106157
+      },
+      {
+        "year": 2026,
+        "amount": 118107
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_liveoak",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 3151897,
+        "operatingExpenses": 2062929,
+        "ebitdar": 1088968,
+        "rent": 346709,
+        "ebitda": 742259,
+        "noi": 931373,
+        "occupancyPct": 87.7,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 3411075,
+        "operatingExpenses": 2277793,
+        "ebitdar": 1133282,
+        "rent": 375218,
+        "ebitda": 758064,
+        "noi": 962728,
+        "occupancyPct": 89.9,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 3573355,
+        "operatingExpenses": 2362708,
+        "ebitdar": 1210647,
+        "rent": 393069,
+        "ebitda": 817578,
+        "noi": 1031979,
+        "occupancyPct": 90.8,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 3651091,
+        "operatingExpenses": 2417927,
+        "ebitdar": 1233164,
+        "rent": 401620,
+        "ebitda": 831544,
+        "noi": 1050609,
+        "occupancyPct": 91.4,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 0,
+      "medicaid": 13,
+      "managedCare": 0,
+      "privatePay": 87,
+      "other": 0
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 75882
+      },
+      {
+        "year": 2023,
+        "amount": 96285
+      },
+      {
+        "year": 2024,
+        "amount": 84405
+      },
+      {
+        "year": 2025,
+        "amount": 85139
+      },
+      {
+        "year": 2026,
+        "amount": 70939
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_chestnut",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 13256511,
+        "operatingExpenses": 11201024,
+        "ebitdar": 2055487,
+        "rent": 1087034,
+        "ebitda": 968453,
+        "noi": 1392661,
+        "occupancyPct": 88.4,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 14150627,
+        "operatingExpenses": 12097554,
+        "ebitdar": 2053073,
+        "rent": 1160351,
+        "ebitda": 892722,
+        "noi": 1345542,
+        "occupancyPct": 89.4,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 14884984,
+        "operatingExpenses": 12786808,
+        "ebitdar": 2098176,
+        "rent": 1220569,
+        "ebitda": 877607,
+        "noi": 1353927,
+        "occupancyPct": 90.7,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 15162535,
+        "operatingExpenses": 12703935,
+        "ebitdar": 2458600,
+        "rent": 1243328,
+        "ebitda": 1215272,
+        "noi": 1700473,
+        "occupancyPct": 91,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 19,
+      "medicaid": 57,
+      "managedCare": 12,
+      "privatePay": 10,
+      "other": 2
+    },
+    "payerMixAsOf": "2026-09-30",
+    "debt": {
+      "lenderOrgId": "org_sterling",
+      "loanType": "HUD 232/223(f)",
+      "originalAmount": 16520000,
+      "balance": 14560000,
+      "rate": "3.85% fixed",
+      "originationDate": "2024-09-01",
+      "maturityDate": "2059-09-01"
+    },
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 307610
+      },
+      {
+        "year": 2023,
+        "amount": 203697
+      },
+      {
+        "year": 2024,
+        "amount": 261161
+      },
+      {
+        "year": 2025,
+        "amount": 272184
+      },
+      {
+        "year": 2026,
+        "amount": 299142
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_seaside",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 6275162,
+        "operatingExpenses": 5439939,
+        "ebitdar": 835223,
+        "rent": 514563,
+        "ebitda": 320660,
+        "noi": 521465,
+        "occupancyPct": 70.1,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 6784212,
+        "operatingExpenses": 5780067,
+        "ebitdar": 1004145,
+        "rent": 556305,
+        "ebitda": 447840,
+        "noi": 664934,
+        "occupancyPct": 71.8,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 7195694,
+        "operatingExpenses": 6145942,
+        "ebitdar": 1049752,
+        "rent": 590047,
+        "ebitda": 459705,
+        "noi": 689967,
+        "occupancyPct": 73.5,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 7326268,
+        "operatingExpenses": 6240485,
+        "ebitdar": 1085783,
+        "rent": 600754,
+        "ebitda": 485029,
+        "noi": 719470,
+        "occupancyPct": 73.7,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 11,
+      "medicaid": 70,
+      "managedCare": 7,
+      "privatePay": 9,
+      "other": 3
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 105685
+      },
+      {
+        "year": 2023,
+        "amount": 98338
+      },
+      {
+        "year": 2024,
+        "amount": 174197
+      },
+      {
+        "year": 2025,
+        "amount": 107797
+      },
+      {
+        "year": 2026,
+        "amount": 96709
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_ozark",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 4518641,
+        "operatingExpenses": 3861680,
+        "ebitdar": 656961,
+        "rent": 0,
+        "ebitda": 656961,
+        "noi": 431029,
+        "occupancyPct": 66.2,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 4833984,
+        "operatingExpenses": 4070892,
+        "ebitdar": 763092,
+        "rent": 0,
+        "ebitda": 763092,
+        "noi": 521393,
+        "occupancyPct": 67.1,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 5151602,
+        "operatingExpenses": 4438186,
+        "ebitdar": 713416,
+        "rent": 0,
+        "ebitda": 713416,
+        "noi": 455836,
+        "occupancyPct": 69,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 5249241,
+        "operatingExpenses": 4447287,
+        "ebitdar": 801954,
+        "rent": 0,
+        "ebitda": 801954,
+        "noi": 539492,
+        "occupancyPct": 69.2,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 7,
+      "medicaid": 76,
+      "managedCare": 5,
+      "privatePay": 7,
+      "other": 5
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 154532
+      },
+      {
+        "year": 2023,
+        "amount": 90471
+      },
+      {
+        "year": 2024,
+        "amount": 191528
+      },
+      {
+        "year": 2025,
+        "amount": 133127
+      },
+      {
+        "year": 2026,
+        "amount": 192975
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_prairieview",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 5016109,
+        "operatingExpenses": 4226903,
+        "ebitdar": 789206,
+        "rent": 411321,
+        "ebitda": 377885,
+        "noi": 538401,
+        "occupancyPct": 80.2,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 5416043,
+        "operatingExpenses": 4669223,
+        "ebitdar": 746820,
+        "rent": 444116,
+        "ebitda": 302704,
+        "noi": 476018,
+        "occupancyPct": 82,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 5679300,
+        "operatingExpenses": 4733544,
+        "ebitdar": 945756,
+        "rent": 465703,
+        "ebitda": 480053,
+        "noi": 661791,
+        "occupancyPct": 82.9,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 5825071,
+        "operatingExpenses": 4956698,
+        "ebitdar": 868373,
+        "rent": 477656,
+        "ebitda": 390717,
+        "noi": 577119,
+        "occupancyPct": 83.8,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 13,
+      "medicaid": 66,
+      "managedCare": 8,
+      "privatePay": 9,
+      "other": 4
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 158685
+      },
+      {
+        "year": 2023,
+        "amount": 102154
+      },
+      {
+        "year": 2024,
+        "amount": 108175
+      },
+      {
+        "year": 2025,
+        "amount": 91483
+      },
+      {
+        "year": 2026,
+        "amount": 114322
+      }
+    ]
+  },
+  {
+    "buildingId": "bld_desertwillow",
+    "periods": [
+      {
+        "label": "FY2023",
+        "periodEnd": "2023-12-31",
+        "revenue": 9310309,
+        "operatingExpenses": 8023636,
+        "ebitdar": 1286673,
+        "rent": 763445,
+        "ebitda": 523228,
+        "noi": 821158,
+        "occupancyPct": 73.6,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2024",
+        "periodEnd": "2024-12-31",
+        "revenue": 9961924,
+        "operatingExpenses": 8401233,
+        "ebitdar": 1560691,
+        "rent": 816878,
+        "ebitda": 743813,
+        "noi": 1062595,
+        "occupancyPct": 74.6,
+        "source": "broker_om"
+      },
+      {
+        "label": "FY2025",
+        "periodEnd": "2025-12-31",
+        "revenue": 10530068,
+        "operatingExpenses": 8957813,
+        "ebitdar": 1572255,
+        "rent": 863466,
+        "ebitda": 708789,
+        "noi": 1045752,
+        "occupancyPct": 76,
+        "source": "data_room"
+      },
+      {
+        "label": "TTM Sep-2026",
+        "periodEnd": "2026-09-30",
+        "revenue": 10800865,
+        "operatingExpenses": 9205566,
+        "ebitdar": 1595299,
+        "rent": 885671,
+        "ebitda": 709628,
+        "noi": 1055256,
+        "occupancyPct": 76.8,
+        "source": "operator_report"
+      }
+    ],
+    "payerMix": {
+      "medicare": 18,
+      "medicaid": 62,
+      "managedCare": 11,
+      "privatePay": 6,
+      "other": 3
+    },
+    "payerMixAsOf": "2026-09-30",
+    "capex": [
+      {
+        "year": 2022,
+        "amount": 287416
+      },
+      {
+        "year": 2023,
+        "amount": 259248
+      },
+      {
+        "year": 2024,
+        "amount": 252757
+      },
+      {
+        "year": 2025,
+        "amount": 274230
+      },
+      {
+        "year": 2026,
+        "amount": 137549
+      }
+    ]
+  }
+]

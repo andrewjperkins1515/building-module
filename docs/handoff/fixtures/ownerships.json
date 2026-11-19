@@ -1,0 +1,556 @@
+[
+  {
+    "id": "bld_maplegrove_own_owner",
+    "buildingId": "bld_maplegrove",
+    "organizationId": "org_meridian",
+    "role": "property_owner",
+    "startDate": "2017-09-01",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_maplegrove_own_operator",
+    "buildingId": "bld_maplegrove",
+    "organizationId": "org_cedarbrook",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_maplegrove_own_parent",
+    "buildingId": "bld_maplegrove",
+    "organizationId": "org_cedarbrook_hold",
+    "role": "parent_organization",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "partially_verified"
+    }
+  },
+  {
+    "id": "bld_maplegrove_own_prior_0",
+    "buildingId": "bld_maplegrove",
+    "organizationId": "org_tricounty",
+    "role": "property_owner",
+    "startDate": "2006-03-01",
+    "endDate": "2017-08-31",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_lakeview_own_owner",
+    "buildingId": "bld_lakeview",
+    "organizationId": "org_meridian",
+    "role": "property_owner",
+    "startDate": "2019-11-16",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_lakeview_own_operator",
+    "buildingId": "bld_lakeview",
+    "organizationId": "org_cedarbrook",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_lakeview_own_parent",
+    "buildingId": "bld_lakeview",
+    "organizationId": "org_cedarbrook_hold",
+    "role": "parent_organization",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "partially_verified"
+    }
+  },
+  {
+    "id": "bld_lakeview_own_prior_0",
+    "buildingId": "bld_lakeview",
+    "organizationId": "org_keystone",
+    "role": "property_owner",
+    "startDate": "2010-02-01",
+    "endDate": "2019-11-15",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_brookhaven_own_owner",
+    "buildingId": "bld_brookhaven",
+    "organizationId": "org_meridian",
+    "role": "property_owner",
+    "startDate": "2019-11-16",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_brookhaven_own_operator",
+    "buildingId": "bld_brookhaven",
+    "organizationId": "org_cedarbrook",
+    "role": "operator",
+    "startDate": "2021-06-01",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_brookhaven_own_parent",
+    "buildingId": "bld_brookhaven",
+    "organizationId": "org_cedarbrook_hold",
+    "role": "parent_organization",
+    "startDate": "2021-06-01",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "partially_verified"
+    }
+  },
+  {
+    "id": "bld_brookhaven_own_prior_0",
+    "buildingId": "bld_brookhaven",
+    "organizationId": "org_keystone",
+    "role": "property_owner",
+    "startDate": "2010-02-01",
+    "endDate": "2019-11-15",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_brookhaven_own_prior_1",
+    "buildingId": "bld_brookhaven",
+    "organizationId": "org_evergreen_prev",
+    "role": "operator",
+    "startDate": "2009-01-01",
+    "endDate": "2021-05-31",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_harborpointe_own_owner",
+    "buildingId": "bld_harborpointe",
+    "organizationId": "org_meridian",
+    "role": "property_owner",
+    "startDate": "2020-07-01",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_harborpointe_own_operator",
+    "buildingId": "bld_harborpointe",
+    "organizationId": "org_cedarbrook",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "state_license",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_harborpointe_own_mgmt",
+    "buildingId": "bld_harborpointe",
+    "organizationId": "org_summit_mgmt",
+    "role": "management_company",
+    "startDate": "2019-03-01",
+    "isCurrent": true,
+    "meta": {
+      "source": "operator_report",
+      "asOf": "2026-08-21",
+      "verification": "unverified"
+    }
+  },
+  {
+    "id": "bld_harborpointe_own_prior_0",
+    "buildingId": "bld_harborpointe",
+    "organizationId": "org_sunbelt",
+    "role": "property_owner",
+    "startDate": "2012-09-01",
+    "endDate": "2020-06-30",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_bluegrass_own_owner",
+    "buildingId": "bld_bluegrass",
+    "organizationId": "org_bluegrass_props",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_bluegrass_own_operator",
+    "buildingId": "bld_bluegrass",
+    "organizationId": "org_bluegrass_props",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_clearwater_own_owner",
+    "buildingId": "bld_clearwater",
+    "organizationId": "org_bluegrass_props",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_clearwater_own_operator",
+    "buildingId": "bld_clearwater",
+    "organizationId": "org_bluegrass_props",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_cumberland_own_owner",
+    "buildingId": "bld_cumberland",
+    "organizationId": "org_bluegrass_props",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "unverified"
+    }
+  },
+  {
+    "id": "bld_cumberland_own_operator",
+    "buildingId": "bld_cumberland",
+    "organizationId": "org_bluegrass_props",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "unverified"
+    }
+  },
+  {
+    "id": "bld_riverside_own_owner",
+    "buildingId": "bld_riverside",
+    "organizationId": "org_harborview",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_riverside_own_operator",
+    "buildingId": "bld_riverside",
+    "organizationId": "org_riverside_rp",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_magnolia_own_owner",
+    "buildingId": "bld_magnolia",
+    "organizationId": "org_sunbelt",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_magnolia_own_operator",
+    "buildingId": "bld_magnolia",
+    "organizationId": "org_ashford",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "state_license",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_liveoak_own_owner",
+    "buildingId": "bld_liveoak",
+    "organizationId": "org_sunbelt",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_liveoak_own_operator",
+    "buildingId": "bld_liveoak",
+    "organizationId": "org_ashford",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "state_license",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_chestnut_own_owner",
+    "buildingId": "bld_chestnut",
+    "organizationId": "org_od_holdings",
+    "role": "property_owner",
+    "startDate": "2023-07-15",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_chestnut_own_operator",
+    "buildingId": "bld_chestnut",
+    "organizationId": "org_pinnacle",
+    "role": "operator",
+    "startDate": "2023-07-14",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_chestnut_own_prior_0",
+    "buildingId": "bld_chestnut",
+    "organizationId": "org_keystone",
+    "role": "property_owner",
+    "startDate": "2011-04-01",
+    "endDate": "2023-07-14",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_chestnut_own_prior_1",
+    "buildingId": "bld_chestnut",
+    "organizationId": "org_tricounty",
+    "role": "operator",
+    "startDate": "2011-04-01",
+    "endDate": "2023-07-13",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_seaside_own_owner",
+    "buildingId": "bld_seaside",
+    "organizationId": "org_tricounty",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_seaside_own_operator",
+    "buildingId": "bld_seaside",
+    "organizationId": "org_coastal",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_ozark_own_owner",
+    "buildingId": "bld_ozark",
+    "organizationId": "org_willow",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_ozark_own_operator",
+    "buildingId": "bld_ozark",
+    "organizationId": "org_willow",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_prairieview_own_owner",
+    "buildingId": "bld_prairieview",
+    "organizationId": "org_lakeshore",
+    "role": "property_owner",
+    "startDate": "2025-08-15",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_prairieview_own_operator",
+    "buildingId": "bld_prairieview",
+    "organizationId": "org_heartland",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_prairieview_own_prior_0",
+    "buildingId": "bld_prairieview",
+    "organizationId": "org_heartland",
+    "role": "property_owner",
+    "startDate": "2003-06-01",
+    "endDate": "2025-08-14",
+    "isCurrent": false,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-05-03",
+      "verification": "verified"
+    }
+  },
+  {
+    "id": "bld_desertwillow_own_owner",
+    "buildingId": "bld_desertwillow",
+    "organizationId": "org_summit_reit",
+    "role": "property_owner",
+    "startDate": "2014-01-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "public_record",
+      "asOf": "2026-09-20",
+      "verification": "unverified"
+    }
+  },
+  {
+    "id": "bld_desertwillow_own_operator",
+    "buildingId": "bld_desertwillow",
+    "organizationId": "org_sonoran",
+    "role": "operator",
+    "startDate": "2016-07-02",
+    "isCurrent": true,
+    "meta": {
+      "source": "cms_mock",
+      "asOf": "2026-10-20",
+      "verification": "unverified"
+    }
+  }
+]
