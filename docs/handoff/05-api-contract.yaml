@@ -1,0 +1,1534 @@
+openapi: 3.1.0
+info:
+  title: Owner Docket — Buildings, Contacts & Deals API (proposed)
+  version: 0.1.0
+  description: |
+    Proposed backend contract for the Buildings, Contacts and Deals modules, derived from the
+    prototype (`src/store/DataProvider.tsx` mutations and the reads each screen performs).
+    Schemas mirror `src/types/index.ts`. See `05-api-mapping.md` for the action → endpoint map.
+
+    Conventions
+    - Bearer authentication on every endpoint. The authenticated user replaces the prototype's
+      "Acting as" persona; all `*By` / actor fields are set server-side from the token.
+    - PATCH bodies are partial objects (JSON Merge Patch semantics).
+    - List endpoints support `limit` / `cursor` pagination and return `{ items, nextCursor }`.
+    - Checklist approvals are **enforced server-side**: only the item's effective approver
+      (`item.approverContactId ?? deal.dealApproverContactId`, matched to the authenticated
+      user's linked contact) may `approve`, `request_changes` or `revoke_approval` → otherwise 403.
+    - System-driven checklist stages (auto rules) and milestone auto-advance are evaluated
+      server-side after every write that can affect them (see 06 business rules).
+    - File bytes go to object storage via presigned upload URLs (`POST /uploads`); API payloads
+      carry the returned `objectKey`.
+servers:
+  - url: https://api.ownerdocket.example/v1
+security:
+  - bearerAuth: []
+
+tags:
+  - name: Buildings
+  - name: Building documents
+  - name: Site visits
+  - name: Organizations
+  - name: Contacts
+  - name: Communications
+  - name: Deals
+  - name: Deal checklist
+  - name: Activity
+  - name: Integrations
+  - name: Uploads
+
+paths:
+  # ------------------------------------------------------------------ Buildings
+  /buildings:
+    get:
+      tags: [Buildings]
+      summary: Buildings directory (search, filters, sort)
+      parameters:
+        - { name: q, in: query, schema: { type: string }, description: "Name, alternate names, city, county, identifier values, operator/owner, deal names" }
+        - { name: state, in: query, schema: { type: array, items: { type: string } }, style: form, explode: true }
+        - { name: facilityType, in: query, schema: { type: array, items: { $ref: "#/components/schemas/FacilityType" } }, style: form, explode: true }
+        - { name: operatorOrgId, in: query, schema: { type: array, items: { type: string } }, style: form, explode: true }
+        - { name: ownerCompanyType, in: query, schema: { type: array, items: { type: string, enum: [bank, finco, mezz_lender, reit, private, ar_lender, none] } }, style: form, explode: true }
+        - { name: cmsRating, in: query, schema: { type: array, items: { type: string, enum: ["1", "2", "3", "4", "5", none] } }, style: form, explode: true }
+        - { name: bedsMin, in: query, schema: { type: integer } }
+        - { name: bedsMax, in: query, schema: { type: integer } }
+        - { name: dealAssociation, in: query, schema: { type: array, items: { type: string, enum: [active, owned, historical, none] } }, style: form, explode: true }
+        - { name: verification, in: query, schema: { type: array, items: { $ref: "#/components/schemas/VerificationStatus" } }, style: form, explode: true }
+        - { name: sort, in: query, schema: { type: string, enum: [name, location, type, beds, adc, rating, operator, deals, verification, updated] } }
+        - { name: dir, in: query, schema: { type: string, enum: [asc, desc] } }
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/cursor"
+      responses:
+        "200":
+          description: Directory rows plus summary metrics for the filtered set
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items: { type: array, items: { $ref: "#/components/schemas/BuildingDirectoryRow" } }
+                  nextCursor: { type: [string, "null"] }
+                  metrics:
+                    type: object
+                    properties:
+                      facilities: { type: integer }
+                      states: { type: integer }
+                      certifiedBeds: { type: integer }
+                      weightedOccupancyPct: { type: [number, "null"] }
+                      avgCmsRating: { type: [number, "null"] }
+                      inActiveDeals: { type: integer }
+                      needsVerification: { type: integer }
+    post:
+      tags: [Buildings]
+      summary: Create a building (from CMS record, provider number, or manually)
+      description: Creates baseline document placeholders (current facility license, floor plan) and a "building created" activity.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/NewBuildingInput" }
+      responses:
+        "201": { description: "Created", content: { application/json: { schema: { $ref: "#/components/schemas/Building" } } } }
+        "409": { description: "CCN already linked to an existing building (response includes its id)" }
+
+  /buildings/{buildingId}:
+    parameters: [{ $ref: "#/components/parameters/buildingId" }]
+    get:
+      tags: [Buildings]
+      summary: Building detail bundle (everything the detail page renders)
+      responses:
+        "200":
+          description: Building with related data
+          content: { application/json: { schema: { $ref: "#/components/schemas/BuildingBundle" } } }
+        "404": { description: "Not found" }
+    patch:
+      tags: [Buildings]
+      summary: Edit building
+      description: |
+        Changing a tracked value resets its provenance to `manual` with the caller's chosen verification.
+        Changing the current CCN retires the current identifier (`effectiveTo = today`) and inserts a new
+        current one. Verification changes and edits write activities.
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: "#/components/schemas/BuildingPatch" } } }
+      responses:
+        "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/Building" } } } }
+
+  /buildings/{buildingId}/verify:
+    post:
+      tags: [Buildings]
+      summary: Mark building (and all tracked fields) verified by the caller
+      parameters: [{ $ref: "#/components/parameters/buildingId" }]
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/Building" } } } } }
+
+  /buildings/{buildingId}/owner:
+    put:
+      tags: [Buildings]
+      summary: Set or change the current property owner
+      description: Closes the current property_owner ownership record (endDate = effectiveDate) and inserts the new one; activity logged.
+      parameters: [{ $ref: "#/components/parameters/buildingId" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [effectiveDate]
+              properties:
+                organizationId: { type: string, description: "Existing company" }
+                newOrganization:
+                  description: Create a new company inline (name + company type)
+                  type: object
+                  required: [name]
+                  properties:
+                    name: { type: string }
+                    companyType: { $ref: "#/components/schemas/CompanyType" }
+                effectiveDate: { type: string, format: date }
+      responses: { "200": { description: "Ownership records after change", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/BuildingOwnership" } } } } } }
+
+  /buildings/{buildingId}/photos:
+    parameters: [{ $ref: "#/components/parameters/buildingId" }]
+    post:
+      tags: [Buildings]
+      summary: Add photos (after uploading via /uploads)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                required: [objectKey]
+                properties:
+                  objectKey: { type: string }
+                  caption: { type: string }
+      responses: { "201": { description: "Photos added", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/BuildingPhoto" } } } } } }
+  /buildings/{buildingId}/photos/{photoId}:
+    parameters: [{ $ref: "#/components/parameters/buildingId" }, { name: photoId, in: path, required: true, schema: { type: string } }]
+    delete:
+      tags: [Buildings]
+      summary: Remove photo
+      responses: { "204": { description: "Removed" } }
+  /buildings/{buildingId}/photos/{photoId}/cover:
+    parameters: [{ $ref: "#/components/parameters/buildingId" }, { name: photoId, in: path, required: true, schema: { type: string } }]
+    post:
+      tags: [Buildings]
+      summary: Make this photo the cover (first in order)
+      responses: { "204": { description: "Updated" } }
+
+  /buildings/{buildingId}/notes:
+    post:
+      tags: [Activity]
+      summary: Add a note to the building timeline
+      parameters: [{ $ref: "#/components/parameters/buildingId" }]
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [text], properties: { text: { type: string, minLength: 1 } } } } } }
+      responses: { "201": { description: "Created", content: { application/json: { schema: { $ref: "#/components/schemas/Activity" } } } } }
+
+  /buildings/{buildingId}/activities:
+    get:
+      tags: [Activity]
+      summary: Building activity timeline
+      parameters:
+        - $ref: "#/components/parameters/buildingId"
+        - { name: type, in: query, schema: { type: array, items: { $ref: "#/components/schemas/ActivityType" } }, style: form, explode: true }
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/cursor"
+      responses: { "200": { description: "Activities, newest first", content: { application/json: { schema: { $ref: "#/components/schemas/ActivityPage" } } } } }
+
+  /buildings/{buildingId}/cms/refresh:
+    post:
+      tags: [Integrations]
+      summary: Refresh CMS data for the building's current CCN
+      parameters: [{ $ref: "#/components/parameters/buildingId" }]
+      responses: { "202": { description: "Refresh queued" } }
+
+  /cms/providers:
+    get:
+      tags: [Integrations]
+      summary: Search CMS provider records (Add Building)
+      parameters:
+        - { name: q, in: query, schema: { type: string }, description: "Name, city, state, county, operator" }
+        - { name: ccn, in: query, schema: { type: string, pattern: "^[0-9A-Za-z]{6}$" } }
+      responses:
+        "200":
+          description: Matching CMS records, each flagged if already linked to a building
+          content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/CmsProviderRecord" } } } }
+
+  # -------------------------------------------------------- Building documents
+  /buildings/{buildingId}/document-requests:
+    parameters: [{ $ref: "#/components/parameters/buildingId" }]
+    get:
+      tags: [Building documents]
+      summary: Document checklist for a building
+      parameters:
+        - { name: status, in: query, schema: { type: array, items: { $ref: "#/components/schemas/DocumentStatus" } }, style: form, explode: true }
+        - { name: category, in: query, schema: { $ref: "#/components/schemas/DocumentCategory" } }
+        - { name: view, in: query, schema: { type: string, enum: [all, missing, review, revision, approved] } }
+      responses: { "200": { description: "Requests with files and comments", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/DocumentRequest" } } } } } }
+    post:
+      tags: [Building documents]
+      summary: Add a document request
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/DocumentRequestInput" } } } }
+      responses: { "201": { description: "Created", content: { application/json: { schema: { $ref: "#/components/schemas/DocumentRequest" } } } } }
+  /buildings/{buildingId}/document-requests/apply-template:
+    post:
+      tags: [Building documents]
+      summary: Add checklist placeholders from the diligence template
+      parameters: [{ $ref: "#/components/parameters/buildingId" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [keys]
+              properties:
+                keys: { type: array, items: { type: string }, description: "Template keys (src/data/templates.ts)" }
+                dealId: { type: string }
+      responses: { "200": { description: "Number of items added", content: { application/json: { schema: { type: object, properties: { added: { type: integer } } } } } } }
+  /document-requests/{requestId}:
+    parameters: [{ $ref: "#/components/parameters/requestId" }]
+    patch:
+      tags: [Building documents]
+      summary: Update request (status, reviewer, due date, requested from, deal, required, notes)
+      description: A status change appends a `status_change` review comment.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/DocumentRequestPatch" } } } }
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/DocumentRequest" } } } } }
+    delete:
+      tags: [Building documents]
+      summary: Delete request (baseline placeholders cannot be deleted → 409)
+      responses: { "204": { description: "Deleted" }, "409": { description: Baseline placeholder } }
+  /document-requests/{requestId}/files:
+    post:
+      tags: [Building documents]
+      summary: Attach a new file version (after /uploads)
+      description: Sets status to `received` (or `in_review` if it was `approved`); activity logged.
+      parameters: [{ $ref: "#/components/parameters/requestId" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [objectKey, fileName, fileSize, mimeType]
+              properties:
+                objectKey: { type: string }
+                fileName: { type: string }
+                fileSize: { type: integer }
+                mimeType: { type: string }
+      responses: { "201": { description: "File version", content: { application/json: { schema: { $ref: "#/components/schemas/DocumentFile" } } } } }
+  /document-requests/{requestId}/review:
+    post:
+      tags: [Building documents]
+      summary: Approve, reject or request revision
+      parameters: [{ $ref: "#/components/parameters/requestId" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [action]
+              properties:
+                action: { type: string, enum: [approved, rejected, needs_revision] }
+                comment: { type: string, description: "Required for rejected / needs_revision" }
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/DocumentRequest" } } } }, "422": { description: Comment required } }
+  /document-requests/{requestId}/comments:
+    post:
+      tags: [Building documents]
+      summary: Add a review comment
+      parameters: [{ $ref: "#/components/parameters/requestId" }]
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [text], properties: { text: { type: string } } } } } }
+      responses: { "201": { description: "Comment", content: { application/json: { schema: { $ref: "#/components/schemas/ReviewComment" } } } } }
+
+  /buildings/{buildingId}/data-room:
+    parameters: [{ $ref: "#/components/parameters/buildingId" }]
+    put:
+      tags: [Integrations]
+      summary: Connect a SharePoint folder
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [siteName, folderPath], properties: { siteName: { type: string }, folderPath: { type: string } } } } } }
+      responses: { "200": { description: "Connection", content: { application/json: { schema: { $ref: "#/components/schemas/DataRoomConnection" } } } } }
+  /buildings/{buildingId}/data-room/sync:
+    post:
+      tags: [Integrations]
+      summary: Sync the data room now
+      description: New files are matched to outstanding requests (status → received) and logged as activities.
+      parameters: [{ $ref: "#/components/parameters/buildingId" }]
+      responses: { "200": { description: "Result", content: { application/json: { schema: { type: object, properties: { imported: { type: integer } } } } } } }
+
+  # --------------------------------------------------------------- Site visits
+  /buildings/{buildingId}/site-visits:
+    parameters: [{ $ref: "#/components/parameters/buildingId" }]
+    get:
+      tags: [Site visits]
+      summary: Site visits, newest first
+      responses: { "200": { description: "Visits", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/SiteVisit" } } } } } }
+    post:
+      tags: [Site visits]
+      summary: Record a site visit
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/SiteVisitInput" } } } }
+      responses: { "201": { description: "Created", content: { application/json: { schema: { $ref: "#/components/schemas/SiteVisit" } } } } }
+  /site-visits/{visitId}/follow-ups/{taskId}:
+    patch:
+      tags: [Site visits]
+      summary: Toggle a follow-up task
+      parameters: [{ name: visitId, in: path, required: true, schema: { type: string } }, { name: taskId, in: path, required: true, schema: { type: string } }]
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [done], properties: { done: { type: boolean } } } } } }
+      responses: { "204": { description: "Updated" } }
+  /site-visits/{visitId}/observations/{obsId}:
+    patch:
+      tags: [Site visits]
+      summary: Resolve / reopen an observation
+      parameters: [{ name: visitId, in: path, required: true, schema: { type: string } }, { name: obsId, in: path, required: true, schema: { type: string } }]
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [status], properties: { status: { type: string, enum: [open, resolved] } } } } } }
+      responses: { "204": { description: "Updated" } }
+
+  # ------------------------------------------------------------- Organizations
+  /organizations:
+    get:
+      tags: [Organizations]
+      summary: Search companies (pickers, filters)
+      parameters:
+        - { name: q, in: query, schema: { type: string } }
+        - { name: type, in: query, schema: { type: array, items: { $ref: "#/components/schemas/OrganizationType" } }, style: form, explode: true }
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/cursor"
+      responses: { "200": { description: "Companies", content: { application/json: { schema: { type: object, properties: { items: { type: array, items: { $ref: "#/components/schemas/Organization" } }, nextCursor: { type: [string, "null"] } } } } } } }
+    post:
+      tags: [Organizations]
+      summary: Create company
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/OrganizationInput" } } } }
+      responses: { "201": { description: "Created", content: { application/json: { schema: { $ref: "#/components/schemas/Organization" } } } } }
+  /organizations/{orgId}:
+    parameters: [{ $ref: "#/components/parameters/orgId" }]
+    get:
+      tags: [Organizations]
+      summary: Company with roster, deals (as seller/buyer/broker/lender) and owned/operated buildings
+      responses:
+        "200":
+          description: Company bundle
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  organization: { $ref: "#/components/schemas/Organization" }
+                  roster: { type: array, items: { $ref: "#/components/schemas/Contact" } }
+                  deals: { type: array, items: { $ref: "#/components/schemas/CompanyDealRow" } }
+                  buildings: { type: array, items: { type: object, properties: { buildingId: { type: string }, role: { $ref: "#/components/schemas/OwnershipRole" } } } }
+    patch:
+      tags: [Organizations]
+      summary: Edit company (incl. company type, parent, office address, focus, tags, primary contact, logo objectKey)
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/OrganizationInput" } } } }
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/Organization" } } } } }
+
+  # ------------------------------------------------------------------ Contacts
+  /contacts:
+    get:
+      tags: [Contacts]
+      summary: Contacts directory
+      parameters:
+        - { name: q, in: query, schema: { type: string }, description: "Name, title, email, phone, company, tags" }
+        - { name: contactType, in: query, schema: { type: array, items: { $ref: "#/components/schemas/ContactType" } }, style: form, explode: true }
+        - { name: sector, in: query, schema: { type: array, items: { $ref: "#/components/schemas/Sector" } }, style: form, explode: true }
+        - { name: organizationId, in: query, schema: { type: array, items: { type: string } }, style: form, explode: true }
+        - { name: tag, in: query, schema: { type: array, items: { type: string } }, style: form, explode: true }
+        - { name: sort, in: query, schema: { type: string, enum: [name, company, type, deals] } }
+        - { name: dir, in: query, schema: { type: string, enum: [asc, desc] } }
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/cursor"
+      responses:
+        "200":
+          description: Contacts with company and deal counts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      allOf:
+                        - $ref: "#/components/schemas/Contact"
+                        - type: object
+                          properties:
+                            organization: { $ref: "#/components/schemas/Organization" }
+                            isPrimary: { type: boolean }
+                            activeDeals: { type: integer }
+                            totalDeals: { type: integer }
+                  nextCursor: { type: [string, "null"] }
+    post:
+      tags: [Contacts]
+      summary: Create contact (company required; type/sectors default from company when omitted)
+      description: If the company has no primary contact, the new contact becomes primary unless `makePrimary` is false.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/ContactInput" } } } }
+      responses: { "201": { description: "Created", content: { application/json: { schema: { $ref: "#/components/schemas/Contact" } } } }, "422": { description: Name and company required } }
+  /contacts/{contactId}:
+    parameters: [{ $ref: "#/components/parameters/contactId" }]
+    get:
+      tags: [Contacts]
+      summary: Contact record bundle
+      responses:
+        "200":
+          description: Contact with company, colleagues, deals and related buildings
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  contact: { $ref: "#/components/schemas/Contact" }
+                  organization: { $ref: "#/components/schemas/Organization" }
+                  colleagues: { type: array, items: { $ref: "#/components/schemas/Contact" } }
+                  activeDeals: { type: array, items: { $ref: "#/components/schemas/CompanyDealRow" } }
+                  pastDeals: { type: array, items: { $ref: "#/components/schemas/CompanyDealRow" } }
+                  relatedBuildings: { type: array, items: { type: object, properties: { buildingId: { type: string }, relation: { type: string } } } }
+                  lastContactedAt: { type: [string, "null"], format: date-time }
+    patch:
+      tags: [Contacts]
+      summary: Edit contact (personal fields require elevated permission)
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/ContactInput" } } } }
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/Contact" } } } }, "403": { description: Not allowed to edit personal fields } }
+    delete:
+      tags: [Contacts]
+      summary: Delete contact (removes building relationships; reassigns company primary contact)
+      responses: { "204": { description: "Deleted" } }
+
+  # ------------------------------------------------------------ Communications
+  /contacts/{contactId}/communications:
+    parameters: [{ $ref: "#/components/parameters/contactId" }]
+    get:
+      tags: [Communications]
+      summary: Communications logged against a contact (grouped client-side by threadId)
+      parameters:
+        - { name: channel, in: query, schema: { $ref: "#/components/schemas/CommChannel" } }
+        - { name: dealId, in: query, schema: { type: string } }
+        - { name: q, in: query, schema: { type: string }, description: "Subject, body, sender, attachment names" }
+      responses: { "200": { description: "Messages", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/Communication" } } } } } }
+  /communications:
+    post:
+      tags: [Communications]
+      summary: Log a call, meeting or email manually
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/CommunicationInput" } } } }
+      responses: { "201": { description: "Logged (source = manual, loggedBy = caller)", content: { application/json: { schema: { $ref: "#/components/schemas/Communication" } } } } }
+  /integrations/outlook/sync:
+    post:
+      tags: [Integrations]
+      summary: Trigger an Outlook (Microsoft Graph) mailbox sync for the caller
+      responses: { "202": { description: "Sync queued" } }
+
+  # --------------------------------------------------------------------- Deals
+  /deals:
+    get:
+      tags: [Deals]
+      summary: Deals pipeline (board / table)
+      parameters:
+        - { name: q, in: query, schema: { type: string }, description: "Name, code, lead, seller, building names" }
+        - { name: status, in: query, schema: { type: array, items: { $ref: "#/components/schemas/DealStatus" } }, style: form, explode: true }
+        - { name: dealKind, in: query, schema: { type: array, items: { $ref: "#/components/schemas/DealKind" } }, style: form, explode: true }
+        - { name: assetClass, in: query, schema: { type: array, items: { $ref: "#/components/schemas/AssetClass" } }, style: form, explode: true }
+        - { name: state, in: query, schema: { type: array, items: { type: string } }, style: form, explode: true }
+        - { name: lead, in: query, schema: { type: array, items: { type: string } }, style: form, explode: true }
+        - { name: includeMarketComps, in: query, schema: { type: boolean, default: false } }
+      responses:
+        "200":
+          description: Deals with calculated values and progress
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items: { type: array, items: { $ref: "#/components/schemas/DealSummary" } }
+                  metrics:
+                    type: object
+                    properties:
+                      activeDeals: { type: integer }
+                      underPsa: { type: integer }
+                      pipelineAskingValue: { type: number }
+                      pipelineBuildings: { type: integer }
+                      pipelineLicensedBeds: { type: integer }
+                      closingIn60Days: { type: integer }
+                      avgProgressPct: { type: [number, "null"] }
+    post:
+      tags: [Deals]
+      summary: Create deal
+      description: Generates `code` (OD-YYYY-NNN), links buildings, creates the checklist from the template and runs auto rules.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/NewDealInput" } } } }
+      responses: { "201": { description: "Created", content: { application/json: { schema: { $ref: "#/components/schemas/Deal" } } } } }
+  /deals/{dealId}:
+    parameters: [{ $ref: "#/components/parameters/dealId" }]
+    get:
+      tags: [Deals]
+      summary: Deal record bundle (overview + progress + documents)
+      responses: { "200": { description: "Deal", content: { application/json: { schema: { $ref: "#/components/schemas/DealBundle" } } } }, "404": { description: Not found } }
+    patch:
+      tags: [Deals]
+      summary: Edit deal summary fields, overrides, distribution lists, data room link, auto-advance toggle
+      description: Server re-evaluates auto rules and auto-advance after the write.
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/DealPatch" } } } }
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/DealBundle" } } } } }
+  /deals/{dealId}/stage:
+    post:
+      tags: [Deals]
+      summary: Change stage, mark dead/abandoned, or reopen
+      description: |
+        `move` to closed/asset_management sets status=closed and actualCloseDate (if unset).
+        `move` to psa_signed from high_level_review sets skippedLoi; moving back to
+        high_level_review/loi_signed clears it. Every manual change sets milestoneFloor so
+        auto-advance does not immediately re-trigger, and clears lastAutoAdvance.
+      parameters: [{ $ref: "#/components/parameters/dealId" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  required: [action, stage]
+                  properties:
+                    action: { const: move }
+                    stage: { $ref: "#/components/schemas/DealStage" }
+                - type: object
+                  required: [action, reason]
+                  properties:
+                    action: { enum: [mark_dead, mark_abandoned] }
+                    reason: { type: string, minLength: 1 }
+                - type: object
+                  required: [action]
+                  properties:
+                    action: { const: reopen }
+              discriminator: { propertyName: action }
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/Deal" } } } } }
+  /deals/{dealId}/auto-advance/undo:
+    post:
+      tags: [Deals]
+      summary: Undo the last automatic milestone move
+      parameters: [{ $ref: "#/components/parameters/dealId" }]
+      responses: { "200": { description: "Reverted", content: { application/json: { schema: { $ref: "#/components/schemas/Deal" } } } }, "409": { description: Nothing to undo } }
+  /deals/{dealId}/auto-advance/dismiss:
+    post:
+      tags: [Deals]
+      summary: Dismiss the auto-advance banner
+      parameters: [{ $ref: "#/components/parameters/dealId" }]
+      responses: { "204": { description: "Dismissed" } }
+  /deals/{dealId}/buildings:
+    parameters: [{ $ref: "#/components/parameters/dealId" }]
+    post:
+      tags: [Deals]
+      summary: Link building(s) to the deal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                required: [buildingId, role]
+                properties:
+                  buildingId: { type: string }
+                  role: { $ref: "#/components/schemas/DealBuildingRole" }
+                  priceAllocation: { type: number }
+                  allocationBasis: { type: string }
+                  notes: { type: string }
+      responses: { "201": { description: "Linked", content: { application/json: { schema: { type: array, items: { $ref: "#/components/schemas/DealBuildingRelationship" } } } } } }
+  /deal-buildings/{relId}:
+    parameters: [{ name: relId, in: path, required: true, schema: { type: string } }]
+    patch:
+      tags: [Deals]
+      summary: Update a building's role / allocation in a deal
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/DealBuildingRelationship" } } } }
+      responses: { "200": { description: "Updated" } }
+    delete:
+      tags: [Deals]
+      summary: Remove building from deal
+      responses: { "204": { description: "Removed" } }
+  /deals/{dealId}/contacts/{side}/{role}:
+    parameters:
+      - $ref: "#/components/parameters/dealId"
+      - { name: side, in: path, required: true, schema: { type: string, enum: [buyer, seller, vendor] } }
+      - { name: role, in: path, required: true, schema: { type: string }, description: "BuyerSellerRole for buyer/seller, VendorRole for vendor" }
+    put:
+      tags: [Deals]
+      summary: Assign a contact to a deal role
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [contactId], properties: { contactId: { type: string } } } } } }
+      responses: { "200": { description: "Assigned" }, "422": { description: Invalid side/role combination } }
+    delete:
+      tags: [Deals]
+      summary: Unassign
+      responses: { "204": { description: "Removed" } }
+  /deals/{dealId}/reports/{kind}:
+    patch:
+      tags: [Deals]
+      summary: Update a third-party report (date ordered, status, expected date, link)
+      description: Entering dateOrdered while status is not_ordered sets status to ordered.
+      parameters: [{ $ref: "#/components/parameters/dealId" }, { name: kind, in: path, required: true, schema: { $ref: "#/components/schemas/VendorRole" } }]
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/ThirdPartyReport" } } } }
+      responses: { "200": { description: "Updated", content: { application/json: { schema: { $ref: "#/components/schemas/ThirdPartyReport" } } } } }
+
+  # ------------------------------------------------------------ Deal checklist
+  /deals/{dealId}/approver:
+    put:
+      tags: [Deal checklist]
+      summary: Set the deal approver (optionally clear all item-specific approvers)
+      parameters: [{ $ref: "#/components/parameters/dealId" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contactId: { type: [string, "null"] }
+                applyToAllItems: { type: boolean, default: false }
+      responses: { "200": { description: "Updated" } }
+  /deals/{dealId}/phase-overrides/{key}:
+    parameters: [{ $ref: "#/components/parameters/dealId" }, { name: key, in: path, required: true, schema: { type: string }, description: "Pipeline phase item key, e.g. identify_price, critical_dates" }]
+    put:
+      tags: [Deal checklist]
+      summary: Manually set a pipeline-phase item done/not done
+      requestBody: { required: true, content: { application/json: { schema: { type: object, required: [done], properties: { done: { type: boolean } } } } } }
+      responses: { "200": { description: "Updated (may trigger auto-advance)" } }
+    delete:
+      tags: [Deal checklist]
+      summary: Reset to automatic
+      responses: { "204": { description: "Reset" } }
+  /deals/{dealId}/checklist/{itemId}/actions:
+    post:
+      tags: [Deal checklist]
+      summary: Perform a checklist action
+      description: |
+        Mirrors `ChecklistAction` in `src/lib/checklist.ts`. The server applies the action,
+        appends a history event (actor = caller), re-runs auto rules and milestone auto-advance,
+        and returns the updated item (plus the deal if its milestone moved).
+        `approve`, `request_changes` and `revoke_approval` return 403 unless the caller is the
+        item's effective approver. `approve` requires every non-approval stage to be done/skipped
+        and (if `requiresDocument`) a submitted/approved document or a waiver → otherwise 409.
+      parameters: [{ $ref: "#/components/parameters/dealId" }, { name: itemId, in: path, required: true, schema: { type: string } }]
+      requestBody: { required: true, content: { application/json: { schema: { $ref: "#/components/schemas/ChecklistAction" } } } }
+      responses:
+        "200":
+          description: Updated item
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  item: { $ref: "#/components/schemas/DealChecklistItem" }
+                  deal: { $ref: "#/components/schemas/Deal" }
+        "403": { description: "Caller is not the effective approver" }
+        "409": { description: "Action not allowed in the item's current state" }
+  /deals/{dealId}/documents:
+    get:
+      tags: [Deal checklist]
+      summary: Deal Documents tab (checklist documents)
+      parameters:
+        - $ref: "#/components/parameters/dealId"
+        - { name: view, in: query, schema: { type: string, enum: [filed, pending, all], default: filed } }
+      responses:
+        "200":
+          description: Documents with their checklist item
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  allOf:
+                    - $ref: "#/components/schemas/ChecklistDoc"
+                    - type: object
+                      properties:
+                        itemId: { type: string }
+                        itemKey: { type: string }
+                        itemTitle: { type: string }
+                        downloadUrl: { type: string, format: uri }
+
+  # --------------------------------------------------------------------- Uploads
+  /uploads:
+    post:
+      tags: [Uploads]
+      summary: Get a presigned upload URL (photos, logos, contact photos, documents)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [fileName, mimeType, size, purpose]
+              properties:
+                fileName: { type: string }
+                mimeType: { type: string }
+                size: { type: integer }
+                purpose: { type: string, enum: [building_photo, org_logo, contact_photo, document_file, checklist_document, site_visit_photo] }
+      responses:
+        "200":
+          description: Upload target
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  objectKey: { type: string }
+                  uploadUrl: { type: string, format: uri }
+                  expiresAt: { type: string, format: date-time }
+
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }
+
+  parameters:
+    buildingId: { name: buildingId, in: path, required: true, schema: { type: string } }
+    dealId: { name: dealId, in: path, required: true, schema: { type: string } }
+    contactId: { name: contactId, in: path, required: true, schema: { type: string } }
+    orgId: { name: orgId, in: path, required: true, schema: { type: string } }
+    requestId: { name: requestId, in: path, required: true, schema: { type: string } }
+    limit: { name: limit, in: query, schema: { type: integer, minimum: 1, maximum: 200, default: 50 } }
+    cursor: { name: cursor, in: query, schema: { type: string } }
+
+  schemas:
+    # ---- enums
+    VerificationStatus: { type: string, enum: [verified, partially_verified, unverified, needs_review] }
+    DataSource: { type: string, enum: [cms, state_license, operator_report, broker_om, site_visit, third_party_report, public_record, data_room, manual], description: "Prototype uses 'cms_mock' for CMS" }
+    FacilityType: { type: string, enum: [skilled_nursing, assisted_living, memory_care, ccrc, behavioral_health] }
+    IdentifierType: { type: string, enum: [cms_ccn, state_license, npi, medicaid_id] }
+    OrganizationType: { type: string, enum: [owner, operator, parent, management, broker, lender, law_firm, consultant, investor] }
+    CompanyType: { type: string, enum: [bank, finco, mezz_lender, reit, private, ar_lender] }
+    ContactType: { type: string, enum: [operator, vendor_dd, vendor_operating, investor, broker, lawyer] }
+    Sector: { type: string, enum: [snf, alf, ilf, mc] }
+    OwnershipRole: { type: string, enum: [property_owner, operator, parent_organization, management_company] }
+    BuildingRelationshipRole: { type: string, enum: [broker, lender, attorney, consultant, key_contact, administrator, other] }
+    DealStage: { type: string, enum: [high_level_review, loi_signed, psa_signed, closed, asset_management] }
+    DealStatus: { type: string, enum: [active, closed, dead, abandoned] }
+    DealType: { type: string, enum: [single_asset, portfolio] }
+    DealKind: { type: string, enum: [acquisition, sale_leaseback, joint_venture, recapitalization, refinance, disposition] }
+    AssetClass: { type: string, enum: [snf, alf, ilf, mc, ccrc, mixed] }
+    BuyerSellerRole: { type: string, enum: [team_lead, support_1, support_2, in_house_counsel, transaction_counsel, financing_counsel, regulatory_counsel] }
+    VendorRole: { type: string, enum: [survey, title, zoning, environmental, property_condition, appraisal, reimbursement, operations] }
+    ReportStatus: { type: string, enum: [not_ordered, ordered, in_progress, draft_received, final_received, waived] }
+    DealBuildingRole: { type: string, enum: [primary_asset, portfolio_asset, add_on, excluded] }
+    ChecklistAutoRule: { type: string, enum: [deal_created, has_buildings, has_dataroom, vendors_engaged, reports_drafts, reports_finals, transitioned_to_am] }
+    DocumentCategory: { type: string, enum: [licenses, property, financial, legal, third_party, capex, site_visit, other] }
+    DocumentStatus: { type: string, enum: [not_requested, requested, received, in_review, approved, rejected, needs_revision] }
+    BuildingSystem: { type: string, enum: [roof, hvac, plumbing, electrical, life_safety, elevators, interiors, site] }
+    ConditionRating: { type: string, enum: [good, fair, poor, critical] }
+    ActivityType: { type: string, enum: [building_created, building_updated, cms_refreshed, document_uploaded, document_reviewed, document_requested, deal_associated, site_visit, verification_changed, note, data_room_sync] }
+    CommChannel: { type: string, enum: [email, call, meeting] }
+    StarRating: { type: integer, minimum: 1, maximum: 5 }
+
+    # ---- shared
+    SourceMeta:
+      type: object
+      required: [source, asOf, verification]
+      properties:
+        source: { $ref: "#/components/schemas/DataSource" }
+        asOf: { type: string, format: date }
+        verification: { $ref: "#/components/schemas/VerificationStatus" }
+        verifiedBy: { type: string }
+        note: { type: string }
+    TrackedNumber:
+      type: object
+      required: [value, meta]
+      properties:
+        value: { type: [number, "null"] }
+        meta: { $ref: "#/components/schemas/SourceMeta" }
+    PostalAddress:
+      type: object
+      properties:
+        street: { type: string }
+        street2: { type: string }
+        city: { type: string }
+        state: { type: string, maxLength: 2 }
+        zip: { type: string }
+
+    # ---- buildings
+    BuildingIdentifier:
+      type: object
+      required: [id, type, value, effectiveFrom, isCurrent]
+      properties:
+        id: { type: string }
+        type: { $ref: "#/components/schemas/IdentifierType" }
+        value: { type: string }
+        issuer: { type: string }
+        effectiveFrom: { type: string, format: date }
+        effectiveTo: { type: string, format: date }
+        isCurrent: { type: boolean }
+        note: { type: string }
+    BuildingPhoto:
+      type: object
+      properties:
+        id: { type: string }
+        caption: { type: string }
+        url: { type: string, format: uri }
+        sortOrder: { type: integer, description: "0 = cover" }
+        uploadedAt: { type: string, format: date-time }
+        uploadedBy: { type: string }
+    Building:
+      type: object
+      required: [id, name, facilityType, address, identifiers, certifiedBeds, licensedBeds, averageDailyCensus, verificationStatus]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        alternateNames: { type: array, items: { type: string } }
+        facilityType: { $ref: "#/components/schemas/FacilityType" }
+        address:
+          type: object
+          properties:
+            street: { type: string }
+            city: { type: string }
+            state: { type: string }
+            zip: { type: string }
+            county: { type: string }
+            latitude: { type: [number, "null"] }
+            longitude: { type: [number, "null"] }
+        identifiers: { type: array, items: { $ref: "#/components/schemas/BuildingIdentifier" } }
+        certifiedBeds: { $ref: "#/components/schemas/TrackedNumber" }
+        licensedBeds: { $ref: "#/components/schemas/TrackedNumber" }
+        averageDailyCensus: { $ref: "#/components/schemas/TrackedNumber" }
+        yearBuilt: { $ref: "#/components/schemas/TrackedNumber" }
+        squareFeet: { $ref: "#/components/schemas/TrackedNumber" }
+        stories: { type: [integer, "null"] }
+        acreage: { type: [number, "null"] }
+        privateRooms: { type: [integer, "null"] }
+        semiPrivateRooms: { type: [integer, "null"] }
+        verificationStatus: { $ref: "#/components/schemas/VerificationStatus" }
+        lastVerifiedAt: { type: [string, "null"], format: date }
+        photos: { type: array, items: { $ref: "#/components/schemas/BuildingPhoto" } }
+        tags: { type: array, items: { type: string } }
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+        createdBy: { type: string }
+    BuildingPatch:
+      type: object
+      description: Partial building. Tracked fields accept `{ value, verification }`; provenance is set server-side.
+      properties:
+        name: { type: string }
+        alternateNames: { type: array, items: { type: string } }
+        facilityType: { $ref: "#/components/schemas/FacilityType" }
+        address: { type: object }
+        currentCcn: { type: [string, "null"], description: "Retires the current CCN and adds a new current one" }
+        certifiedBeds: { type: object, properties: { value: { type: number }, verification: { $ref: "#/components/schemas/VerificationStatus" } } }
+        licensedBeds: { type: object, properties: { value: { type: number }, verification: { $ref: "#/components/schemas/VerificationStatus" } } }
+        averageDailyCensus: { type: object, properties: { value: { type: number }, verification: { $ref: "#/components/schemas/VerificationStatus" } } }
+        yearBuilt: { type: object, properties: { value: { type: [number, "null"] }, verification: { $ref: "#/components/schemas/VerificationStatus" } } }
+        squareFeet: { type: object, properties: { value: { type: [number, "null"] }, verification: { $ref: "#/components/schemas/VerificationStatus" } } }
+        stories: { type: [integer, "null"] }
+        acreage: { type: [number, "null"] }
+        verificationStatus: { $ref: "#/components/schemas/VerificationStatus" }
+        tags: { type: array, items: { type: string } }
+    NewBuildingInput:
+      oneOf:
+        - type: object
+          required: [method, ccn]
+          properties:
+            method: { enum: [cms_search, provider_number] }
+            ccn: { type: string }
+        - type: object
+          required: [method, fields]
+          properties:
+            method: { const: manual }
+            fields:
+              type: object
+              required: [name, facilityType, city, state, certifiedBeds]
+              properties:
+                name: { type: string }
+                facilityType: { $ref: "#/components/schemas/FacilityType" }
+                street: { type: string }
+                city: { type: string }
+                state: { type: string }
+                zip: { type: string }
+                county: { type: string }
+                certifiedBeds: { type: integer, minimum: 1 }
+                licensedBeds: { type: integer }
+                averageDailyCensus: { type: integer }
+                yearBuilt: { type: [integer, "null"] }
+                squareFeet: { type: [integer, "null"] }
+                providerNumber: { type: string }
+                operatorName: { type: string, description: "Matches an existing company by name or creates an operator" }
+      discriminator: { propertyName: method }
+    CmsProviderRecord:
+      type: object
+      properties:
+        ccn: { type: string }
+        name: { type: string }
+        street: { type: string }
+        city: { type: string }
+        state: { type: string }
+        zip: { type: string }
+        county: { type: string }
+        type: { $ref: "#/components/schemas/FacilityType" }
+        certifiedBeds: { type: integer }
+        adc: { type: integer }
+        operatorName: { type: string }
+        ownershipType: { type: string }
+        ratings: { type: object, properties: { overall: { $ref: "#/components/schemas/StarRating" }, health: { $ref: "#/components/schemas/StarRating" }, staffing: { $ref: "#/components/schemas/StarRating" }, qm: { $ref: "#/components/schemas/StarRating" } } }
+        certificationDate: { type: string, format: date }
+        existingBuildingId: { type: [string, "null"] }
+    BuildingDirectoryRow:
+      type: object
+      properties:
+        building: { $ref: "#/components/schemas/Building" }
+        ccn: { type: [string, "null"] }
+        cmsRating: { type: [integer, "null"] }
+        operatorName: { type: [string, "null"] }
+        ownerName: { type: [string, "null"] }
+        ownerCompanyType: { type: [string, "null"] }
+        occupancyPct: { type: [number, "null"] }
+        activeDeals: { type: array, items: { type: object, properties: { id: { type: string }, name: { type: string }, stage: { $ref: "#/components/schemas/DealStage" } } } }
+        totalDeals: { type: integer }
+        dealAssociation: { type: string, enum: [active, owned, historical, none] }
+        docRequired: { type: integer }
+        docRequiredApproved: { type: integer }
+        docPct: { type: integer }
+    BuildingOwnership:
+      type: object
+      properties:
+        id: { type: string }
+        buildingId: { type: string }
+        organizationId: { type: string }
+        role: { $ref: "#/components/schemas/OwnershipRole" }
+        startDate: { type: string, format: date }
+        endDate: { type: string, format: date }
+        isCurrent: { type: boolean }
+        meta: { $ref: "#/components/schemas/SourceMeta" }
+        note: { type: string }
+    BuildingRelationship:
+      type: object
+      properties:
+        id: { type: string }
+        buildingId: { type: string }
+        role: { $ref: "#/components/schemas/BuildingRelationshipRole" }
+        organizationId: { type: string }
+        contactId: { type: string }
+        description: { type: string }
+        since: { type: string, format: date }
+    CMSData:
+      type: object
+      description: Latest CMS snapshot for a building (Care Compare / Provider Data)
+      properties:
+        providerNumber: { type: string }
+        ratings:
+          type: object
+          properties:
+            overall: { $ref: "#/components/schemas/StarRating" }
+            health: { $ref: "#/components/schemas/StarRating" }
+            staffing: { $ref: "#/components/schemas/StarRating" }
+            qualityMeasures: { $ref: "#/components/schemas/StarRating" }
+            longStayQm: { $ref: "#/components/schemas/StarRating" }
+            shortStayQm: { $ref: "#/components/schemas/StarRating" }
+        staffing:
+          type: object
+          properties:
+            totalNurseHprd: { type: number }
+            rnHprd: { type: number }
+            lpnHprd: { type: number }
+            cnaHprd: { type: number }
+            stateAvgTotalHprd: { type: number }
+            nationalAvgTotalHprd: { type: number }
+            nurseTurnoverPct: { type: number }
+        surveys: { type: array, items: { type: object, properties: { id: { type: string }, date: { type: string, format: date }, type: { type: string, enum: [standard, complaint, fire_safety, infection_control] }, deficiencyCount: { type: integer }, highestScopeSeverity: { type: string } } } }
+        deficiencies: { type: array, items: { type: object, properties: { id: { type: string }, surveyDate: { type: string, format: date }, tag: { type: string }, category: { type: string }, description: { type: string }, scopeSeverity: { type: string }, status: { type: string, enum: [corrected, open, past_noncompliance] } } } }
+        penalties: { type: array, items: { type: object, properties: { id: { type: string }, date: { type: string, format: date }, type: { type: string, enum: [civil_money_penalty, payment_denial] }, amount: { type: number }, description: { type: string } } } }
+        ratingHistory: { type: array, items: { type: object, properties: { period: { type: string }, overall: { type: integer }, health: { type: integer }, staffing: { type: integer }, qualityMeasures: { type: integer } } } }
+        specialFocusFacility: { type: boolean }
+        abuseIcon: { type: boolean }
+        lastRefreshedAt: { type: string, format: date-time }
+        sourceLabel: { type: string }
+    PropertyCondition:
+      type: object
+      properties:
+        overall: { $ref: "#/components/schemas/ConditionRating" }
+        assessedBy: { type: string }
+        assessmentDate: { type: string, format: date }
+        construction: { type: string }
+        sprinklered: { type: string, enum: [full, partial, none] }
+        generator: { type: string }
+        parkingSpaces: { type: integer }
+        systems: { type: array, items: { type: object, properties: { system: { $ref: "#/components/schemas/BuildingSystem" }, rating: { $ref: "#/components/schemas/ConditionRating" }, installYear: { type: integer }, remainingUsefulLifeYrs: { type: integer }, lastAssessed: { type: string, format: date }, notes: { type: string }, source: { $ref: "#/components/schemas/DataSource" } } } }
+        deferredMaintenance: { type: array, items: { type: object, properties: { id: { type: string }, system: { $ref: "#/components/schemas/BuildingSystem" }, description: { type: string }, estimatedCost: { type: number }, priority: { type: string, enum: [immediate, short_term, long_term] } } } }
+        renovations: { type: array, items: { type: object, properties: { id: { type: string }, year: { type: integer }, description: { type: string }, cost: { type: number } } } }
+    CapitalProject:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        category: { type: string }
+        status: { type: string, enum: [planned, in_progress, completed] }
+        budget: { type: number }
+        spent: { type: number }
+        startDate: { type: string, format: date }
+        targetDate: { type: string, format: date }
+    BuildingFinancials:
+      type: object
+      properties:
+        periods: { type: array, items: { type: object, properties: { label: { type: string }, periodEnd: { type: string, format: date }, revenue: { type: number }, operatingExpenses: { type: number }, ebitdar: { type: number }, rent: { type: number }, ebitda: { type: number }, noi: { type: number }, occupancyPct: { type: number }, source: { $ref: "#/components/schemas/DataSource" } } } }
+        payerMix: { type: object, properties: { medicare: { type: number }, medicaid: { type: number }, managedCare: { type: number }, privatePay: { type: number }, other: { type: number } } }
+        payerMixAsOf: { type: string, format: date }
+        debt: { type: [object, "null"], properties: { lenderOrgId: { type: string }, loanType: { type: string }, originalAmount: { type: number }, balance: { type: number }, rate: { type: string }, originationDate: { type: string, format: date }, maturityDate: { type: string, format: date } } }
+        capex: { type: array, items: { type: object, properties: { year: { type: integer }, amount: { type: number } } } }
+    AttentionItem:
+      type: object
+      description: Derived server-side (see attentionItems in src/store/selectors.ts)
+      properties:
+        id: { type: string }
+        kind: { type: string, enum: [missing_doc, pending_review, revision, unverified, follow_up, observation, regulatory] }
+        severity: { type: string, enum: [high, medium, low] }
+        title: { type: string }
+        detail: { type: string }
+        tab: { type: string }
+        targetId: { type: string }
+    BuildingBundle:
+      type: object
+      properties:
+        building: { $ref: "#/components/schemas/Building" }
+        cms: { oneOf: [{ $ref: "#/components/schemas/CMSData" }, { type: "null" }] }
+        condition: { oneOf: [{ $ref: "#/components/schemas/PropertyCondition" }, { type: "null" }] }
+        capitalProjects: { type: array, items: { $ref: "#/components/schemas/CapitalProject" } }
+        financials: { oneOf: [{ $ref: "#/components/schemas/BuildingFinancials" }, { type: "null" }] }
+        ownerships: { type: array, items: { $ref: "#/components/schemas/BuildingOwnership" } }
+        currentOwnership:
+          type: object
+          properties:
+            owner: { $ref: "#/components/schemas/Organization" }
+            operator: { $ref: "#/components/schemas/Organization" }
+            parent: { $ref: "#/components/schemas/Organization" }
+            management: { $ref: "#/components/schemas/Organization" }
+        relationships: { type: array, items: { $ref: "#/components/schemas/BuildingRelationship" } }
+        deals: { type: array, items: { type: object, properties: { deal: { $ref: "#/components/schemas/Deal" }, rel: { $ref: "#/components/schemas/DealBuildingRelationship" } } } }
+        siteVisits: { type: array, items: { $ref: "#/components/schemas/SiteVisit" } }
+        documentStats:
+          type: object
+          properties:
+            total: { type: integer }
+            required: { type: integer }
+            requiredApproved: { type: integer }
+            approved: { type: integer }
+            pendingReview: { type: integer }
+            missing: { type: integer }
+            needsRevision: { type: integer }
+            overdue: { type: integer }
+            pct: { type: integer }
+        dataRoom: { $ref: "#/components/schemas/DataRoomConnection" }
+        attention: { type: array, items: { $ref: "#/components/schemas/AttentionItem" } }
+
+    # ---- documents
+    DocumentFile:
+      type: object
+      properties:
+        id: { type: string }
+        fileName: { type: string }
+        fileSize: { type: integer }
+        mimeType: { type: string }
+        version: { type: integer }
+        uploadedAt: { type: string, format: date-time }
+        uploadedBy: { type: string }
+        source: { type: string, enum: [upload, sharepoint, email] }
+        pageCount: { type: integer }
+        downloadUrl: { type: string, format: uri }
+    ReviewComment:
+      type: object
+      properties:
+        id: { type: string }
+        author: { type: string }
+        text: { type: string }
+        createdAt: { type: string, format: date-time }
+        action: { type: string, enum: [approved, rejected, needs_revision, status_change, comment] }
+    DocumentRequest:
+      type: object
+      properties:
+        id: { type: string }
+        buildingId: { type: string }
+        dealId: { type: string }
+        name: { type: string }
+        category: { $ref: "#/components/schemas/DocumentCategory" }
+        required: { type: boolean }
+        isBaseline: { type: boolean }
+        requestedFrom: { type: string }
+        reviewer: { type: string }
+        dueDate: { type: string, format: date }
+        status: { $ref: "#/components/schemas/DocumentStatus" }
+        files: { type: array, items: { $ref: "#/components/schemas/DocumentFile" } }
+        notes: { type: string }
+        comments: { type: array, items: { $ref: "#/components/schemas/ReviewComment" } }
+        createdAt: { type: string, format: date-time }
+        updatedAt: { type: string, format: date-time }
+    DocumentRequestInput:
+      type: object
+      required: [name, category]
+      properties:
+        name: { type: string }
+        category: { $ref: "#/components/schemas/DocumentCategory" }
+        dealId: { type: string }
+        required: { type: boolean, default: true }
+        requestedFrom: { type: string }
+        reviewer: { type: string }
+        dueDate: { type: string, format: date }
+        status: { type: string, enum: [not_requested, requested], default: requested }
+        notes: { type: string }
+    DocumentRequestPatch:
+      type: object
+      properties:
+        status: { $ref: "#/components/schemas/DocumentStatus" }
+        reviewer: { type: [string, "null"] }
+        dueDate: { type: [string, "null"], format: date }
+        requestedFrom: { type: [string, "null"] }
+        dealId: { type: [string, "null"] }
+        required: { type: boolean, description: "Not changeable for baseline placeholders" }
+        notes: { type: string }
+    DataRoomConnection:
+      type: object
+      properties:
+        provider: { const: sharepoint }
+        siteName: { type: string }
+        folderPath: { type: string }
+        status: { type: string, enum: [connected, syncing, error, not_connected] }
+        lastSyncAt: { type: string, format: date-time }
+        recentFiles: { type: array, items: { type: object, properties: { id: { type: string }, name: { type: string }, importedAt: { type: string, format: date-time }, size: { type: integer }, matchedRequestId: { type: string } } } }
+
+    # ---- site visits
+    SiteVisitInput:
+      type: object
+      required: [date, type, participants, summary]
+      properties:
+        dealId: { type: string }
+        date: { type: string, format: date }
+        type: { type: string, enum: [initial_tour, diligence_inspection, pca_walkthrough, asset_review] }
+        participants: { type: array, minItems: 1, items: { type: string } }
+        summary: { type: string, minLength: 1 }
+        conditionRatings: { type: object, additionalProperties: { $ref: "#/components/schemas/ConditionRating" } }
+        observations: { type: array, items: { type: object, required: [text, severity], properties: { text: { type: string }, severity: { type: string, enum: [low, medium, high] }, system: { $ref: "#/components/schemas/BuildingSystem" } } } }
+        followUps: { type: array, items: { type: object, required: [title, assignee], properties: { title: { type: string }, assignee: { type: string }, dueDate: { type: string, format: date } } } }
+        photos: { type: array, items: { type: object, properties: { caption: { type: string }, area: { type: string }, objectKey: { type: string } } } }
+    SiteVisit:
+      allOf:
+        - $ref: "#/components/schemas/SiteVisitInput"
+        - type: object
+          properties:
+            id: { type: string }
+            buildingId: { type: string }
+            createdBy: { type: string }
+            createdAt: { type: string, format: date-time }
+
+    # ---- organizations & contacts
+    Organization:
+      type: object
+      required: [id, name, type]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        type: { $ref: "#/components/schemas/OrganizationType" }
+        companyType: { $ref: "#/components/schemas/CompanyType" }
+        parentOrgId: { type: string }
+        hqCity: { type: string }
+        hqState: { type: string }
+        officeAddress: { $ref: "#/components/schemas/PostalAddress" }
+        website: { type: string }
+        description: { type: string }
+        logoUrl: { type: string, format: uri }
+        acuityFocus: { type: array, items: { type: string } }
+        regionalFocus: { type: array, items: { type: string } }
+        stateFocus: { type: array, items: { type: string } }
+        primaryContactId: { type: string }
+        tags: { type: array, items: { type: string } }
+    OrganizationInput:
+      type: object
+      properties:
+        name: { type: string, minLength: 1 }
+        type: { $ref: "#/components/schemas/OrganizationType" }
+        companyType: { type: [string, "null"], enum: [bank, finco, mezz_lender, reit, private, ar_lender, null] }
+        parentOrgId: { type: [string, "null"] }
+        officeAddress: { $ref: "#/components/schemas/PostalAddress" }
+        website: { type: string }
+        description: { type: string }
+        logoObjectKey: { type: [string, "null"] }
+        acuityFocus: { type: array, items: { type: string } }
+        regionalFocus: { type: array, items: { type: string } }
+        stateFocus: { type: array, items: { type: string } }
+        primaryContactId: { type: [string, "null"] }
+        tags: { type: array, items: { type: string } }
+    Contact:
+      type: object
+      required: [id, name, organizationId, contactType, sectors]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        title: { type: string }
+        organizationId: { type: string }
+        contactType: { $ref: "#/components/schemas/ContactType" }
+        sectors: { type: array, items: { $ref: "#/components/schemas/Sector" } }
+        email: { type: string, format: email }
+        phone: { type: string }
+        mobilePhone: { type: string }
+        linkedIn: { type: string }
+        dob: { type: string, format: date, description: "Personal — returned only to permitted roles" }
+        personalEmail: { type: string, description: "Personal — returned only to permitted roles" }
+        mailingAddress: { $ref: "#/components/schemas/PostalAddress" }
+        photoUrl: { type: string, format: uri }
+        rosterRole: { type: string }
+        notes: { type: string }
+        tags: { type: array, items: { type: string } }
+    ContactInput:
+      type: object
+      properties:
+        name: { type: string, minLength: 1 }
+        title: { type: string }
+        organizationId: { type: string }
+        newOrganizationName: { type: string, description: "Create a company inline (alternative to organizationId)" }
+        contactType: { $ref: "#/components/schemas/ContactType" }
+        sectors: { type: array, items: { $ref: "#/components/schemas/Sector" } }
+        email: { type: string }
+        phone: { type: string }
+        mobilePhone: { type: string }
+        linkedIn: { type: string }
+        dob: { type: [string, "null"], format: date }
+        personalEmail: { type: string }
+        mailingAddress: { $ref: "#/components/schemas/PostalAddress" }
+        photoObjectKey: { type: [string, "null"] }
+        rosterRole: { type: string }
+        notes: { type: string }
+        tags: { type: array, items: { type: string } }
+        makePrimary: { type: boolean }
+
+    # ---- communications
+    CommParticipant: { type: object, required: [name, email], properties: { name: { type: string }, email: { type: string } } }
+    Communication:
+      type: object
+      properties:
+        id: { type: string }
+        threadId: { type: string }
+        channel: { $ref: "#/components/schemas/CommChannel" }
+        direction: { type: string, enum: [inbound, outbound] }
+        subject: { type: string }
+        from: { $ref: "#/components/schemas/CommParticipant" }
+        to: { type: array, items: { $ref: "#/components/schemas/CommParticipant" } }
+        cc: { type: array, items: { $ref: "#/components/schemas/CommParticipant" } }
+        sentAt: { type: string, format: date-time }
+        body: { type: string }
+        attachments: { type: array, items: { type: object, properties: { name: { type: string }, size: { type: integer } } } }
+        contactIds: { type: array, items: { type: string } }
+        dealId: { type: string }
+        buildingId: { type: string }
+        durationMin: { type: integer }
+        source: { type: string, enum: [outlook_sync, manual] }
+        loggedBy: { type: string }
+    CommunicationInput:
+      type: object
+      required: [channel, direction, subject, sentAt, contactIds]
+      properties:
+        channel: { $ref: "#/components/schemas/CommChannel" }
+        direction: { type: string, enum: [inbound, outbound] }
+        subject: { type: string, minLength: 1 }
+        body: { type: string }
+        sentAt: { type: string, format: date-time }
+        durationMin: { type: integer, minimum: 1 }
+        contactIds: { type: array, minItems: 1, items: { type: string } }
+        dealId: { type: string }
+
+    # ---- deals
+    DealContactAssignment:
+      oneOf:
+        - type: object
+          required: [side, role, contactId]
+          properties:
+            side: { enum: [buyer, seller] }
+            role: { $ref: "#/components/schemas/BuyerSellerRole" }
+            contactId: { type: string }
+        - type: object
+          required: [side, role, contactId]
+          properties:
+            side: { const: vendor }
+            role: { $ref: "#/components/schemas/VendorRole" }
+            contactId: { type: string }
+    ThirdPartyReport:
+      type: object
+      properties:
+        kind: { $ref: "#/components/schemas/VendorRole" }
+        dateOrdered: { type: [string, "null"], format: date }
+        status: { $ref: "#/components/schemas/ReportStatus" }
+        expectedDate: { type: [string, "null"], format: date }
+        url: { type: [string, "null"], format: uri }
+    DealBuildingRelationship:
+      type: object
+      properties:
+        id: { type: string }
+        dealId: { type: string }
+        buildingId: { type: string }
+        role: { $ref: "#/components/schemas/DealBuildingRole" }
+        priceAllocation: { type: number }
+        allocationBasis: { type: string }
+        notes: { type: string }
+        addedAt: { type: string, format: date }
+    Deal:
+      type: object
+      required: [id, name, code, type, stage, status]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        code: { type: string }
+        type: { $ref: "#/components/schemas/DealType" }
+        stage: { $ref: "#/components/schemas/DealStage" }
+        status: { $ref: "#/components/schemas/DealStatus" }
+        skippedLoi: { type: boolean }
+        deadReason: { type: string }
+        dealKind: { $ref: "#/components/schemas/DealKind" }
+        assetClass: { $ref: "#/components/schemas/AssetClass" }
+        sellerOrgId: { type: string }
+        buyerOrgId: { type: string }
+        buyerEntity: { type: string }
+        brokerOrgId: { type: string }
+        lenderOrgId: { type: string }
+        sourceOrgId: { type: string }
+        sourceContactId: { type: string }
+        currentOperatorOrgId: { type: string }
+        newOperatorOrgId: { type: string }
+        jvPartnerOrgId: { type: string }
+        jvPct: { type: number, minimum: 0, maximum: 100 }
+        askingPrice: { type: number }
+        purchasePrice: { type: number }
+        projectedCloseDate: { type: string, format: date }
+        actualCloseDate: { type: string, format: date }
+        dataRoomUrl: { type: string }
+        statesOverride: { type: array, items: { type: string } }
+        totalBuildingsOverride: { type: integer }
+        totalLicBedsOverride: { type: integer }
+        contacts: { type: array, items: { $ref: "#/components/schemas/DealContactAssignment" } }
+        buyerDistribution: { type: string }
+        sellerDistribution: { type: string }
+        reports: { type: array, items: { $ref: "#/components/schemas/ThirdPartyReport" } }
+        leadName: { type: string }
+        summary: { type: string }
+        dealApproverContactId: { type: string }
+        autoAdvance: { type: boolean }
+        milestoneFloor: { $ref: "#/components/schemas/DealStage" }
+        phaseOverrides: { type: object, additionalProperties: { type: boolean } }
+        lastAutoAdvance:
+          type: [object, "null"]
+          properties:
+            from: { $ref: "#/components/schemas/DealStage" }
+            fromStatus: { $ref: "#/components/schemas/DealStatus" }
+            to: { $ref: "#/components/schemas/DealStage" }
+            at: { type: string, format: date-time }
+            reason: { type: string }
+            dismissed: { type: boolean }
+        createdAt: { type: string, format: date-time }
+    DealCalculated:
+      type: object
+      description: Server-calculated values (see dealView in src/store/selectors.ts)
+      properties:
+        totalBuildings: { type: integer }
+        totalLicBeds: { type: integer }
+        states: { type: array, items: { type: string } }
+        pricePerBed: { type: [number, "null"], description: "askingPrice ÷ totalLicBeds" }
+        currentOperatorOrgIds: { type: array, items: { type: string } }
+        overridden: { type: object, properties: { states: { type: boolean }, buildings: { type: boolean }, beds: { type: boolean } } }
+        progressPct: { type: integer, description: "checklistProgress × 100" }
+        checklistCounts:
+          type: object
+          properties:
+            complete: { type: integer }
+            awaiting_approval: { type: integer }
+            awaiting_document: { type: integer }
+            in_progress: { type: integer }
+            not_started: { type: integer }
+            bypassed: { type: integer }
+        phases:
+          type: array
+          items:
+            type: object
+            properties:
+              key: { type: string, enum: [sourced, boe, full_dd, pre_closing] }
+              items: { type: array, items: { type: object, properties: { key: { type: string }, done: { type: boolean }, manual: { type: boolean } } } }
+    DealSummary:
+      allOf:
+        - $ref: "#/components/schemas/Deal"
+        - $ref: "#/components/schemas/DealCalculated"
+        - type: object
+          properties:
+            sellerName: { type: [string, "null"] }
+    DealBundle:
+      type: object
+      properties:
+        deal: { $ref: "#/components/schemas/Deal" }
+        calculated: { $ref: "#/components/schemas/DealCalculated" }
+        buildings: { type: array, items: { type: object, properties: { rel: { $ref: "#/components/schemas/DealBuildingRelationship" }, building: { $ref: "#/components/schemas/Building" }, cms: { oneOf: [{ $ref: "#/components/schemas/CMSData" }, { type: "null" }] } } } }
+        organizations: { type: array, items: { $ref: "#/components/schemas/Organization" }, description: "All companies referenced by the deal" }
+        contacts: { type: array, items: { $ref: "#/components/schemas/Contact" }, description: "All contacts referenced by the deal" }
+        checklist: { type: array, items: { $ref: "#/components/schemas/DealChecklistItem" } }
+    NewDealInput:
+      type: object
+      required: [name]
+      properties:
+        name: { type: string, minLength: 1 }
+        dealKind: { $ref: "#/components/schemas/DealKind" }
+        assetClass: { type: [string, "null"], description: "Null = derive from selected buildings" }
+        buildingIds: { type: array, items: { type: string } }
+        sellerOrgId: { type: string, description: "Defaults to current owner of the first building" }
+        teamLeadContactId: { type: string }
+        askingPrice: { type: number }
+        projectedCloseDate: { type: string, format: date }
+        stage: { type: string, enum: [high_level_review, loi_signed, psa_signed] }
+        skippedLoi: { type: boolean }
+    DealPatch:
+      type: object
+      description: Any editable Deal field (name, dealKind, assetClass, source, parties, prices, dates, overrides, dataRoomUrl, summary, distribution lists, autoAdvance)
+      additionalProperties: true
+
+    # ---- checklist
+    ChecklistSubItem:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        status: { type: string, enum: [todo, done, na] }
+    ChecklistStage:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        status: { type: string, enum: [todo, done, skipped] }
+        auto: { $ref: "#/components/schemas/ChecklistAutoRule" }
+        subItems: { type: array, items: { $ref: "#/components/schemas/ChecklistSubItem" } }
+        completedByApproval: { type: boolean }
+        completedAt: { type: string, format: date-time }
+        completedBy: { type: string }
+        skipReason: { type: string }
+    ChecklistDoc:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        size: { type: integer }
+        mimeType: { type: string }
+        uploadedAt: { type: string, format: date-time }
+        uploadedBy: { type: string }
+        status: { type: string, enum: [submitted, approved, rejected] }
+        reviewedBy: { type: string }
+        reviewedAt: { type: string, format: date-time }
+        reviewNote: { type: string }
+    DealChecklistItem:
+      type: object
+      properties:
+        id: { type: string }
+        key: { type: string }
+        title: { type: string }
+        stages: { type: array, items: { $ref: "#/components/schemas/ChecklistStage" } }
+        responsibleContactId: { type: string }
+        approverContactId: { type: [string, "null"], description: "Null = deal approver applies" }
+        effectiveApproverContactId: { type: [string, "null"], description: "Calculated" }
+        requiresResponsible: { type: boolean }
+        requiresDocument: { type: boolean }
+        approval: { type: object, properties: { status: { type: string, enum: [pending, approved] }, by: { type: string }, at: { type: string, format: date-time }, note: { type: string } } }
+        documentWaived: { type: [object, "null"], properties: { reason: { type: string }, by: { type: string }, at: { type: string, format: date-time } } }
+        documents: { type: array, items: { $ref: "#/components/schemas/ChecklistDoc" } }
+        bypass: { type: [object, "null"], properties: { reason: { type: string }, by: { type: string }, at: { type: string, format: date-time } } }
+        history: { type: array, items: { type: object, properties: { id: { type: string }, at: { type: string, format: date-time }, by: { type: string }, text: { type: string }, tone: { type: string, enum: [default, success, warning, danger] } } } }
+        state: { type: string, enum: [bypassed, complete, awaiting_approval, awaiting_document, in_progress, not_started], description: "Calculated (itemState)" }
+        progressPct: { type: integer, description: "Calculated (itemProgress × 100)" }
+    ChecklistAction:
+      description: Mirrors ChecklistAction in src/lib/checklist.ts
+      oneOf:
+        - { type: object, required: [type, stageId], properties: { type: { const: complete_stage }, stageId: { type: string } } }
+        - { type: object, required: [type, stageId], properties: { type: { const: reopen_stage }, stageId: { type: string } } }
+        - { type: object, required: [type, stageId, reason], properties: { type: { const: skip_stage }, stageId: { type: string }, reason: { type: string, minLength: 1 } } }
+        - { type: object, required: [type, stageId, subId, status], properties: { type: { const: set_sub }, stageId: { type: string }, subId: { type: string }, status: { type: string, enum: [todo, done, na] } } }
+        - { type: object, required: [type, field], properties: { type: { const: set_party }, field: { type: string, enum: [responsibleContactId, approverContactId] }, contactId: { type: [string, "null"] } } }
+        - { type: object, required: [type, doc], properties: { type: { const: upload_doc }, doc: { type: object, required: [objectKey, name, size, mimeType], properties: { objectKey: { type: string }, name: { type: string }, size: { type: integer }, mimeType: { type: string } } } } }
+        - { type: object, required: [type, docId], properties: { type: { const: remove_doc }, docId: { type: string } } }
+        - { type: object, required: [type], properties: { type: { const: approve }, note: { type: string } } }
+        - { type: object, required: [type, note], properties: { type: { const: request_changes }, note: { type: string, minLength: 1 } } }
+        - { type: object, required: [type], properties: { type: { const: revoke_approval } } }
+        - { type: object, required: [type, reason], properties: { type: { const: waive_doc }, reason: { type: string, minLength: 1 } } }
+        - { type: object, required: [type], properties: { type: { const: unwaive_doc } } }
+        - { type: object, required: [type, reason], properties: { type: { const: bypass }, reason: { type: string, minLength: 1 } } }
+        - { type: object, required: [type], properties: { type: { const: restore } } }
+      discriminator: { propertyName: type }
+
+    # ---- company deal rows (Owner tab, contact record)
+    CompanyDealRow:
+      type: object
+      description: Deals where the company is seller, buyer, broker or lender (companyDeals in src/store/selectors.ts)
+      properties:
+        deal: { $ref: "#/components/schemas/Deal" }
+        role: { type: string, description: "e.g. Seller, Buyer, Broker, Lender, or combined 'Seller & Broker'" }
+        states: { type: array, items: { type: string } }
+        buildings: { type: integer }
+        beds: { type: integer, description: "Certified beds across the deal's buildings" }
+        amount: { type: [number, "null"], description: "purchasePrice ?? askingPrice" }
+        amountLabel: { type: string, enum: [Purchase, Ask, "—"] }
+        perBed: { type: [number, "null"] }
+
+    # ---- activity
+    Activity:
+      type: object
+      properties:
+        id: { type: string }
+        buildingId: { type: string }
+        dealId: { type: string }
+        type: { $ref: "#/components/schemas/ActivityType" }
+        title: { type: string }
+        description: { type: string }
+        actor: { type: string }
+        timestamp: { type: string, format: date-time }
+    ActivityPage:
+      type: object
+      properties:
+        items: { type: array, items: { $ref: "#/components/schemas/Activity" } }
+        nextCursor: { type: [string, "null"] }
